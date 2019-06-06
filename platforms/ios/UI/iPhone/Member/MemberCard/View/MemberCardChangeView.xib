@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MemberCardChangeView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl2-qZ-gNO">
+                    <connections>
+                        <action selector="hideBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="6oy-i3-CFG"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zr-FL-gVz">
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lAn-sv-tj5">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="218" id="JUA-Hk-tyS"/>
+                            </constraints>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQl-EF-XcS">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择会员卡" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGd-yk-bYz">
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsb-2D-gfM">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="dMT-SS-9q3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="hideBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Q4H-gD-LvN"/>
+                                    </connections>
+                                </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_card_cancel_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="0h2-zX-loO"/>
+                            </subviews>
+                            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="0h2-zX-loO" secondAttribute="trailing" constant="10" id="1hm-Pm-rJK"/>
+                                <constraint firstItem="WGd-yk-bYz" firstAttribute="centerX" secondItem="fQl-EF-XcS" secondAttribute="centerX" id="4Ef-HD-e3I"/>
+                                <constraint firstAttribute="height" constant="45" id="AHl-Ty-NgU"/>
+                                <constraint firstItem="0h2-zX-loO" firstAttribute="centerY" secondItem="fQl-EF-XcS" secondAttribute="centerY" id="I5I-Ho-ERy"/>
+                                <constraint firstItem="WGd-yk-bYz" firstAttribute="centerY" secondItem="fQl-EF-XcS" secondAttribute="centerY" id="IaD-KM-IBI"/>
+                                <constraint firstAttribute="bottom" secondItem="tsb-2D-gfM" secondAttribute="bottom" id="KB0-vR-UpE"/>
+                                <constraint firstItem="tsb-2D-gfM" firstAttribute="top" secondItem="fQl-EF-XcS" secondAttribute="top" id="V84-9P-9vx"/>
+                                <constraint firstAttribute="trailing" secondItem="tsb-2D-gfM" secondAttribute="trailing" id="hnO-sn-vWq"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="lAn-sv-tj5" secondAttribute="bottom" id="DGl-bH-HeD"/>
+                        <constraint firstItem="fQl-EF-XcS" firstAttribute="top" secondItem="6zr-FL-gVz" secondAttribute="top" id="LBO-Fu-Xpk"/>
+                        <constraint firstItem="lAn-sv-tj5" firstAttribute="leading" secondItem="6zr-FL-gVz" secondAttribute="leading" id="Oaa-nz-jPC"/>
+                        <constraint firstItem="fQl-EF-XcS" firstAttribute="leading" secondItem="6zr-FL-gVz" secondAttribute="leading" id="mNK-my-0pt"/>
+                        <constraint firstItem="lAn-sv-tj5" firstAttribute="top" secondItem="fQl-EF-XcS" secondAttribute="bottom" id="nhq-kd-3tD"/>
+                        <constraint firstAttribute="trailing" secondItem="lAn-sv-tj5" secondAttribute="trailing" id="yKF-Py-H8n"/>
+                        <constraint firstAttribute="trailing" secondItem="fQl-EF-XcS" secondAttribute="trailing" id="ylc-KJ-kGd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Xl2-qZ-gNO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6yU-rH-Vja"/>
+                <constraint firstAttribute="trailing" secondItem="6zr-FL-gVz" secondAttribute="trailing" id="HsJ-Q5-P8a"/>
+                <constraint firstAttribute="bottom" secondItem="Xl2-qZ-gNO" secondAttribute="bottom" id="IQ2-kf-YEm"/>
+                <constraint firstItem="Xl2-qZ-gNO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="am7-1u-mlR"/>
+                <constraint firstAttribute="trailing" secondItem="Xl2-qZ-gNO" secondAttribute="trailing" id="dai-di-07b"/>
+                <constraint firstItem="6zr-FL-gVz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" id="hJc-2L-V6u"/>
+                <constraint firstItem="6zr-FL-gVz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="llS-7I-7RC"/>
+            </constraints>
+            <connections>
+                <outlet property="bgBtn" destination="Xl2-qZ-gNO" id="tgR-lo-pZr"/>
+                <outlet property="containerView" destination="6zr-FL-gVz" id="NNz-1i-3e6"/>
+                <outlet property="tableView" destination="lAn-sv-tj5" id="CyK-aE-eDy"/>
+                <outlet property="topConstraint" destination="hJc-2L-V6u" id="lCw-s4-RyH"/>
+            </connections>
+            <point key="canvasLocation" x="-41.5" y="246.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_card_cancel_selected.png" width="12" height="12"/>
+    </resources>
+</document>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CouponSectionHead">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="rbZ-2h-gPR"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="fIO-Q3-wuD"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szE-FG-Q60">
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.52941176469999995" green="0.52941176469999995" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rbZ-2h-gPR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="EkK-eX-TCn"/>
+                <constraint firstItem="fIO-Q3-wuD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Nt3-i6-rRQ"/>
+                <constraint firstItem="fIO-Q3-wuD" firstAttribute="width" secondItem="rbZ-2h-gPR" secondAttribute="width" id="UOT-Oe-rvo"/>
+                <constraint firstAttribute="trailing" secondItem="fIO-Q3-wuD" secondAttribute="trailing" constant="15" id="WUk-9T-8a9"/>
+                <constraint firstItem="rbZ-2h-gPR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="c0D-94-JYp"/>
+                <constraint firstItem="szE-FG-Q60" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="msh-v2-SkQ"/>
+                <constraint firstItem="szE-FG-Q60" firstAttribute="leading" secondItem="rbZ-2h-gPR" secondAttribute="trailing" constant="20" id="uxP-1r-6oY"/>
+                <constraint firstItem="fIO-Q3-wuD" firstAttribute="leading" secondItem="szE-FG-Q60" secondAttribute="trailing" constant="20" id="yBv-Oe-z52"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="szE-FG-Q60" id="t9Q-cH-pDs"/>
+            </connections>
+            <point key="canvasLocation" x="251" y="146"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+    </resources>
+</document>

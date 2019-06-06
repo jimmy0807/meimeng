@@ -1,0 +1,33 @@
+﻿<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      选择员工
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let employees of employees" (tap)="onSelectEmployee(employees)">
+      <ion-avatar item-left>
+        <img *ngIf="employees.image_url" [src]="employees.image_url">
+        <img *ngIf="!employees.image_url" src="assets/img/avatar-default.png">
+      </ion-avatar>
+      <h2>{{employees.name}}</h2>
+      <p *ngFor="let recent of employees.recents">{{recent}}</p>
+      <ion-note item-right>{{employees.qty}}</ion-note>
+    </button>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!employees.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有需要分配指标的员工</p>
+    </div>
+  </div>
+</ion-content>

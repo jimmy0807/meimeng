@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemArrowCell" id="KGk-i7-Jjw" customClass="ItemArrowCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_common_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="MgT-E1-nhG">
+                        <rect key="frame" x="292" y="14" width="16" height="16"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7B-xw-zJH">
+                        <rect key="frame" x="247" y="13.5" width="43" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.52941176469999995" green="0.52941176469999995" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="89L-NS-LXK">
+                        <rect key="frame" x="15" y="42.5" width="290" height="1"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YE-Ng-KbZ">
+                        <rect key="frame" x="15" y="13" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="T7B-xw-zJH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7fd-R9-H76"/>
+                    <constraint firstItem="4YE-Ng-KbZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="DG1-7Y-5je"/>
+                    <constraint firstItem="MgT-E1-nhG" firstAttribute="leading" secondItem="T7B-xw-zJH" secondAttribute="trailing" constant="2" id="VZx-ab-wch"/>
+                    <constraint firstAttribute="trailing" secondItem="MgT-E1-nhG" secondAttribute="trailing" constant="12" id="hnw-fG-Ria"/>
+                    <constraint firstAttribute="trailing" secondItem="89L-NS-LXK" secondAttribute="trailing" constant="15" id="iHd-Te-SPB"/>
+                    <constraint firstItem="89L-NS-LXK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="iQu-HQ-wuA"/>
+                    <constraint firstItem="4YE-Ng-KbZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qnW-Td-fCU"/>
+                    <constraint firstAttribute="bottom" secondItem="89L-NS-LXK" secondAttribute="bottom" id="t7d-cO-gtu"/>
+                    <constraint firstItem="MgT-E1-nhG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yxr-ix-dVu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="arrowImgView" destination="MgT-E1-nhG" id="ymO-OA-K4r"/>
+                <outlet property="lineImgView" destination="89L-NS-LXK" id="kUO-yy-IcR"/>
+                <outlet property="lineLeadingConstraint" destination="iQu-HQ-wuA" id="Dbb-mF-ofL"/>
+                <outlet property="lineTailingConstraint" destination="iHd-Te-SPB" id="rOg-HD-50h"/>
+                <outlet property="nameLabel" destination="4YE-Ng-KbZ" id="7UZ-Ro-6jh"/>
+                <outlet property="valueLabel" destination="T7B-xw-zJH" id="rRI-lq-zL9"/>
+            </connections>
+            <point key="canvasLocation" x="-27" y="92"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bs_common_arrow.png" width="16" height="16"/>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+    </resources>
+</document>

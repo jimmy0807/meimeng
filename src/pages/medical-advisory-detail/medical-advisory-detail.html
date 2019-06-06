@@ -1,0 +1,92 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}咨询单</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item (tap)="select('customer')">
+      <ion-label>客户</ion-label>
+      <ion-note *ngIf="a.customer_name" item-right>{{a.customer_name}}</ion-note>
+      <ion-note *ngIf="!a.customer_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>区分</ion-label>
+      <ion-select [(ngModel)]="a.category" okText="确定" cancelText="关闭">
+        <ion-option value="advisory">咨询</ion-option>
+        <ion-option value="complaints">投诉</ion-option>
+        <ion-option value="service">服务</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-item (tap)="select('receiver')">
+      <ion-label>咨询师</ion-label>
+      <ion-note *ngIf="a.receiver_name" item-right>{{a.receiver_name}}</ion-note>
+      <ion-note *ngIf="!a.receiver_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('split')">
+      <ion-label>分诊单</ion-label>
+      <ion-note *ngIf="a.split_name" item-right>{{a.split_name}}</ion-note>
+      <ion-note *ngIf="!a.split_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('member')">
+      <ion-label>会员</ion-label>
+      <ion-note *ngIf="a.member_name" item-right>{{a.member_name}}</ion-note>
+      <ion-note *ngIf="!a.member_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('employee')">
+      <ion-label>顾问</ion-label>
+      <ion-note *ngIf="a.employee_name" item-right>{{a.employee_name}}</ion-note>
+      <ion-note *ngIf="!a.employee_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('designer')">
+      <ion-label>设计师</ion-label>
+      <ion-note *ngIf="a.designers_name" item-right>{{a.designers_name}}</ion-note>
+      <ion-note *ngIf="!a.designers_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('doctor')">
+      <ion-label>医生</ion-label>
+      <ion-note *ngIf="a.doctor_name" item-right>{{a.doctor_name}}</ion-note>
+      <ion-note *ngIf="!a.doctor_name" item-right>请选择</ion-note>
+    </button>
+    <br />
+
+
+    <button ion-item (tap)="select('reservation')">
+      <ion-label>预约</ion-label>
+      <ion-note *ngIf="a.reservation_name" item-right>{{a.reservation_name}}</ion-note>
+      <ion-note *ngIf="!a.reservation_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('operate')">
+      <ion-label>开单号</ion-label>
+      <ion-note *ngIf="a.operate_name" item-right>{{a.operate_name}}</ion-note>
+      <ion-note *ngIf="!a.operate_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item (tap)="select('product')">
+      <h2>咨询项目</h2>
+      <p *ngFor="let t of a.product_ids">{{t.name}}</p>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label>实际情况</ion-label>
+      <ion-input text-right item-right [(ngModel)]="a.condition" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>就诊意见</ion-label>
+      <ion-input text-right item-right [(ngModel)]="a.advice" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

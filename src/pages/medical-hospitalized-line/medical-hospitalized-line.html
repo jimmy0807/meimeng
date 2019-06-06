@@ -1,0 +1,45 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}药品</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item (tap)="select('prd')">
+      <ion-label>服务项目</ion-label>
+      <ion-note *ngIf="ol.product_name" item-right>{{ol.product_name}}</ion-note>
+      <ion-note *ngIf="!ol.product_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>数量</ion-label>
+      <ion-input text-right item-right [(ngModel)]="ol.qty" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>价格</ion-label>
+      <ion-input text-right item-right [(ngModel)]="ol.price" type="number"></ion-input>
+    </ion-item>
+    <button ion-item (tap)="select('uom')">
+      <ion-label>单位</ion-label>
+      <ion-note *ngIf="ol.uom_name" item-right>{{ol.uom_name}}</ion-note>
+      <ion-note *ngIf="!ol.uom_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>其他信息</ion-label>
+      <ion-input text-right item-right [(ngModel)]="ol.note" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

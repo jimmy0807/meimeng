@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MobileListVC">
+            <connections>
+                <outlet property="headerView" destination="Vd3-gu-neB" id="Pfa-vD-qPj"/>
+                <outlet property="mobileTableView" destination="Zd2-Hp-zZx" id="Nre-Tz-ZIr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zd2-Hp-zZx">
+                    <rect key="frame" x="673" y="80" width="351" height="688"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="351" id="kAf-Wq-ZPH"/>
+                        <constraint firstAttribute="height" constant="688" id="nnx-ln-9Kc"/>
+                    </constraints>
+                    <color key="sectionIndexBackgroundColor" red="0.61788657339119146" green="0.71701058695417197" blue="0.73574317893401009" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ln6-os-YXd"/>
+                        <outlet property="delegate" destination="-1" id="QMI-cb-phA"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vd3-gu-neB">
+                    <rect key="frame" x="673" y="0.0" width="351" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择一位会员手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqY-Mr-dhV">
+                            <rect key="frame" x="108" y="31" width="135" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="bg7-P7-t0a"/>
+                                <constraint firstAttribute="width" constant="135" id="hLc-9v-DBA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="gqY-Mr-dhV" firstAttribute="centerY" secondItem="Vd3-gu-neB" secondAttribute="centerY" constant="1.5" id="23p-gf-SXu"/>
+                        <constraint firstItem="gqY-Mr-dhV" firstAttribute="centerX" secondItem="Vd3-gu-neB" secondAttribute="centerX" id="RKL-AC-gcZ"/>
+                        <constraint firstAttribute="height" constant="80" id="caH-0X-4He"/>
+                        <constraint firstAttribute="width" constant="351" id="hJy-yW-Fzw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.39822345889999999" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Vd3-gu-neB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Fyy-dN-IjE"/>
+                <constraint firstItem="Zd2-Hp-zZx" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="X8A-DC-eas"/>
+                <constraint firstItem="Zd2-Hp-zZx" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="cxw-SX-Ylk"/>
+                <constraint firstItem="Vd3-gu-neB" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="ubk-22-gdO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="84" y="-604"/>
+        </view>
+    </objects>
+</document>

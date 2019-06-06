@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>跟进回访</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showPop($event)">
+        筛选
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="all">
+        全部
+      </ion-segment-button>
+      <ion-segment-button value="my">
+        我的
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-back" [ngSwitch]="segment">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngSwitchCase="'my'">
+    <div *ngFor="let key of myKeys">
+      <div class="div-date">
+        {{key}}
+      </div>
+      <ion-list style="margin:0">
+        <button ion-item (tap)="edit(i)" *ngFor="let i of groups[key]">
+          <h2>
+            {{i.member_name}}
+            <span class="p-state p-{{i.state}}">{{i.state_name}}</span>
+          </h2>
+          <p>类型：{{i.levle_name}}</p>
+          <p>回访人：{{i.employee_name}}，市场团队：{{i.team_name}}</p>
+          <p>操作日期：{{i.operate_create_date}}</p>
+        </button>
+      </ion-list>
+    </div>
+    <div text-center class="no-item-div" *ngIf="!myKeys.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有记录</p>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="'all'">
+    <div *ngFor="let key of keys">
+      <div class="div-date">
+        {{key}}
+      </div>
+      <ion-list style="margin:0">
+        <button ion-item (tap)="edit(i)" *ngFor="let i of groups[key]">
+          <h2>
+            {{i.member_name}}
+            <span class="p-state p-{{i.state}}">{{i.state_name}}</span>
+          </h2>
+          <p>类型：{{i.levle_name}}</p>
+          <p>回访人：{{i.employee_name}}，市场团队：{{i.team_name}}</p>
+          <p>操作日期：{{i.operate_create_date}}</p>
+        </button>
+      </ion-list>
+    </div>
+    <div text-center class="no-item-div" *ngIf="!keys.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有记录</p>
+      </div>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

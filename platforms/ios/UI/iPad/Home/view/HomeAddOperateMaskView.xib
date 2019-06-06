@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view alpha="0.0" contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeAddOperateMaskView">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGV-xK-7mY">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuG-lp-EaJ">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <connections>
+                        <action selector="didEmptyButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="nXh-zh-bNj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjJ-yR-5aC">
+                    <rect key="frame" x="797" y="292" width="83" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="83" id="qXs-yb-CR4"/>
+                        <constraint firstAttribute="height" constant="83" id="zAy-pf-ntm"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="Home_UnBooked_Icon.png"/>
+                    <state key="highlighted" backgroundImage="Home_UnBooked_Icon.png"/>
+                    <connections>
+                        <action selector="didUnBookedPosOperatePressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="XyQ-6U-l22"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N10-UO-6o3">
+                    <rect key="frame" x="810" y="400" width="58" height="58"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="IlM-g3-iKq"/>
+                        <constraint firstAttribute="width" constant="58" id="W8Q-0a-xPt"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="Home_Booked_Icon.png"/>
+                    <state key="highlighted" backgroundImage="Home_Booked_Icon.png"/>
+                    <connections>
+                        <action selector="didBookedPosOperatePressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="UR6-wb-sNb"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_UnBooked_Title.png" translatesAutoresizingMaskIntoConstraints="NO" id="tvV-zN-HZL">
+                    <rect key="frame" x="709" y="320" width="78" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="DhB-DX-bZs"/>
+                        <constraint firstAttribute="width" constant="78" id="NCr-bQ-JQi"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_Booked_Title.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jd4-Vv-8c7">
+                    <rect key="frame" x="709" y="415" width="78" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="bIm-Jo-LHj"/>
+                        <constraint firstAttribute="height" constant="27" id="wAS-bc-gjO"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XjJ-yR-5aC" secondAttribute="trailing" constant="144" id="065-wZ-Wrb"/>
+                <constraint firstItem="XjJ-yR-5aC" firstAttribute="leading" secondItem="tvV-zN-HZL" secondAttribute="trailing" constant="10" id="4It-SG-URL"/>
+                <constraint firstItem="N10-UO-6o3" firstAttribute="top" secondItem="XjJ-yR-5aC" secondAttribute="bottom" constant="25" id="9wA-fF-syJ"/>
+                <constraint firstItem="N10-UO-6o3" firstAttribute="centerX" secondItem="XjJ-yR-5aC" secondAttribute="centerX" id="PQb-B6-wQf"/>
+                <constraint firstItem="XjJ-yR-5aC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="292" id="WYS-wz-K5J"/>
+                <constraint firstItem="Jd4-Vv-8c7" firstAttribute="centerX" secondItem="tvV-zN-HZL" secondAttribute="centerX" id="Zbb-mc-K36"/>
+                <constraint firstItem="N10-UO-6o3" firstAttribute="centerY" secondItem="Jd4-Vv-8c7" secondAttribute="centerY" id="yOH-wm-i78"/>
+                <constraint firstItem="XjJ-yR-5aC" firstAttribute="centerY" secondItem="tvV-zN-HZL" secondAttribute="centerY" id="yja-DT-KmL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="topConstraint" destination="WYS-wz-K5J" id="vYa-tY-UJ7"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="Home_Booked_Icon.png" width="58" height="58"/>
+        <image name="Home_Booked_Title.png" width="78" height="27"/>
+        <image name="Home_UnBooked_Icon.png" width="83" height="83"/>
+        <image name="Home_UnBooked_Title.png" width="78" height="27"/>
+    </resources>
+</document>

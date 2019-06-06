@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{pos.period_name}}营业</ion-title>
+  </ion-navbar>
+  <ion-toolbar color="primary" no-border-top style="color:#ffffff;">
+    <div>
+      <ion-row style="padding:10px;">
+        <ion-col text-left>
+          <span style="color:#bcdefa">会员：</span> {{pos.member_name}}
+        </ion-col>
+        <ion-col text-right>
+          <span style="color:#bcdefa">截止日期：</span> {{pos.follow_date}}
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar no-border-top>
+    <ion-segment color="danger" [(ngModel)]="segment">
+      <ion-segment-button value="shop">
+        到店
+      </ion-segment-button>
+      <ion-segment-button value="consume">
+        消费
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        卡/院余
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div [hidden]="segment!=='shop'">
+    <ion-list>
+      <ion-list-header>
+        当月到店
+      </ion-list-header>
+      <ion-item>第一周
+        <ion-note item-right>{{pos.first_week_come_count}}次</ion-note>
+      </ion-item>
+      <ion-item>第二周
+        <ion-note item-right>{{pos.second_week_come_count}}次</ion-note>
+      </ion-item>
+      <ion-item>第三周
+        <ion-note item-right>{{pos.third_week_come_count}}次</ion-note>
+      </ion-item>
+      <ion-item>第四周
+        <ion-note item-right>{{pos.forth_week_come_count}}次</ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        上月到店
+      </ion-list-header>
+      <ion-item>上月最后到店日
+        <ion-note item-right>{{pos.last_month_come_day}}号</ion-note>
+      </ion-item>
+      <ion-item>上月到店总次数
+        <ion-note item-right>{{pos.last_month_come_count}}次</ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        最后到店
+      </ion-list-header>
+      <ion-item>最后到店日
+        <ion-note item-right>{{pos.month_come_day}}</ion-note>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div [hidden]="segment!=='consume'">
+    <chart #chart [options]="options"></chart>
+  </div>
+  <div [hidden]="segment!=='card'">
+    <ion-list>
+      <ion-item>卡余
+        <ion-note item-right>{{pos.card_amount}}</ion-note>
+      </ion-item>
+      <ion-item>院余
+        <ion-note item-right>{{pos.course_amount}}</ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+        卡内项目
+      </ion-list-header>
+      <ion-item *ngFor="let line of pos.product_ids">
+        <h2>{{line.product_name}}</h2>
+        <p>购买日期:{{line.buy_date}}</p>
+        <p *ngIf="line.limited_date">失效日期:{{line.limited_date}}</p>
+        <ion-badge *ngIf="line.is_main_product" samll color="danger">主推项目</ion-badge>
+        <ion-note item-right>{{line.qty}}个</ion-note>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

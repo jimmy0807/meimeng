@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="combinationController">
+            <connections>
+                <outlet property="boomView" destination="NQF-hL-E2W" id="PAr-BQ-q3P"/>
+                <outlet property="tableView" destination="Uud-8r-dAw" id="hpI-P4-8wF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uud-8r-dAw">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Isg-an-tYT"/>
+                        <outlet property="delegate" destination="-1" id="a6V-2k-zzb"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQF-hL-E2W">
+                    <subviews>
+                        <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hW0-oh-Hoe">
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="9Nq-ho-ECe"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbg-ac-EAZ">
+                            <state key="normal" title="添加" backgroundImage="member_green_bg.png"/>
+                            <connections>
+                                <action selector="addBtnClick:" destination="-1" eventType="touchUpInside" id="qgH-Zp-J5K"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.60890884300000003" green="1" blue="0.50738682530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="hW0-oh-Hoe" firstAttribute="top" secondItem="NQF-hL-E2W" secondAttribute="top" id="93X-zc-opv"/>
+                        <constraint firstAttribute="trailing" secondItem="Jbg-ac-EAZ" secondAttribute="trailing" constant="20" id="C0X-DN-0xS"/>
+                        <constraint firstAttribute="height" constant="60" id="LKa-nf-WTN"/>
+                        <constraint firstAttribute="trailing" secondItem="hW0-oh-Hoe" secondAttribute="trailing" id="PsE-TN-fCW"/>
+                        <constraint firstItem="Jbg-ac-EAZ" firstAttribute="leading" secondItem="NQF-hL-E2W" secondAttribute="leading" constant="20" id="YsF-nE-Kqo"/>
+                        <constraint firstItem="Jbg-ac-EAZ" firstAttribute="top" secondItem="hW0-oh-Hoe" secondAttribute="bottom" constant="10" id="cEe-mq-DQo"/>
+                        <constraint firstItem="hW0-oh-Hoe" firstAttribute="leading" secondItem="NQF-hL-E2W" secondAttribute="leading" id="sY3-jj-iwd"/>
+                        <constraint firstAttribute="bottom" secondItem="Jbg-ac-EAZ" secondAttribute="bottom" constant="10" id="zYC-MW-mKo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NQF-hL-E2W" secondAttribute="trailing" id="4ch-2c-22O"/>
+                <constraint firstItem="NQF-hL-E2W" firstAttribute="trailing" secondItem="Uud-8r-dAw" secondAttribute="trailing" id="9wy-dL-uWZ"/>
+                <constraint firstAttribute="trailing" secondItem="Uud-8r-dAw" secondAttribute="trailing" id="Cbr-hB-QLj"/>
+                <constraint firstItem="Uud-8r-dAw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="L4p-d9-EOO"/>
+                <constraint firstAttribute="bottom" secondItem="NQF-hL-E2W" secondAttribute="bottom" id="NjB-CF-5zh"/>
+                <constraint firstItem="NQF-hL-E2W" firstAttribute="top" secondItem="Uud-8r-dAw" secondAttribute="bottom" id="WjZ-W9-vU1"/>
+                <constraint firstItem="NQF-hL-E2W" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b0r-TX-3gw"/>
+                <constraint firstItem="Uud-8r-dAw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="izn-sO-tDL"/>
+                <constraint firstItem="NQF-hL-E2W" firstAttribute="top" secondItem="Uud-8r-dAw" secondAttribute="bottom" id="mw8-Zj-Ju4"/>
+                <constraint firstItem="NQF-hL-E2W" firstAttribute="leading" secondItem="Uud-8r-dAw" secondAttribute="leading" id="u6R-Pg-HeD"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="251.5" y="225"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

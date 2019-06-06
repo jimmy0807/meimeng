@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let member of members">
+      <button (tap)="showMember(member)" ion-item>
+        <ion-avatar item-left>
+          <img *ngIf="member.image_url" [src]="member.image_url">
+          <img *ngIf="!member.image_url" src="assets/img/avatar-default.png">
+        </ion-avatar>
+        <h2>{{member.name}}</h2>
+        <p>最后到店:{{member.last_operate_date}}</p>
+        <p>当月:充值{{member.recharge_amount}}、销售{{member.sale_product_amount}}、消耗{{member.consume_item_amount}}</p>
+        <p>卡余{{member.card_amount}}、院余{{member.course_amount}}</p>
+        <p>
+          <span *ngFor="let t of member.types">
+            <ion-badge color="danger" item-left>{{t}}</ion-badge>
+          </span>
+        </p>
+      </button>
+      <!--<ion-item-options>
+        <button (tap)="showVisit(member)" ion-button color="danger">
+          回访
+        </button>
+        <button (tap)="cancelNotice(member)" ion-button color="primary">
+          不再提醒
+        </button>
+      </ion-item-options>-->
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

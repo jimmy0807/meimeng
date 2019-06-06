@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PadRoomViewController">
+            <connections>
+                <outlet property="tableView" destination="FoW-ZO-gLR" id="0sI-Ck-zxe"/>
+                <outlet property="view" destination="Qeo-eS-Y3t" id="KZS-ZY-JP4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Qeo-eS-Y3t">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNT-DG-SGP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tn2-I5-Pel">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="qfV-yG-ylq"/>
+                            </constraints>
+                            <state key="normal" title="返回">
+                                <color key="titleColor" red="0.76078431369999999" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="backBtnPressed:" destination="-1" eventType="touchUpInside" id="Wkh-DO-p2I"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择房间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-LR-qrS">
+                            <rect key="frame" x="155" y="13" width="66" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pad_project_side_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="o0p-CO-K5q">
+                            <rect key="frame" x="0.0" y="44" width="375" height="1"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="o0p-CO-K5q" firstAttribute="leading" secondItem="oNT-DG-SGP" secondAttribute="leading" id="COL-2m-tfj"/>
+                        <constraint firstItem="sNv-LR-qrS" firstAttribute="centerX" secondItem="oNT-DG-SGP" secondAttribute="centerX" id="Rah-H9-LBK"/>
+                        <constraint firstAttribute="trailing" secondItem="o0p-CO-K5q" secondAttribute="trailing" id="YRo-wl-gI0"/>
+                        <constraint firstItem="Tn2-I5-Pel" firstAttribute="top" secondItem="oNT-DG-SGP" secondAttribute="top" id="ioE-ck-mlD"/>
+                        <constraint firstAttribute="bottom" secondItem="Tn2-I5-Pel" secondAttribute="bottom" id="jVf-oW-XlF"/>
+                        <constraint firstAttribute="height" constant="45" id="tET-1v-Bst"/>
+                        <constraint firstAttribute="bottom" secondItem="o0p-CO-K5q" secondAttribute="bottom" id="tiy-dE-yoi"/>
+                        <constraint firstItem="Tn2-I5-Pel" firstAttribute="leading" secondItem="oNT-DG-SGP" secondAttribute="leading" id="wja-hR-Wqe"/>
+                        <constraint firstItem="sNv-LR-qrS" firstAttribute="centerY" secondItem="oNT-DG-SGP" secondAttribute="centerY" id="zXa-kT-Kt1"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FoW-ZO-gLR">
+                    <rect key="frame" x="14" y="53" width="347" height="606"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zLp-x3-tBf"/>
+                        <outlet property="delegate" destination="-1" id="2FF-T8-CdV"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oNT-DG-SGP" secondAttribute="trailing" id="MZ8-Ls-v9D"/>
+                <constraint firstAttribute="bottom" secondItem="FoW-ZO-gLR" secondAttribute="bottom" constant="8" id="WHo-6S-87Y"/>
+                <constraint firstItem="oNT-DG-SGP" firstAttribute="leading" secondItem="Qeo-eS-Y3t" secondAttribute="leading" id="Wo1-rp-9jz"/>
+                <constraint firstItem="oNT-DG-SGP" firstAttribute="top" secondItem="Qeo-eS-Y3t" secondAttribute="top" id="dUe-mP-3cF"/>
+                <constraint firstAttribute="trailing" secondItem="FoW-ZO-gLR" secondAttribute="trailing" constant="14" id="jVh-H8-TMa"/>
+                <constraint firstItem="FoW-ZO-gLR" firstAttribute="leading" secondItem="Qeo-eS-Y3t" secondAttribute="leading" constant="14" id="owj-OY-ynd"/>
+                <constraint firstItem="FoW-ZO-gLR" firstAttribute="top" secondItem="oNT-DG-SGP" secondAttribute="bottom" constant="8" id="tD0-bw-cdz"/>
+            </constraints>
+            <point key="canvasLocation" x="-449" y="-163"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pad_project_side_line.png" width="299" height="1"/>
+    </resources>
+</document>

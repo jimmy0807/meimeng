@@ -1,0 +1,95 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>医院</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="adv">
+        咨询
+      </ion-segment-button>
+      <ion-segment-button value="man">
+        管理
+      </ion-segment-button>
+      <ion-segment-button value="aft">
+        售后
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [hidden]="segment!=='adv'">
+    <button ion-item (tap)="show('cus')">
+      客户
+    </button>
+    <button ion-item (tap)="show('spl')">
+      分诊单
+    </button>
+    <button ion-item (tap)="show('adv')">
+      咨询单
+    </button>
+  </ion-list>
+  <ion-list [hidden]="segment!=='man'">
+    <ion-item-divider color="light">住院门诊</ion-item-divider>
+    <button ion-item (tap)="show('doc')">
+      医生
+    </button>
+    <button ion-item (tap)="show('nur')">
+      护士
+    </button>
+    <button ion-item (tap)="show('war')">
+      病房
+    </button>
+    <button ion-item (tap)="show('bed')">
+      床位
+    </button>
+    <button ion-item (tap)="show('hos')">
+      住院管理
+    </button>
+    <button ion-item (tap)="show('records')">
+      电子病历
+    </button>
+    <button ion-item (tap)="show('ope')" no-lines>
+      手术
+    </button>
+    <ion-item-divider color="light">处方与药品</ion-item-divider>
+    <button ion-item (tap)="show('prescription')">
+      处方单
+    </button>
+    <button ion-item (tap)="show('pharmacy')" no-lines>
+      药房
+    </button>
+    <ion-item-divider color="light">渠道</ion-item-divider>
+    <button ion-item (tap)="show('par')">
+      渠道商
+    </button>
+    <button ion-item (tap)="show('com')" no-lines>
+      渠道提成方案
+    </button>
+    <ion-item-divider color="light">医院配置</ion-item-divider>
+    <button ion-item (tap)="show('act')">
+      流程
+    </button>
+    <button ion-item (tap)="show('flw')">
+      工作流
+    </button>
+    <button ion-item (tap)="show('dep')">
+      诊室
+    </button>
+  </ion-list>
+  <ion-list [hidden]="segment!=='aft'">
+    <ion-item-divider color="light">售后配置</ion-item-divider>
+    <button ion-item (tap)="show('lev')">
+      回访计划
+    </button>
+    <button ion-item (tap)="show('cat')">
+      咨询分类
+    </button>
+    <button ion-item (tap)="show('tag')">
+      标签
+    </button>
+    <button ion-item (tap)="show('typ')">
+      咨询方式
+    </button>
+  </ion-list>
+</ion-content>

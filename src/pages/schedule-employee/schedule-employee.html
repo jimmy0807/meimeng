@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+     <ion-title>
+      选择员工
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button (tap)="dismiss()">
+        <span  >取消</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let employee of employees"  >
+      <ion-checkbox ng-checked="false" [(ngModel)]="employee.checked"></ion-checkbox>
+      <ion-label>{{employee.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer >
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col text-right>
+        <button (tap)="onConfirm()" ion-button color="primary" full>确认</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

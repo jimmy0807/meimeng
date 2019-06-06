@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>客源情报</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()">
+        <span>保存</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-back">
+  <ion-list class="margin-0">
+    <ion-item>
+      <ion-label>消费年限</ion-label>
+      <ion-input text-right item-right [(ngModel)]="info.be_years_cnt" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>月均上门次数</ion-label>
+      <ion-input text-right item-right [(ngModel)]="info.be_month_consume_cnt" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>最近一年消费（万元）</ion-label>
+      <ion-input text-right item-right [(ngModel)]="info.be_year_consume_amount" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>累计消费（万元）</ion-label>
+      <ion-input text-right item-right [(ngModel)]="info.be_total_consume_amount" placeholder="请输入"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

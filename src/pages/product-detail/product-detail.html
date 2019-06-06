@@ -1,0 +1,188 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>商品详情</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="normal">
+        基本信息
+      </ion-segment-button>
+      <ion-segment-button value="commission" [hidden]="product.category_code>2">
+        提成比例
+      </ion-segment-button>
+      <ion-segment-button value="pack">
+        {{segmentName}}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div [hidden]="segment!=='normal'" style="padding-right:16px">
+    <!--<ion-item-divider light>基本信息</ion-item-divider>-->
+    <ion-item mode="ios" class="font-16">
+      <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input type="text" text-right [(ngModel)]="product.name"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>售价<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.list_price" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>会员价</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.member_price" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>多少积分可兑换</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.exchange" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <!--<ion-item-divider light>类型</ion-item-divider>-->
+    <br />
+    <ion-item>
+      <ion-label>产品区分</ion-label>
+      <ion-note *ngIf="editMode" item-right>{{product.category_name}}</ion-note>
+      <ion-select *ngIf="!editMode" [(ngModel)]="product.category_code" cancelText="取消" okText="确定"
+                  (ionChange)="changeMode()">
+        <ion-option *ngFor="let cat of bornCats" value="{{cat.code}}">{{cat.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-item (tap)="selectPosCat()">
+      <ion-label>产品分类</ion-label>
+      <ion-note *ngIf="product.pos_categ_name" item-right>{{product.pos_categ_name}}</ion-note>
+      <ion-note *ngIf="!product.pos_categ_name" item-right>请选分类</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>打折分类<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-select [(ngModel)]="product.categ_id" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let pc of productCats" value="{{pc.id}}">{{pc.complete_name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>产品类型</ion-label>
+      <ion-select [(ngModel)]="product.type" cancelText="取消" okText="确定">
+        <ion-option value="consu">消耗品</ion-option>
+        <ion-option value="product">库存商品</ion-option>
+        <ion-option value="service">服务</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- <ion-item-divider light>销售控制</ion-item-divider>-->
+    <br />
+    <ion-item>
+      <ion-label>可销售</ion-label>
+      <ion-toggle text-right [(ngModel)]="product.sale_ok"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>是否接受预约</ion-label>
+      <ion-toggle text-right [(ngModel)]="product.book_ok"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>在收银端销售</ion-label>
+      <ion-toggle text-right [(ngModel)]="product.available_in_pos"></ion-toggle>
+    </ion-item>
+    <br />
+    <ion-item mode="ios" class="font-16">
+      <ion-label>内部货号</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="product.default_code" onfocus="this.select()"></ion-input>
+      <button (tap)="scan('d')" ion-button icon-only item-right color="primary">
+        <ion-icon name="ios-barcode-outline"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>条形码</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="product.barcode" onfocus="this.select()"></ion-input>
+      <button (tap)="scan('b')" ion-button icon-only item-right color="primary">
+        <ion-icon name="ios-barcode-outline"></ion-icon>
+      </button>
+    </ion-item>
+  </div>
+  <div [hidden]="segment!=='commission'" style="padding-right:16px">
+    <ion-item>
+      <ion-label>参与加成</ion-label>
+      <ion-toggle text-right [(ngModel)]="product.is_add"></ion-toggle>
+    </ion-item>
+    <br />
+    <ion-item-divider>销售基本提成比例</ion-item-divider>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>卡扣 (%)</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.percent_card" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>卡扣 (固定)</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.fix_card" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>非卡扣 (%)</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.percent_not_card" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>非卡扣 (固定)</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.fix_not_card" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item-divider>手工基本提成比例</ion-item-divider>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>提成 (%)</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.do_percent" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>提成 (固定)</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.do_fix" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>赠送提成</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.do_fix_gift" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>赠送是否有业绩</ion-label>
+      <ion-toggle text-right [(ngModel)]="product.is_gift_commission"></ion-toggle>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>赠送业绩</ion-label>
+      <ion-input type="number" text-right [(ngModel)]="product.fix_commission" onfocus="this.select()"></ion-input>
+    </ion-item>
+  </div>
+  <div [hidden]="segment!=='pack'" style="padding-top:5px;">
+    <ion-list *ngIf="packMode">
+      <ion-item-sliding *ngFor="let line of product.pack_line_ids" class="item-p16">
+        <ion-item (tap)="editLine(line)" class="item-p0">
+          <h2>{{line.product_name}}</h2>
+          <p color="danger" class="p-price">￥{{line.lst_price}}</p>
+          <p item-right>x{{line.qty}}</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (tap)="deleteLine(line)">
+            删除
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-list *ngIf="!packMode">
+      <ion-item-sliding *ngFor="let line of product.consumables_ids" class="item-p16">
+        <ion-item (tap)="editLine(line)" class="item-p0">
+          <h2>{{line.product_name}}</h2>
+          <p color="danger" class="p-price">￥{{line.lst_price}}</p>
+          <p item-right>x{{line.qty}}</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (tap)="deleteLine(line)">
+            删除
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer *ngIf="segment==='normal' || showAddLine">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button *ngIf="segment==='normal'" ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+        <button *ngIf="segment!=='normal' && showAddLine" ion-button (tap)="createLine()" type="submit" color="primary" block>添加</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

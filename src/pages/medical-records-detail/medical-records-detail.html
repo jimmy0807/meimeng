@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}电子履历</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="normal">
+        基本信息
+      </ion-segment-button>
+      <ion-segment-button value="recordsline">
+        履历
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list [hidden]="segment!=='normal'">
+    <ion-item>
+      <ion-label>名称</ion-label>
+      <ion-input text-right item-right [(ngModel)]="r.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>病人</ion-label>
+      <ion-input text-right item-right [(ngModel)]="r.member_name" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>性别</ion-label>
+      <ion-input text-right item-right [(ngModel)]="r.gender" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>手机</ion-label>
+      <ion-input text-right item-right [(ngModel)]="r.mobile" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list [hidden]="segment!=='recordsline'">
+    <ion-item-sliding *ngFor="let i of r.line_ids">
+      <button ion-item (tap)="editRecordsLine(i)">
+        <h2>{{i.doctors_name}}</h2>
+        <ion-note item-right>{{i.create_date}}</ion-note>
+        <p>病症描述:{{i.reason}}</p>
+        <p>主治医生建议{{i.doctors_note}}</p>
+      </button>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button *ngIf="segment==='normal'" (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

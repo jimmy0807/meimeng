@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>铺垫信息</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="add()">
+        <span>添加</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <button ion-item (tap)="edit(i)" *ngFor="let i of list">
+      <h2>{{i.member_name}}</h2>
+      <p>铺垫部位：{{i.part_names}}</p>
+      <p>铺垫日期：{{i.prepare_date}}</p>
+      <ion-note *ngIf="i.is_consume" item-right class="note-con">已报单</ion-note>
+    </button>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!list.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

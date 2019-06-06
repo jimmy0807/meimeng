@@ -1,0 +1,131 @@
+﻿
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>更多应用</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-bg">
+  <div class="list-box">
+    <ion-list-header>营业</ion-list-header>
+    <ion-row text-center class="row-line">
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('mail')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-mail"></ion-icon>
+          <div class="bnt-box-text">短信</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('follow')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-appstore"></ion-icon>
+          <div class="bnt-box-text">业绩考核</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="list-box" *ngIf="showSys">
+    <ion-list-header>系统维护</ion-list-header>
+    <ion-row text-center class="row-line">
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('shopManager')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-home"></ion-icon>
+          <div class="bnt-box-text">门店</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('usersMamager')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-contact"></ion-icon>
+          <div class="bnt-box-text">用户</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('hr')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-man"></ion-icon>
+          <div class="bnt-box-text">员工</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('product')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-square"></ion-icon>
+          <div class="bnt-box-text">商品</div>
+        </button>
+      </ion-col>
+      <ion-col col-3 class="row-col">
+        <button no-lines text-center (tap)="onFunctionClick('pricelist')" full clear style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-disc"></ion-icon>
+          <div class="bnt-box-text">折扣方案</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('commissionRule')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-download"></ion-icon>
+          <div class="bnt-box-text">提成方案</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('company')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-download"></ion-icon>
+          <div class="bnt-box-text">公司</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('poscategory')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-grid"></ion-icon>
+          <div class="bnt-box-text">产品分类</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('room')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-grid"></ion-icon>
+          <div class="bnt-box-text">咨询室</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col">
+        <button (tap)="onFunctionClick('schedule')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-grid"></ion-icon>
+          <div class="bnt-box-text">排班</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <!--<div class="list-box">
+    <ion-list-header>进销存</ion-list-header>
+    <ion-row text-center class="row-line">
+      <ion-col text-center>
+        <button (tap)="onFunctionClick('stock')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-cube"></ion-icon>
+          <div class="bnt-box-text">仓库</div>
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button (tap)="onFunctionClick('other')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="danger" name="ios-cash"></ion-icon>
+          <div class="bnt-box-text">销售</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button (tap)="onFunctionClick('other')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="danger" name="ios-cart"></ion-icon>
+          <div class="bnt-box-text">采购</div>
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button (tap)="onFunctionClick('inventory')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-refresh-circle"></ion-icon>
+          <div class="bnt-box-text">盘点</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>-->
+  <!--<div class="list-box" *ngIf="groupMedical">
+    <ion-list-header>合作联盟</ion-list-header>
+    <ion-row text-center class="row-line">
+      <ion-col text-center col-3 class="row-col" >
+        <button (tap)="onFunctionClick('medical')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-flower"></ion-icon>
+          <div class="bnt-box-text">医美</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>-->
+
+</ion-content>

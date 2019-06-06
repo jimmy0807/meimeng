@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="combiEditController">
+            <connections>
+                <outlet property="compleBtn" destination="6nG-uJ-9gX" id="kE1-WF-ejr"/>
+                <outlet property="tableView" destination="yJn-LV-djA" id="2C5-qk-yVX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNB-0x-uBZ">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commom_navi_bk_IOS7.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jq0-ub-ix0"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuj-ho-ON1">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="PDw-V6-pbT"/>
+                                <constraint firstAttribute="height" constant="32" id="UST-8N-HQj"/>
+                            </constraints>
+                            <state key="normal" image="navi_back_n.png"/>
+                            <state key="highlighted" image="navi_back_h.png"/>
+                            <connections>
+                                <action selector="backBtnClick:" destination="-1" eventType="touchUpInside" id="NrO-SO-z9Q"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  组合套" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yW1-9b-2QM">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-uJ-9gX">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="完成"/>
+                            <connections>
+                                <action selector="completeBtnClick:" destination="-1" eventType="touchUpInside" id="7Qb-rl-x3y"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Jq0-ub-ix0" firstAttribute="leading" secondItem="iNB-0x-uBZ" secondAttribute="leading" id="4i2-eM-GCs"/>
+                        <constraint firstAttribute="bottom" secondItem="Jq0-ub-ix0" secondAttribute="bottom" id="5Lw-5n-Aw3"/>
+                        <constraint firstItem="Jq0-ub-ix0" firstAttribute="top" secondItem="iNB-0x-uBZ" secondAttribute="top" id="5Y5-jc-eeK"/>
+                        <constraint firstAttribute="trailing" secondItem="6nG-uJ-9gX" secondAttribute="trailing" constant="15" id="8nf-hT-vFa"/>
+                        <constraint firstItem="Tuj-ho-ON1" firstAttribute="leading" secondItem="iNB-0x-uBZ" secondAttribute="leading" constant="10" id="DMn-RN-x3G"/>
+                        <constraint firstAttribute="trailing" secondItem="Jq0-ub-ix0" secondAttribute="trailing" id="HBJ-rY-AIX"/>
+                        <constraint firstItem="Tuj-ho-ON1" firstAttribute="top" secondItem="iNB-0x-uBZ" secondAttribute="top" constant="26" id="YWc-CJ-CQ4"/>
+                        <constraint firstItem="yW1-9b-2QM" firstAttribute="centerY" secondItem="Tuj-ho-ON1" secondAttribute="centerY" id="hCj-sf-56m"/>
+                        <constraint firstItem="yW1-9b-2QM" firstAttribute="centerX" secondItem="iNB-0x-uBZ" secondAttribute="centerX" id="jDI-SS-Z3U"/>
+                        <constraint firstItem="6nG-uJ-9gX" firstAttribute="centerY" secondItem="yW1-9b-2QM" secondAttribute="centerY" id="nSX-mz-dxb"/>
+                        <constraint firstAttribute="height" constant="64" id="nwI-ks-TbI"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yJn-LV-djA">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="I6O-jr-kmH"/>
+                        <outlet property="delegate" destination="-1" id="KNH-EI-faa"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="iNB-0x-uBZ" secondAttribute="trailing" id="8JI-SW-TuU"/>
+                <constraint firstAttribute="bottom" secondItem="yJn-LV-djA" secondAttribute="bottom" id="KtD-ts-7f4"/>
+                <constraint firstItem="iNB-0x-uBZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hDT-xc-3uJ"/>
+                <constraint firstItem="yJn-LV-djA" firstAttribute="top" secondItem="iNB-0x-uBZ" secondAttribute="bottom" constant="20" id="hUM-hA-jy3"/>
+                <constraint firstAttribute="trailing" secondItem="yJn-LV-djA" secondAttribute="trailing" id="ojo-u5-MMm"/>
+                <constraint firstItem="yJn-LV-djA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sqD-7o-sVh"/>
+                <constraint firstItem="iNB-0x-uBZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vks-n8-8wQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="305.5" y="268.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="commom_navi_bk_IOS7.png" width="320" height="64"/>
+        <image name="navi_back_h.png" width="32" height="32"/>
+        <image name="navi_back_n.png" width="32" height="32"/>
+    </resources>
+</document>

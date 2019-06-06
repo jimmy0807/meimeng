@@ -1,0 +1,60 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>消息</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item (tap)="showMessages('quest')">
+      <ion-avatar item-left style="position: relative">
+        <ion-icon class="icon-large icon2" name="menu"></ion-icon>
+        <span class="red-point" *ngIf="msgCount.quest>0"></span>
+      </ion-avatar>
+      <h2>
+        工作任务单<span *ngIf="msgCount.quest>0">({{msgCount.quest}})</span>
+        <ion-note class="note">{{msgCount.quest_time}}</ion-note>
+      </h2>
+      <p class="p color">会员跟进、排班、业绩规划、分配指标、审批</p>
+    </ion-item>
+
+    <ion-item (tap)="showMessages('reservation')">
+      <ion-avatar item-left style="position: relative">
+        <ion-icon class="icon-large icon2" name="text"></ion-icon>
+        <span class="red-point" *ngIf="msgCount.reservation>0"></span>
+      </ion-avatar>
+      <h2>
+        预约消息<span *ngIf="msgCount.reservation>0">({{msgCount.reservation}})</span>
+        <ion-note class="note">{{msgCount.reservation_time}}</ion-note>
+      </h2>
+      <p class="p">新的预约和状态变更的提醒</p>
+    </ion-item>
+
+    <ion-item (tap)="showMessages('commission')">
+      <ion-avatar item-left style="position: relative">
+        <ion-icon class="icon-large icon3" name="water"></ion-icon>
+        <span class="red-point" *ngIf="msgCount.commission>0"></span>
+      </ion-avatar>
+      <h2>
+        提成消息<span *ngIf="msgCount.commission>0">({{msgCount.commission}})</span>
+        <ion-note class="note">{{msgCount.commission_time}}</ion-note>
+      </h2>
+      <p class="p">您今天的提成已更新！</p>
+    </ion-item>
+    <ion-item (tap)="showMessages('system')">
+      <ion-avatar item-left style="position: relative">
+        <ion-icon class="icon-large icon1" name="mail-open"></ion-icon>
+        <span class="red-point" *ngIf="msgCount.system>0"></span>
+      </ion-avatar>
+      <h2>
+        系统通知
+        <span *ngIf="msgCount.system>0">({{msgCount.system}})</span>
+        <ion-note class="note">{{msgCount.system_time}}</ion-note>
+      </h2>
+      <p class="p">新开功能</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,168 @@
+<ion-header>
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title>
+      公司详情
+    </ion-title>
+    <ion-buttons  *ngIf="flag_role==true" end>
+      <button ion-button *ngIf="mode=='view'" (tap)="editCompanyData()">
+        编辑
+      </button>
+      <button ion-button *ngIf="mode=='edit'" (tap)="updateCompanyData()">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <!--<p class="user-msg">UserInfo: {{Info}}</p>-->
+  <ion-list inset>
+    <ion-item-divider light>基本信息</ion-item-divider>
+    <ion-item text-wrap>
+      <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.name}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.name" *ngIf="mode=='view'" class="item-disabled" readonly name="company_name"
+        value="{{company.name}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.name" *ngIf="mode=='edit'" name="company_name" required value="{{company.name}}"
+        placeholder="请输入公司名称"></ion-input>
+      <!--<p>classname:{{spy.id}}</p>-->
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>业务伙伴</ion-label>
+      <ion-input text-right *ngIf="mode=='view'" class="item-disabled" readonly name="partner_name" value="{{company.partner_name}}"></ion-input>
+      <ion-note item-right *ngIf="mode=='edit'">{{company.partner_name}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>地址</ion-label>
+      <ion-input text-right *ngIf="mode=='view'" class="item-disabled" readonly name="street" value="{{company.state_name}}{{company.area_name}}{{company.subdivide_name}}{{company.street}}"></ion-input>
+      <ion-note item-right *ngIf="mode=='edit'">{{company.state_name}}{{company.area_name}}{{company.subdivide_name}}{{company.street}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>网站</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right><p>{{company.website}}</p></ion-note>-->
+      <!--<div *ngIf="mode=='view'" item-right>{{company.website}}</div>-->
+      <ion-input text-right [(ngModel)]="company.website" *ngIf="mode=='view'" class="item-disabled" readonly name="website" value="{{company.website}}"></ion-input>
+      <ion-input [(ngModel)]="company.website" *ngIf="mode=='edit'" name="website" required value="{{company.website}}" type="url"
+        placeholder="请输入网址"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>品牌</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.brand}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.brand" *ngIf="mode=='view'" class="item-disabled" readonly name="brand" value="{{company.brand}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.brand" *ngIf="mode=='edit'" name="brand" required value="{{company.brand}}" placeholder="请输入品牌名"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>联系人</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.contact_name}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.contact_name" *ngIf="mode=='view'" class="item-disabled" readonly name="contact_name"
+        value="{{company.contact_name}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.contact_name" *ngIf="mode=='edit'" name="contact_name" required value="{{company.contact_name}}"
+        placeholder="请输入联系人"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>电话</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.phone}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.phone" *ngIf="mode=='view'" class="item-disabled" readonly name="phone" value="{{company.phone}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.phone" *ngIf="mode=='edit'" name="phone" required value="{{company.phone}}" type="tel"
+        placeholder="请输入电话"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>邮件</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.email}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.email" *ngIf="mode=='view'" class="item-disabled" readonly name="email" value="{{company.email}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.email" *ngIf="mode=='edit'" name="email" required value="{{company.email}}" type="email"
+        placeholder="请输入邮箱"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>税务登记号</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.vat}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.vat" *ngIf="mode=='view'" class="item-disabled" readonly name="vat" value="{{company.vat}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.vat" *ngIf="mode=='edit'" name="vat" required value="{{company.vat}}" placeholder="请输入税务登记号"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>营业登记证</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.company_registry}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.company_registry" *ngIf="mode=='view'" class="item-disabled" readonly name="company_registry"
+        value="{{company.company_registry}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.company_registry" *ngIf="mode=='edit'" name="company_registry" required value="{{company.company_registry}}"
+        placeholder="请输入营业登记证"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list inset>
+    <ion-item-divider light>配置选项</ion-item-divider>
+    <ion-item>
+      <ion-label>是否将会员卡自动推送到微卡</ion-label>
+      <ion-toggle [(ngModel)]="company.is_auto_weika" [disabled]="mode=='view'?true:false" checked="{{company.is_auto_weika}}"></ion-toggle>
+      <!--<ion-toggle *ngIf="mode=='edit'" [(ngModel)]="company.is_auto_weika"></ion-toggle>-->
+    </ion-item>
+    <ion-item>
+      <ion-label>是否让会员查看卡内项目</ion-label>
+      <ion-toggle [(ngModel)]="company.is_show_card_items" [disabled]="mode=='view'?true:false" checked="{{company.is_show_card_items}}"></ion-toggle>
+      <!--<ion-toggle *ngIf="mode=='edit'" [(ngModel)]="company.is_show_card_items"></ion-toggle>-->
+    </ion-item>
+    <ion-item>
+      <ion-label>无库存不能进行POS销售</ion-label>
+      <ion-toggle [(ngModel)]="company.no_stock_sale" [disabled]="mode=='view'?true:false" checked="{{company.no_stock_sale}}"></ion-toggle>
+      <!--<ion-toggle *ngIf="mode=='edit'" [(ngModel)]="company.no_stock_sale"></ion-toggle>-->
+    </ion-item>
+    <ion-item>
+      <ion-label>是否允许客人寄存</ion-label>
+      <ion-toggle [(ngModel)]="company.is_deposit" [disabled]="mode=='view'?true:false" checked="{{company.is_deposit}}"></ion-toggle>
+      <!--<ion-toggle *ngIf="mode=='edit'" [(ngModel)]="company.is_deposit"></ion-toggle>-->
+    </ion-item>
+    <ion-item>
+      <ion-label>收银端明细行是否四舍五入</ion-label>
+      <ion-toggle [(ngModel)]="company.is_line_round" [disabled]="mode=='view'?true:false" checked="{{company.is_line_round}}"></ion-toggle>
+      <!--<ion-toggle *ngIf="mode=='edit'" [(ngModel)]="company.is_line_round"></ion-toggle>-->
+    </ion-item>
+    <ion-item>
+      <ion-label>是否预约开单</ion-label>
+      <ion-toggle [(ngModel)]="company.is_book_operate" [disabled]="mode=='view'?true:false" checked="{{company.is_book_operate}}"></ion-toggle>
+      <!--<ion-toggle *ngIf="mode=='edit'" [(ngModel)]="company.is_book_operate"></ion-toggle>-->
+    </ion-item>
+    <ion-item>
+      <ion-label>是否启用微卡积分商城</ion-label>
+      <ion-toggle [(ngModel)]="company.is_point_shop" [disabled]="mode=='view'?true:false" checked="{{company.is_point_shop}}"></ion-toggle>
+      <!--<ion-toggle *ngIf="mode=='edit'" [(ngModel)]="company.is_point_shop"></ion-toggle>-->
+    </ion-item>
+    <ion-item>
+      <ion-label>四舍五入精度</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.round_accuracy}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.round_accuracy" *ngIf="mode=='view'" class="item-disabled" readonly name="round_accuracy"
+        value="{{company.round_accuracy}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.round_accuracy" *ngIf="mode=='edit'" name="round_accuracy" required value="{{company.round_accuracy}}"
+        placeholder="请输入精度"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>预约缓冲时间（分钟）</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.book_operate_time}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.book_operate_time" *ngIf="mode=='view'" class="item-disabled" readonly name="book_operate_time"
+        value="{{company.book_operate_time}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.book_operate_time" *ngIf="mode=='edit'" name="book_operate_time" required value="{{company.book_operate_time}}"
+        placeholder="请输入预约缓冲时间（分钟）"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>活跃会员阀值</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.active_member_threshold}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.active_member_threshold" *ngIf="mode=='view'" class="item-disabled" readonly name="active_member_threshold"
+        value="{{company.active_member_threshold}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.active_member_threshold" *ngIf="mode=='edit'" name="active_member_threshold" required
+        value="{{company.active_member_threshold}}" placeholder="请输入活跃会员阀值"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>沉睡会员阀值</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{company.sleep_member_threshold}}</ion-note>-->
+      <ion-input text-right [(ngModel)]="company.sleep_member_threshold" *ngIf="mode=='view'" class="item-disabled" readonly name="sleep_member_threshold"
+        value="{{company.sleep_member_threshold}}"></ion-input>
+      <ion-input text-right [(ngModel)]="company.sleep_member_threshold" *ngIf="mode=='edit'" name="sleep_member_threshold" required
+        value="{{company.sleep_member_threshold}}" placeholder="请输入沉睡会员阀值"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list inset>
+    <ion-item-divider light>下属门店</ion-item-divider>
+    <ion-item><button ion-item (tap)="gotoShop()">点击查看所有门店</button></ion-item>
+  </ion-list>
+</ion-content>

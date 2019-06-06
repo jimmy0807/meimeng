@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GuaDanCell" id="KGk-i7-Jjw" customClass="GuaDanCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ggd-LD-V5y">
+                        <rect key="frame" x="23" y="17" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="RAp-ji-MCz"/>
+                            <constraint firstAttribute="height" constant="36" id="rEl-9z-cwI"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="2Mg-Xr-EVq">
+                        <rect key="frame" x="74" y="15" width="126" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="散客" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyJ-ew-Mdp">
+                                <rect key="frame" x="0.0" y="0.0" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guadan_clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="th5-RV-L6K">
+                                <rect key="frame" x="0.0" y="29" width="11" height="11"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="11" id="mtD-uk-uKr"/>
+                                    <constraint firstAttribute="width" constant="11" id="vfl-Ke-4zk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-06-07 11:12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3d-TY-hHH">
+                                <rect key="frame" x="19" y="29" width="107" height="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h3d-TY-hHH" firstAttribute="top" secondItem="lyJ-ew-Mdp" secondAttribute="bottom" constant="8" id="GkR-61-YKl"/>
+                            <constraint firstItem="th5-RV-L6K" firstAttribute="leading" secondItem="2Mg-Xr-EVq" secondAttribute="leading" id="HKt-LY-uJa"/>
+                            <constraint firstItem="lyJ-ew-Mdp" firstAttribute="top" secondItem="2Mg-Xr-EVq" secondAttribute="top" id="N6h-hn-DNu"/>
+                            <constraint firstAttribute="trailing" secondItem="h3d-TY-hHH" secondAttribute="trailing" id="Phi-vC-Iac"/>
+                            <constraint firstItem="lyJ-ew-Mdp" firstAttribute="leading" secondItem="2Mg-Xr-EVq" secondAttribute="leading" id="TcT-jg-bcy"/>
+                            <constraint firstAttribute="bottom" secondItem="h3d-TY-hHH" secondAttribute="bottom" id="W3z-Qo-kYr"/>
+                            <constraint firstItem="h3d-TY-hHH" firstAttribute="leading" secondItem="th5-RV-L6K" secondAttribute="trailing" constant="8" id="Y6z-EP-Ttf"/>
+                            <constraint firstAttribute="bottom" secondItem="th5-RV-L6K" secondAttribute="bottom" id="bL3-i2-Owg"/>
+                            <constraint firstItem="th5-RV-L6K" firstAttribute="top" secondItem="lyJ-ew-Mdp" secondAttribute="bottom" constant="8" id="met-cE-qAJ"/>
+                            <constraint firstAttribute="trailing" secondItem="lyJ-ew-Mdp" secondAttribute="trailing" id="vkj-tt-iWQ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="￥9870.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAG-Zb-hDJ">
+                        <rect key="frame" x="204" y="15" width="81" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_common_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jaj-9S-FFB">
+                        <rect key="frame" x="289" y="15" width="16" height="16"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="B8B-gO-YES">
+                        <rect key="frame" x="15" y="68" width="290" height="1"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2Mg-Xr-EVq" firstAttribute="leading" secondItem="Ggd-LD-V5y" secondAttribute="trailing" constant="15" id="5Of-Xk-a9F"/>
+                    <constraint firstItem="Ggd-LD-V5y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DWM-NM-23i"/>
+                    <constraint firstItem="2Mg-Xr-EVq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JgG-2a-TDr"/>
+                    <constraint firstItem="B8B-gO-YES" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="QPd-8L-qeE"/>
+                    <constraint firstItem="mAG-Zb-hDJ" firstAttribute="top" secondItem="2Mg-Xr-EVq" secondAttribute="top" id="RgO-Z8-OHF"/>
+                    <constraint firstAttribute="trailing" secondItem="B8B-gO-YES" secondAttribute="trailing" constant="15" id="VgQ-j3-1Wa"/>
+                    <constraint firstAttribute="bottom" secondItem="B8B-gO-YES" secondAttribute="bottom" id="dHj-lh-ueR"/>
+                    <constraint firstItem="mAG-Zb-hDJ" firstAttribute="leading" secondItem="2Mg-Xr-EVq" secondAttribute="trailing" constant="4" id="eAg-m4-24W"/>
+                    <constraint firstItem="Ggd-LD-V5y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="ecL-l6-PFH"/>
+                    <constraint firstItem="Jaj-9S-FFB" firstAttribute="top" secondItem="2Mg-Xr-EVq" secondAttribute="top" id="gD8-Y7-eLe"/>
+                    <constraint firstItem="Jaj-9S-FFB" firstAttribute="leading" secondItem="mAG-Zb-hDJ" secondAttribute="trailing" constant="4" id="gKC-72-Q0E"/>
+                    <constraint firstAttribute="trailing" secondItem="Jaj-9S-FFB" secondAttribute="trailing" constant="15" id="gPb-gq-GVV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="h3d-TY-hHH" id="h8a-bO-6pM"/>
+                <outlet property="imgView" destination="Ggd-LD-V5y" id="nRz-FX-4Zc"/>
+                <outlet property="line" destination="B8B-gO-YES" id="u6E-5J-WGk"/>
+                <outlet property="moneyLabel" destination="mAG-Zb-hDJ" id="eim-6d-UJp"/>
+                <outlet property="nameLabel" destination="lyJ-ew-Mdp" id="lUF-uZ-sCe"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bs_common_arrow.png" width="16" height="16"/>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+        <image name="guadan_clock.png" width="11" height="11"/>
+    </resources>
+</document>

@@ -1,0 +1,30 @@
+page-report-sale {
+.report-card{
+    margin: 12px 0px 12px 0px;
+    font-size: 1.4rem;
+    background: #fff;
+    }
+.report-segment{
+    margin: 12px 12px 12px 12px;
+    font-size: 1.4rem;
+    background: #fff;
+}
+.row_report ion-row {    
+    margin: 16px 0px 16px 0px;
+}
+.row_report ion-col {    
+    margin: 12px 0px 12px 0px;
+}
+.row_report ion-col div{
+    margin: 6px 0px 6px 0px;
+}
+.col_left{
+    border-right:#ccc 1px solid;
+}
+.col_right{
+    border-left:#ccc 1px solid;
+}
+.reprot-card .item-md.item-block .item-inner{
+    border-bottom: none;
+}
+}

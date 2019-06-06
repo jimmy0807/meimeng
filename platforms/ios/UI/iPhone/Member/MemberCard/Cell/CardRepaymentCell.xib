@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardRepaymentCell" id="LHu-3P-dD2" customClass="CardRepaymentCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LHu-3P-dD2" id="iSh-SU-wdH">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小熊杯" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXP-Wq-mZK">
+                        <rect key="frame" x="45" y="15" width="45" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7y-B1-4Ep">
+                        <rect key="frame" x="260" y="15" width="40" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="cQT-5b-mgD">
+                        <rect key="frame" x="0.0" y="63" width="320" height="1"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z24-yo-tTr">
+                        <rect key="frame" x="270" y="37" width="30" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_message_people_selected_n.png" highlightedImage="member_message_people_selected_h.png" translatesAutoresizingMaskIntoConstraints="NO" id="iqr-78-sli">
+                        <rect key="frame" x="15" y="21" width="22" height="22"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pos1111" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhq-lf-V27">
+                        <rect key="frame" x="45" y="37" width="46" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Z24-yo-tTr" firstAttribute="top" secondItem="hhq-lf-V27" secondAttribute="top" id="4Nr-Wc-ps5"/>
+                    <constraint firstItem="Z24-yo-tTr" firstAttribute="trailing" secondItem="u7y-B1-4Ep" secondAttribute="trailing" id="5Zb-g4-czA"/>
+                    <constraint firstAttribute="trailing" secondItem="cQT-5b-mgD" secondAttribute="trailing" id="9RQ-yB-R0v"/>
+                    <constraint firstItem="cQT-5b-mgD" firstAttribute="leading" secondItem="iSh-SU-wdH" secondAttribute="leading" id="D80-El-ugc"/>
+                    <constraint firstItem="Z24-yo-tTr" firstAttribute="top" secondItem="u7y-B1-4Ep" secondAttribute="bottom" constant="1" id="Drm-3O-EGX"/>
+                    <constraint firstItem="mXP-Wq-mZK" firstAttribute="top" secondItem="iSh-SU-wdH" secondAttribute="top" constant="15" id="GUt-nf-Y1F"/>
+                    <constraint firstItem="hhq-lf-V27" firstAttribute="top" secondItem="mXP-Wq-mZK" secondAttribute="bottom" constant="4" id="HRu-YB-T7a"/>
+                    <constraint firstItem="u7y-B1-4Ep" firstAttribute="top" secondItem="mXP-Wq-mZK" secondAttribute="top" id="Jfo-NK-pDd"/>
+                    <constraint firstItem="iqr-78-sli" firstAttribute="centerY" secondItem="iSh-SU-wdH" secondAttribute="centerY" id="K26-1I-6Sf"/>
+                    <constraint firstAttribute="trailing" secondItem="u7y-B1-4Ep" secondAttribute="trailing" constant="20" id="ML0-rF-H6O"/>
+                    <constraint firstItem="iqr-78-sli" firstAttribute="leading" secondItem="iSh-SU-wdH" secondAttribute="leading" constant="15" id="RLg-2J-b1d"/>
+                    <constraint firstItem="mXP-Wq-mZK" firstAttribute="leading" secondItem="iqr-78-sli" secondAttribute="trailing" constant="8" id="XA0-Je-dhT"/>
+                    <constraint firstAttribute="bottom" secondItem="cQT-5b-mgD" secondAttribute="bottom" id="pQu-xp-DjL"/>
+                    <constraint firstItem="hhq-lf-V27" firstAttribute="leading" secondItem="mXP-Wq-mZK" secondAttribute="leading" id="veC-ba-dTL"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Drm-3O-EGX"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="Z24-yo-tTr" id="m6f-vk-VLc"/>
+                <outlet property="detailLabel" destination="hhq-lf-V27" id="l0j-3Y-QNR"/>
+                <outlet property="priceLabel" destination="u7y-B1-4Ep" id="9he-Ad-zTV"/>
+                <outlet property="selectedImgView" destination="iqr-78-sli" id="Cqu-Q3-IOU"/>
+                <outlet property="titleLabel" destination="mXP-Wq-mZK" id="FIa-44-TRj"/>
+            </connections>
+            <point key="canvasLocation" x="248" y="181.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+        <image name="member_message_people_selected_h.png" width="22" height="22"/>
+        <image name="member_message_people_selected_n.png" width="22" height="22"/>
+    </resources>
+</document>

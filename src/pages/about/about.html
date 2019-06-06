@@ -1,0 +1,61 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button (tap)="onSetting()">
+        <ion-icon name="md-settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar color="primary">
+    <div class="avatar-div" (tap)="detail()">
+      <img class="avatar" *ngIf="employee.image_url" [src]="employee.image_url">
+      <img class="avatar" *ngIf="!employee.image_url" src="assets/img/avatar-default.png">
+      <div class="line-div">
+        <h2 class="line-h2">{{employee.name}}</h2>
+        <p class="line-p">账号：{{user.login}}</p>
+      </div>
+      <ion-icon name="ios-arrow-forward" class="arrow" *ngIf="employee.id"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content style="background-color:#f5f5f5">
+  <div class="count-div">
+    <div class="count-col1">
+      <h2 class="count-h2">{{(employee.amount_total).toFixed(2)}}</h2>
+      <p class="count-p">累计提成</p>
+    </div>
+    <div class="count-col2">
+      <h2 class="count-h2">{{employee.member_count}}</h2>
+      <p class="count-p">所属会员</p>
+    </div>
+  </div>
+  <br />
+  <ion-list style="margin:0;">
+    <ion-item class="border-0">
+      <ion-icon name="ios-home-outline" class="icon-2" item-left></ion-icon>
+      当前门店
+      <ion-note item-right>{{employee.shop_name}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="ios-podium-outline" class="icon-2" item-left></ion-icon>
+      公司
+      <ion-note item-right>{{employee.company_name}}</ion-note>
+    </ion-item>
+    <ion-item class="border-0">
+      <ion-icon name="ios-person-outline" class="icon-2" item-left></ion-icon>
+      用户角色
+      <ion-note item-right>{{user.role_option}}</ion-note>
+    </ion-item>
+  </ion-list>
+  <br />
+  <ion-list>
+    <!--<ion-item (tap)="phone()" class="border-0">
+      <ion-icon name="ios-people-outline" class="icon-1" item-left></ion-icon>
+      通讯录
+    </ion-item>-->
+    <ion-item (tap)="permission()" class="border-0">
+      <ion-icon name="ios-construct-outline" class="icon-1" item-left></ion-icon>
+      权限管理
+    </ion-item>
+  </ion-list>
+</ion-content>

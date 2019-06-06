@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+    <ion-title>提成方案:{{commissionRule.title_display}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-divider light>基础信息</ion-item-divider>
+    <ion-item>
+      <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="commissionRule.name" name="name" #name="ngModel"
+                 required type="text" placeholder="提成方案名称"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>业绩计算方式<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-select okText="确定" cancelText="关闭" [(ngModel)]="commissionRule.sale_price_sel" name="sale_price_sel"
+                  required>
+        <ion-option value="sale_price">根据成交价</ion-option>
+        <ion-option value="open_price">根据原价计算</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>分配整单提成</ion-label>
+      <ion-toggle [(ngModel)]="commissionRule.is_total_special" name="is_total_special"
+                  (ionChange)="isDisabled = !isDisabled"></ion-toggle>
+    </ion-item>
+    <ion-item *ngIf="commissionRule.is_total_special">
+      <ion-label>整单提成(百分比)</ion-label>
+      <ion-input text-right item-right [(ngModel)]="commissionRule.total_special" name="total_special"
+                 #total_special="ngModel"
+                 required type="number" placeholder="提成方案名称"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>生效</ion-label>
+      <ion-toggle [(ngModel)]="commissionRule.active" name="active"
+                  (ionChange)="isDisabled = !isDisabled"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="commissionRule.is_total_special == false">
+    <ion-item-divider light>手工提成比例</ion-item-divider>
+    <ion-item>
+      <ion-label>点单加成(固定)</ion-label>
+      <ion-input text-right item-right [(ngModel)]="commissionRule.fix_named" name="fix_named" #fix_named="ngModel"
+                 required type="number" placeholder="点单加成(固定)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>点单加成(百分比)</ion-label>
+      <ion-input text-right item-right [(ngModel)]="commissionRule.percent_named" name="percent_named"
+                 #percent_named="ngModel"
+                 required type="number" placeholder="点单加成(百分比)"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="commissionRule.is_total_special == false">
+    <ion-item-divider light>充值提成比例</ion-item-divider>
+    <ion-item>
+      <ion-label>固定比例</ion-label>
+      <ion-input text-right item-right [(ngModel)]="commissionRule.fix_percent" name="fix_percent"
+                 #fix_percent="ngModel"
+                 required type="number" placeholder="充值提成固定比例"></ion-input>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button *ngIf="model=='add'" ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+      <button *ngIf="model=='edit'" ion-button (tap)="update()" type="submit" color="primary" block>修改</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

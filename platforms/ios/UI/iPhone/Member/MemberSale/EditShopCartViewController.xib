@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditShopCartViewController">
+            <connections>
+                <outlet property="tableView" destination="5kV-Wy-UmK" id="jg6-wn-3th"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5kV-Wy-UmK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="OrV-cn-Wa6"/>
+                        <outlet property="delegate" destination="-1" id="vKD-N1-CQh"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLj-2m-JcI">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3o-bX-Zcu">
+                            <rect key="frame" x="15" y="10" width="345" height="40"/>
+                            <state key="normal" title="删除" backgroundImage="member_green_bg.png"/>
+                            <connections>
+                                <action selector="deleteBtnPressed:" destination="-1" eventType="touchUpInside" id="GEk-bN-zBZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="ABa-0h-cmG"/>
+                        <constraint firstAttribute="trailing" secondItem="W3o-bX-Zcu" secondAttribute="trailing" constant="15" id="EVQ-Zm-s7B"/>
+                        <constraint firstItem="W3o-bX-Zcu" firstAttribute="centerY" secondItem="wLj-2m-JcI" secondAttribute="centerY" id="R9V-jl-7hQ"/>
+                        <constraint firstItem="W3o-bX-Zcu" firstAttribute="leading" secondItem="wLj-2m-JcI" secondAttribute="leading" constant="15" id="bFr-Eo-ulD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="5kV-Wy-UmK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8Kg-EV-Msn"/>
+                <constraint firstItem="wLj-2m-JcI" firstAttribute="top" secondItem="5kV-Wy-UmK" secondAttribute="bottom" id="C55-42-UTM"/>
+                <constraint firstAttribute="trailing" secondItem="wLj-2m-JcI" secondAttribute="trailing" id="L7H-S4-6g5"/>
+                <constraint firstAttribute="bottom" secondItem="5kV-Wy-UmK" secondAttribute="bottom" id="Wga-Hp-1VL"/>
+                <constraint firstItem="wLj-2m-JcI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZdK-tq-AUG"/>
+                <constraint firstAttribute="bottom" secondItem="wLj-2m-JcI" secondAttribute="bottom" id="cVR-g0-zJR"/>
+                <constraint firstAttribute="trailing" secondItem="5kV-Wy-UmK" secondAttribute="trailing" id="q6s-5V-Xf4"/>
+                <constraint firstItem="5kV-Wy-UmK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sdO-Gk-9xT"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Wga-Hp-1VL"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="-287.5" y="78.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

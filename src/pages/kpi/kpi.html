@@ -1,0 +1,256 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{kpi.period_name}}考核指标</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="month">
+        当月指标
+      </ion-segment-button>
+      <ion-segment-button value="done">
+        已规划会员
+      </ion-segment-button>
+      <ion-segment-button value="more">
+        历史指标
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-bg">
+  <div [hidden]="segment !=='month'">
+    <div class="card-box">
+      <ion-list no-lines>
+        <ion-item >
+          <ion-row text-center>
+            <ion-col width-33 text-right>
+              <h1 class="percent">{{kpi.royalties_percent}}<small style="font-size:12px;">%</small></h1>
+              <p>目标 {{kpi.royalties_amt}}</p>
+            </ion-col>
+            <ion-col width-66 text-left>
+              <div class="right-text">
+                <h2>营业额</h2>
+                <p>已规划 {{kpi.plant_royalties_amt}}</p>
+                <p>实际完成 {{kpi.current_royalties_amt}}</p>
+                <p>开单 {{kpi.coming_customer_num}}</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="card-box">
+      <ion-list no-lines>
+       <ion-item>
+          <ion-row text-center>
+            <ion-col width-33 text-right>
+              <h1 class="percent">{{kpi.spending_percent}}<small style="font-size:12px;">%</small></h1>
+              <p>目标 {{kpi.spending_amt}}</p>
+            </ion-col>
+            <ion-col width-66 text-left>
+              <div class="right-text">
+                <h2>净消费额</h2>
+                <p>已规划 {{kpi.plant_spending_amt}}</p>
+                <p>实际完成 {{kpi.current_spending_amt}}</p>
+                <p>销售额 {{kpi.current_product_spending_amt}}</p>
+                <p>消耗额 {{kpi.current_item_spending_amt}}</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="card-box">
+      <ion-list no-lines>
+        <button ion-item (tap)="onOperate('coming_customer')">
+          <ion-row text-center>
+            <ion-col width-33 text-right>
+              <h1 class="percent">{{kpi.coming_customer_percent}}<small style="font-size:12px;">%</small></h1>
+              <p>目标 {{kpi.operate_num}}</p>
+            </ion-col>
+            <ion-col width-66 text-left>
+              <div class="right-text">
+                <h2>客流</h2>
+                <p>实际完成 {{kpi.coming_customer_num}}</p>
+                <p>散客 {{kpi.default_customer_num}}</p>
+                <p>会员 {{kpi.coming_customer_num-kpi.default_customer_num}}</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </button>
+      </ion-list>
+    </div>
+    <div class="card-box">
+      <ion-list no-lines>
+        <button ion-item (tap)="onOperate('new_member')">
+          <ion-row text-center>
+            <ion-col width-33 text-right>
+              <h1 class="percent">{{kpi.new_member_percent}}<small style="font-size:12px;">%</small></h1>
+              <p>目标 {{kpi.new_card_num}}</p>
+            </ion-col>
+            <ion-col width-66 text-left>
+              <div class="right-text">
+                <h2>新入会会员</h2>
+                <p>实际完成 {{kpi.new_member_num}}</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </button>
+      </ion-list>
+    </div>
+    <div class="card-box">
+      <ion-list no-lines>
+       <button ion-item (tap)="onOperate('coming_in')">
+          <ion-row text-center>
+            <ion-col width-33 text-right>
+              <h1 class="percent">{{kpi.coming_in_percent}}<small style="font-size:12px;">%</small></h1>
+              <p>目标 {{kpi.customer_num}}</p>
+            </ion-col>
+            <ion-col width-66 text-left>
+              <div class="right-text">
+                <h2>会员到店</h2>
+                <p>已规划 {{kpi.plant_customer_num}}</p>
+                <p>实际完成 {{kpi.coming_num}}</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </button>
+      </ion-list>
+    </div>
+  </div>
+  <div [hidden]="segment !=='done'">
+    <ion-list>
+      <ion-item-divider sticky>
+        <ion-label>
+          本月已规划的会员
+        </ion-label>
+      </ion-item-divider>
+      <div text-center class="no-data-box" *ngIf="!has_member">
+        <h4 style="font-size:16px;">很遗憾，您还没有规划会员</h4>
+        <p class="padding">点击<span color="primary">"业绩规划"</span>马上进行设置</p>
+      </div>
+      <ion-item-sliding *ngFor="let item of kpi.members">
+        <ion-item>
+          <ion-avatar item-left (tap)="openFollowPlan(item)">
+            <img *ngIf="item.member_image_url" [src]="item.member_image_url">
+            <img *ngIf="!item.member_image_url" src="assets/img/avatar-default.png">
+          </ion-avatar>
+          <div (tap)="openFollowPlan(item)">
+            <h2>{{item.member_name}}</h2>
+            <p>已规划营业额 {{item.royalties_amount}}</p>
+            <p>已规划消费额 {{item.spending_amount}}</p>
+            <p>已跟进 {{item.record_cnt}}次</p>
+            <p>预约成功 {{item.success_cnt}}次</p>
+          </div>
+          <ion-note item-right>
+            <div><span *ngIf="item.success_cnt>0" style="padding: 30px 0; " (tap)="openFollowPlan(item)" color="primary">预约成功</span></div>
+            <div><span *ngIf="item.success_cnt<=0" style="padding: 30px 0; " (tap)="openSocial(item)" color="danger">跟进预约</span></div>
+          </ion-note>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="primary" (tap)="openFollowMemberPos(item)">
+            查看营业额
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  <div [hidden]="segment !=='more'">
+    <ion-list>
+      <ion-item-group *ngFor="let item of records">
+        <ion-item-divider sticky>
+          <ion-label>
+            {{item.period_name}}指标
+          </ion-label>
+        </ion-item-divider>
+        <ion-item-sliding>
+          <button ion-item (tap)="onRecordOperate('royalties',item)">
+            <h2 >营业额</h2>
+            <p>目标：{{item.royalties_amt_format}}</p>
+            <p>实际完成：{{item.current_royalties_amt_format}}</p>
+            <ion-note *ngIf="item.current_royalties_amt>=item.royalties_amt"  item-right>
+              <span color="primary">已达标</span>
+            </ion-note>
+            <ion-note *ngIf="item.current_royalties_amt<item.royalties_amt"  item-right>
+              <span color="danger" class="c-danger">未达标({{item.current_royalties_amt-item.royalties_amt}})</span>
+            </ion-note>
+          </button>
+          <ion-item-options>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <button ion-item (tap)="onRecordOperate('spending',item)">
+            <h2 >净消费额</h2>
+            <p>目标：{{item.spending_amt_format}}</p>
+            <p>实际完成：{{item.current_spending_amt_format}}</p>
+            <ion-note *ngIf="item.current_spending_amt>=item.spending_amt"  item-right>
+              <span color="primary">已达标</span>
+              </ion-note>
+            <ion-note *ngIf="item.current_spending_amt<item.spending_amt"   item-right>
+              <span color="danger" class="c-danger">未达标({{item.current_spending_amt-item.spending_amt}})</span>
+              </ion-note>
+          </button>
+          <ion-item-options>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <button ion-item (tap)="onRecordOperate('coming_customer',item)">
+            <h2 >客流</h2>
+            <p>目标：{{item.operate_num}}人次</p>
+            <p>实际完成：{{item.coming_customer_num}}人次</p>
+            <ion-note *ngIf="item.coming_customer_num>=item.operate_num"  item-right>
+              <span color="primary">已达标</span>
+              </ion-note>
+            <ion-note *ngIf="item.coming_customer_num<item.operate_num"  item-right>
+              <span color="danger" class="c-danger">未达标</span>
+              </ion-note>
+          </button>
+          <ion-item-options>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <button ion-item (tap)="onRecordOperate('new_member',item)">
+            <h2 >新入会会员</h2>
+            <p>目标：{{item.new_card_num}}人</p>
+            <p>实际完成：{{item.new_member_num}}人</p>
+            <ion-note *ngIf="item.new_member_num>=item.new_card_num" item-right>
+              <span color="primary">已达标</span>
+              </ion-note>
+            <ion-note *ngIf="item.new_member_num<item.new_card_num" item-right>
+               <span color="danger" class="c-danger">未达标</span>
+               </ion-note>
+          </button>
+          <ion-item-options>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <button ion-item (tap)="onRecordOperate('coming_in',item)">
+            <h2 >会员到店</h2>
+            <p>目标：{{item.customer_num}}人</p>
+            <p>实际完成：{{item.coming_num}}人</p>
+            <ion-note *ngIf="item.coming_num>=item.customer_num" item-right>
+              <span color="primary">已达标</span>
+              </ion-note>
+            <ion-note *ngIf="item.coming_num<item.customer_num"  item-right>
+              <span color="danger" class="c-danger">未达标</span>
+              </ion-note>
+          </button>
+          <ion-item-options>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-item-group>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>
+<ion-footer *ngIf="kpi.employee_id===user_eid">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col text-right>
+        <button (tap)="doKpi()" ion-button color="primary" full>业绩规划</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

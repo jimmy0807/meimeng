@@ -1,0 +1,23 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>仓库</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-list>
+    <ion-item *ngFor="let i of list">
+      <h2>{{i.name}}</h2>
+      <p>库存库位：{{i.lot_stock_name}}</p>
+      <p>地址：{{i.partner_name}}</p>
+    </ion-item>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!list.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+</ion-content>

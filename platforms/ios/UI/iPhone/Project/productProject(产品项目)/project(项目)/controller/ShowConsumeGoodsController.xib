@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10089" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10072.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowConsumeGoodsController">
+            <connections>
+                <outlet property="boomView" destination="ARR-aR-aMr" id="NuS-NZ-VyI"/>
+                <outlet property="collectionView" destination="gS6-0Z-E67" id="m7h-cB-lgb"/>
+                <outlet property="seletedBtn" destination="1To-EF-ozj" id="jvi-Ez-RIC"/>
+                <outlet property="titleLableView" destination="bcR-mK-ZfT" id="pe9-zf-hhE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="592-Tw-cn2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commom_navi_bk_IOS7.png" translatesAutoresizingMaskIntoConstraints="NO" id="edL-Yj-4MG">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLJ-75-Aot">
+                            <rect key="frame" x="10" y="26" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="HtB-7d-jiJ"/>
+                                <constraint firstAttribute="height" constant="32" id="WXm-U0-8VZ"/>
+                            </constraints>
+                            <state key="normal" image="navi_back_n.png"/>
+                            <connections>
+                                <action selector="backBtnClick:" destination="-1" eventType="touchUpInside" id="UFr-lx-Dem"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消耗品" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcR-mK-ZfT">
+                            <rect key="frame" x="161" y="31" width="54" height="22"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="dLJ-75-Aot" firstAttribute="top" secondItem="592-Tw-cn2" secondAttribute="top" constant="26" id="6G8-KM-ZSt"/>
+                        <constraint firstItem="edL-Yj-4MG" firstAttribute="top" secondItem="592-Tw-cn2" secondAttribute="top" id="F4Y-l6-GwF"/>
+                        <constraint firstItem="bcR-mK-ZfT" firstAttribute="centerY" secondItem="dLJ-75-Aot" secondAttribute="centerY" id="JZ5-SF-nQA"/>
+                        <constraint firstAttribute="trailing" secondItem="edL-Yj-4MG" secondAttribute="trailing" id="MMa-C6-xEb"/>
+                        <constraint firstAttribute="height" constant="64" id="Tqd-1N-j6g"/>
+                        <constraint firstItem="edL-Yj-4MG" firstAttribute="leading" secondItem="592-Tw-cn2" secondAttribute="leading" id="bwL-aT-zdH"/>
+                        <constraint firstAttribute="bottom" secondItem="edL-Yj-4MG" secondAttribute="bottom" id="jCX-zM-EJ8"/>
+                        <constraint firstItem="bcR-mK-ZfT" firstAttribute="centerX" secondItem="592-Tw-cn2" secondAttribute="centerX" id="p0u-Pc-mv9"/>
+                        <constraint firstItem="dLJ-75-Aot" firstAttribute="leading" secondItem="592-Tw-cn2" secondAttribute="leading" constant="10" id="woG-kH-g3l"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARR-aR-aMr" userLabel="boomView">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1To-EF-ozj">
+                            <rect key="frame" x="20" y="10" width="335" height="40"/>
+                            <state key="normal" title="已选择" backgroundImage="member_green_bg.png"/>
+                            <connections>
+                                <action selector="seletedBtnClick:" destination="-1" eventType="touchUpInside" id="ihI-Cy-7Gq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="1To-EF-ozj" secondAttribute="bottom" constant="10" id="8RZ-wb-Zab"/>
+                        <constraint firstAttribute="trailing" secondItem="1To-EF-ozj" secondAttribute="trailing" constant="20" id="QC8-Z5-VcK"/>
+                        <constraint firstItem="1To-EF-ozj" firstAttribute="top" secondItem="ARR-aR-aMr" secondAttribute="top" constant="10" id="U7F-8T-jKp"/>
+                        <constraint firstItem="1To-EF-ozj" firstAttribute="leading" secondItem="ARR-aR-aMr" secondAttribute="leading" constant="20" id="X6D-4T-Ids"/>
+                        <constraint firstAttribute="height" constant="60" id="mBW-M5-QRX"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gS6-0Z-E67">
+                    <rect key="frame" x="0.0" y="64" width="375" height="543"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="90g-Wo-ZeP">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9er-0B-XWC"/>
+                        <outlet property="delegate" destination="-1" id="yLg-gh-9Be"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="592-Tw-cn2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="01L-Dr-ShD"/>
+                <constraint firstAttribute="trailing" secondItem="592-Tw-cn2" secondAttribute="trailing" id="40b-Ru-Lag"/>
+                <constraint firstAttribute="bottom" secondItem="ARR-aR-aMr" secondAttribute="bottom" id="4MY-mv-cO2"/>
+                <constraint firstItem="ARR-aR-aMr" firstAttribute="top" secondItem="gS6-0Z-E67" secondAttribute="bottom" id="EYL-s8-hhY"/>
+                <constraint firstItem="gS6-0Z-E67" firstAttribute="top" secondItem="592-Tw-cn2" secondAttribute="bottom" id="F6j-fp-S6D"/>
+                <constraint firstItem="592-Tw-cn2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OJy-Kc-Yrf"/>
+                <constraint firstItem="gS6-0Z-E67" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QKK-j6-64w"/>
+                <constraint firstAttribute="trailing" secondItem="gS6-0Z-E67" secondAttribute="trailing" id="ehS-8z-FBi"/>
+                <constraint firstItem="ARR-aR-aMr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fnH-ZO-zhv"/>
+                <constraint firstAttribute="trailing" secondItem="ARR-aR-aMr" secondAttribute="trailing" id="hka-jn-Bdi"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="312.5" y="256.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="commom_navi_bk_IOS7.png" width="320" height="64"/>
+        <image name="member_green_bg.png" width="290" height="40"/>
+        <image name="navi_back_n.png" width="32" height="32"/>
+    </resources>
+</document>

@@ -1,0 +1,55 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>产品分类</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()" *ngIf="!manageMode">
+        <span>取消</span>
+      </button>
+      <button ion-button (tap)="create()" *ngIf="isAdmin && manageMode">
+        <span>添加</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar placeholder="按名称搜索" showCancelButton color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)"
+                   (ionInput)="onInput($event)" [(ngModel)]="keyword"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list style="margin-top:5px;">
+    <ion-item-sliding *ngFor="let cat of categories">
+      <button ion-item (tap)="onSelected(cat)" style="padding-left:16px;padding-right:16px;">
+        {{cat.complete_name}}
+      </button>
+      <ion-item-options side="right" *ngIf="editMode">
+        <button ion-button color="danger" (tap)="delete(cat)">
+          删除
+        </button>
+        <button ion-button color="primary" (tap)="edit(cat)" *ngIf="!manageMode">
+          编辑
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!categories.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有结果</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+<ion-footer *ngIf="editMode && !manageMode">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="create()" type="submit" color="primary" block>添加</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

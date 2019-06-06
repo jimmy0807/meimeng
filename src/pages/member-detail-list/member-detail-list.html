@@ -1,0 +1,201 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-back">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list *ngIf="mode==='vis'">
+    <button ion-item *ngFor="let i of items" (tap)="showVisit(i)">
+      <h2>{{i.member_name}}-{{i.category_name}}</h2>
+      <p>项目：{{i.product_names}}</p>
+      <p>计划回访人：{{i.plant_visit_user_name}}</p>
+      <p>计划回访日期：{{i.plant_visit_date}}</p>
+      <p item-right class="p-state p-{{i.state}}">{{i.state_name}}</p>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="mode==='ext'">
+    <ion-card *ngFor="let i of items">
+      <h2 class="h2-header">
+        {{i.extended_name}}
+      </h2>
+      <ion-card-content>
+        <p class="p-header"><span class="p-text">{{i.description}}</span></p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="mode==='rel'">
+    <ion-item *ngFor="let i of items">
+      <h2>{{i.name}}</h2>
+      <p>手机：{{i.mobile}}</p>
+      <ion-note item-right>{{i.gender}}</ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="mode==='img'">
+    <div *ngFor="let i of items" class="img-box">
+      <div class="img-title-box">
+        <div class="img-title-div">
+          <p class="img-name">{{i.name}}-{{i.type}}</p>
+          <p class="img-amount">￥{{i.now_amount | number :'1.2'}}</p>
+        </div>
+        <p class="img-date">{{i.create_date}}</p>
+      </div>
+      <hr />
+      <div>
+        <p class="img-remark">{{i.display_remark}}</p>
+        <div class="div-scroll">
+          <div class="div-img" *ngFor="let img of i.images">
+            <img src="{{img.image_small_url}}"
+                 (click)="showImage(i,img)" tappable />
+            <p class="img-type">{{img.take_time}}</p>
+          </div>
+        </div>
+        <div class="div-img-add">
+          <p (tap)="addImage(i,'after')">添加术后照</p>
+          <p (tap)="addImage(i,'before')">添加术前照</p>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+  <div *ngIf="mode==='ope'">
+    <div class="ope-div" *ngFor="let i of items">
+      <h2>
+        {{i.name}} - {{i.type}}
+        <span style="float:right">{{i.queue_no}}</span>
+      </h2>
+      <hr />
+      <div class="ope-content">
+        <p class="pre">{{i.display_remark}}</p>
+      </div>
+      <div class="ope-act" *ngIf="i.activity_ids">
+        <p class="ope-act-p">就诊流程</p>
+        <div class="ope-act-div">
+          <div class="ope-brd"></div>
+          <div class="ope-items">
+            <div *ngFor="let a of i.activity_ids">
+              <div class="ope-item" *ngIf="a.state==='done'">
+                <img src="assets/img/done.png" />
+                <div class="ope-item-content">
+                  <h5>{{a.activity_name.trim()}}</h5>
+                  <div>
+                    <img src="assets/img/clock.png" />
+                    <p class="ope-date">{{a.display_date}}</p>
+                    <p>处理人: {{a.user_name}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ope-item" *ngIf="a.state!=='done'">
+                <img src="assets/img/doing.png" />
+                <div class="ope-item-content">
+                  <h5>{{a.activity_name.trim()}}-<span class="a-span-draft">{{a.state_name}}</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-list *ngIf="mode==='sta'">
+    <ion-card *ngFor="let i of items">
+      <h2 class="h2-header">
+        {{i.operate_name}} - {{i.type}}
+      </h2>
+      <ion-card-content>
+        <div style="display:flex;flex-direction:row;align-items:center">
+          <div style="flex:auto">
+            <p class="p-header">支付方式：<span class="p-text">{{i.journal_name}}</span></p>
+            <p class="p-header">支付金额：<span class="p-text">{{i.amount | number :'1.2'}}</span></p>
+            <p class="p-header">积分：<span class="p-text">{{i.point}}</span></p>
+          </div>
+          <div style="flex:1">
+            <p *ngIf="i.card_amount>=0" item-right class="right-item" style="color:#FF4848">+{{i.card_amount| number :'1.2'}}</p>
+            <p *ngIf="i.card_amount<0" item-right class="right-item" style="color:#78C750">{{i.card_amount| number :'1.2'}}</p>
+          </div>
+        </div>
+      </ion-card-content>
+      <p class="p-left">{{i.create_date}}</p>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="mode==='poi'">
+    <ion-card *ngFor="let i of items">
+      <h2 class="h2-header">
+        {{i.operate_name}} - {{i.type}}
+      </h2>
+      <ion-card-content>
+        <p class="p-header">变动前积分：<span class="p-text">{{i.exchange_point}}</span></p>
+        <p class="p-header">本次变动积分：<span class="p-text">{{i.point}}</span></p>
+      </ion-card-content>
+      <p class="p-left">{{i.create_date}}</p>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="mode==='com'">
+    <ion-card *ngFor="let i of items">
+      <h2 class="h2-header">
+        {{i.operate_name}}
+      </h2>
+      <ion-card-content>
+        <p class="p-header">消费会员：<span class="p-text">{{i.consume_member_name}}</span></p>
+        <p class="p-header">分润方案：<span class="p-text">{{i.rule_name}}</span></p>
+        <p class="p-header">提成到账：<span class="p-text">{{i.commission_account}}</span></p>
+        <p class="p-header">消费金额：<span class="p-text">{{i.total_amount}}</span></p>
+        <p class="p-header">佣金：<span class="p-text">{{i.amount}}</span></p>
+      </ion-card-content>
+      <p class="p-left">{{i.create_date}}</p>
+      <p class="p-right">{{i.create_name}}</p>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="mode==='pro'">
+    <ion-card *ngFor="let i of items">
+      <h2 class="h2-header">
+        {{i.operate_name}}
+      </h2>
+      <ion-card-content>
+        <p class="p-header">产品：<span class="p-text">{{i.product_name}}</span></p>
+        <p class="p-header">数量：<span class="p-text">{{i.qty}}</span></p>
+        <p class="p-header">公开价：<span class="p-text">{{i.open_price}}</span></p>
+        <p class="p-header">购买单价：<span class="p-text">{{i.price_unit}}</span></p>
+        <p class="p-header">小计：<span class="p-text">{{i.price_subtotal_incl}}</span></p>
+      </ion-card-content>
+      <p class="p-left">{{i.create_date}}</p>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="mode==='car'">
+    <ion-item *ngFor="let i of items">
+      <h2>{{i.name}}</h2>
+      <p>购买价：{{i.price_unit| number:'1.2'}}</p>
+      <ion-note item-right>x{{i.remain_qty}}</ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="mode==='rec'">
+    <div *ngFor="let i of items" class="rec-block">
+      <div class="rec-div1">
+        <p class="rec-doc">{{i.doctors_name}}</p>
+        <p class="rec-date">{{i.create_date}}</p>
+      </div>
+      <div class="rec-div2">
+        <p class="rec-header">症状描述：</p>
+        <p class="rec-content">{{i.reason}}</p>
+      </div>
+      <div class="rec-div3">
+        <p class="rec-header">医生意见：</p>
+        <p class="rec-content">{{i.doctors_note}}</p>
+      </div>
+    </div>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!items.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title>
+      客单价
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="filter()">
+        <span>筛选</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content style="background-color: #f7f7f7;">
+  <div class="report-segment">
+    <ion-segment [(ngModel)]="segment" (ionChange)="select_timezone(segment)">
+      <ion-segment-button value="today">
+        今日
+      </ion-segment-button>
+      <ion-segment-button value="yesterday">
+        昨日
+      </ion-segment-button>
+      <ion-segment-button value="week">
+        近七天
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        当月
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="report-card">
+    <!--<div id="line1">设置边线<br><br><br></div>
+    <div id="line2">设置虚线<br><br><br></div>-->
+    <ion-row class="row_report">
+      <ion-col class="col_left">
+        <div *ngIf="flag_left" text-center style="color:#F00;font-size: 30px">{{report_data.pct_all_percent}}%</div>
+        <div *ngIf="!flag_left" text-center style="color:#F00;font-size: 30px;"><b>- -</b></div>
+        <div text-center>客单价同期比</div>
+      </ion-col>
+      <ion-col class="col_right">
+        <div *ngIf="flag_right" text-center style="color:#F00;font-size: 30px">{{report_data.pct_care_percent}}%</div>
+        <div *ngIf="!flag_right" text-center style="color:#F00;font-size: 30px;"><b>- -</b></div>
+        <div text-center>护理客单价同期比</div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="report-card">
+    <div class="row_not_last">
+      <ion-item no-lines>
+        <ion-label text-left><b>客单价总计</b></ion-label>
+        <ion-label text-right><b>¥{{report_data.pct_all}}</b></ion-label>
+      </ion-item>
+    </div>
+    <div style="width:200px;margin:0 auto;">
+      <chart style="width: 200px;height: 200px; margin:20px 0px 20px 0px;" #chart [options]="options"></chart>
+    </div>
+    <div>
+      <ion-item no-lines><b>客单价明细（2）</b></ion-item>
+      <div>
+        <ion-row id="row_pct_care" class="row_not_last" center>
+          <ion-col width-10>
+            <div class="circle"></div>
+          </ion-col>
+          <ion-col width-90>
+            <ion-item no-lines>
+              <ion-label text-left>护理客单价</ion-label>
+              <ion-label text-right>¥{{report_data.pct_item}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row id="row_pct_product" class="row_last" center>
+          <ion-col width-10>
+            <div class="circle"></div>
+          </ion-col>
+          <ion-col>
+            <ion-item no-lines>
+              <ion-label text-left>产品客单价</ion-label>
+              <ion-label text-right>¥{{report_data.pct_product}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+  <div class="report-card">
+    <ion-item no-lines><b>客单价（会员）</b></ion-item>
+    <div text-center style="color:black;font-size: 30px">¥{{report_data.pct_member}}</div>
+  </div>
+  <div class="report-card">
+    <ion-item no-lines><b>客单价（散客）</b></ion-item>
+    <div text-center style="color:black;font-size: 30px">¥{{report_data.pct_temp}}</div>
+  </div>
+</ion-content>

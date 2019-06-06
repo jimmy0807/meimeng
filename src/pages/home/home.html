@@ -1,0 +1,260 @@
+<ion-header align-title="center">
+  <ion-navbar color="primary">
+    <ion-title (tap)="onChangeShop()">
+      {{shopName}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="has-refresher" style="background-color: #EBEFED;">
+  <ion-refresher (ionRefresh)="doRefresh($event)" (ionPull)="doPulling($event)">
+    <ion-refresher-content refreshingSpinner="circles" pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div class="list-box" *ngIf="banners.length">
+    <ion-slides pager autoplay="10000" class="sides">
+      <ion-slide *ngFor="let item of banners">
+        <img [src]="item.url" (tap)="onBannerClick(item)" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="list-box">
+    <ion-row text-center class="row-line">
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_member">
+        <button (tap)="onFunctionClick('member')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-contact"></ion-icon>
+          <div class="bnt-box-text">会员中心</div>
+        </button>
+      </ion-col>
+      <ion-col col-3 class="row-col" *ngIf="g.app_reservation">
+        <button (tap)="onFunctionClick('reservation')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-help-circle"></ion-icon>
+          <div class="bnt-box-text">预约</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_commission">
+        <button (tap)="onFunctionClick('commission')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-ribbon"></ion-icon>
+          <div class="bnt-box-text">提成</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_visit">
+        <button (tap)="onFunctionClick('visit')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-text"></ion-icon>
+          <div class="bnt-box-text">跟进回访</div>
+        </button>
+      </ion-col>
+      <ion-col text-center *ngIf="groupMedical && g.app_partner" col-3 class="row-col">
+        <button (tap)="onFunctionClick('partner')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-briefcase"></ion-icon>
+          <div class="bnt-box-text">渠道商</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_achievement">
+        <button (tap)="onFunctionClick('achieve')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-appstore"></ion-icon>
+          <div class="bnt-box-text">个人业绩</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_partner_commission">
+        <button (tap)="onFunctionClick('partner_commission')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-appstore"></ion-icon>
+          <div class="bnt-box-text">渠道业绩</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_authorization">
+        <button (tap)="onFunctionClick('authorization')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="danger" name="ios-create"></ion-icon>
+          <div class="bnt-box-text">审批</div>
+        </button>
+      </ion-col>
+      <ion-col col-3 class="row-col" *ngIf="g.app_device_access">
+        <button (tap)="onFunctionClick('deviceAccess')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="danger" name="ios-key"></ion-icon>
+          <div class="bnt-box-text">设备授权</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_report">
+        <button (tap)="onFunctionClick('reportIndex')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="danger" name="ios-locate"></ion-icon>
+          <div class="bnt-box-text">报表</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_event">
+        <button (tap)="onFunctionClick('event')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="md-calendar"></ion-icon>
+          <div class="bnt-box-text">活动签到</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_charge">
+        <button (tap)="onFunctionClick('buy')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="danger" name="camera"></ion-icon>
+          <div class="bnt-box-text">充值卡</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="g.app_photo">
+        <button (tap)="onFunctionClick('photo')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="camera"></ion-icon>
+          <div class="bnt-box-text">拍照</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" *ngIf="!groupMedical">
+        <button (tap)="onFunctionClick('all')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-apps"></ion-icon>
+          <div class="bnt-box-text">更多</div>
+        </button>
+      </ion-col>
+
+      <ion-col text-center col-3 class="row-col" *ngIf="test">
+        <button (tap)="onFunctionClick('test')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-apps"></ion-icon>
+          <div class="bnt-box-text">测试</div>
+        </button>
+      </ion-col>
+      <!--<ion-col text-center class="bnt-box row-col" col-3 >
+        <button (tap)="onFunctionClick('follow')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-appstore"></ion-icon>
+          <div class="bnt-box-text">业绩考核</div>
+        </button>
+      </ion-col>
+      <ion-col text-center col-3 class="row-col" >
+        <button (tap)="onFunctionClick('mail')" full clear text-center style="background-color:#FFFFFF;">
+          <ion-icon class="icon28" color="primary" name="ios-mail"></ion-icon>
+          <div class="bnt-box-text">短信</div>
+        </button>
+      </ion-col>-->
+    </ion-row>
+  </div>
+  <div class="card-box" *ngIf="g.app_report">
+    <ion-slides pager class="sides">
+      <ion-slide>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-icon class="icon28" item-left color="primary" name="ios-time"></ion-icon>
+            <h3>今日营业情况</h3>
+            <p>店内营业情况实时掌握</p>
+          </ion-item>
+          <ion-row text-center>
+            <ion-col text-center (tap)="onFunctionClick('revenue')">
+              <div class="card-box-money">+{{dashboard.account_amount}}</div>
+              <p class="card-box-label">营业额</p>
+            </ion-col>
+            <ion-col text-center (tap)="showOperateDailyDetail(dashboard.account_id)">
+              <div class="card-box-money">+{{dashboard.customer_count}}</div>
+              <div class="card-box-label">客流</div>
+            </ion-col>
+          </ion-row>
+          <ion-item text-center>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+      <ion-slide>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-icon class="icon28" item-left color="primary" name="ios-time"></ion-icon>
+            <h3>当月营业情况</h3>
+            <p>{{ shopName }}{{ dashboard.period_name }}月营业情况</p>
+          </ion-item>
+          <ion-row text-center>
+            <ion-col text-center (tap)="onFunctionClick('revenue')">
+              <div class="card-box-money">+{{dashboard.month_account_amount}}</div>
+              <p class="card-box-label">营业额</p>
+            </ion-col>
+            <ion-col text-center (tap)="showOperateMonthDetail(dashboard.month_account_id)">
+              <div class="card-box-money">+{{dashboard.month_customer_count}}</div>
+              <div class="card-box-label">客流</div>
+            </ion-col>
+          </ion-row>
+          <ion-item text-center>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="card-box" *ngIf="dashboard && dashboard.kpi_id>0">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-icon class="icon28" item-left color="primary" name="ios-trending-up"></ion-icon>
+        <h3>{{ dashboard.period_name }}月业绩考核考核指标</h3>
+        <p>您的考核指标已经更新，马上跟进</p>
+      </ion-item>
+      <ion-row text-center (tap)="onFunctionClick('kpi')">
+        <ion-col text-center>
+          <div class="card-box-money">+{{ dashboard.kpi_royalties_amt }}</div>
+          <p class="card-box-label">目标营业额</p>
+        </ion-col>
+        <ion-col text-center>
+          <div class="card-box-money">+{{ dashboard.kpi_spending_amt }}</div>
+          <div class="card-box-label">目标净消费额</div>
+        </ion-col>
+      </ion-row>
+      <div text-center>
+        <p class="padding">
+          已规划
+          <span style="color:#ef473a;">{{dashboard.current_member_cnt}}</span>/{{dashboard.follow_my_member_total}}名会员
+        </p>
+      </div>
+      <div text-center>
+        <p class="padding">已约成功{{dashboard.success_qty}}人</p>
+      </div>
+
+      <!--
+            <div text-center>
+              <p class="padding">已完成营业额 {{dashboard.current_royalties_amt}}</p>
+            </div>
+            <div text-center>
+              <p class="padding">已完成净消费额 {{dashboard.current_spending_amt}}</p>
+            </div>
+            -->
+      <ion-item text-center>
+        <div class="more">
+          <a (tap)="onFunctionClick('kpi')">立即查看</a>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="card-box" *ngIf="g.app_reservation">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-icon class="icon28" item-left color="primary" name="ios-list-box"></ion-icon>
+        <h3>今日预约单（{{dashboard.reservation_create_date}}号的预约）</h3>
+        <p *ngIf="dashboard.reservation_start_date">客人<span color="danger" class="c-danger">{{ dashboard.reservation_start_date }}</span>点到店</p>
+        <p *ngIf="!dashboard.reservation_start_date">目前没有客人预约</p>
+        <ion-badge item-right>{{dashboard.reservation_count}}</ion-badge>
+      </ion-item>
+      <div text-center *ngIf="!dashboard.reservation_member_name">
+        <h4 style="font-size:16px;">很遗憾，没有找到任何预约信息</h4>
+        <p class="padding">赶快打电话<span color="danger" class="c-danger">"约"</span>起来吧</p>
+      </div>
+      <div text-center (tap)="onFunctionClick('reservation')">
+        <div class="card-box-money"> {{dashboard.reservation_member_name }}</div>
+        <div class="padding">{{dashboard.reservation_telephone}}</div>
+        <div>{{ dashboard.reservation_product_name }} {{ dashboard.reservation_technician_name }}</div>
+      </div>
+      <ion-item text-center>
+        <div class="more">
+          <a (tap)="onFunctionClick('reservation')">立即查看</a>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="card-box" *ngIf="g.app_commission">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-icon class="icon28" item-left color="primary" name="ios-pie"></ion-icon>
+        <h3>我的提成</h3>
+        <p>今日{{ dashboard.commission_count }}单，本月累计{{ dashboard.month_commission_count }}单</p>
+      </ion-item>
+      <ion-row text-center (tap)="onFunctionClick('commission')">
+        <ion-col text-center>
+          <div class="card-box-money">+{{dashboard.month_commission_money}}</div>
+          <p class="card-box-label">累计</p>
+        </ion-col>
+      </ion-row>
+      <ion-item text-center>
+        <div class="more">
+          <a (tap)="onFunctionClick('commission')">立即查看</a>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,48 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}诊室</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="d.name" type="text"></ion-input>
+    </ion-item>
+    <button ion-item (tap)="select('parent')">
+      <ion-label>上级诊室</ion-label>
+      <ion-note *ngIf="d.parent_name" item-right>{{d.parent_name}}</ion-note>
+      <ion-note *ngIf="!d.parent_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>编号</ion-label>
+      <ion-input text-right item-right [(ngModel)]="d.code" type="text"></ion-input>
+    </ion-item>
+    <ion-item (tap)="select('doctors')">
+      <h2>医生</h2>
+      <p *ngFor="let i of d.hr_doctor_ids">{{i.name}}</p>
+    </ion-item>
+    <ion-item (tap)="select('operates')">
+      <h2>仪器操作老师</h2>
+      <p *ngFor="let i of d.hr_operate_ids">{{i.name}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>是否显示顾问</ion-label>
+      <ion-toggle text-right [(ngModel)]="d.is_display_adviser"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

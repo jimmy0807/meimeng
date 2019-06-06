@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color:#f5f5f5">
+  <ion-list *ngIf="mode=='reservation'" style="margin:0">
+    <ion-card *ngFor="let msg of msgs">
+      <ion-card-content>
+        <h2 style="font-size:1.8rem;">{{msg.title}}</h2>
+        <h3 color="light" style="margin:5px 0 10px 0;">{{msg.create_date}}</h3>
+        <p>{{msg.content}}</p>
+        <div style="margin:15px 0 0 0;">
+          <hr />
+          <a (tap)="showReservation()">立即查看</a>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="mode=='commission'" style="margin:0">
+    <ion-card *ngFor="let msg of msgs">
+      <ion-card-content>
+        <h2 style="font-size:1.8rem;">{{msg.title}}</h2>
+        <h3 color="light" style="margin:5px 0 10px 0;">{{msg.create_date}}</h3>
+        <p>{{msg.content}}</p>
+        <div style="margin:15px 0 0 0;">
+          <hr />
+          <a (tap)="showCommission()">立即查看</a>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="mode=='system'" style="margin:0">
+    <ion-item *ngFor="let msg of msgs">
+      <h2>
+        {{msg.title}}
+        <ion-note class="note">{{msg.display_date}}</ion-note>
+      </h2>
+      <p class="p">{{msg.content}}</p>
+    </ion-item>
+    <!--<ion-card *ngFor="let msg of msgs">
+      <ion-card-content>
+        <h2 style="font-size:1.8rem;">{{msg.title}}</h2>
+        <h3 color="light" style="margin:5px 0 10px 0;">{{msg.create_date}}</h3>
+        <p>{{msg.content}}</p>
+      </ion-card-content>
+    </ion-card>-->
+  </ion-list>
+  <ion-list *ngIf="mode=='5'" style="margin:0">
+    <ion-card *ngFor="let msg of msgs">
+      <ion-card-content>
+        <h2 style="font-size:1.8rem;">{{msg.title}}</h2>
+        <h3 color="light" style="margin:5px 0 10px 0;">{{msg.create_date}}</h3>
+        <p>{{msg.content}}</p>
+        <div style="margin:15px 0 0 0;">
+          <hr />
+          <a (tap)="showMember(msg)">立即跟进</a>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="mode=='6'" style="margin:0">
+    <ion-card *ngFor="let msg of msgs">
+      <ion-card-content>
+        <h2 style="font-size:1.8rem;">{{msg.title}}</h2>
+        <h3 color="light" style="margin:5px 0 10px 0;">{{msg.create_date}}</h3>
+        <p>{{msg.content}}</p>
+        <div style="margin:15px 0 0 0;">
+          <hr />
+          <a (tap)="showBirth()">立即跟进</a>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="mode=='9'" style="margin:0">
+    <ion-card *ngFor="let msg of msgs">
+      <ion-card-content>
+        <h2 style="font-size:1.8rem;">{{msg.title}}</h2>
+        <h3 color="light" style="margin:5px 0 10px 0;">{{msg.create_date}}</h3>
+        <p>{{msg.content}}</p>
+        <div style="margin:15px 0 0 0;">
+          <hr />
+          <a (tap)="showKpi()">立即跟进</a>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!msgs.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>您还没有{{title}}</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title>筛选</ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="cancel()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (tap)="complete()">
+        <span>完成</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="background-color: #f7f7f7;">
+  <ion-list inset>
+    <ion-item>
+      <ion-label text-left>开始日期</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="date_start" [max]="date_end" cancelText="取消" doneText="完成"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label text-left>结束日期</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="date_end" [max]="date_max" cancelText="取消" doneText="完成" (ionChange)="check_date()"></ion-datetime>
+    </ion-item>
+  </ion-list>
+</ion-content>

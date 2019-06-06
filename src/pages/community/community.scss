@@ -1,0 +1,61 @@
+page-community {
+  .list-box {
+    background-color: #FFFFFF;
+  }
+  .ion-scroll-box {
+    height: 160px;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+  .scroll-box {
+    text-align: center;
+    padding: 10px;
+  }
+  .scroll-month {
+    height: 40px;
+  }
+  .scroll-month-box {
+    width: 15%;
+  }
+  .content-bg {
+    background-color: #EBEFED;
+  }
+  .card-box {
+    min-height: 150px;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+  }
+    .more{
+    font-size:13px;padding-top:15px;border-top:solid 1px #EBEFED;
+  }
+  .more a{
+    color:#666;
+  }
+
+  .card-background-page {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+    }
+
+  }
+
+}

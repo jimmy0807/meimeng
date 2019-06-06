@@ -1,0 +1,73 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}病房</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="normal">
+        基本信息
+      </ion-segment-button>
+      <ion-segment-button value="bed">
+        床位
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list [hidden]="segment!=='normal'">
+    <ion-item>
+      <ion-label>名称</ion-label>
+      <ion-input text-right item-right [(ngModel)]="w.name" type="text"></ion-input>
+    </ion-item>
+    <button ion-item (tap)="select('department')">
+      <ion-label>科室</ion-label>
+      <ion-note *ngIf="w.departments_name" item-right>{{w.departments_name}}</ion-note>
+      <ion-note *ngIf="!w.departments_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('doctor')">
+      <ion-label>医生</ion-label>
+      <ion-note *ngIf="w.doctors_name" item-right>{{w.doctors_name}}</ion-note>
+      <ion-note *ngIf="!w.doctors_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('nurse')">
+      <ion-label>护士</ion-label>
+      <ion-note *ngIf="w.nurse_name" item-right>{{w.nurse_name}}</ion-note>
+      <ion-note *ngIf="!w.nurse_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>类型</ion-label>
+      <ion-select [(ngModel)]="w.category" okText="确定" cancelText="关闭">
+        <ion-option value="normal">普通病房</ion-option>
+        <ion-option value="vip">VIP病房</ion-option>
+        <ion-option value="special">特殊病房</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list [hidden]="segment!=='bed'">
+    <ion-item-sliding *ngFor="let i of w.bed_ids">
+      <button ion-item (tap)="editBed(i)">
+        <h2>{{i.name}}</h2>
+        <ion-note item-right>{{i.state_name}}</ion-note>
+      </button>
+      <ion-item-options>
+        <button (tap)="deleteBed(i)" ion-button color="danger">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button *ngIf="segment==='normal'" (tap)="save()" type="submit" color="primary" block>保存</button>
+      <button ion-button *ngIf="segment==='bed'" (tap)="addBed()" type="submit" color="primary" block>添加</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

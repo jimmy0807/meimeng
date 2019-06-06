@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SameReplaceViewController">
+            <connections>
+                <outlet property="tableView" destination="EWi-5e-t9c" id="3Vn-qu-KF0"/>
+                <outlet property="view" destination="rFP-2K-w8p" id="xch-BO-Qik"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rFP-2K-w8p">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EWi-5e-t9c">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="3yf-RD-mdu"/>
+                        <outlet property="delegate" destination="-1" id="Rx3-xr-GhQ"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kd1-9L-wR5">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-PK-sxz">
+                            <rect key="frame" x="15" y="10" width="345" height="40"/>
+                            <state key="normal" title="添加" backgroundImage="member_green_bg.png"/>
+                            <connections>
+                                <action selector="addBtnPressed:" destination="-1" eventType="touchUpInside" id="v8Y-6s-vTJ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="DnS-OZ-HTx"/>
+                        <constraint firstAttribute="trailing" secondItem="jCf-PK-sxz" secondAttribute="trailing" constant="15" id="SOG-uY-hBH"/>
+                        <constraint firstItem="jCf-PK-sxz" firstAttribute="centerY" secondItem="Kd1-9L-wR5" secondAttribute="centerY" id="pHy-2U-emb"/>
+                        <constraint firstItem="jCf-PK-sxz" firstAttribute="leading" secondItem="Kd1-9L-wR5" secondAttribute="leading" constant="15" id="pSu-T3-WtY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EWi-5e-t9c" firstAttribute="top" secondItem="rFP-2K-w8p" secondAttribute="top" id="1jb-9v-NRN"/>
+                <constraint firstAttribute="trailing" secondItem="Kd1-9L-wR5" secondAttribute="trailing" id="38V-CW-TCh"/>
+                <constraint firstAttribute="bottom" secondItem="Kd1-9L-wR5" secondAttribute="bottom" id="40U-FG-UZM"/>
+                <constraint firstItem="Kd1-9L-wR5" firstAttribute="leading" secondItem="rFP-2K-w8p" secondAttribute="leading" id="Fbn-XI-bnJ"/>
+                <constraint firstAttribute="trailing" secondItem="EWi-5e-t9c" secondAttribute="trailing" id="csL-zt-DzZ"/>
+                <constraint firstItem="EWi-5e-t9c" firstAttribute="leading" secondItem="rFP-2K-w8p" secondAttribute="leading" id="jvI-Rw-CHp"/>
+                <constraint firstItem="Kd1-9L-wR5" firstAttribute="top" secondItem="EWi-5e-t9c" secondAttribute="bottom" id="pQH-rb-vrs"/>
+            </constraints>
+            <point key="canvasLocation" x="223.5" y="81.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

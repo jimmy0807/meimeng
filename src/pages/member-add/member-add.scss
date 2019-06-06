@@ -1,0 +1,44 @@
+﻿page-member-add {
+  .avatar {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .bottom-10 {
+    margin: 0 0 10px 0;
+  }
+
+  .bottom-10 input {
+    font-size: 15px;
+    color: rgb(146,146,146);
+  }
+
+  .bottom-10 ion-note {
+    color: rgb(146,146,146);
+    font-size: 15px;
+  }
+
+  .bottom-10 .select-text {
+    font-size: 15px;
+    color: rgb(146,146,146);
+  }
+
+  .bottom-10 ion-label {
+    font-size: 15px;
+  }
+
+  .bottom-10 ion-item {
+    min-height: 50px;
+  }
+
+  .bottom-10 button {
+    min-height: 50px;
+  }
+
+  .clr-146 {
+    color: rgb(146,146,146);
+  }
+}

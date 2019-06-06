@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>充值</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <div class="div-info">
+    <div>
+      <p>售价</p>
+      <h1>￥{{t | number:'1.2-2'}}</h1>
+    </div>
+    <!--<h3>充值介绍：</h3>-->
+    <!--<p class="p-info">-->
+      <!--1、会员每消费达到2千元，余额会自动扣除100元；-->
+      <!--2、赠送项目不算在内-->
+    <!--</p>-->
+  </div>
+  <ion-list class="div-pay">
+    <h2>支付方式 </h2>
+    <div class="div-pt" (tap)="select('wx')">
+      <img src="assets/img/wechat.png" />
+      <p>微信支付</p>
+      <ion-checkbox name="pay" [(ngModel)]="wx" disabled></ion-checkbox>
+    </div>
+    <!--<div class="div-pt" (tap)="select('ali')">-->
+      <!--<img src="assets/img/alipay.png" />-->
+      <!--<p>支付宝</p>-->
+      <!--<ion-checkbox name="pay" [(ngModel)]="ali" disabled></ion-checkbox>-->
+    <!--</div>-->
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <div class="div-footer">
+    <div class="div-pay-info">
+      <p>实付款：<span>¥{{t | number:'1.2-2'}}</span></p>
+    </div>
+    <div class="div-btn" (tap)="pay()">前往付款</div>
+  </div>
+</ion-footer>

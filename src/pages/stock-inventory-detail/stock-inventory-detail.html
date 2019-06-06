@@ -1,0 +1,55 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-list style="margin:0">
+    <ion-item>
+      <ion-label>名称</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="item.name" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>盘点库位</ion-label>
+      <ion-select [(ngModel)]="item.location_id" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let l of locations" value="{{l.id}}">{{l.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>类型</ion-label>
+      <ion-select [(ngModel)]="item.location_id" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let l of locations" value="{{l.id}}">{{l.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <br />
+  <ion-list>
+    <ion-item>
+      <h2>
+        盘点明细
+      </h2>
+      <p class="item-div" item-right>
+        <ion-icon name="md-barcode" class="item-icon"></ion-icon>
+        <ion-icon name="md-add" class="item-icon" (tap)="addProducts()"></ion-icon>
+      </p>
+    </ion-item>
+    <ion-item>
+      <h2>产品</h2>
+      <p>理论数量：</p>
+      <ion-note item-right>12</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <div class="div-footer">
+    <button ion-button full class="ele-f1 btn-w">取消</button>
+    <button ion-button full class="ele-f2 btn-b" color="primary">提交</button>
+  </div>
+</ion-footer>
+

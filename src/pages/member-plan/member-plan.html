@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()">
+        <span>保存</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-back">
+  <ion-list class="bottom-10">
+    <!--<button ion-item (tap)="select('employee')">
+      <ion-label>顾问</ion-label>
+      <ion-note item-right>{{p.employee_name || '请选择'}}</ion-note>
+    </button>-->
+    <button ion-item (tap)="select('designers')">
+      <ion-label>设计师</ion-label>
+      <ion-note item-right>{{p.designers_name || '请选择'}}</ion-note>
+    </button>
+    <button ion-item (tap)="select('doctor')">
+      <ion-label>医生</ion-label>
+      <ion-note item-right>{{p.doctor_name || '请选择'}}</ion-note>
+    </button>
+    <button ion-item (tap)="select('director')">
+      <ion-label>设计总监</ion-label>
+      <ion-note item-right>{{p.director_employee_name || '请选择'}}</ion-note>
+    </button>
+    <button ion-item (tap)="select('department')" no-lines>
+      <ion-label>科室</ion-label>
+      <ion-note item-right>{{p.departments_name || '请选择'}}</ion-note>
+    </button>
+    <div class="divider-light" style="display:flex">
+      <span style="flex:1">订单项目</span>
+      <span class="c-primary" style="margin-right:15px" (tap)="add()">添加</span>
+    </div>
+    <ion-list class="list-line">
+      <div class="div-line" *ngFor="let l of p.card_lines">
+        <p class="p-name">{{l.name}}</p>
+        <ion-icon name="remove-circle" color="primary" (tap)="minusQty(l)"></ion-icon>
+        <p class="p-qty">{{l.qty}}</p>
+        <ion-icon name="add-circle" color="primary" (tap)="addQty(l)"></ion-icon>
+      </div>
+      <div class="div-line" *ngFor="let l of p.lines">
+        <p class="p-name">{{l.name}}</p>
+        <ion-icon name="remove-circle" color="primary" (tap)="minusQty(l)"></ion-icon>
+        <p class="p-qty">{{l.qty}}</p>
+        <ion-icon name="add-circle" color="primary" (tap)="addQty(l)"></ion-icon>
+      </div>
+    </ion-list>
+    <div class="divider-light">
+      医生备注
+    </div>
+    <ion-textarea placeholder="请输入" [(ngModel)]="p.remark" rows="5" class="text-area"></ion-textarea>
+    <div class="divider-light">
+      财务备注
+    </div>
+    <ion-textarea placeholder="请输入" [(ngModel)]="p.note" rows="5" class="text-area"></ion-textarea>
+    <div class="divider-light" *ngIf="p.operate">
+      单据信息
+    </div>
+    <ion-list class="list-line" *ngIf="p.operate">
+      <ion-item style="border-top:0">
+        <ion-label>开单人</ion-label>
+        <ion-note item-right>{{p.operate.create_name}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>开单时间</ion-label>
+        <ion-note item-right>{{p.operate.create_date}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>排号</ion-label>
+        <ion-note item-right>{{p.operate.queue_no}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>单号</ion-label>
+        <ion-note item-right>{{p.operate.name}}</ion-note>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>
+<!--<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>提交</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>-->

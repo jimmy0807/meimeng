@@ -1,0 +1,39 @@
+﻿page-message {
+  .note {
+    position: absolute;
+    right: 4%;
+    margin: 2px 0px;
+  }
+
+  .red-point {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 12px;
+    width: 12px;
+    border-radius: 6px;
+    background-color: red;
+  }
+
+  .icon-large {
+    font-size: 24px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+  }
+
+  .icon1 {
+    background-color: #1d82d2;
+  }
+
+  .icon2 {
+    background-color: #FF6E3D;
+  }
+
+  .icon3 {
+    background-color: #0BA9FA;
+  }
+}

@@ -1,0 +1,35 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()">
+        <span>保存</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color:#f5f5f5">
+  <div class="item-div" *ngIf="key==='name'">
+    <ion-input #input type="text" [(ngModel)]="value" onfocus="this.select()" clearInput="true"></ion-input>
+  </div>
+  <div class="item-div" *ngIf="key==='mobile_phone'">
+    <ion-input #input type="tel" maxlength="11" [(ngModel)]="value" onfocus="this.select()" clearInput></ion-input>
+  </div>
+  <div class="item-div" *ngIf="key==='work_email'">
+    <ion-input #input [(ngModel)]="value" onfocus="this.select()" clearInput></ion-input>
+  </div>
+  <div class="item-div" *ngIf="key==='birthday'">
+    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="value" doneText="确定" cancelText="取消"></ion-datetime>
+  </div>
+  <ion-list *ngIf="key==='gender'" radio-group [(ngModel)]="value">
+    <ion-item>
+      <ion-label>男</ion-label>
+      <ion-radio value="male"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>女</ion-label>
+      <ion-radio value="female"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

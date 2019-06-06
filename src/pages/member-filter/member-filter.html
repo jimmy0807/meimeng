@@ -1,0 +1,88 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>会员筛选</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>生日</ion-label>
+      <ion-select okText="确定" cancelText="关闭" name="birthday_month"
+                  [(ngModel)]="memberFilterOptions.birthday_month" #birthday_month="ngModel">
+        <ion-option value="01">1月</ion-option>
+        <ion-option value="02">2月</ion-option>
+        <ion-option value="03">3月</ion-option>
+        <ion-option value="04">4月</ion-option>
+        <ion-option value="05">5月</ion-option>
+        <ion-option value="06">6月</ion-option>
+        <ion-option value="07">7月</ion-option>
+        <ion-option value="08">8月</ion-option>
+        <ion-option value="09">9月</ion-option>
+        <ion-option value="10">10月</ion-option>
+        <ion-option value="11">11月</ion-option>
+        <ion-option value="12">12月</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>指定顾问</ion-label>
+      <ion-select okText="确定" cancelText="关闭" name="employee_id"
+                  [(ngModel)]="memberFilterOptions.employee_id" #employee_id="ngModel">
+        <ion-option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>多少天内未到店</ion-label>
+      <ion-input text-right item-right name="un_consume_day" type="number" placeholder="天数"
+                 [(ngModel)]="memberFilterOptions.un_consume_day" #un_consume_day="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>多少天内到店</ion-label>
+      <ion-input text-right item-right name="consume_day" type="number" placeholder="天数"
+                 [(ngModel)]="memberFilterOptions.consume_day" #consume_day="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>储值余额(大于)</ion-label>
+      <ion-input text-right item-right name="max_amount" type="number" placeholder="金额"
+                 [(ngModel)]="memberFilterOptions.max_amount" #max_amount="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>储值余额(小于)</ion-label>
+      <ion-input text-right item-right name="min_amount" type="number" placeholder="金额"
+                 [(ngModel)]="memberFilterOptions.min_amount" #min_amount="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>累计充值(大于)</ion-label>
+      <ion-input text-right item-right name="max_recharge_amount" type="number" placeholder="金额"
+                 [(ngModel)]="memberFilterOptions.max_recharge_amount" #max_recharge_amount="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>累计充值(小于)</ion-label>
+      <ion-input text-right item-right name="min_recharge_amount" type="number" placeholder="金额"
+                 [(ngModel)]="memberFilterOptions.min_recharge_amount" #min_recharge_amount="ngModel"></ion-input>
+    </ion-item>
+    <!--<ion-item>
+      <ion-label>累计消费(大于)</ion-label>
+      <ion-input text-right item-right name="max_consumption_amount" type="number" placeholder="金额"
+                 [(ngModel)]="memberFilterOptions.max_consumption_amount" #max_consumption_amount="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>累计消费(小于)</ion-label>
+      <ion-input text-right item-right name="min_consumption_amount" type="number" placeholder="金额"
+                 [(ngModel)]="memberFilterOptions.min_consumption_amount" #min_consumption_amount="ngModel"></ion-input>
+    </ion-item>-->
+
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="onCancel()" color="danger" full>重置</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (tap)="onConfirm()" color="primary" full>确定</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

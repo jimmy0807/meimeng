@@ -1,0 +1,32 @@
+$categories: ( ionic: color($colors, primary), draft: #32db64, approved: #1d82d2, done: #333, cancel: #ef473a, billed:#333, refuse:#ef473a, unlink: #ef473a, );
+@function auxiliary-categories() {
+  @return map-remove($categories);
+}
+
+page-reservation {
+  @each $track,
+  $value in auxiliary-categories() {
+    ion-item-sliding[track=#{$track}] ion-label {
+      border-left: 2px solid $value;
+      padding-left: 10px;
+    }
+  }
+  .done {
+    color: #333;
+  }
+  .billed {
+    color: #333;
+  }
+  .unlink {
+    color: #ef473a;
+  }
+  .cancel {
+    color: #ef473a;
+  }
+  .draft {
+    color: #32db64;
+  }
+  .approved {
+    color: #1d82d2;
+  }
+}

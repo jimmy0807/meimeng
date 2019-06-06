@@ -1,0 +1,55 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}回访计划</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>名称<span class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="w.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>回访类型</ion-label>
+      <ion-select [(ngModel)]="w.category" okText="确定" cancelText="关闭">
+        <ion-option value="potential">潜在客户跟进</ion-option>
+        <ion-option value="operate">术后回访</ion-option>
+        <ion-option value="old">老客户开发</ion-option>
+        <ion-option value="day">日常跟进</ion-option>
+        <ion-option value="festival">投诉跟进</ion-option>
+        <ion-option value="other">其他</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>几天后回访</ion-label>
+      <ion-input text-right item-right [(ngModel)]="w.days" type="number"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">
+      分类
+      <span class="c-primary" style="float:right" (tap)="addCat()">添加</span>
+    </ion-item-divider>
+    <ion-item-sliding *ngFor="let i of w.category_ids">
+      <ion-item>
+        <h2>{{i.name}}</h2>
+      </ion-item>
+      <ion-item-options>
+        <button (tap)="deleteCat(i)" ion-button color="danger">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

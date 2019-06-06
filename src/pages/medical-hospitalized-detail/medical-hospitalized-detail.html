@@ -1,0 +1,134 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}住院管理</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="normal">
+        基本信息
+      </ion-segment-button>
+      <ion-segment-button value="line">
+        住院消耗
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list [hidden]="segment!=='normal'">
+    <ion-item>
+      <ion-label>名称<span class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="o.name" type="text"></ion-input>
+    </ion-item>
+    <button ion-item (tap)="select('mem')">
+      <ion-label>病人<span class="c-danger">*</span></ion-label>
+      <ion-note *ngIf="o.member_name" item-right>{{o.member_name}}</ion-note>
+      <ion-note *ngIf="!o.member_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>入院类型</ion-label>
+      <ion-select [(ngModel)]="o.category" okText="确定" cancelText="关闭">
+        <ion-option value="normal">常规</ion-option>
+        <ion-option value="urgent">紧急</ion-option>
+        <ion-option value="other">其他</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>状态</ion-label>
+      <ion-select [(ngModel)]="o.state" okText="确定" cancelText="关闭">
+        <ion-option value="checking">住院中</ion-option>
+        <ion-option value="done">已出院</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-item (tap)="select('bed')">
+      <ion-label>病床<span class="c-danger">*</span></ion-label>
+      <ion-note *ngIf="o.bed_name" item-right>{{o.bed_name}}</ion-note>
+      <ion-note *ngIf="!o.bed_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('ward')">
+      <ion-label>病房</ion-label>
+      <ion-note *ngIf="o.ward_name" item-right>{{o.ward_name}}</ion-note>
+      <ion-note *ngIf="!o.ward_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('des')">
+      <ion-label>设计师</ion-label>
+      <ion-note *ngIf="o.designers_name" item-right>{{o.designers_name}}</ion-note>
+      <ion-note *ngIf="!o.designers_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('emp')">
+      <ion-label>顾问/业务员</ion-label>
+      <ion-note *ngIf="o.employee_name" item-right>{{o.employee_name}}</ion-note>
+      <ion-note *ngIf="!o.employee_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('doc')">
+      <ion-label>主治医生<span class="c-danger">*</span></ion-label>
+      <ion-note *ngIf="o.doctors_name" item-right>{{o.doctors_name}}</ion-note>
+      <ion-note *ngIf="!o.doctors_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>住院时间</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="o.check_in_date" doneText="确定" cancelText="取消"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>出院时间</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="o.check_out_date" doneText="确定" cancelText="取消"></ion-datetime>
+    </ion-item>
+    <button ion-item (tap)="select('rec')">
+      <ion-label>病历卡</ion-label>
+      <ion-note *ngIf="o.records_name" item-right>{{o.records_name}}</ion-note>
+      <ion-note *ngIf="!o.records_name" item-right>请选择</ion-note>
+    </button>
+    <br />
+    <button ion-item (tap)="select('ope')">
+      <ion-label>结算单</ion-label>
+      <ion-note *ngIf="o.operate_name" item-right>{{o.operate_name}}</ion-note>
+      <ion-note *ngIf="!o.operate_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>是否结算</ion-label>
+      <ion-toggle text-right [(ngModel)]="o.is_payment"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>入院原因</ion-label>
+      <ion-input text-right item-right [(ngModel)]="o.reason" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>护理计划 </ion-label>
+      <ion-input text-right item-right [(ngModel)]="o.medical_plant" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>主治医生意见 </ion-label>
+      <ion-input text-right item-right [(ngModel)]="o.doctors_note" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>其他信息 </ion-label>
+      <ion-input text-right item-right [(ngModel)]="o.note" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list [hidden]="segment!=='line'">
+    <ion-item-sliding *ngFor="let i of o.line_ids">
+      <button ion-item (tap)="editLine(i)">
+        <h2>{{i.name}}</h2>
+        <p>{{i.operate_date}}</p>
+      </button>
+      <ion-item-options>
+        <button (tap)="deleteLine(i)" ion-button color="danger">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button *ngIf="segment==='normal'" (tap)="save()" type="submit" color="primary" block>保存</button>
+      <button ion-button *ngIf="segment==='line'" (tap)="addLine()" type="submit" color="primary" block>添加</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

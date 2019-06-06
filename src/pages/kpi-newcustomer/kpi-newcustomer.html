@@ -1,0 +1,23 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>新客入会</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let line of operates">
+      <h2>{{line.member_name}}</h2>
+      <h3>日期:{{line.create_date}}</h3>
+      <p>登记人:{{line.create_name}}</p>
+      <ion-note item-right>{{line.member_mobile}}</ion-note>
+    </ion-item>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!operates.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>暂无新客入会</p>
+    </div>
+  </div>
+</ion-content>

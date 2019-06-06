@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AttributeLineHeadView" id="U6b-Vx-4bR" customClass="AttributeLineHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="62"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFA-BL-7NE">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-Qk-AMq">
+                    <state key="normal" backgroundImage="attribute_line_delete_n.png"/>
+                    <state key="highlighted" backgroundImage="attribute_line_delete_h.png"/>
+                    <connections>
+                        <action selector="deleteBtnPressed:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="k13-Xa-yci"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="W4v-Qk-AMq" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="9az-dB-Vbt"/>
+                <constraint firstItem="JFA-BL-7NE" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="Ffh-Yw-2rH"/>
+                <constraint firstItem="JFA-BL-7NE" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="15" id="P61-An-0FK"/>
+                <constraint firstAttribute="trailing" secondItem="W4v-Qk-AMq" secondAttribute="trailing" constant="15" id="qd8-9p-nVK"/>
+            </constraints>
+            <connections>
+                <outlet property="deleteBtn" destination="W4v-Qk-AMq" id="m32-QU-2mo"/>
+                <outlet property="titleLabel" destination="JFA-BL-7NE" id="1kn-XZ-SbT"/>
+            </connections>
+            <point key="canvasLocation" x="-213" y="83"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="attribute_line_delete_h.png" width="32" height="32"/>
+        <image name="attribute_line_delete_n.png" width="32" height="32"/>
+    </resources>
+</document>

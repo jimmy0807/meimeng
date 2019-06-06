@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      选择主推项目
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span >取消</span>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (tap)="onConfirm()">
+        <span  showWhen="ios">确认</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar [(ngModel)]="keyword" placeholder="按名称、编号、简称搜索" showCancelButton color="danger" cancelButtonText="搜索" (ionCancel)="onCancel($event)"
+      (ionInput)="onInput($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item *ngFor="let product of products">
+    <ion-checkbox ng-checked="false" [(ngModel)]="product.checked"></ion-checkbox>
+    <ion-label>{{product.name}}</ion-label>
+  </ion-item>
+  <ion-infinite-scroll *ngIf="keyword===''" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GiveWeikaCardViewController">
+            <connections>
+                <outlet property="tableView" destination="MY1-j4-Oyf" id="IPG-Ud-qQ6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MY1-j4-Oyf">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="G0F-Ym-beh"/>
+                        <outlet property="delegate" destination="-1" id="Ac4-Li-wFf"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpe-Ms-eGT">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekK-az-ma4">
+                            <state key="normal" title="赠送" backgroundImage="member_green_bg.png"/>
+                            <connections>
+                                <action selector="giveBtnPressed:" destination="-1" eventType="touchUpInside" id="Klt-hN-URi"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ekK-az-ma4" secondAttribute="trailing" constant="20" id="0Nb-1L-eFN"/>
+                        <constraint firstItem="ekK-az-ma4" firstAttribute="leading" secondItem="tpe-Ms-eGT" secondAttribute="leading" constant="20" id="0t9-aZ-GRR"/>
+                        <constraint firstItem="ekK-az-ma4" firstAttribute="centerY" secondItem="tpe-Ms-eGT" secondAttribute="centerY" id="JIc-1q-Bt4"/>
+                        <constraint firstAttribute="height" constant="60" id="bPc-JD-bcw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="tpe-Ms-eGT" secondAttribute="trailing" id="7ht-k6-Mdu"/>
+                <constraint firstItem="MY1-j4-Oyf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PiG-Me-Hfu"/>
+                <constraint firstItem="MY1-j4-Oyf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WIu-4h-g0I"/>
+                <constraint firstAttribute="bottom" secondItem="tpe-Ms-eGT" secondAttribute="bottom" id="fbm-1s-UkV"/>
+                <constraint firstItem="tpe-Ms-eGT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jnf-I7-yTX"/>
+                <constraint firstAttribute="trailing" secondItem="MY1-j4-Oyf" secondAttribute="trailing" id="sgy-7K-9WG"/>
+                <constraint firstItem="tpe-Ms-eGT" firstAttribute="top" secondItem="MY1-j4-Oyf" secondAttribute="bottom" id="tQv-8E-cEm"/>
+            </constraints>
+            <point key="canvasLocation" x="-122" y="38"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

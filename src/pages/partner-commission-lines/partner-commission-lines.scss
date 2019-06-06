@@ -1,0 +1,36 @@
+page-partner-commission-lines {
+  .p-amount {
+    color: rgb(112,109,110);
+    font-size: 17px;
+    margin: 0 7px 0 0 !important;
+  }
+
+  .div-date {
+    background-color: white;
+    color: rgb(153,153,153);
+    padding: 10px 0 10px 15px;
+    border-bottom: 1px solid rgba(29,29,38,0.05);
+  }
+
+  .list-item {
+    margin-bottom: 10px;
+
+    h2 {
+      background-color: white;
+      margin: 0;
+      padding: 10px 15px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      color: rgb(37,37,37);
+      font-size: 20px;
+    }
+
+    .span-amount {
+      float: right;
+      color: rgb(255,72,72);
+    }
+
+    .p-date {
+      margin-top: 5px;
+    }
+  }
+}

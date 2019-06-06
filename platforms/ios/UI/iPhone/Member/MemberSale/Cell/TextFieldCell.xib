@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="KGk-i7-Jjw" customClass="TextFieldCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总价" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U7-3J-a53">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-tQ-D8Z"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x5y-6b-wdR">
+                        <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="XMG-tQ-D8Z" secondAttribute="trailing" constant="15" id="0KJ-3w-aVk"/>
+                    <constraint firstItem="0U7-3J-a53" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="9UN-ir-2Xa"/>
+                    <constraint firstItem="x5y-6b-wdR" firstAttribute="leading" secondItem="0U7-3J-a53" secondAttribute="trailing" constant="8" id="GFL-sp-ISq"/>
+                    <constraint firstItem="0U7-3J-a53" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GwL-OL-pGb"/>
+                    <constraint firstAttribute="trailing" secondItem="x5y-6b-wdR" secondAttribute="trailing" constant="15" id="TGD-kD-38Z"/>
+                    <constraint firstAttribute="bottom" secondItem="XMG-tQ-D8Z" secondAttribute="bottom" id="aOF-cg-HQQ"/>
+                    <constraint firstAttribute="bottom" secondItem="x5y-6b-wdR" secondAttribute="bottom" id="rg4-8t-MB6"/>
+                    <constraint firstItem="x5y-6b-wdR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vth-uj-l7U"/>
+                    <constraint firstItem="XMG-tQ-D8Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="zKY-b6-qrU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lineImgView" destination="XMG-tQ-D8Z" id="Pbd-kN-YMm"/>
+                <outlet property="lineLeadingConstraint" destination="zKY-b6-qrU" id="HkX-Dz-i8P"/>
+                <outlet property="lineTailingConstraint" destination="0KJ-3w-aVk" id="nOt-NF-0Px"/>
+                <outlet property="titleLabel" destination="0U7-3J-a53" id="bRH-X3-uRU"/>
+                <outlet property="valueTextFiled" destination="x5y-6b-wdR" id="mfH-Ce-JP5"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+    </resources>
+</document>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>活动签到</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <div class="div-card">
+    <div class="div-img" [style.background-image]=" 'url('+ event.image +')' | safe:'style'">
+      <div class="div-color">
+        <div class="div-title">
+          <h2>{{event.name}}</h2>
+          <p>活动时间：{{event.start_date}} - {{event.end_date}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="div-input">
+      <ion-item no-lines style="padding:0">
+        <ion-input placeholder="请输入活动核销码" clearInput [(ngModel)]="code"></ion-input>
+      </ion-item>
+      <ion-icon name="ios-barcode-outline" (tap)="scan()"></ion-icon>
+    </div>
+    <div class="b-sign {{code ? 'b-sign-a' : 'b-sign-d'}}" (tap)="sign()">马上签到</div>
+    <div class="div-bottom">
+      <p>已售卖{{event.total_attendee}}张入场劵，其中{{event.count}}人已签到</p>
+      <a (tap)="show()">立即查看</a>
+    </div>
+  </div>
+</ion-content>

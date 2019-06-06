@@ -1,0 +1,62 @@
+page-schedule {
+.calendar {
+    font-size: calc(0.65em + 1vmin);
+    color: #333;
+    background-color: #FFFFFF;
+    padding-bottom: 5px;
+  }
+  .calendar-header-row {
+    background-color: #1d82d2;
+    color: #FFFFFF;
+  }
+  .calendar-col-btn {
+    width: 100%;
+    font-size: 16px;
+    height: 40px;
+    background-color: #FFFFFF;
+  }
+  .pass-calendar-col-btn {
+    background-color: transparent;
+  }
+  .calendar-header-col {
+    text-align: center;
+    font-size: calc(0.55em + 1vmin);
+  }
+  .calendar-col {
+    padding: 0px;
+    text-align: center;
+    border-bottom: 1px solid #FAFAFA;
+  }
+  .today {
+    color: red;
+  }
+  .diff-month {
+    background-color: transparent;
+    border: 0px;
+    color: #FFFFFF;
+  }
+  .select-date {
+    color: #FFFFFF;
+    background-color: #1d82d2;
+  }
+  .time-text {
+    font-size: 16px;
+  }
+  .it {
+    font-size: 12px;
+    height: 15px;
+  }
+  .it-busy {
+    border-bottom: solid 1px red;
+  }
+  .events {
+    color: red;
+  }
+
+  .header{
+    font-size:16px;
+  }
+  .point{
+    color:#F5A623;font-size:10px;
+  }
+}

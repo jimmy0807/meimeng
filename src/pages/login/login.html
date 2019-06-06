@@ -1,0 +1,50 @@
+﻿<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      登录
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss(false)">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="logo">
+  </div>
+  <ion-list padding>
+    <form #loginForm="ngForm" novalidate>
+      <ion-item>
+        <ion-label floating color="primary">账号/手机号码</ion-label>
+        <ion-input [(ngModel)]="login.username" name="username" type="tel" #username="ngModel" spellcheck="false" autocapitalize="off"
+                   maxlength="11"
+                   required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        请输入账号/手机号码
+      </p>
+
+      <ion-item>
+        <ion-label floating color="primary">密码</ion-label>
+        <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        请输入密码
+      </p>
+      <ion-row responsive-sm>
+        <ion-col>
+          <button class="btn-box" ion-button (tap)="onLogin(loginForm)" type="submit" color="primary" block>登录</button>
+
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+  <div class="weixin-box">
+    <button ion-button icon-left clear (tap)="resetPwd()">
+      忘记密码？
+    </button>
+  </div>
+</ion-content>

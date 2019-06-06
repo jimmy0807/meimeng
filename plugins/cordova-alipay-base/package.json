@@ -1,0 +1,85 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/xueron/cordova-alipay-base",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/xueron/cordova-alipay-base",
+        "spec": "git+https://github.com/xueron/cordova-alipay-base.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:xueron/cordova-alipay-base.git",
+          "sshUrl": "git+ssh://git@github.com/xueron/cordova-alipay-base.git",
+          "httpsUrl": "git+https://github.com/xueron/cordova-alipay-base.git",
+          "gitUrl": "git://github.com/xueron/cordova-alipay-base.git",
+          "shortcut": "github:xueron/cordova-alipay-base",
+          "directUrl": "https://raw.githubusercontent.com/xueron/cordova-alipay-base/master/package.json"
+        }
+      },
+      "/Users/bornmacpro/Desktop/meimeng/node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/xueron/cordova-alipay-base.git",
+  "_id": "cordova-alipay-base@0.0.10",
+  "_inCache": true,
+  "_location": "/cordova-alipay-base",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/xueron/cordova-alipay-base",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/xueron/cordova-alipay-base",
+    "spec": "git+https://github.com/xueron/cordova-alipay-base.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:xueron/cordova-alipay-base.git",
+      "sshUrl": "git+ssh://git@github.com/xueron/cordova-alipay-base.git",
+      "httpsUrl": "git+https://github.com/xueron/cordova-alipay-base.git",
+      "gitUrl": "git://github.com/xueron/cordova-alipay-base.git",
+      "shortcut": "github:xueron/cordova-alipay-base",
+      "directUrl": "https://raw.githubusercontent.com/xueron/cordova-alipay-base/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/xueron/cordova-alipay-base.git#1e353bc218431db21ca3a1fb4695f457f471a1af",
+  "_shasum": "ea3f8ceade28e58f5eee490d0311a0e424e6eee9",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/xueron/cordova-alipay-base",
+  "_where": "/Users/bornmacpro/Desktop/meimeng/node_modules",
+  "cordova_name": "Alipay Basic Mobile Payment Plugin",
+  "dependencies": {},
+  "description": "阿里支付移动支付Cordova插件",
+  "devDependencies": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "gitHead": "1e353bc218431db21ca3a1fb4695f457f471a1af",
+  "issue": "https://github.com/xueron/cordova-alipay-base/issues",
+  "keywords": [
+    "alipay",
+    "阿里支付",
+    "支付宝"
+  ],
+  "license": "MIT license",
+  "name": "cordova-alipay-base",
+  "optionalDependencies": {},
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "readme": "# cordova-alipay-base \n\nCordova 支付宝基础功能插件\n\n# 功能\n\n仅实现APP的支付宝支付功能\n\n# 安装\n\n0. 背景\n\n本插件来源于 https://github.com/pipitang/cordova-alipay-base ，根据最新的SDK做了修正。\n\n配套提交了ionic-native插件。\n\n1. 运行\n\n```\ncordova plugin add https://github.com/xueron/cordova-alipay-base --variable APP_ID=your_app_id\n\n```\n\n2. cordova各种衍生命令行都应该支持，例如phonegap或者ionic。\n\n# 使用方法\n\n## 注意\n\n阿里官方的例子只是演示了支付参数的调用，在实际项目中决不可使用。在客户端使用appkey，更别提private_key了，危险隐患重重。\n\n安全的使用方式应该是由服务端保存key，然后根据客户端传来的订单id，装载订单内容，生成支付字符串，最后由客户端提交给支付网关。\n\n## API\n\n### 支付API\n\n\n```\n    Alipay.Base.pay(parameters, success, failure); \n\n```\n\n此处第一个参数为json对象，请从服务端获取，直接传给改方法。\n客户端会对服务端返回的JSON对象属性进行排序，js层不需要关心。具体服务端参数合成，java代码请参照一下内容及阿里官方文档，注意createLinkString上得注释：\n\n在项目中客户端使用如下：\n```\norderService.checkout(orderId, $scope.selectPay).then(function (parameters) {\n    if ('Wechat' === $scope.selectPay) callNativeWexinPayment(parameters); {\n    else Alipay.Base.pay(parameters, function(result){\n        if(result.resultStatus==='9000'||result.resultStatus==='8000') finishPayment();\n        else showPaymentError(null);\n    }, showPaymentError);\n}\n\n```\n\nionic 2使用方法如下：\n```\nimport { Alipay, AlipayOrder } from 'ionic-native';\n\n......\n  payInfo: AlipayOrder; // 从服务器端返回。\n\n......\n    Alipay.pay(this.payInfo)\n      .then(res => {\n        console.log(res);\n        this.payResult = res;\n      }, err => {\n        console.log(err);\n        this.payResult = err;\n      })\n      .catch(e => {\n        console.log(e);\n        this.payResult = e;\n      });\n......\n\n```\n\n服务端如下，(PHP)JSON返回：\n\n```\n                //组装系统参数\n                $params[\"app_id\"] = $alipayOrder->app_id;\n                $params[\"method\"] = 'alipay.trade.app.pay';\n                $params[\"format\"] = 'json';\n                $params[\"charset\"] = 'UTF-8';\n                $params[\"sign_type\"] = 'RSA';\n                $params[\"timestamp\"] = date(\"Y-m-d H:i:s\");\n                $params[\"version\"] = '1.0';\n                $params[\"notify_url\"] = $alipayOrder->notify_url;\n                $params[\"biz_content\"] = $alipayOrder->biz_content;\n                $sign = $this->getDI()->get(AlipayService::class)->sign($params);\n                $this->logger->debug(\"支付签名=$sign\");\n                $params['sign'] = $sign;\n\n                //\n                array_walk($params, function (&$v, $k) {\n                    $v = urlencode($v);\n                });\n\n                return json_encode($params);\n\n```\n\n# FAQ\n\nQ: Android如何调试？\n\nA: 如果怀疑插件有BUG，请使用tag名称为cordova-alipay-base查看日志。\n\nQ: Windows 版本？\n\nA: 这个很抱歉，有个哥们买了Lumia之后一直在抱怨应用太少，你也很不幸，有这个需求：） 欢迎 pull request.\n\n\n# TODO\n\n# 许可证\n\n[MIT LICENSE](http://opensource.org/licenses/MIT)\n",
+  "readmeFilename": "README.md",
+  "repo": "https://github.com/xueron/cordova-alipay-base",
+  "version": "0.0.10"
+}

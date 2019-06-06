@@ -1,0 +1,48 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}手术项目</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>手术项目<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="ol.name" type="text"></ion-input>
+    </ion-item>
+    <button ion-item (tap)="select('doc')">
+      <ion-label>医生</ion-label>
+      <ion-note *ngIf="ol.doctor_name" item-right>{{ol.doctor_name}}</ion-note>
+      <ion-note *ngIf="!ol.doctor_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>手术时间<span class="c-danger">*</span></ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="ol.operate_date" doneText="确定" cancelText="取消"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>复查天数<span class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="ol.review_days" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>复查日期</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="ol.review_date" doneText="确定" cancelText="取消"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>备注</ion-label>
+      <ion-input text-right item-right [(ngModel)]="ol.note" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

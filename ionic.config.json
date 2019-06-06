@@ -1,0 +1,14 @@
+{
+  "name": "meim",
+  "app_id": "3c2b5940",
+  "proxies": [
+    {
+      "path": "/V9N00000025",
+      "proxyUrl": "http://localhost:8069/V9N00000025"
+    }
+  ],
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

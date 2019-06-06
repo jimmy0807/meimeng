@@ -1,0 +1,64 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>选择要规划的会员</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span >取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="members_normal.length>0">
+    <ion-list-header>普通会员</ion-list-header>
+    <button ion-item *ngFor="let item of members_normal" (tap)="onSelectMember(item)">
+      <ion-avatar item-left>
+         <img *ngIf="item.image_url"  [src]="item.image_url" >
+        <img *ngIf="!item.image_url" src="assets/img/avatar-default.png" >
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+       <p>卡余 {{item.amount}}</p>
+        <p>院余 {{item.product_amount}}</p>
+        <p>入会日期 {{item.create_date}}</p>
+      <ion-note item-right>
+        <span *ngIf="item.last_date">最后到店日</span>
+        <span *ngIf="!item.last_date">未到店</span>
+        <p>{{item.last_date}}</p>
+        </ion-note>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="members_vip.length>0">
+    <ion-list-header>VIP会员</ion-list-header>
+    <button ion-item *ngFor="let item of members_vip" (tap)="onSelectMember(item)">
+      <ion-avatar item-left>
+         <img *ngIf="item.image_url"  [src]="item.image_url" >
+        <img *ngIf="!item.image_url" src="assets/img/avatar-default.png" >
+      </ion-avatar>
+    <h2>{{item.name}}</h2>
+       <p>卡余 {{item.amount}}</p>
+        <p>院余 {{item.product_amount}}</p>
+        <p>入会日期 {{item.create_date}}</p>
+      <ion-note item-right>
+        最后到店日
+        <p>{{item.last_date}}</p>
+        </ion-note>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="members_mvp.length>0">
+    <ion-list-header>WVP会员</ion-list-header>
+    <button ion-item *ngFor="let item of members_mvp" (tap)="onSelectMember(item)">
+      <ion-avatar item-left>
+         <img *ngIf="item.image_url"  [src]="item.image_url" >
+        <img *ngIf="!item.image_url" src="assets/img/avatar-default.png" >
+      </ion-avatar>
+     <h2>{{item.name}}</h2>
+       <p>卡余 {{item.amount}}</p>
+        <p>院余 {{item.product_amount}}</p>
+        <p>入会日期 {{item.create_date}}</p>
+      <ion-note item-right>
+        最后到店日
+        <p>{{item.last_date}}</p>
+        </ion-note>
+    </button>
+  </ion-list>
+</ion-content>

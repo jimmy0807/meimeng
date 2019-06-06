@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>渠道业绩</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-back">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngFor="let c of list" (tap)="show(c)" class="div-line">
+    <div class="div-date">
+      {{c.date}}
+    </div>
+    <ion-item no-lines>
+      <h2>店家：共{{c.count}}家 </h2>
+      <p item-right class="p-amount">{{c.amount | number :'1.0-0'}}</p>
+    </ion-item>
+  </div>
+  <div text-center class="no-item-div" *ngIf="!list.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+  <div class="div-range">
+    <p class="p-range">{{daySStr}} - {{dayEStr}}</p>
+    <p (tap)="lastMonth()" class="c-primary p-tap">上一月</p>
+  </div>
+</ion-content>

@@ -1,0 +1,148 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>会员中心</ion-title>
+    <ion-buttons *ngIf="allowAdd" end>
+      <button ion-button (tap)="present()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <!--<ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="formal">
+        正式会员
+      </ion-segment-button>
+      <ion-segment-button value="experience">
+        体验会员
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>-->
+  <ion-toolbar no-border-top>
+    <ion-searchbar placeholder="按名字、手机号码搜索" color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)"
+                   [(ngModel)]="keyword" (ionInput)="onInput($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div [hidden]="segment!='formal'">
+    <ion-list *ngIf="members_mvp.length>0" class="list">
+      <div class="div-light"><span>WIP客</span></div>
+      <ion-item-sliding *ngFor="let item of members_mvp">
+        <button ion-item (tap)="showMember(item)">
+          <ion-avatar item-left>
+            <img *ngIf="item.image_url" [src]="item.image_url">
+            <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+          </ion-avatar>
+          <h2>{{item.name}}</h2>
+          <p>{{item.display_mobile}}</p>
+        </button>
+        <ion-item-options>
+          <!--<button (tap)="showVisit(item)" ion-button color="danger">
+            回访
+          </button>-->
+          <button (tap)="showCard(item)" ion-button color="primary">
+            会员卡
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-list *ngIf="members_new.length>0" class="list">
+      <div class="div-light"><span>新客</span></div>
+      <ion-item-sliding *ngFor="let item of members_new">
+        <button ion-item (tap)="showMember(item)">
+          <ion-avatar item-left>
+            <img *ngIf="item.image_url" [src]="item.image_url">
+            <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+          </ion-avatar>
+          <h2>{{item.name}}</h2>
+          <p>{{item.display_mobile}}</p>
+        </button>
+        <ion-item-options>
+          <!--<button (tap)="showVisit(item)" ion-button color="danger">
+            回访
+          </button>-->
+          <button (tap)="showCard(item)" ion-button color="primary">
+            会员卡
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-list *ngIf="members_vip.length>0" class="list">
+      <div class="div-light"><span>VIP客</span></div>
+      <ion-item-sliding *ngFor="let item of members_vip">
+        <button ion-item (tap)="showMember(item)">
+          <ion-avatar item-left>
+            <img *ngIf="item.image_url" [src]="item.image_url">
+            <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+          </ion-avatar>
+          <h2>{{item.name}}</h2>
+          <p>{{item.display_mobile}}</p>
+        </button>
+        <ion-item-options>
+          <!--<button (tap)="showVisit(item)" ion-button color="danger">
+            回访
+          </button>-->
+          <button (tap)="showCard(item)" ion-button color="primary">
+            会员卡
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-list *ngIf="members_normal.length>0" class="list">
+      <div class="div-light"><span>普通客</span></div>
+      <ion-item-sliding *ngFor="let item of members_normal">
+        <button ion-item (tap)="showMember(item)">
+          <ion-avatar item-left>
+            <img *ngIf="item.image_url" [src]="item.image_url">
+            <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+          </ion-avatar>
+          <h2>{{item.name}}</h2>
+          <p>{{item.display_mobile}}</p>
+        </button>
+        <ion-item-options>
+          <!--<button (tap)="showVisit(item)" ion-button color="danger">
+            回访
+          </button>-->
+          <button (tap)="showCard(item)" ion-button color="primary">
+            会员卡
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  <div [hidden]="segment!='experience'">
+    <ion-list *ngIf="members_experience.length>0">
+      <ion-item-sliding *ngFor="let item of members_experience">
+        <button ion-item (tap)="showMember(item)">
+          <ion-avatar item-left>
+            <img *ngIf="item.image_url" [src]="item.image_url">
+            <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+          </ion-avatar>
+          <h2>{{item.name}}</h2>
+          <p>{{item.display_mobile}}</p>
+        </button>
+        <!--<ion-item-options>
+          <button (tap)="showVisit(item)" ion-button color="danger">
+            回访
+          </button>
+        </ion-item-options>-->
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  <div text-center class="no-item-div" *ngIf="!members.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有会员</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

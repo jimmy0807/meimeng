@@ -1,0 +1,59 @@
+page-report-member-new {
+
+.circle{    
+    // position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 6px;
+    margin:0px 0px 0px 12px;
+}
+
+.report-card{
+    margin: 12px 0px 12px 0px;
+    font-size: 1.4rem;
+    background: #fff;
+    }
+.report-segment{
+    margin: 12px 12px 12px 12px;
+    font-size: 1.4rem;
+    background: #fff;
+}
+.row_report ion-row {    
+    margin: 16px 0px 16px 0px;
+}
+.row_report ion-col {    
+    margin: 12px 0px 12px 0px;
+}
+.row_report ion-col div{
+    margin: 6px 0px 6px 0px;
+}
+
+.row_not_last{
+    border-bottom:#ccc 1px solid;
+    width: calc(100% - 24px);
+    margin : 0px 0px 0px 12px;
+}
+
+.row_last{
+    width: calc(100% - 24px);
+    margin : 0px 0px 0px 12px;
+}
+
+#row_member_active .circle{
+    background-color: #28BAF0;
+}
+
+#row_member_sleep .circle{
+    background-color: #28E5F0;
+}
+
+.col_left{
+    border-right:#ccc 1px solid;
+}
+.col_right{
+    border-left:#ccc 1px solid;
+}
+.reprot-card .item-md.item-block .item-inner{
+    border-bottom: none;
+}
+}

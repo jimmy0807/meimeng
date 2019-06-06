@@ -1,0 +1,17 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>房间</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+   <ion-row wrap>
+      <ion-col  width-50 class="room"  *ngFor="let room of rooms">
+          <img  src="assets/img/room.png">
+          <div >{{room.name}}</div>
+      </ion-col>
+    </ion-row>
+</ion-content>

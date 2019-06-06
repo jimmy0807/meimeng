@@ -1,0 +1,410 @@
+[
+  {
+    "file": "assets/fonts/ionicons.eot",
+    "hash": "bdf1d30681cf87986c385eea78e8de9a"
+  },
+  {
+    "file": "assets/fonts/ionicons.scss",
+    "hash": "c1fdfabf9cbd412b444f064d27641f10"
+  },
+  {
+    "file": "assets/fonts/ionicons.svg",
+    "hash": "d9496a234c81179afbca6bf5959cc30a"
+  },
+  {
+    "file": "assets/fonts/ionicons.ttf",
+    "hash": "74c652671225d6ded874a648502e5f0a"
+  },
+  {
+    "file": "assets/fonts/ionicons.woff",
+    "hash": "81414686e99c00d2921e03dd53c0ab04"
+  },
+  {
+    "file": "assets/fonts/ionicons.woff2",
+    "hash": "311d81961c5880647fec7eaca1221b2a"
+  },
+  {
+    "file": "assets/fonts/noto-sans-bold.ttf",
+    "hash": "a165a42685795361b25593effb32fdb1"
+  },
+  {
+    "file": "assets/fonts/noto-sans-bold.woff",
+    "hash": "ce3d777f2c41cca1494021cfa3fcd72c"
+  },
+  {
+    "file": "assets/fonts/noto-sans-regular.ttf",
+    "hash": "2fd9c16b805724d590c0cff96da070a4"
+  },
+  {
+    "file": "assets/fonts/noto-sans-regular.woff",
+    "hash": "ce8ba1a4ff970db896192c41fc3c96b1"
+  },
+  {
+    "file": "assets/fonts/noto-sans.scss",
+    "hash": "47d5f7264952ccee8cead7b6dcb6d1bd"
+  },
+  {
+    "file": "assets/fonts/roboto-bold.ttf",
+    "hash": "1f4fd7e4df65487f07ba9148f7ca095d"
+  },
+  {
+    "file": "assets/fonts/roboto-bold.woff",
+    "hash": "43183beef21370d8a4b0d64152287eba"
+  },
+  {
+    "file": "assets/fonts/roboto-bold.woff2",
+    "hash": "28d80f43ae4cc35f19e1f1a6ab670f25"
+  },
+  {
+    "file": "assets/fonts/roboto-light.ttf",
+    "hash": "9ff15bd34ea83e4dd3f23c20c7f5090e"
+  },
+  {
+    "file": "assets/fonts/roboto-light.woff",
+    "hash": "7e2d32e7141050d758a38b4ec96390c0"
+  },
+  {
+    "file": "assets/fonts/roboto-light.woff2",
+    "hash": "a826ff848e9f52b1732fed7d154afa97"
+  },
+  {
+    "file": "assets/fonts/roboto-medium.ttf",
+    "hash": "a937e2cae14e68262a45aa91204c2fdf"
+  },
+  {
+    "file": "assets/fonts/roboto-medium.woff",
+    "hash": "0f3b7101a8adc1afe1fbe89775553c32"
+  },
+  {
+    "file": "assets/fonts/roboto-medium.woff2",
+    "hash": "b2c9c262e089411e20689ed393c00796"
+  },
+  {
+    "file": "assets/fonts/roboto-regular.ttf",
+    "hash": "07f8fb6acbabeb10d3fad9ab02d65e0b"
+  },
+  {
+    "file": "assets/fonts/roboto-regular.woff",
+    "hash": "f94d5e5102359961c44a1da1b58d37c9"
+  },
+  {
+    "file": "assets/fonts/roboto-regular.woff2",
+    "hash": "e6b9d54811307f98da62eae992ae05ba"
+  },
+  {
+    "file": "assets/fonts/roboto.scss",
+    "hash": "e7c30075bc0f0b11422bfbdb2236f9e7"
+  },
+  {
+    "file": "assets/icon/favicon.ico",
+    "hash": "0350f4b3a2067110b1e642ee5931a38a"
+  },
+  {
+    "file": "assets/img/1.png",
+    "hash": "d3a970ee76c8a7adfa471932e602c705"
+  },
+  {
+    "file": "assets/img/2.png",
+    "hash": "b7b75e6c315868e98f8e60111dcc8feb"
+  },
+  {
+    "file": "assets/img/3.png",
+    "hash": "c2428363bee92acc8d4675fbddc7d999"
+  },
+  {
+    "file": "assets/img/4.png",
+    "hash": "40da7a56244c55bcecc4ea04ccdec67b"
+  },
+  {
+    "file": "assets/img/5.png",
+    "hash": "56f69760b19f07bd1bde69f783a9345f"
+  },
+  {
+    "file": "assets/img/6.png",
+    "hash": "fae6329d4a5239416aaf8e5926c5ffe7"
+  },
+  {
+    "file": "assets/img/Artboard1.png",
+    "hash": "1407879d6ee42cf1902002d373e4af19"
+  },
+  {
+    "file": "assets/img/Artboard2.png",
+    "hash": "3c1d288aff1348f2c7ccdc77f3c916c5"
+  },
+  {
+    "file": "assets/img/Artboard3.png",
+    "hash": "11b1e00ad0ef5dbc4aaa65f811edf70a"
+  },
+  {
+    "file": "assets/img/Artboard4.png",
+    "hash": "10db535d0c08a1a061e424fe51d0f554"
+  },
+  {
+    "file": "assets/img/Artboard5.png",
+    "hash": "e7eeb60645dec17997b5a046609d4dab"
+  },
+  {
+    "file": "assets/img/avatar-default.png",
+    "hash": "cabc97b57dcac5a74a787663b8794c16"
+  },
+  {
+    "file": "assets/img/default-product.png",
+    "hash": "8131f3b29203f826be3d883a2938ee24"
+  },
+  {
+    "file": "assets/img/first.png",
+    "hash": "f6d39ec26a5a33c4f2271490b34e0ce7"
+  },
+  {
+    "file": "assets/img/ica-slidebox-img-1.png",
+    "hash": "c16e169064825e678b1b9d2711e28fa1"
+  },
+  {
+    "file": "assets/img/ica-slidebox-img-2.png",
+    "hash": "5d0efcabb81b1d0d33d8e1a4a407c5c8"
+  },
+  {
+    "file": "assets/img/ica-slidebox-img-3.png",
+    "hash": "61214553fb1bea01e1f504b16b74af50"
+  },
+  {
+    "file": "assets/img/ica-slidebox-img-4.png",
+    "hash": "43bd9907f8611e881f5886f63ac4ff02"
+  },
+  {
+    "file": "assets/img/ica-slidebox-img-5.png",
+    "hash": "fabc43e1eaebb90083b00e29ce5a3434"
+  },
+  {
+    "file": "assets/img/kpi-default-head.png",
+    "hash": "a35beba7472b75b7d99d4eaf5e4ec919"
+  },
+  {
+    "file": "assets/img/loading-screen.png",
+    "hash": "829233375766e768cb745e483f25ec03"
+  },
+  {
+    "file": "assets/img/room.png",
+    "hash": "fb7b59497679e6723e98e8bab9b1a876"
+  },
+  {
+    "file": "assets/libs/Chart.bundle.min.js",
+    "hash": "baf1f3355d948a64eec0a0fb648066dd"
+  },
+  {
+    "file": "assets/libs/Chart.min.js",
+    "hash": "3614a310ec3347334e61c4af9b8bddfb"
+  },
+  {
+    "file": "build/0.main.js",
+    "hash": "0233c04f865953fa3f279a51791d6df6"
+  },
+  {
+    "file": "build/1.main.js",
+    "hash": "e1c95a10bbcd6249acd03625b1c79366"
+  },
+  {
+    "file": "build/10.main.js",
+    "hash": "ef43b011975a05b9ca17d49581055af3"
+  },
+  {
+    "file": "build/11.main.js",
+    "hash": "51c6c872058f3753b02f36508d4c01b1"
+  },
+  {
+    "file": "build/12.main.js",
+    "hash": "a4cb54078d5187a2e4dd955630559de3"
+  },
+  {
+    "file": "build/13.main.js",
+    "hash": "dbed2af609c0fb666fc565580b1069ea"
+  },
+  {
+    "file": "build/14.main.js",
+    "hash": "4b35fd3db7036fa4ba15fe997b65f03b"
+  },
+  {
+    "file": "build/15.main.js",
+    "hash": "42a507fe9b28852ba2545a9a431ff72a"
+  },
+  {
+    "file": "build/16.main.js",
+    "hash": "052c5349730caefa2ddf519b1c97b91b"
+  },
+  {
+    "file": "build/17.main.js",
+    "hash": "180a67991fd7ddd185ae5183d305bdbf"
+  },
+  {
+    "file": "build/18.main.js",
+    "hash": "75ccbacc4dcfd135b19c9f90e9886655"
+  },
+  {
+    "file": "build/19.main.js",
+    "hash": "57f4c0457f0a12fe58c5bd7d3601ce03"
+  },
+  {
+    "file": "build/2.main.js",
+    "hash": "120794d466a34d3910e8c07928ef8909"
+  },
+  {
+    "file": "build/20.main.js",
+    "hash": "42dd863b70282f93fdd21a1dbdeb63fa"
+  },
+  {
+    "file": "build/21.main.js",
+    "hash": "dcc1fbac8497ef6e7d4916df7a6ac78b"
+  },
+  {
+    "file": "build/22.main.js",
+    "hash": "35df4b1d169aafd5387111dfffe69c33"
+  },
+  {
+    "file": "build/23.main.js",
+    "hash": "ee20bbc60e896bafdaf66aba61953b04"
+  },
+  {
+    "file": "build/24.main.js",
+    "hash": "70544f563a2267f9ea657b9f9dd8bcfc"
+  },
+  {
+    "file": "build/25.main.js",
+    "hash": "f2f826754147d5a82faf07b967391c9a"
+  },
+  {
+    "file": "build/26.main.js",
+    "hash": "b429ef86ec1eab7d2e95d475fd4e5e5b"
+  },
+  {
+    "file": "build/27.main.js",
+    "hash": "ed5e8d81afb4e6b1a668aa73e4a3e480"
+  },
+  {
+    "file": "build/28.main.js",
+    "hash": "f0b755a64c9b0d727d828c9356c0517a"
+  },
+  {
+    "file": "build/29.main.js",
+    "hash": "78b288b5fd9527e10457854990de1662"
+  },
+  {
+    "file": "build/3.main.js",
+    "hash": "96d5d96c68afd8059d18cb6769eacbcd"
+  },
+  {
+    "file": "build/30.main.js",
+    "hash": "483b5e393bbe8f71f2564aa69d6340c1"
+  },
+  {
+    "file": "build/31.main.js",
+    "hash": "531077352ac780f10baf82b9417f6c16"
+  },
+  {
+    "file": "build/32.main.js",
+    "hash": "5dcca6a74d5edf286c69da8f95d4b430"
+  },
+  {
+    "file": "build/33.main.js",
+    "hash": "8498813b738d7458f9e63c37b054f2a3"
+  },
+  {
+    "file": "build/34.main.js",
+    "hash": "06ffc9112dfe40fbd1062b6ab225d2d0"
+  },
+  {
+    "file": "build/35.main.js",
+    "hash": "7f653a47ce202e5d43cd183fbb9e4954"
+  },
+  {
+    "file": "build/36.main.js",
+    "hash": "eabe9206387193da164e24ac09aac869"
+  },
+  {
+    "file": "build/37.main.js",
+    "hash": "853ad1be981300df0ca34fb10576d104"
+  },
+  {
+    "file": "build/38.main.js",
+    "hash": "d7507282f147d2b6d59ea49ed5fcf744"
+  },
+  {
+    "file": "build/39.main.js",
+    "hash": "d826deee1975e093fab0ddc5c096eb3b"
+  },
+  {
+    "file": "build/4.main.js",
+    "hash": "a7eb3caecea617875481e47cbb61618b"
+  },
+  {
+    "file": "build/40.main.js",
+    "hash": "322a92679cf9902c34fc325d3add7a0f"
+  },
+  {
+    "file": "build/41.main.js",
+    "hash": "cba7d563164559267017288ced9c6d67"
+  },
+  {
+    "file": "build/42.main.js",
+    "hash": "26e1635902224380baab1ca7be4d7dd2"
+  },
+  {
+    "file": "build/43.main.js",
+    "hash": "ee5e92605371e3e4af8571c7cb58bcf6"
+  },
+  {
+    "file": "build/44.main.js",
+    "hash": "8364d693e6ff15cdb2a6505208990e05"
+  },
+  {
+    "file": "build/45.main.js",
+    "hash": "b8bcfba4e53648a038a90f70db3d7c81"
+  },
+  {
+    "file": "build/5.main.js",
+    "hash": "b37f36bb1f7684418ff15d583fade63f"
+  },
+  {
+    "file": "build/6.main.js",
+    "hash": "4a1f7338ee7024052a753371a89ed457"
+  },
+  {
+    "file": "build/7.main.js",
+    "hash": "cd06a4128c0d88a27089debef3693575"
+  },
+  {
+    "file": "build/8.main.js",
+    "hash": "e687da801840fb714d6f3aabfb22d219"
+  },
+  {
+    "file": "build/9.main.js",
+    "hash": "f3d8235a7652d409501f0dca7720db02"
+  },
+  {
+    "file": "build/main.css",
+    "hash": "00ca5ea5e156675e1f6048e6bc7e2493"
+  },
+  {
+    "file": "build/main.js",
+    "hash": "68fdc44a475d73469fc9d8b3ede2994b"
+  },
+  {
+    "file": "build/polyfills.js",
+    "hash": "52790b2b7cffe55df912cfe9301a6b68"
+  },
+  {
+    "file": "build/sw-toolbox.js",
+    "hash": "2770efb889cc10c4de88d0b746c2a13c"
+  },
+  {
+    "file": "index.html",
+    "hash": "a05ef37812f648f9faf0ba96939e5144"
+  },
+  {
+    "file": "manifest.json",
+    "hash": "df9b99468d4bd4cf2fee5d24ed9badbf"
+  },
+  {
+    "file": "service-worker.js",
+    "hash": "ad8e1ecec78a692477047bcbc8be7508"
+  }
+]

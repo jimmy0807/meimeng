@@ -1,0 +1,64 @@
+﻿<ion-header>
+  <ion-toolbar color="primary">
+    <ion-segment [(ngModel)]="segment" color="light">
+      <ion-segment-button value="all">
+        所有项目
+      </ion-segment-button>
+      <ion-segment-button value="customer">
+        卡内项目
+      </ion-segment-button>
+    </ion-segment>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar placeholder="按名称、编号、简称搜索" showCancelButton color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)"
+                   (ionInput)="onInput($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let product of products" [hidden]="segment==='customer'">
+      <ion-checkbox [(ngModel)]="product.checked"></ion-checkbox>
+      <ion-label>
+        <span *ngIf="product.default_code">[{{product.default_code}}]</span>
+        {{product.name}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let product of cardProducts" [hidden]="segment==='all'">
+      <ion-checkbox [(ngModel)]="product.checked"></ion-checkbox>
+      <ion-label>{{product.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list-header text-center [hidden]="segment==='customer' || products.length>0">
+    没有搜索到可以预约的项目
+  </ion-list-header>
+
+  <ion-list-header text-center [hidden]="segment==='all' || cardProducts.length>0">
+    客户卡内没有项目
+  </ion-list-header>
+
+  <ion-infinite-scroll *ngIf="keyword===''" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col text-right>
+        <button (tap)="clear()" ion-button color="danger" full>清空</button>
+      </ion-col>
+      <ion-col text-right>
+        <button (tap)="onConfirm()" ion-button color="primary" full>确认</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      {{plant.name}}业绩规划
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span *ngIf="mode=='edit'">取消</span>
+        <span *ngIf="mode=='view'">返回</span>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="user_eid===plant.employee_id">
+      <button ion-button *ngIf="mode=='view'" (tap)="swich_edit()">
+        编辑
+      </button>
+      <button ion-button *ngIf="mode=='edit'" (tap)="saveKpiMemberInfo()">
+        完成
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="primary" no-border-top style="color:#ffffff;">
+    <div>
+      <ion-row style="padding:0px 10px;">
+        <ion-col text-left>
+          <span style="color:#bcdefa">入会日期：</span> {{plant.create_date}}
+        </ion-col>
+        <ion-col text-right>
+          <span style="color:#bcdefa">卡余：</span> {{plant.amount}}
+        </ion-col>
+      </ion-row>
+    </div>
+     <div class="plant">
+      <ion-row>
+        <ion-col text-center style="padding:10px 0px;">
+          规划营业额
+          <div class="number">{{plant.royalties_amount}}</div>
+        </ion-col>
+        <ion-col text-center style="padding:10px 0px;">
+          规划消费额
+          <div class="number">{{plant.spending_amount}}</div>
+        </ion-col>
+        <ion-col text-center style="padding:10px 0px;">
+          规划卡扣
+          <div class="number">{{plant.card_amount}}</div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <ion-list style="margin-top:30px;">
+    <ion-list-header>
+      卡内项目
+    </ion-list-header>
+    <div text-center class="no-data-box" *ngIf="plant.card_products.length<=0">
+      <h4 style="font-size:16px;">客人卡内没有院余的项目</h4>
+    </div>
+    <ion-item *ngFor="let item of plant.card_products ;let i = index">
+      <ion-label>{{item.name}} / ({{item.total_qty}})个</ion-label>
+      <button ion-button outline *ngIf="mode=='view'" disabled style="margin:10px 1px" item-right (tap)="addProduct(i)">卡耗({{item.select_qty}})</button>
+      <button ion-button outline *ngIf="mode=='edit'" style="margin:10px 1px" item-right (tap)="addProduct(i)">卡耗({{item.select_qty}})</button>
+      <button ion-button outline *ngIf="mode=='view'" disabled style="margin:10px 0px" color="danger" item-right (tap)="clearProduct(i)">清除</button>
+      <button ion-button outline *ngIf="mode=='edit'" style="margin:10px 0px" color="danger" item-right (tap)="clearProduct(i)">清除</button>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      主推项目
+    </ion-list-header>
+    <div text-center class="no-data-box" *ngIf="plant.featured_products.length<=0">
+      <h4 style="font-size:16px;">当月没有设置主推项目</h4>
+    </div>
+    <ion-item *ngFor="let item of plant.featured_products; let i = index">
+      <ion-label>{{item.name}}</ion-label>
+      <button ion-button outline item-right *ngIf="mode=='view'" disabled style="margin:10px 0px" (tap)="addFeatured(i)">卡扣({{item.select_qty}})</button>
+      <button ion-button outline item-right *ngIf="mode=='edit'" style="margin:10px 0px" (tap)="addFeatured(i)">卡扣({{item.select_qty}})</button>
+      <button ion-button outline item-right *ngIf="mode=='view'" disabled style="margin:10px 1px" (tap)="addCashFeatured(i)">现金({{item.select_cash_qty}})</button>
+      <button ion-button outline item-right *ngIf="mode=='edit'" style="margin:10px 1px" (tap)="addCashFeatured(i)">现金({{item.select_cash_qty}})</button>
+      <button ion-button outline color="danger" *ngIf="mode=='view'" disabled  style="margin:10px 0px" item-right (tap)="clearFeatured(i)">清除</button>
+      <button ion-button outline color="danger" *ngIf="mode=='edit'" style="margin:10px 0px" item-right (tap)="clearFeatured(i)">清除</button>
+    </ion-item>
+  </ion-list>
+   <ion-list >
+    <ion-item>
+      <ion-label>填写续卡金额</ion-label>
+      <ion-input text-right item-right *ngIf="mode=='view'" class="item-disabled" readonly [(ngModel)]="recharge_amount" name="recharge_amount"
+                 required type="number" placeholder="点击输入续卡金额"></ion-input>
+      <ion-input text-right item-right *ngIf="mode=='edit'" [(ngModel)]="recharge_amount" name="recharge_amount"
+                 required type="number" placeholder="点击输入续卡金额"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>填写其他项目金额</ion-label>
+       <ion-input *ngIf="mode=='view'" class="item-disabled" readonly text-right item-right  [(ngModel)]="other_amount" name="other_amount"
+                 required type="number" placeholder="点击输入其他项目金额"></ion-input>
+      <ion-input *ngIf="mode=='edit'" text-right item-right  [(ngModel)]="other_amount" name="other_amount"
+                 required type="number" placeholder="点击输入其他项目金额"></ion-input>
+    </ion-item>
+  </ion-list>
+
+<ion-list >
+  <ion-card  *ngFor="let item of plant.record_ids">
+    <ion-item >
+      <ion-badge color="primary" *ngIf="item.is_success" item-right>成功</ion-badge>
+       <ion-badge color="danger" *ngIf="!item.is_success" item-right>失败</ion-badge>
+      <p>跟进人 {{item.employee_name}}</p>
+      <p>跟日期 {{item.create_date}}</p>
+      <p *ngIf="item.is_success && item.technician_name">预约技师 {{item.technician_name}}</p>
+      <p *ngIf="item.is_success && item.product_name">预约项目 {{item.product_name}}</p>
+      <p *ngIf="item.is_success && item.reservation_time">预约到店 {{item.reservation_time}}</p>
+    </ion-item>
+    <ion-card-content>
+ <p>{{item.note}}</p>
+    </ion-card-content>
+  </ion-card>
+ </ion-list>
+
+  <div style="height:80px;"></div>
+</ion-content>
+<ion-footer color="primary" *ngIf="plant.id>0 && user_eid===plant.employee_id">
+  <ion-toolbar color="primary" *ngIf="plant.id>0" no-border-top no-border-bottom>
+    <button (tap)="openSocial()" ion-button full>马上"约"起来</button>
+  </ion-toolbar>
+</ion-footer>
+
+

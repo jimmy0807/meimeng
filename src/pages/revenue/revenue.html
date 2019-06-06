@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>营业情况</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="day">
+        日
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        月
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list [hidden]="segment === 'month'">
+    <ion-item-group *ngFor="let day of revenueDays">
+      <ion-item-divider sticky>
+        <ion-label>
+          {{day.account_date}}
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding>
+        <button ion-item (tap)="showDetail(day)">
+          <h3>营业额（营）: {{day.total_in_amount}}</h3>
+          <p>销售额: {{day.sale_amount}} / 充值: {{day.recharge_amount}}
+          <p>还款: {{day.repayment_amount}} / 退款: {{day.refund_amount}}
+          <p>消费额（收）: {{day.situation_amount}}</p>
+          <p>产品销售: {{day.product_consume_amount}} / 项目消耗: {{day.item_consume_amount}}</p>
+          <p>客流: {{day.cnt}}</p>
+        </button>
+        <ion-item-options>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+
+  <ion-list [hidden]="segment === 'day'">
+    <ion-item-group *ngFor="let month of revenueMonths">
+      <ion-item-divider sticky>
+        <ion-label>
+          {{month.account_month}}
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding>
+        <button ion-item (tap)="showMonthDetail(month)">
+          <h3>营业额（营）: {{month.total_in_amount}}</h3>
+          <p>销售额: {{month.sale_amount}} / 充值: {{month.recharge_amount}}
+          <p>还款: {{month.repayment_amount}} / 退款: {{month.refund_amount}}
+          <p>消费额（收）: {{month.situation_amount}}</p>
+          <p>产品销售: {{month.product_consume_amount}} / 项目消耗: {{month.item_consume_amount}}</p>
+        </button>
+        <ion-item-options>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+
+   <ion-infinite-scroll *ngIf="segment==='day'" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

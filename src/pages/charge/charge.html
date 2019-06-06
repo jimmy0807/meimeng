@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>我的余额</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="log()">
+        <span>余额记录</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <div class="div-remain">
+    <p class="p-text">账户余额(元)</p>
+    <p class="p-amount">￥{{remain | number:'1.2-2'}}</p>
+  </div>
+  <ion-list>
+    <div class="div-type" *ngFor="let t of types">
+      <div class="div-card">
+        <div>
+          <h2>{{t | number:'1.0-0'}}</h2>
+          <p>充值卡</p>
+        </div>
+      </div>
+      <div class="div-btn" (tap)="pay(t)">
+        <div>
+          <p>立即</p>
+          <p>充值</p>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>

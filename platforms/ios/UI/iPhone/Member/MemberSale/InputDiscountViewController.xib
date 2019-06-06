@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputDiscountViewController">
+            <connections>
+                <outlet property="discountTextField" destination="WDW-Ae-JpD" id="CqZ-hc-zVz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uee-k5-DWh">
+                    <rect key="frame" x="15" y="105" width="290" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="确定" backgroundImage="member_green_bg.png"/>
+                    <connections>
+                        <action selector="sureBtnPressed:" destination="-1" eventType="touchUpInside" id="rTO-mQ-ze6"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXU-xz-E4u">
+                    <rect key="frame" x="0.0" y="30" width="320" height="45"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="整单折扣" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4N-7A-PDH">
+                            <rect key="frame" x="15" y="14" width="60" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WDW-Ae-JpD">
+                            <rect key="frame" x="80" y="0.0" width="230" height="45"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="1EN-l5-Yqk"/>
+                        <constraint firstItem="WDW-Ae-JpD" firstAttribute="leading" secondItem="r4N-7A-PDH" secondAttribute="trailing" constant="5" id="1tK-hI-unB"/>
+                        <constraint firstItem="WDW-Ae-JpD" firstAttribute="top" secondItem="AXU-xz-E4u" secondAttribute="top" id="99I-Oc-sBq"/>
+                        <constraint firstAttribute="trailing" secondItem="WDW-Ae-JpD" secondAttribute="trailing" constant="10" id="LJr-Sq-AAm"/>
+                        <constraint firstItem="r4N-7A-PDH" firstAttribute="centerY" secondItem="AXU-xz-E4u" secondAttribute="centerY" id="TVA-7y-Z8d"/>
+                        <constraint firstAttribute="bottom" secondItem="WDW-Ae-JpD" secondAttribute="bottom" id="cKU-6N-h6H"/>
+                        <constraint firstItem="r4N-7A-PDH" firstAttribute="leading" secondItem="AXU-xz-E4u" secondAttribute="leading" constant="15" id="ned-Px-R4M"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="AXU-xz-E4u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7Wx-ht-x4b"/>
+                <constraint firstItem="uee-k5-DWh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="CYE-if-6Jp"/>
+                <constraint firstAttribute="trailing" secondItem="AXU-xz-E4u" secondAttribute="trailing" id="FbN-SY-1Ul"/>
+                <constraint firstItem="AXU-xz-E4u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="Ug1-wm-aFD"/>
+                <constraint firstAttribute="trailing" secondItem="uee-k5-DWh" secondAttribute="trailing" constant="15" id="hIJ-ro-uUX"/>
+                <constraint firstItem="uee-k5-DWh" firstAttribute="top" secondItem="AXU-xz-E4u" secondAttribute="bottom" constant="30" id="vWc-Ww-QMI"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="-91" y="143"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

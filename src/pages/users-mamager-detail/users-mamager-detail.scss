@@ -1,0 +1,6 @@
+page-users-mamager-detail {
+.item-disabled, item-disabled * { opacity: 0.3; }
+// .toggle * {opacity: 0.3; pointer-events: none;}
+.label .toggle-ios.toggle-disabled, .item-ios.item-toggle-disabled ion-label {opacity: 1; }
+.item-divider .label { opacity: 0.3;}
+}

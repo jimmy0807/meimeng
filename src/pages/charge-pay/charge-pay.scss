@@ -1,0 +1,104 @@
+page-charge-pay {
+  .div-info {
+    background-color: white;
+    padding: 30px 15px;
+
+    div {
+      color: rgb(255,72,72);
+      display: flex;
+      align-items: flex-end;
+
+      p {
+        font-size: 15px;
+        margin: 0;
+      }
+
+      h1 {
+        margin: 0 0 0 15px;
+        font-size: 32px;
+      }
+    }
+
+    h3 {
+      margin: 25px 0 0 0;
+      font-size: 15px;
+      color: rgb(37,37,37);
+    }
+
+    .p-info {
+      margin: 10px 0 0 20px;
+      font-size: 14px;
+      color: rgb(112,109,110);
+    }
+  }
+
+  ion-list {
+    margin: 10px 0 0 0 !important;
+    background-color: white;
+    padding-left: 20px;
+
+    h2 {
+      font-size: 15px;
+      height: 45px;
+      line-height: 45px;
+      color: rgb(112, 109, 110);
+      margin: 0;
+    }
+  }
+
+  .div-pt {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(29,29,38,0.04);
+    height: 50px;
+
+    p {
+      flex: 1;
+      margin: 0 0 0 10px;
+      font-size: 15px;
+      color: rgb(74,74,74);
+    }
+
+    ion-checkbox {
+      margin-right: 20px;
+      opacity: 1 !important;
+    }
+
+    img {
+      width: 34px;
+      height: 24px;
+    }
+  }
+
+  .div-footer {
+    height: 50px;
+    display: flex;
+  }
+
+  .div-pay-info {
+    flex: 3;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    background-color: white;
+    text-align: right;
+
+    p {
+      margin: 0 20px 0 0;
+      line-height: 49px;
+      font-size: 15px;
+      color: rgb(155,155,155);
+
+      span {
+        color: rgb(255,72,72);
+      }
+    }
+  }
+
+  .div-btn {
+    flex: 2;
+    font-size: 17px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(255,72,72);
+    color: white;
+  }
+}

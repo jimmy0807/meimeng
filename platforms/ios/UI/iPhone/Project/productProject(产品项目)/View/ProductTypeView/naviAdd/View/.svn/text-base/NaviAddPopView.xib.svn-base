@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="naviAddPopView" customClass="NaviAddPopView">
+            <rect key="frame" x="0.0" y="0.0" width="256" height="107"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale_back.png" translatesAutoresizingMaskIntoConstraints="NO" id="dLn-qS-3U9">
+                    <rect key="frame" x="0.0" y="0.0" width="256" height="107"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a5a-La-VCr">
+                    <rect key="frame" x="0.0" y="5" width="256" height="102"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dLn-qS-3U9" secondAttribute="trailing" id="75c-GW-h7x"/>
+                <constraint firstItem="dLn-qS-3U9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AfZ-kU-xhC"/>
+                <constraint firstAttribute="bottom" secondItem="a5a-La-VCr" secondAttribute="bottom" id="GAt-jh-nEC"/>
+                <constraint firstAttribute="trailing" secondItem="a5a-La-VCr" secondAttribute="trailing" id="SRo-lN-fqo"/>
+                <constraint firstItem="a5a-La-VCr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="hTL-9z-9WJ"/>
+                <constraint firstItem="dLn-qS-3U9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lEf-Wd-Umx"/>
+                <constraint firstAttribute="bottom" secondItem="dLn-qS-3U9" secondAttribute="bottom" id="pPx-fW-f8X"/>
+                <constraint firstItem="a5a-La-VCr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x0c-br-KGL"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="dLn-qS-3U9" id="R33-A6-jMi"/>
+                <outlet property="tableView" destination="a5a-La-VCr" id="7yK-4d-0VQ"/>
+            </connections>
+            <point key="canvasLocation" x="275" y="39.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sale_back.png" width="145" height="150"/>
+    </resources>
+</document>

@@ -1,0 +1,52 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      个人资料
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background:#f5f5f5">
+  <ion-list class="div-list">
+    <ion-item (tap)="edit('image')" class="border-0">
+      <ion-label>头像</ion-label>
+      <img class="avatar" item-right *ngIf="employee.image_url" [src]="employee.image_url">
+      <img class="avatar" item-right *ngIf="!employee.image_url" src="assets/img/avatar-default.png">
+    </ion-item>
+    <ion-item (tap)="edit('name')">
+      <ion-label>姓名</ion-label>
+      <ion-note item-right>{{employee.name}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>登陆账号(手机)</ion-label>
+      <ion-note item-right>{{employee.mobile_phone}}</ion-note>
+    </ion-item>
+    <ion-item class="border-0">
+      <ion-label class="line">用户角色</ion-label>
+      <ion-select [(ngModel)]="employee.role_option" disabled>
+        <ion-option value="1">公司管理员</ion-option>
+        <ion-option value="2">公司运维</ion-option>
+        <ion-option value="3">门店管理员</ion-option>
+        <ion-option value="4">收银员</ion-option>
+        <ion-option value="5">普通用户</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <br />
+  <ion-list class="div-list">
+    <ion-item (tap)="edit('gender')" class="border-0">
+      <ion-label class="line">性别</ion-label>
+      <ion-select [(ngModel)]="employee.gender" disabled>
+        <ion-option value="male">男</ion-option>
+        <ion-option value="female">女</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item (tap)="edit('birthday')">
+      <ion-label>生日</ion-label>
+      <ion-note item-right>{{employee.birthday}}</ion-note>
+    </ion-item>
+    <ion-item (tap)="edit('work_email')" class="border-0">
+      <ion-label>邮箱</ion-label>
+      <ion-note item-right>{{employee.work_email}}</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

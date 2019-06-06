@@ -1,0 +1,11 @@
+framework module WacomLicensing {
+  umbrella header "WacomLicensing.h"
+
+  export *
+  module * { export * }
+}
+
+module WacomLicensing.Swift {
+    header "WacomLicensing-Swift.h"
+    requires objc
+}

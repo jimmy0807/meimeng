@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>月业绩提成明细</ion-title>
+  </ion-navbar>
+  <ion-toolbar color="primary" no-border-top>
+    <ion-row>
+      <ion-col>
+        <button small ion-button icon-left>
+        {{commission.reservation_month}}
+      </button>
+      </ion-col>
+      <ion-col text-center>
+        <button small ion-button>
+       {{commission.employee_name}}
+      </button>
+      </ion-col>
+      <ion-col text-right>
+        <button small ion-button icon-right>
+        总提成：{{commission.amount_total_format}}
+      </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-group *ngFor="let day of commissionDays">
+      <ion-item-divider sticky>
+        <ion-label>
+          {{day.date}}
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let commission of day.commissions">
+        <button ion-item (tap)="goDetail(commission)">
+          <p>{{commission.employee_name}} {{commission.date_time}} {{commission.ampm}}</p>
+          <p>客户：{{commission.member_name}} / {{commission.sale_or_do}}: {{commission.base_amount}} / 提成:  {{commission.commission_money_format}}</p>
+        </button>
+        <ion-item-options>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

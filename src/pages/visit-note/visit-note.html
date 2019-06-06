@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>回访内容</ion-title>
+    <ion-buttons end *ngIf="!readonly">
+      <button ion-button (tap)="save()" [disabled]="loading">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-list class="margin-0">
+    <button ion-item (tap)="select('employee')">
+      <ion-label>员工</ion-label>
+      <ion-note item-right>{{n.employee_name || holder2}}</ion-note>
+    </button>
+    <!--<button ion-item (tap)="select('user')">
+      <ion-label>登陆账号</ion-label>
+      <ion-note item-right>{{n.plant_visit_user_name || holder2}}</ion-note>
+    </button>-->
+    <ion-item>
+      <ion-label>类型</ion-label>
+      <ion-select [(ngModel)]="n.levle_id" okText="确定" cancelText="关闭" [disabled]="readonly">
+        <ion-option *ngFor="let l of levels" value="{{l.id}}">{{l.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>计划回访日期</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="n.plant_visit_date" doneText="确定" cancelText="取消" class="clr-146"
+                    [disabled]="readonly"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <div class="div-10"></div>
+  <div *ngIf="n.id">
+    <div *ngIf="n.state==='draft'">
+      <div class="text-div">
+        <textarea class="text-area" rows="5"
+                  [(ngModel)]="n.note" placeholder="请输入回访结果"></textarea>
+      </div>
+      <div class="div-scroll">
+        <div *ngFor="let img of n.visit_image_ids" class="div-add">
+          <img src="{{img.image_url}}" class="div-img"
+               (tap)="showImage(img)" />
+          <ion-icon name="close" class="icon-del" (tap)="delImage(img)"></ion-icon>
+        </div>
+        <div class="div-add" (tap)="getImage()">
+          <ion-icon name="add" class="icon-add"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="n.state!=='draft'">
+      <div class="text-div">
+        <div class="text-div">
+          <textarea class="text-area" rows="5"
+                    [(ngModel)]="n.note" placeholder="请输入回访结果"></textarea>
+        </div>
+        <div class="div-scroll">
+          <div *ngFor="let img of n.visit_image_ids" class="div-add">
+            <img src="{{img.image_url}}" class="div-img"
+                 (tap)="showImage(img)" />
+          </div>
+        </div>
+        <div class="div-10"></div>
+        <div *ngIf="n.state!=='finish' && isAdmin">
+          <textarea class="text-area" rows="5"
+                    [(ngModel)]="n.review" placeholder="请输入审核内容..."></textarea>
+        </div>
+        <p class="text-p" *ngIf="!isAdmin || n.state==='finish'">{{n.review}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer *ngIf="n.state==='draft' && n.id && isSelf">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="done()" color="primary" full [disabled]="loading">完成回访</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-footer *ngIf="n.state==='done' && n.id && isAdmin">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="draft()" color="danger" full [disabled]="loading">驳回</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (tap)="finish()" color="primary" full [disabled]="loading">审核通过</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

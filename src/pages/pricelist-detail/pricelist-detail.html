@@ -1,0 +1,86 @@
+﻿<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+    <ion-title>{{model.title}}：{{pricelist.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="text" text-right required [(ngModel)]="pricelist.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>折扣(几折)<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="number" text-right required [(ngModel)]="pricelist.first_price_discount"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>折扣有效期（天） </ion-label>
+    <ion-input type="number" text-right [(ngModel)]="pricelist.discount_days"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>是否启动会员价</ion-label>
+    <ion-toggle text-right [(ngModel)]="pricelist.is_member_price"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>开卡充值积分</ion-label>
+    <ion-input type="number" text-right [(ngModel)]="pricelist.recharge_points"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>消耗项目积分</ion-label>
+    <ion-input type="number" text-right [(ngModel)]="pricelist.course_points"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>购买产品积分</ion-label>
+    <ion-input type="number" text-right [(ngModel)]="pricelist.product_points"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>积分兑换现金</ion-label>
+    <ion-input type="number" text-right [(ngModel)]="pricelist.points_change_money"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>唯一识别码<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="text" text-right required [(ngModel)]="pricelist.code"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>起充金额</ion-label>
+    <ion-input type="number" text-right [(ngModel)]="pricelist.start_money"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>续充金额</ion-label>
+    <ion-input type="number" text-right [(ngModel)]="pricelist.refill_money"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>赠送卡券（开卡充值）</ion-label>
+    <ion-select [(ngModel)]="pricelist.weika_id_first" cancelText="取消" okText="确定">
+      <ion-option *ngFor="let tmpl of couponTmpls" value="{{tmpl.id}}">{{tmpl.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>赠送卡券（续充值）</ion-label>
+    <ion-select [(ngModel)]="pricelist.weika_id_other" cancelText="取消" okText="确定">
+      <ion-option *ngFor="let tmpl of couponTmpls" value="{{tmpl.id}}">{{tmpl.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>赠送金额比例</ion-label>
+    <ion-input type="number" text-right [(ngModel)]="pricelist.gift_amount_points"></ion-input>
+  </ion-item>
+  <button *ngIf="pricelist.id>0" ion-item (tap)="showItems()">
+      <ion-label>折扣规则</ion-label>
+      <ion-note item-right>编辑</ion-note>
+  </button>
+</ion-content>
+<ion-footer *ngIf="isAdmin">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PeopleBottomSelectedView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLO-bE-ThJ">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="全选" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh1-z9-lHw">
+                            <rect key="frame" x="57" y="11" width="34" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3d-t7-g2g">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+                            <connections>
+                                <action selector="allSelectedBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="wEC-Vh-6NL"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="member_message_people_selected_n.png" highlightedImage="member_message_people_selected_h.png" translatesAutoresizingMaskIntoConstraints="NO" id="bsZ-So-Uhu">
+                            <rect key="frame" x="20" y="11" width="22" height="22"/>
+                        </imageView>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已选(45)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrL-jo-sWO">
+                            <rect key="frame" x="126" y="13" width="59" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.69411764705882351" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Sh1-z9-lHw" firstAttribute="leading" secondItem="bsZ-So-Uhu" secondAttribute="trailing" constant="15" id="BPg-pv-hzI"/>
+                        <constraint firstAttribute="bottom" secondItem="u3d-t7-g2g" secondAttribute="bottom" id="Kkq-qL-0UO"/>
+                        <constraint firstItem="XrL-jo-sWO" firstAttribute="centerY" secondItem="VLO-bE-ThJ" secondAttribute="centerY" id="NGz-le-zVI"/>
+                        <constraint firstItem="Sh1-z9-lHw" firstAttribute="centerY" secondItem="VLO-bE-ThJ" secondAttribute="centerY" id="Vrk-LC-azw"/>
+                        <constraint firstAttribute="trailing" secondItem="u3d-t7-g2g" secondAttribute="trailing" id="lpj-SW-m2d"/>
+                        <constraint firstItem="u3d-t7-g2g" firstAttribute="top" secondItem="VLO-bE-ThJ" secondAttribute="top" id="ofs-kb-xrt"/>
+                        <constraint firstItem="bsZ-So-Uhu" firstAttribute="leading" secondItem="VLO-bE-ThJ" secondAttribute="leading" constant="20" id="rDf-YJ-lIr"/>
+                        <constraint firstItem="u3d-t7-g2g" firstAttribute="leading" secondItem="VLO-bE-ThJ" secondAttribute="leading" id="tCi-fw-75r"/>
+                        <constraint firstAttribute="trailing" secondItem="XrL-jo-sWO" secondAttribute="trailing" constant="15" id="upW-3N-dTg"/>
+                        <constraint firstItem="bsZ-So-Uhu" firstAttribute="centerY" secondItem="VLO-bE-ThJ" secondAttribute="centerY" id="zot-vk-Uxh"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilo-sq-QeL">
+                    <rect key="frame" x="200" y="0.0" width="120" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="确认" backgroundImage="member_filter_sure_btn.png"/>
+                    <state key="disabled" backgroundImage="member_message_disable_bg.png"/>
+                    <connections>
+                        <action selector="sureBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="jZa-QN-uLW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VLO-bE-ThJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9PG-2t-vsX"/>
+                <constraint firstItem="VLO-bE-ThJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Aqz-Wn-G4r"/>
+                <constraint firstAttribute="trailing" secondItem="Ilo-sq-QeL" secondAttribute="trailing" id="D2k-GB-cEP"/>
+                <constraint firstAttribute="bottom" secondItem="VLO-bE-ThJ" secondAttribute="bottom" id="GnM-11-fKo"/>
+                <constraint firstAttribute="bottom" secondItem="Ilo-sq-QeL" secondAttribute="bottom" id="LjT-rG-roX"/>
+                <constraint firstItem="VLO-bE-ThJ" firstAttribute="width" secondItem="Ilo-sq-QeL" secondAttribute="width" multiplier="1.67" id="i3w-th-eFu"/>
+                <constraint firstItem="Ilo-sq-QeL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="w1S-Z8-heP"/>
+                <constraint firstItem="Ilo-sq-QeL" firstAttribute="leading" secondItem="VLO-bE-ThJ" secondAttribute="trailing" id="zZ3-ew-7Hm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="selectedImgView" destination="bsZ-So-Uhu" id="91X-Wv-bzw"/>
+                <outlet property="selectedLabel" destination="XrL-jo-sWO" id="LdM-F5-Atr"/>
+                <outlet property="sureBtn" destination="Ilo-sq-QeL" id="IyA-In-1FQ"/>
+            </connections>
+            <point key="canvasLocation" x="332" y="-10"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_filter_sure_btn.png" width="160" height="44"/>
+        <image name="member_message_disable_bg.png" width="121" height="44"/>
+        <image name="member_message_people_selected_h.png" width="22" height="22"/>
+        <image name="member_message_people_selected_n.png" width="22" height="22"/>
+    </resources>
+</document>

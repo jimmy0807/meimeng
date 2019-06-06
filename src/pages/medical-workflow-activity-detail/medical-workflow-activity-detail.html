@@ -1,0 +1,56 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}流程</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="a.name" type="text"></ion-input>
+    </ion-item>
+    <button ion-item (tap)="select('workflow')" [disabled]="inWorkflow">
+      <ion-label>工作流</ion-label>
+      <ion-note *ngIf="a.workflow_name" item-right>{{a.workflow_name}}</ion-note>
+      <ion-note *ngIf="!a.workflow_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('parent')">
+      <ion-label>上级活动</ion-label>
+      <ion-note *ngIf="a.parent_activity_name" item-right>{{a.parent_activity_name}}</ion-note>
+      <ion-note *ngIf="!a.parent_activity_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>流程角色</ion-label>
+      <ion-select [(ngModel)]="a.role_option" okText="确定" cancelText="关闭">
+        <ion-option value="1">财务开单员</ion-option>
+        <ion-option value="2">洗脸操作员</ion-option>
+        <ion-option value="3">拍照操作员</ion-option>
+        <ion-option value="4">敷麻药操作员</ion-option>
+        <ion-option value="5">诊室分派员</ion-option>
+        <ion-option value="6">诊室操作员</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>流程开始</ion-label>
+      <ion-toggle text-right [(ngModel)]="a.flow_start"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>流程结束</ion-label>
+      <ion-toggle text-right [(ngModel)]="a.flow_end"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

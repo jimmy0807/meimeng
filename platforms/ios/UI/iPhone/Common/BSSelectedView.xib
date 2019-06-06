@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BSSelectedView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1T-Nb-Ota">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <action selector="bgBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="UV7-Sl-hRo"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGF-JL-cre">
+                    <rect key="frame" x="0.0" y="404" width="375" height="263"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H9A-Dk-f9n">
+                            <rect key="frame" x="0.0" y="45" width="375" height="218"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="218" id="s8p-3D-O2J"/>
+                            </constraints>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-BI-Qfb">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择月份" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4A-W1-1Te" userLabel="选择月份">
+                                    <rect key="frame" x="155" y="13" width="65.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDo-dM-bdb">
+                                    <rect key="frame" x="325" y="0.0" width="50" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="I9x-XE-0n4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="BH5-lZ-FFk"/>
+                                    </connections>
+                                </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_card_cancel_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-w3-qq0">
+                                    <rect key="frame" x="353" y="16.5" width="12" height="12"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="s4A-W1-1Te" firstAttribute="centerY" secondItem="h9S-BI-Qfb" secondAttribute="centerY" id="AKL-ro-QF5"/>
+                                <constraint firstAttribute="trailing" secondItem="nXh-w3-qq0" secondAttribute="trailing" constant="10" id="KAz-kr-aV5"/>
+                                <constraint firstAttribute="height" constant="45" id="Miz-j6-dNc"/>
+                                <constraint firstItem="PDo-dM-bdb" firstAttribute="top" secondItem="h9S-BI-Qfb" secondAttribute="top" id="URp-2h-qUY"/>
+                                <constraint firstItem="s4A-W1-1Te" firstAttribute="centerX" secondItem="h9S-BI-Qfb" secondAttribute="centerX" id="VI7-up-tmj"/>
+                                <constraint firstAttribute="bottom" secondItem="PDo-dM-bdb" secondAttribute="bottom" id="Zaq-2Y-z1e"/>
+                                <constraint firstItem="nXh-w3-qq0" firstAttribute="centerY" secondItem="h9S-BI-Qfb" secondAttribute="centerY" id="k0M-9E-QjJ"/>
+                                <constraint firstAttribute="trailing" secondItem="PDo-dM-bdb" secondAttribute="trailing" id="rdy-Hi-99V"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="h9S-BI-Qfb" firstAttribute="leading" secondItem="MGF-JL-cre" secondAttribute="leading" id="4g6-lt-VXk"/>
+                        <constraint firstItem="h9S-BI-Qfb" firstAttribute="top" secondItem="MGF-JL-cre" secondAttribute="top" id="A3N-HI-zpC"/>
+                        <constraint firstAttribute="trailing" secondItem="H9A-Dk-f9n" secondAttribute="trailing" id="KDP-gz-gv7"/>
+                        <constraint firstAttribute="bottom" secondItem="H9A-Dk-f9n" secondAttribute="bottom" id="Rn6-ln-jr9"/>
+                        <constraint firstItem="H9A-Dk-f9n" firstAttribute="leading" secondItem="MGF-JL-cre" secondAttribute="leading" id="ZEe-Jr-3yi"/>
+                        <constraint firstItem="H9A-Dk-f9n" firstAttribute="top" secondItem="h9S-BI-Qfb" secondAttribute="bottom" id="aKL-7P-YYB"/>
+                        <constraint firstAttribute="trailing" secondItem="h9S-BI-Qfb" secondAttribute="trailing" id="oMv-GS-3iZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MGF-JL-cre" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Dgz-t2-K7D"/>
+                <constraint firstAttribute="trailing" secondItem="MGF-JL-cre" secondAttribute="trailing" id="JoJ-KR-gYN"/>
+                <constraint firstAttribute="bottom" secondItem="MGF-JL-cre" secondAttribute="bottom" id="Nnz-BF-R9Y"/>
+                <constraint firstItem="F1T-Nb-Ota" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Qne-6s-0wk"/>
+                <constraint firstAttribute="bottom" secondItem="F1T-Nb-Ota" secondAttribute="bottom" id="dGe-eQ-1wT"/>
+                <constraint firstItem="F1T-Nb-Ota" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jaI-gu-BLb"/>
+                <constraint firstAttribute="trailing" secondItem="F1T-Nb-Ota" secondAttribute="trailing" id="org-oe-d8J"/>
+            </constraints>
+            <connections>
+                <outlet property="bgBtn" destination="F1T-Nb-Ota" id="Hdy-Ai-Z6d"/>
+                <outlet property="containerView" destination="MGF-JL-cre" id="5Qr-rm-LTL"/>
+                <outlet property="containerViewBottomConstraint" destination="Nnz-BF-R9Y" id="eAM-Ap-uUw"/>
+                <outlet property="tableView" destination="H9A-Dk-f9n" id="kvc-cB-Tqo"/>
+                <outlet property="titleLabel" destination="s4A-W1-1Te" id="FEM-6F-E9t"/>
+            </connections>
+            <point key="canvasLocation" x="167.5" y="219.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_card_cancel_selected.png" width="12" height="12"/>
+    </resources>
+</document>

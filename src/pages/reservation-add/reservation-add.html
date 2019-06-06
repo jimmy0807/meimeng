@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+    <ion-title>预约（{{reservation.state_display}}）</ion-title>
+    <ion-buttons end *ngIf="reservation.state==='draft' || reservation.state==='approved'">
+      <button *ngIf="reservation.id>0" ion-button (tap)="present()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list class="margin-0">
+    <div class="divider-light">客户信息</div>
+    <ion-item>
+      <ion-label>电话<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input [(ngModel)]="reservation.telephone" (input)='onChangeMobile($event.target.value)' name="telephone" #telephone="ngModel"
+                 text-right maxlength="11"
+                 required type="tel" placeholder="请输入手机号码" [readonly]="reservation.id>0"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>姓名<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input required type="text" [(ngModel)]="reservation.member_name"
+                 text-right (input)='onChangeName($event.target.value)'
+                 placeholder="客户姓名" [readonly]="reservation.id>0"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>是否是店家</ion-label>
+      <ion-toggle text-right [(ngModel)]="reservation.is_partner"></ion-toggle>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>客户类别</ion-label>
+      <ion-select [(ngModel)]="reservation.member_type" okText="确定" cancelText="关闭">
+        <ion-option value="wip">WIP</ion-option>
+        <ion-option value="vip">VIP</ion-option>
+        <ion-option value="pt">PT</ion-option>
+        <ion-option value="dj">DJ</ion-option>
+        <ion-option value="dd">DD</ion-option>
+        <ion-option value="dl">DL</ion-option>
+        <ion-option value="yg">YG</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list class="margin-0">
+    <div class="divider-light">预约信息 {{reservation.name}}</div>
+    <button ion-item (tap)="select('employee')">
+      <ion-label>预约对象<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-note *ngIf="reservation.technician_name" item-right>{{reservation.technician_name}}</ion-note>
+      <ion-note *ngIf="!reservation.technician_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="onSelectProduct()">
+      <ion-label>项目</ion-label>
+      <ion-note item-right>{{reservation.product_names || '请选项目'}}</ion-note>
+    </button>
+    <button ion-item (tap)="select('designer')">
+      <ion-label>设计师</ion-label>
+      <ion-note *ngIf="reservation.designers_name" item-right>{{reservation.designers_name}}</ion-note>
+      <ion-note *ngIf="!reservation.designers_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('designers_service')">
+      <ion-label>第二设计师或陪同</ion-label>
+      <ion-note *ngIf="reservation.designers_service_name" item-right>{{reservation.designers_service_name}}</ion-note>
+      <ion-note *ngIf="!reservation.designers_service_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('director')">
+      <ion-label>设计总监</ion-label>
+      <ion-note *ngIf="reservation.director_employee_name" item-right>{{reservation.director_employee_name}}</ion-note>
+      <ion-note *ngIf="!reservation.director_employee_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('doctor')">
+      <ion-label>医生</ion-label>
+      <ion-note *ngIf="reservation.doctor_name" item-right>{{reservation.doctor_name}}</ion-note>
+      <ion-note *ngIf="!reservation.doctor_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>到店日期</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" min="{{minDate}}" [(ngModel)]="startDate" doneText="确定" cancelText="取消" class="clr-146"
+                    (ionChange)="dateChanged()"></ion-datetime>
+    </ion-item>
+    <div class="div-time" (tap)="showTimes()">
+      <ion-item class="item-time">
+        <ion-label>开始时间<span color="danger" class="c-danger">*</span></ion-label>
+        <!--<ion-datetime displayFormat="HH:mm" min="{{minStart}}" [(ngModel)]="startTime" doneText="确定" cancelText="取消" class="clr-146 date-time"
+                      (ionChange)="startChanged()"></ion-datetime>-->
+        <ion-note item-right class="date-time">{{startTime}}</ion-note>
+      </ion-item>
+      <ion-icon class="icon-time" item-right name="ios-calendar" color="primary"></ion-icon>
+    </div>
+    <ion-item no-lines>
+      <ion-label>结束时间</ion-label>
+      <ion-datetime displayFormat="HH:mm" min="{{minEnd}}" [(ngModel)]="endTime" doneText="确定" cancelText="取消" class="clr-146"
+                    [disabled]="bookTime"></ion-datetime>
+    </ion-item>
+    <div class="divider-light">备注</div>
+    <ion-item>
+      <ion-textarea [(ngModel)]="reservation.description" placeholder="请输入客人要求" rows="4">{{reservation.description}}</ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="reservation.approve_date" class="margin-0">
+    <div class="divider-light">审核信息</div>
+    <ion-item>
+      <ion-label>审核人</ion-label>
+      <ion-note item-right>{{reservation.approve_name}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>审核时间</ion-label>
+      <ion-note item-right>{{reservation.approve_date}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-textarea rows="4" placeholder="管理员审核、备注信息"> {{reservation.refuse_desc}}</ion-textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer *ngIf="reservation.state=='draft' || reservation.state=='approved'">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button *ngIf="model=='add'" ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+      <button *ngIf="model=='edit'" ion-button (tap)="update()" type="submit" color="primary" block>修改</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+

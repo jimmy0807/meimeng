@@ -1,0 +1,76 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="padding-top:5px;">
+  <!--<button ion-item class="item-p16">-->
+  <button ion-item (tap)="selectProduct()" class="item-p16">
+    <ion-label>产品</ion-label>
+    <ion-note *ngIf="line.product_name" item-right>{{line.product_name}}</ion-note>
+    <ion-note *ngIf="!line.product_name" item-right>请选择产品</ion-note>
+  </button>
+  <ion-item class="item-p16">
+    <ion-label>售价</ion-label>
+    <ion-note item-right><span *ngIf="line.lst_price">￥</span>{{line.lst_price}}</ion-note>
+  </ion-item>
+  <ion-item mode="ios" class="item-p16 font-16">
+    <ion-label>数量<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="number" text-right required [(ngModel)]="line.qty" onfocus="this.select()"></ion-input>
+  </ion-item>
+  <div *ngIf="showMore">
+    <br />
+    <ion-item class="item-p16">
+      <ion-label>更多设置</ion-label>
+      <ion-toggle text-right [(ngModel)]="line.is_show_more"></ion-toggle>
+    </ion-item>
+    <div *ngIf="line.is_show_more">
+      <ion-item class="item-p16">
+        <ion-label>有效期内不限次数</ion-label>
+        <ion-toggle text-right [(ngModel)]="line.limited_qty"></ion-toggle>
+      </ion-item>
+      <ion-item class="item-p16">
+        <ion-label>可以等价替换消耗</ion-label>
+        <ion-toggle text-right [(ngModel)]="line.same_price_replace"></ion-toggle>
+      </ion-item>
+      <ion-item mode="ios" class="item-p16 font-16">
+        <ion-label>有效期限（天）</ion-label>
+        <ion-input type="number" text-right [(ngModel)]="line.limited_date" onfocus="this.select()"></ion-input>
+      </ion-item>
+      <ion-card class="card-m16">
+        <ion-card-header color="primary">
+          可替换项目
+          <span style="float:right" (tap)="addSame()">添加</span>
+        </ion-card-header>
+        <ion-list>
+          <ion-item-sliding *ngFor="let prd of line.same_ids" style="padding-left:16px;padding-right:0">
+            <ion-item class="item-p0">
+              <h2>{{prd.name}}</h2>
+              <p item-right>￥{{prd.lst_price}}</p>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="danger" (tap)="deleteSame(prd)">
+                删除
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="saveLine()" type="submit" color="primary" block>保存</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

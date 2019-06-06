@@ -1,0 +1,11 @@
+framework module WILLDevicesCore {
+  umbrella header "WILLDevicesCore.h"
+
+  export *
+  module * { export * }
+}
+
+module WILLDevicesCore.Swift {
+    header "WILLDevicesCore-Swift.h"
+    requires objc
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IndicatorCollectionTableView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGf-Hf-Dtd">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="57" id="pXM-as-wrl"/>
+                    </constraints>
+                </scrollView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GBG-kg-Yzs">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gO8-Tq-ZK0">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="vGf-Hf-Dtd" secondAttribute="trailing" id="BQ7-cG-SNV"/>
+                <constraint firstItem="GBG-kg-Yzs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QhK-jS-IJl"/>
+                <constraint firstItem="vGf-Hf-Dtd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bnm-9b-lpQ"/>
+                <constraint firstItem="vGf-Hf-Dtd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dTh-Jh-Twe"/>
+                <constraint firstAttribute="bottom" secondItem="GBG-kg-Yzs" secondAttribute="bottom" id="rJY-qH-XAd"/>
+                <constraint firstAttribute="trailing" secondItem="GBG-kg-Yzs" secondAttribute="trailing" id="rlq-31-fCo"/>
+                <constraint firstItem="GBG-kg-Yzs" firstAttribute="top" secondItem="vGf-Hf-Dtd" secondAttribute="bottom" id="vz5-vA-6Od"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionView" destination="GBG-kg-Yzs" id="yNv-oR-8oF"/>
+                <outlet property="scrollView" destination="vGf-Hf-Dtd" id="2QO-uG-z8t"/>
+                <outlet property="scrollViewHeightConstraint" destination="pXM-as-wrl" id="Fet-lo-MbO"/>
+            </connections>
+            <point key="canvasLocation" x="229.5" y="302.5"/>
+        </view>
+    </objects>
+</document>

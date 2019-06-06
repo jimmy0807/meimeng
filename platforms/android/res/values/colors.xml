@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="clear">#00000000</color>
+    <color name="dialog_bg">#88000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="dark_red">#FF4040</color>
+    <color name="point_selected">#595757</color>
+    <color name="dark_blue">#ff0099cc</color>
+    <color name="light_blue_bg">#e6f3f5</color>
+    <color name="dark_d_blue">#2e99a3</color>
+    <color name="orange">#f48b36</color>
+    <color name="bg_color">#f3ede2</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_frame">#ff88ae00</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="bisiness_bg">#c5e5e8</color>
+    <color name="blue_bg">#2badba</color>
+    <color name="grey_bg">#cfd2d2</color>
+    <color name="dark_gray">#555555</color>
+    <color name="gray">#808080</color>
+    <color name="light_gray">#aaaaaa</color>
+    <color name="back_red">#ff0000</color>
+    
+    <!-- QR -->
+    <color name="qr_color">#7dd8de</color>
+    
+    <!-- GESTURE -->
+    <color name="gesture_error">#e8691e</color>
+    
+    <!-- CARD -->
+    <color name="null_gray">#8f8f8f</color>
+    <color name="item_null">#808080</color>
+    <color name="item_exist">#48ac0c</color>
+    <color name="plus_green">#46aa09</color>
+    <color name="minus_orange">#ec501a</color>
+    <color name="consume_user">#2caebd</color>
+    <color name="banding_card">#3e939d</color>
+    <color name="create_new_card">#e77244</color>
+    
+    <!-- 设置 -->
+    <color name="share_text_color">#2caebd</color>
+    <color name="home_detail_line">#d0e9e9</color>
+    <color name="home_setting_exit">#ff623e</color>
+    
+    <!-- navi -->
+    <color name="navi_text_highlight">#888888</color>
+    
+    <color name="title_text_color">#242424</color>
+    <color name="reserve_background_color">#F5F5F5</color>
+    
+    <!-- action_sheet -->
+    <color name="popup_title">#81898b</color>
+    <color name="popup_ok">#eb512f</color>
+    <color name="popup_cancel">#0c71f3</color>
+    <color name="action_sheet_n">#f5f3ef</color>
+    <color name="action_sheet_h">#dcdad8</color>
+    <color name="action_sheet_text_color">#007aff</color>
+    
+    <!-- consume -->
+    <color name="consume_background_color">#f3ede1</color>
+    <color name="consume_help_info_color">#645d58</color>
+    <color name="consume_phone_color">#2f99a5</color>
+    <color name="consume_payment_amount_color">#de1414</color>
+    
+    
+</resources>

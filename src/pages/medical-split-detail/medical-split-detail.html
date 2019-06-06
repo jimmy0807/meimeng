@@ -1,0 +1,71 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}分诊单</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item (tap)="select('customer')">
+      <ion-label>客户</ion-label>
+      <ion-note *ngIf="s.customer_name" item-right>{{s.customer_name}}</ion-note>
+      <ion-note *ngIf="!s.customer_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>客户咨询分类</ion-label>
+      <ion-select [(ngModel)]="s.category_id" okText="确定" cancelText="关闭">
+        <ion-option *ngFor="let i of cats" value="{{i.id}}">{{i.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>客户咨询方式</ion-label>
+      <ion-select [(ngModel)]="s.type_id" okText="确定" cancelText="关闭">
+        <ion-option *ngFor="let i of types" value="{{i.id}}">{{i.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>客户类型</ion-label>
+      <ion-select [(ngModel)]="s.customer_category" okText="确定" cancelText="关闭">
+        <ion-option value="new">新客户</ion-option>
+        <ion-option value="old">老客户</ion-option>
+        <ion-option value="retreat">潜在客户</ion-option>
+      </ion-select>
+    </ion-item>
+    <br />
+    <button ion-item (tap)="select('reservation')">
+      <ion-label>预约</ion-label>
+      <ion-note *ngIf="s.reservation_name" item-right>{{s.reservation_name}}</ion-note>
+      <ion-note *ngIf="!s.reservation_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('receiver')">
+      <ion-label>咨询师</ion-label>
+      <ion-note *ngIf="s.receiver_name" item-right>{{s.receiver_name}}</ion-note>
+      <ion-note *ngIf="!s.receiver_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item (tap)="select('tags')">
+      <h2>标签</h2>
+      <p><span *ngFor="let t of s.tag_ids">{{t.name}}&nbsp;</span></p>
+    </ion-item>
+    <ion-item>
+      <ion-label>咨询内容<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="s.content" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>结果建议</ion-label>
+      <ion-input text-right item-right [(ngModel)]="s.result" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

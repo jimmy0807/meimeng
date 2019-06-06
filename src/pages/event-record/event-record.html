@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>查看详情</ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="sign">
+        已签到
+      </ion-segment-button>
+      <ion-segment-button value="buy">
+        已购买
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-back" [ngSwitch]="segment">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngSwitchCase="'sign'">
+    <ion-list style="margin:0">
+      <div class="div-item" *ngFor="let i of list">
+        <div class="div-l">
+          <h2>{{i.name}}</h2>
+          <p class="p-name">{{i.event_name}}</p>
+          <p class="p-code">SN码：{{i.barcode}}</p>
+        </div>
+        <div class="div-r">
+          <p class="p-time">{{i.date}}</p>
+          <p class="p-state">{{i.state_name}}</p>
+        </div>
+      </div>
+    </ion-list>
+    <div text-center class="no-item-div" *ngIf="!list.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有记录</p>
+      </div>
+    </div>
+    <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  <div *ngSwitchCase="'buy'">
+    <ion-list style="margin:0">
+      <div class="div-item" *ngFor="let i of list2">
+        <div class="div-l">
+          <h2>{{i.name}}</h2>
+          <p class="p-name">{{i.event_name}}</p>
+        </div>
+        <div class="div-r">
+          <p class="p-time">{{i.date}}</p>
+          <p class="p-state p-state-d">{{i.state_name}}</p>
+        </div>
+      </div>
+    </ion-list>
+    <div text-center class="no-item-div" *ngIf="!list2.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有记录</p>
+      </div>
+    </div>
+    <ion-infinite-scroll *ngIf="infiniteEnabled2" (ionInfinite)="doInfinite2($event)" threshold="100px">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

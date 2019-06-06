@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PosOperateAssignViewController">
+            <connections>
+                <outlet property="tableView" destination="C8H-uP-1HQ" id="ONJ-zx-XXm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C8H-uP-1HQ">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="NXl-QS-rUc"/>
+                        <outlet property="delegate" destination="-1" id="Amb-zE-7ew"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQ7-Cc-rYc">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bP0-Ra-azZ">
+                            <state key="normal" title="确认" backgroundImage="member_green_bg.png"/>
+                            <connections>
+                                <action selector="sureBtnPressed:" destination="-1" eventType="touchUpInside" id="JWX-KN-fxn"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="bP0-Ra-azZ" firstAttribute="leading" secondItem="VQ7-Cc-rYc" secondAttribute="leading" constant="15" id="PyR-iz-chn"/>
+                        <constraint firstItem="bP0-Ra-azZ" firstAttribute="centerY" secondItem="VQ7-Cc-rYc" secondAttribute="centerY" id="SLN-h4-dMQ"/>
+                        <constraint firstAttribute="trailing" secondItem="bP0-Ra-azZ" secondAttribute="trailing" constant="15" id="bhS-cV-G9g"/>
+                        <constraint firstAttribute="height" constant="60" id="ygS-cm-kwM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="C8H-uP-1HQ" secondAttribute="trailing" id="77R-0V-dSV"/>
+                <constraint firstItem="C8H-uP-1HQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gsg-TO-wlK"/>
+                <constraint firstItem="C8H-uP-1HQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xbg-6k-yUd"/>
+                <constraint firstAttribute="bottom" secondItem="VQ7-Cc-rYc" secondAttribute="bottom" id="eBE-2C-Sgo"/>
+                <constraint firstAttribute="bottom" secondItem="C8H-uP-1HQ" secondAttribute="bottom" id="gq2-0K-u8L"/>
+                <constraint firstItem="VQ7-Cc-rYc" firstAttribute="top" secondItem="C8H-uP-1HQ" secondAttribute="bottom" id="lKD-Oo-X6m"/>
+                <constraint firstItem="VQ7-Cc-rYc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lQ0-gp-6cO"/>
+                <constraint firstAttribute="trailing" secondItem="VQ7-Cc-rYc" secondAttribute="trailing" id="yLK-Ef-Yf5"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="gq2-0K-u8L"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="238.5" y="185.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

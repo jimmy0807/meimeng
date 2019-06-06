@@ -1,0 +1,78 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>库位</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="text" text-right [(ngModel)]="lot.name" onfocus="this.select()"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>库位类型<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-select [(ngModel)]="lot.usage" cancelText="取消" okText="确定">
+      <ion-option value="supplier">供应商库位</ion-option>
+      <ion-option value="view">视图</ion-option>
+      <ion-option value="internal">内部库位</ion-option>
+      <ion-option value="customer">客户库位</ion-option>
+      <ion-option value="inventory">库存损耗</ion-option>
+      <ion-option value="procurement">补货</ion-option>
+      <ion-option value="production">生产</ion-option>
+      <ion-option value="transit">转移库位</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>上级库位</ion-label>
+    <ion-select [(ngModel)]="lot.location_id" cancelText="取消" okText="确定">
+      <ion-option *ngFor="let l of locations" value="{{l.id}}">{{l.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item-divider class="divider-light">
+    其他信息
+  </ion-item-divider>
+  <button ion-item (tap)="selectPartner()">
+    <ion-label>拥有者</ion-label>
+    <ion-note *ngIf="lot.partner_name" item-right>{{lot.partner_name}}</ion-note>
+    <ion-note *ngIf="!lot.partner_name" item-right>请选择</ion-note>
+  </button>
+  <ion-item>
+    <ion-label>是一个废料库位？</ion-label>
+    <ion-toggle text-right [(ngModel)]="lot.scrap_location"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>是一个退货库位？</ion-label>
+    <ion-toggle text-right [(ngModel)]="lot.return_location"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>调配间库位</ion-label>
+    <ion-toggle text-right [(ngModel)]="lot.consumable_location"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>调拨临时传输库位</ion-label>
+    <ion-toggle text-right [(ngModel)]="lot.is_temp_translation"></ion-toggle>
+  </ion-item>
+  <ion-item-divider class="divider-light">
+    物流
+  </ion-item-divider>
+  <ion-item>
+    <ion-label>出库策略</ion-label>
+    <ion-select [(ngModel)]="lot.removal_strategy_id" cancelText="取消" okText="确定">
+      <ion-option *ngFor="let s of removal" value="{{s.id}}">{{s.name}}</ion-option>
+    </ion-select>
+  </ion-item><ion-item>
+    <ion-label>入库策略</ion-label>
+    <ion-select [(ngModel)]="lot.putaway_strategy_id" cancelText="取消" okText="确定">
+      <ion-option *ngFor="let s of putaway" value="{{s.id}}">{{s.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

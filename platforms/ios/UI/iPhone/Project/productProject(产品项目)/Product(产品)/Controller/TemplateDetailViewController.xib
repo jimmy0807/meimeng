@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TemplateDetailViewController">
+            <connections>
+                <outlet property="naviBackBtn" destination="bO5-KR-EPA" id="tuh-tz-Bg5"/>
+                <outlet property="naviSaveBtn" destination="R28-TD-X5j" id="z8k-g3-shZ"/>
+                <outlet property="naviTitleBtn" destination="iSp-0u-YOD" id="U8b-im-AL6"/>
+                <outlet property="naviTitleView" destination="nRx-Rj-SPL" id="zv9-s3-hbV"/>
+                <outlet property="subControllerView" destination="3IQ-hb-yUY" id="Dbg-DH-VQd"/>
+                <outlet property="titleImageView" destination="t2P-Pe-o9g" id="rdA-1F-div"/>
+                <outlet property="titleNameLabel" destination="gFZ-vy-VEv" id="bzq-Mi-Y4N"/>
+                <outlet property="view" destination="3BW-am-wTa" id="hw7-Uq-nEj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3BW-am-wTa">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRx-Rj-SPL" userLabel="titleView">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commom_navi_bk_IOS7.png" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-WI-9Xt"/>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO5-KR-EPA">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="4WT-Fd-OTA"/>
+                                <constraint firstAttribute="width" constant="32" id="BYX-f2-gWy"/>
+                            </constraints>
+                            <state key="normal" image="navi_back_n.png"/>
+                            <connections>
+                                <action selector="backBtnclick:" destination="-1" eventType="touchUpInside" id="EfC-jk-uin"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R28-TD-X5j">
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="保存"/>
+                            <connections>
+                                <action selector="saveBtnClick:" destination="-1" eventType="touchUpInside" id="3NJ-1S-iTB"/>
+                            </connections>
+                        </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFZ-vy-VEv">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale_selected_member_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="t2P-Pe-o9g">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="12" id="FqW-zM-Zms"/>
+                                <constraint firstAttribute="height" constant="7" id="VBl-kj-KlP"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="d1s-XS-LAS"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="yRd-jS-SdH"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="FqW-zM-Zms"/>
+                                    <exclude reference="d1s-XS-LAS"/>
+                                    <exclude reference="yRd-jS-SdH"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSp-0u-YOD">
+                            <connections>
+                                <action selector="naviTitleBtnClick:" destination="-1" eventType="touchUpInside" id="3jy-eC-Je4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="iSp-0u-YOD" firstAttribute="leading" secondItem="gFZ-vy-VEv" secondAttribute="leading" constant="-20" id="9eM-eH-Vx2"/>
+                        <constraint firstItem="DSD-WI-9Xt" firstAttribute="leading" secondItem="nRx-Rj-SPL" secondAttribute="leading" id="9hk-CF-UfZ"/>
+                        <constraint firstItem="t2P-Pe-o9g" firstAttribute="centerY" secondItem="gFZ-vy-VEv" secondAttribute="centerY" id="CBw-u4-cnr"/>
+                        <constraint firstItem="iSp-0u-YOD" firstAttribute="top" secondItem="nRx-Rj-SPL" secondAttribute="top" id="CDy-4f-REV"/>
+                        <constraint firstAttribute="trailing" secondItem="DSD-WI-9Xt" secondAttribute="trailing" id="FXh-kP-bM2"/>
+                        <constraint firstItem="t2P-Pe-o9g" firstAttribute="centerY" secondItem="bO5-KR-EPA" secondAttribute="centerY" id="ItQ-s7-viU"/>
+                        <constraint firstItem="gFZ-vy-VEv" firstAttribute="centerX" secondItem="nRx-Rj-SPL" secondAttribute="centerX" id="IyL-VI-b1T"/>
+                        <constraint firstItem="t2P-Pe-o9g" firstAttribute="leading" secondItem="gFZ-vy-VEv" secondAttribute="trailing" constant="3" id="KM9-Mv-HpV"/>
+                        <constraint firstItem="gFZ-vy-VEv" firstAttribute="centerY" secondItem="bO5-KR-EPA" secondAttribute="centerY" id="Kho-3K-zfU"/>
+                        <constraint firstAttribute="trailing" secondItem="R28-TD-X5j" secondAttribute="trailing" constant="15" id="OTr-8c-UDX"/>
+                        <constraint firstAttribute="height" id="P9t-O4-qIh"/>
+                        <constraint firstItem="iSp-0u-YOD" firstAttribute="height" secondItem="nRx-Rj-SPL" secondAttribute="height" id="UOO-U9-2of"/>
+                        <constraint firstItem="bO5-KR-EPA" firstAttribute="top" secondItem="nRx-Rj-SPL" secondAttribute="top" constant="26" id="Y9n-L3-Y7k"/>
+                        <constraint firstItem="iSp-0u-YOD" firstAttribute="trailing" secondItem="t2P-Pe-o9g" secondAttribute="trailing" constant="20" id="dyA-97-Dea"/>
+                        <constraint firstAttribute="bottom" secondItem="DSD-WI-9Xt" secondAttribute="bottom" id="fpn-As-OQ7"/>
+                        <constraint firstItem="t2P-Pe-o9g" firstAttribute="leading" secondItem="gFZ-vy-VEv" secondAttribute="trailing" constant="3" id="l4K-89-m7y"/>
+                        <constraint firstItem="DSD-WI-9Xt" firstAttribute="top" secondItem="nRx-Rj-SPL" secondAttribute="top" id="lOB-uv-wit"/>
+                        <constraint firstItem="R28-TD-X5j" firstAttribute="centerY" secondItem="bO5-KR-EPA" secondAttribute="centerY" id="tVW-u1-iUX"/>
+                        <constraint firstItem="bO5-KR-EPA" firstAttribute="leading" secondItem="nRx-Rj-SPL" secondAttribute="leading" constant="10" id="w9o-Up-yKd"/>
+                        <constraint firstItem="iSp-0u-YOD" firstAttribute="centerX" secondItem="nRx-Rj-SPL" secondAttribute="centerX" id="zk4-qI-Xu0"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="zk4-qI-Xu0"/>
+                        </mask>
+                    </variation>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IQ-hb-yUY" userLabel="subView">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3IQ-hb-yUY" secondAttribute="trailing" id="1ah-Uo-orI"/>
+                <constraint firstAttribute="trailing" secondItem="nRx-Rj-SPL" secondAttribute="trailing" id="7U1-xf-5AK"/>
+                <constraint firstAttribute="bottom" secondItem="3IQ-hb-yUY" secondAttribute="bottom" id="7cs-Kr-Mo2"/>
+                <constraint firstItem="nRx-Rj-SPL" firstAttribute="leading" secondItem="3BW-am-wTa" secondAttribute="leading" id="FDf-eb-IhM"/>
+                <constraint firstItem="3IQ-hb-yUY" firstAttribute="leading" secondItem="3BW-am-wTa" secondAttribute="leading" id="bC4-Yo-XGu"/>
+                <constraint firstItem="3IQ-hb-yUY" firstAttribute="top" secondItem="nRx-Rj-SPL" secondAttribute="bottom" id="c9O-BO-1Nh"/>
+                <constraint firstItem="nRx-Rj-SPL" firstAttribute="top" secondItem="3BW-am-wTa" secondAttribute="top" id="rB6-ZZ-F9e"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="-156" y="248"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="commom_navi_bk_IOS7.png" width="320" height="64"/>
+        <image name="navi_back_n.png" width="32" height="32"/>
+        <image name="sale_selected_member_arrow.png" width="12" height="7"/>
+    </resources>
+</document>

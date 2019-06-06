@@ -1,0 +1,75 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}客户</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>头像</ion-label>
+      <img class="avatar" item-right *ngIf="c.image_url" [src]="c.image_url" (tap)="getImage()">
+      <img class="avatar" item-right *ngIf="!c.image_url" src="assets/img/avatar-default.png" (tap)="getImage()">
+    </ion-item>
+    <ion-item>
+      <ion-label>姓名<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>手机<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.mobile" maxlength="11" required type="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>电话</ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.phone" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>邮箱</ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.email" type="text"></ion-input>
+    </ion-item>
+    <br />
+    <button ion-item (tap)="select('parent')">
+      <ion-label>推荐人(客户)</ion-label>
+      <ion-note *ngIf="c.parent_name" item-right>{{c.parent_name}}</ion-note>
+      <ion-note *ngIf="!c.parent_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('rmember')">
+      <ion-label>推荐人(会员) </ion-label>
+      <ion-note *ngIf="c.recommend_member_name" item-right>{{c.recommend_member_name}}</ion-note>
+      <ion-note *ngIf="!c.recommend_member_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('partner')">
+      <ion-label>渠道商</ion-label>
+      <ion-note *ngIf="c.channel_name" item-right>{{c.channel_name}}</ion-note>
+      <ion-note *ngIf="!c.channel_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('employee')">
+      <ion-label>顾问/跟进人</ion-label>
+      <ion-note *ngIf="c.employee_name" item-right>{{c.employee_name}}</ion-note>
+      <ion-note *ngIf="!c.employee_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="select('member')">
+      <ion-label>会员</ion-label>
+      <ion-note *ngIf="c.member_name" item-right>{{c.member_name}}</ion-note>
+      <ion-note *ngIf="!c.member_name" item-right>请选择</ion-note>
+    </button>
+    <br />
+    <ion-item>
+      <ion-label>备注</ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.note" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,47 @@
+﻿<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span>返回</span>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      跟进
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary" no-border-top>
+    <div class="head-box">
+      <h2>{{member.name}}&nbsp;</h2>
+      <div class="head-item">电话:{{member.mobile}} </div>
+      <div class="head-item">入会日期:{{member.create_date}}</div>
+      <div class="head-item">最后到店日:{{member.last_date}}</div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list padding>
+    <ion-item>
+      <ion-label stacked color="primary">备注，请填写预约结果信息</ion-label>
+      <ion-textarea row="10" [(ngModel)]="note" placeholder="点击编写预约结果"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-fab left bottom #fab3>
+    <button ion-fab color="primary"><ion-icon name="ios-call"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button color="primary" (tap)="call(fab3)" ion-fab><ion-icon name="ios-call"></ion-icon></button>
+      <button color="primary" (tap)="message(fab3)" ion-fab><ion-icon name="ios-mail"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="saveKpiRecord(0)" color="danger" full>跟进失败</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (tap)="saveKpiRecord(1)" color="primary" full>跟进成功</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

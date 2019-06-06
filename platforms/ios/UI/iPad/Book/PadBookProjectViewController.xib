@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PadBookProjectViewController">
+            <connections>
+                <outlet property="tableView" destination="H8H-RV-ahc" id="R0d-5K-pqA"/>
+                <outlet property="view" destination="030-zH-kfH" id="shw-fk-1Cg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="030-zH-kfH">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pad_project_side_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="3l8-45-i6J">
+                    <rect key="frame" x="0.0" y="43" width="400" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h3-Vg-83b">
+                    <rect key="frame" x="0.0" y="0.0" width="59" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="59" id="YeN-Po-4ER"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="返回">
+                        <color key="titleColor" red="0.76078431369999999" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="backBtnPressed:" destination="-1" eventType="touchUpInside" id="KqH-aQ-Ttj"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H8H-RV-ahc">
+                    <rect key="frame" x="14" y="51" width="373" height="441"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="441" id="L24-lk-Hjw"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="A6n-Br-w5w"/>
+                        <outlet property="delegate" destination="-1" id="NpC-gQ-fPd"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择预约项目" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLa-mR-t9v">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="VDh-YX-sjN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="H8H-RV-ahc" secondAttribute="bottom" constant="8" id="0yx-e2-EhT"/>
+                <constraint firstItem="H8H-RV-ahc" firstAttribute="top" secondItem="HLa-mR-t9v" secondAttribute="bottom" constant="6" id="6Op-xi-hcO"/>
+                <constraint firstItem="HLa-mR-t9v" firstAttribute="top" secondItem="030-zH-kfH" secondAttribute="top" id="Nb6-AD-6Tl"/>
+                <constraint firstItem="HLa-mR-t9v" firstAttribute="leading" secondItem="030-zH-kfH" secondAttribute="leading" id="PLc-MP-8lj"/>
+                <constraint firstAttribute="trailing" secondItem="H8H-RV-ahc" secondAttribute="trailing" constant="13" id="QX6-oc-mXF"/>
+                <constraint firstItem="H8H-RV-ahc" firstAttribute="leading" secondItem="030-zH-kfH" secondAttribute="leading" constant="14" id="dUW-8T-N7K"/>
+                <constraint firstAttribute="trailing" secondItem="HLa-mR-t9v" secondAttribute="trailing" id="drL-Zq-h1r"/>
+                <constraint firstItem="H8H-RV-ahc" firstAttribute="top" secondItem="0h3-Vg-83b" secondAttribute="bottom" constant="6" id="ee4-rX-Pe9"/>
+                <constraint firstItem="0h3-Vg-83b" firstAttribute="top" secondItem="030-zH-kfH" secondAttribute="top" id="s9o-GM-Fi6"/>
+                <constraint firstItem="0h3-Vg-83b" firstAttribute="leading" secondItem="030-zH-kfH" secondAttribute="leading" id="yYY-co-d3Q"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="321" y="341"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pad_project_side_line.png" width="299" height="1"/>
+    </resources>
+</document>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PopupBuyExtensionService">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4G-Gq-Oqr">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZiK-2y-ly7">
+                    <rect key="frame" x="347" y="189" width="330" height="390"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_pad_popup_dlc.png" translatesAutoresizingMaskIntoConstraints="NO" id="llR-Iu-sI4">
+                            <rect key="frame" x="135" y="42" width="60" height="65"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请购买扩展服务包" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzE-e5-cIm">
+                            <rect key="frame" x="8" y="127" width="314" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                            <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="该功能需要收费,请按需购买" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ge-Im-Mjf">
+                            <rect key="frame" x="8" y="170" width="314" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.5607843137254902" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiF-J6-JXX">
+                            <rect key="frame" x="16" y="244" width="298" height="60"/>
+                            <state key="normal" title="去购买" backgroundImage="common_pad_popup_button_solid_n.png"/>
+                            <state key="highlighted" backgroundImage="common_pad_popup_button_solid_h.png"/>
+                            <connections>
+                                <action selector="didOKButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="EfM-j5-tU6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHh-ri-acX">
+                            <rect key="frame" x="16" y="312" width="298" height="60"/>
+                            <state key="normal" title="下次再说" backgroundImage="common_pad_popup_button_blank_n.png">
+                                <color key="titleColor" red="0.3529411764705882" green="0.82745098039215681" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="highlighted" backgroundImage="common_pad_popup_button_blank_h.png"/>
+                            <connections>
+                                <action selector="didCancelButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="71O-2H-3TK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="common_pad_popup_button_blank_h.png" width="298" height="60"/>
+        <image name="common_pad_popup_button_blank_n.png" width="298" height="60"/>
+        <image name="common_pad_popup_button_solid_h.png" width="298" height="60"/>
+        <image name="common_pad_popup_button_solid_n.png" width="298" height="60"/>
+        <image name="common_pad_popup_dlc.png" width="59" height="65"/>
+    </resources>
+</document>

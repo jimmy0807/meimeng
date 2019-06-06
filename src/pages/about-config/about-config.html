@@ -1,0 +1,54 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>设置</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()">
+        <span>保存</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-list class="margin-0">
+    <ion-item>
+      <ion-label class="line">是否允许登陆后台</ion-label>
+      <ion-toggle class="line-8" disabled checked="{{user.is_allow_login}}"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label class="line">是否接收信息推送</ion-label>
+      <ion-toggle class="line" [(ngModel)]="user.is_accept_notice"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label class="line">是否智能推送需要跟进的会员</ion-label>
+      <ion-toggle class="line" [(ngModel)]="user.is_accept_push"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label class="line">多门店</ion-label>
+      <ion-toggle class="line-8" disabled checked="{{user.in_group_55}}"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label class="line">多公司</ion-label>
+      <ion-toggle class="line-8" disabled checked="{{user.in_group_6}}"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label class="line">是否允许消费欠款</ion-label>
+      <ion-toggle class="line-8" disabled checked="{{user.in_group_84}}"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <div class="div-10"></div>
+  <ion-list class="margin-0">
+    <button ion-item (tap)="changePwd()">
+      修改密码
+    </button>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="logout()" type="submit" color="danger" block>退出</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,36 @@
+﻿<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>允许的门店</ion-title>
+    <ion-buttons *ngIf="mode=='edit' || mode=='new'" end>
+      <button ion-button (tap)="save_shoplists()">
+        保存修改
+      </button>
+    </ion-buttons>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list inset>
+    <!--<button ion-item *ngFor="let item of shops" (tap)="itemSelected(item)">
+         {{item.name}}
+          <ion-icon color="primary" *ngIf="item.id===sid" name="ios-checkmark" item-left></ion-icon>
+      </button>-->
+    <ion-item *ngFor="let item of shopLists">
+      <ion-label>{{item.name}}</ion-label>
+      <ion-checkbox [(ngModel)]="item.active" *ngIf="mode=='view'" class="item-disabled" item-left></ion-checkbox>
+      <ion-checkbox [(ngModel)]="item.active" *ngIf="mode=='edit' || mode=='new'" [ngClass]="shop_id==item.id?'item-disabled':''" item-left></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!shopLists.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有选择门店</p>
+    </div>
+  </div>
+</ion-content>

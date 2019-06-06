@@ -1,0 +1,43 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>手术</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="add()">
+        <span>新建</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item-sliding *ngFor="let i of list">
+      <button ion-item (tap)="edit(i)">
+        <h2>{{i.name}}</h2>
+        <p>医生：{{i.doctor_name}}</p>
+        <p>病人：{{i.member_name}}</p>
+      </button>
+      <ion-item-options>
+        <button (tap)="delete(i)" ion-button color="danger">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!list.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

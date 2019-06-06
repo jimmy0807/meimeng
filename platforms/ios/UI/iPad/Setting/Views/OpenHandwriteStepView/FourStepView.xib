@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FourStepView">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step3.png" translatesAutoresizingMaskIntoConstraints="NO" id="1lQ-7F-Faf">
+                    <rect key="frame" x="384" y="56" width="256" height="256"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="256" id="0Nb-Bd-tCw"/>
+                        <constraint firstAttribute="width" constant="256" id="Lls-JJ-hZ0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击确认" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NF-lD-fJ2">
+                    <rect key="frame" x="392" y="350" width="240" height="68"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="68" id="ENK-E0-7o5"/>
+                        <constraint firstAttribute="width" constant="240" id="gxk-da-isq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                    <color key="textColor" red="0.37647058820000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="等待中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GA-9d-ye1">
+                    <rect key="frame" x="479" y="525" width="96" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="IE7-kj-Msh"/>
+                        <constraint firstAttribute="width" constant="96" id="RqU-KB-XzN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="7" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="IGQ-2v-7Wq">
+                    <rect key="frame" x="493" y="654" width="39" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="HDi-tn-qG6"/>
+                        <constraint firstAttribute="width" constant="39" id="VxH-Wy-cwK"/>
+                    </constraints>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="0.37647058820000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IGQ-2v-7Wq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="288.5" id="5cL-MB-acF"/>
+                <constraint firstItem="2NF-lD-fJ2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DMm-vi-8ux"/>
+                <constraint firstItem="IGQ-2v-7Wq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DXr-Rv-Id6"/>
+                <constraint firstItem="8GA-9d-ye1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="151.5" id="XyS-gX-eeJ"/>
+                <constraint firstItem="2NF-lD-fJ2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZyO-8G-eIF"/>
+                <constraint firstItem="1lQ-7F-Faf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-200" id="hsm-Wt-qPC"/>
+                <constraint firstItem="8GA-9d-ye1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="15" id="hva-Bd-WVK"/>
+                <constraint firstItem="1lQ-7F-Faf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rvA-g0-QAd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="157" y="-7"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="step3.png" width="260" height="260"/>
+    </resources>
+</document>

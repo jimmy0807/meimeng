@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      {{sale.period_name}}销售详情
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span >取消</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-list>
+    <ion-list-header>
+      主推商品销售明细
+    </ion-list-header>
+    <ion-item>
+      <ion-label>商品名称</ion-label>
+      <ion-label text-right item-right>{{sale.product_name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>公开价</ion-label>
+       <ion-label text-right item-right>{{sale.list_price}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>销量</ion-label>
+      <ion-label  text-right item-right>{{sale.sale_cnt}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>成交均价</ion-label>
+      <ion-label text-right item-right>{{sale.price_unit}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>合计</ion-label>
+     <ion-label text-right item-right>{{sale.total_amount}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col text-right>
+        <button (tap)="cancel()" ion-button color="danger" full>取消主推</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SecondStepView">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="连接中..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hva-wK-uGN">
+                    <rect key="frame" x="456.5" y="552" width="110" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="MJ6-c4-aV7"/>
+                        <constraint firstAttribute="width" constant="110" id="enp-Cd-Kes"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提示：确定USB线已经拔除" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyg-cV-e1L">
+                    <rect key="frame" x="388.5" y="482" width="247" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="247" id="Eq4-2S-Ybk"/>
+                        <constraint firstAttribute="height" constant="21" id="qy9-NM-Dl2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请按住6秒钟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Iy-g5-JVG">
+                    <rect key="frame" x="413.5" y="401" width="197" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="M9Z-y4-mJH"/>
+                        <constraint firstAttribute="width" constant="197" id="Wpi-or-yZ2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                    <color key="textColor" red="0.37647058820000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZVc-bN-3WW">
+                    <rect key="frame" x="384" y="56" width="256" height="256"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="256" id="vye-7g-8TW"/>
+                        <constraint firstAttribute="height" constant="256" id="zQD-2t-2W5"/>
+                    </constraints>
+                </imageView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="7" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="R1e-fs-YDu">
+                    <rect key="frame" x="481" y="620" width="62" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="GTo-hi-nbL"/>
+                        <constraint firstAttribute="height" constant="37" id="gr8-P3-r9a"/>
+                    </constraints>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="0.37647058820000001" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OIq-lN-wAF">
+                    <rect key="frame" x="451" y="554" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Fyg-cV-e1L" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="108.5" id="0lb-EA-sgs"/>
+                <constraint firstItem="hva-wK-uGN" firstAttribute="leading" secondItem="OIq-lN-wAF" secondAttribute="trailing" constant="-14.5" id="3Z7-UE-KCm"/>
+                <constraint firstItem="OIq-lN-wAF" firstAttribute="bottom" secondItem="hva-wK-uGN" secondAttribute="bottom" constant="1" id="8Sw-t9-49x"/>
+                <constraint firstItem="Fyg-cV-e1L" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Bp3-AB-Yqh"/>
+                <constraint firstItem="R1e-fs-YDu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ci2-9M-PrW"/>
+                <constraint firstItem="2Iy-g5-JVG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="41" id="Eg7-mT-NMG"/>
+                <constraint firstItem="hva-wK-uGN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Jb3-XQ-bT4"/>
+                <constraint firstItem="2Iy-g5-JVG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NNu-EW-twa"/>
+                <constraint firstItem="ZVc-bN-3WW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-200" id="Vug-kN-Xly"/>
+                <constraint firstItem="OIq-lN-wAF" firstAttribute="top" secondItem="hva-wK-uGN" secondAttribute="top" constant="2" id="X3j-8I-9ma"/>
+                <constraint firstItem="hva-wK-uGN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="178.5" id="cGb-Zd-nfJ"/>
+                <constraint firstItem="ZVc-bN-3WW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tZ7-mF-SH6"/>
+                <constraint firstItem="R1e-fs-YDu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="254.5" id="zNh-98-3bO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="connectStatus" destination="OIq-lN-wAF" id="Jix-a3-t8m"/>
+                <outlet property="connecting" destination="hva-wK-uGN" id="BMh-dH-YOe"/>
+            </connections>
+            <point key="canvasLocation" x="389" y="-136"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="step2.png" width="261" height="260"/>
+    </resources>
+</document>

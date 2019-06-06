@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PadBookPopoverDetailViewController">
+            <connections>
+                <outlet property="doneButton" destination="vwh-PU-6DI" id="sVQ-m8-GB5"/>
+                <outlet property="tableView" destination="rqS-fl-meg" id="TRj-Ae-YBf"/>
+                <outlet property="titleLabel" destination="rii-HO-l2i" id="0Lf-5T-u81"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编辑预约" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rii-HO-l2i">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="QSQ-Mq-bQ8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pad_project_side_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Zg-I0-1mK">
+                    <rect key="frame" x="0.0" y="43" width="400" height="1"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhJ-tg-JWY">
+                    <rect key="frame" x="0.0" y="0.0" width="59" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="Lg5-U0-de4"/>
+                        <constraint firstAttribute="width" constant="59" id="yb0-Xy-dqq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" red="0.76078431372549016" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="cacelBtnPressed:" destination="-1" eventType="touchUpInside" id="Kwk-xh-BfF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwh-PU-6DI">
+                    <rect key="frame" x="349" y="0.0" width="51" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="51" id="18F-88-PNS"/>
+                        <constraint firstAttribute="height" constant="45" id="CUh-qT-sWz"/>
+                        <constraint firstAttribute="height" constant="45" id="xhn-Fa-5OP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="完成">
+                        <color key="titleColor" red="0.27058823529411763" green="0.81568627450980391" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="xhn-Fa-5OP"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="doneBtnPressed:" destination="-1" eventType="touchUpInside" id="8XS-uj-G2G"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rqS-fl-meg">
+                    <rect key="frame" x="14" y="51" width="373" height="441"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="8i7-DY-GOj"/>
+                        <outlet property="delegate" destination="-1" id="MjD-yW-We7"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="vwh-PU-6DI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1nw-Ad-QiR"/>
+                <constraint firstAttribute="bottom" secondItem="rqS-fl-meg" secondAttribute="bottom" constant="8" id="3lh-Q0-xzZ"/>
+                <constraint firstItem="rii-HO-l2i" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9Ku-f4-MTx"/>
+                <constraint firstAttribute="trailing" secondItem="vwh-PU-6DI" secondAttribute="trailing" id="JFe-qg-GVU"/>
+                <constraint firstItem="vwh-PU-6DI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UBo-3D-iOY"/>
+                <constraint firstItem="rqS-fl-meg" firstAttribute="top" secondItem="vwh-PU-6DI" secondAttribute="bottom" constant="6" id="WYr-2p-2GJ"/>
+                <constraint firstAttribute="trailing" secondItem="rii-HO-l2i" secondAttribute="trailing" id="Xkh-tH-27D"/>
+                <constraint firstItem="RhJ-tg-JWY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZAj-n1-awY"/>
+                <constraint firstItem="rqS-fl-meg" firstAttribute="top" secondItem="vwh-PU-6DI" secondAttribute="bottom" constant="6" id="aiV-Ev-7Aj"/>
+                <constraint firstItem="RhJ-tg-JWY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="e8c-wf-mA9"/>
+                <constraint firstItem="rqS-fl-meg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="gb3-Uy-jl1"/>
+                <constraint firstAttribute="trailing" secondItem="vwh-PU-6DI" secondAttribute="trailing" id="k8I-Jp-lcK"/>
+                <constraint firstItem="rii-HO-l2i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lZi-rS-gwf"/>
+                <constraint firstAttribute="trailing" secondItem="rqS-fl-meg" secondAttribute="trailing" constant="13" id="nJl-QD-7GC"/>
+                <constraint firstAttribute="trailing" secondItem="vwh-PU-6DI" secondAttribute="trailing" id="sLq-sO-w2s"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="aiV-Ev-7Aj"/>
+                    <exclude reference="1nw-Ad-QiR"/>
+                    <exclude reference="JFe-qg-GVU"/>
+                    <exclude reference="k8I-Jp-lcK"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="321" y="341"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pad_project_side_line.png" width="299" height="1"/>
+    </resources>
+</document>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
+            <connections>
+                <outlet property="acopyRight" destination="wBs-za-JNI" id="CNt-Kx-E5V"/>
+                <outlet property="logoImageVeiw" destination="mV7-KV-Lw6" id="g4z-ex-Udr"/>
+                <outlet property="versionLabel" destination="CBA-8J-u1B" id="26r-OL-hYT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_logo@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="mV7-KV-Lw6">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="175" id="05W-wh-NRd"/>
+                        <constraint firstAttribute="width" constant="152" id="kL6-AQ-oXu"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="05W-wh-NRd"/>
+                            <exclude reference="kL6-AQ-oXu"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="05W-wh-NRd"/>
+                            <include reference="kL6-AQ-oXu"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_copyright@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="wBs-za-JNI">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="71" id="1jT-04-vVS"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="1jT-04-vVS"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="1jT-04-vVS"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6.2.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-8J-u1B">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="5bW-mP-q9Y"/>
+                        <constraint firstAttribute="height" constant="30" id="H0X-vd-oSZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.58222853535353536" green="0.58222853535353536" blue="0.58222853535353536" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="5bW-mP-q9Y"/>
+                            <exclude reference="H0X-vd-oSZ"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="5bW-mP-q9Y"/>
+                            <include reference="H0X-vd-oSZ"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="CBA-8J-u1B" firstAttribute="top" secondItem="mV7-KV-Lw6" secondAttribute="bottom" constant="10" id="CTQ-Qg-IV9"/>
+                <constraint firstAttribute="trailing" secondItem="wBs-za-JNI" secondAttribute="trailing" constant="50" id="O1g-la-KrO"/>
+                <constraint firstItem="mV7-KV-Lw6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="Wy1-xo-rSy"/>
+                <constraint firstAttribute="bottom" secondItem="wBs-za-JNI" secondAttribute="bottom" id="ZeO-fF-yO7"/>
+                <constraint firstAttribute="centerX" secondItem="CBA-8J-u1B" secondAttribute="centerX" id="o0x-2S-fRb"/>
+                <constraint firstItem="wBs-za-JNI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="p24-Zi-9dJ"/>
+                <constraint firstAttribute="centerX" secondItem="mV7-KV-Lw6" secondAttribute="centerX" id="tOL-gy-rtr"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="mV7-KV-Lw6"/>
+                    <exclude reference="wBs-za-JNI"/>
+                    <exclude reference="CBA-8J-u1B"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="CTQ-Qg-IV9"/>
+                    <exclude reference="o0x-2S-fRb"/>
+                    <exclude reference="Wy1-xo-rSy"/>
+                    <exclude reference="tOL-gy-rtr"/>
+                    <exclude reference="O1g-la-KrO"/>
+                    <exclude reference="ZeO-fF-yO7"/>
+                    <exclude reference="p24-Zi-9dJ"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="mV7-KV-Lw6"/>
+                    <include reference="wBs-za-JNI"/>
+                    <include reference="CBA-8J-u1B"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="CTQ-Qg-IV9"/>
+                    <include reference="o0x-2S-fRb"/>
+                    <include reference="Wy1-xo-rSy"/>
+                    <include reference="tOL-gy-rtr"/>
+                    <include reference="O1g-la-KrO"/>
+                    <include reference="ZeO-fF-yO7"/>
+                    <include reference="p24-Zi-9dJ"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="setting_copyright@2x.png" width="264" height="386"/>
+        <image name="setting_logo@2x.png" width="264" height="386"/>
+    </resources>
+</document>

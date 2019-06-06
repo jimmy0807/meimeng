@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>营业客流</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    <ion-item-group *ngFor="let group of operates" >
+      <ion-item-divider sticky>
+        <ion-label>
+          {{group.member_name}}
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let line of group.operates" >
+        <ion-item>
+          <h3>{{line.create_date}}</h3>
+          <p>收银员:{{line.create_name}}</p>
+          <p>单号:{{line.name}}</p>
+          <p *ngIf="line.products">商品:{{line.products}}</p>
+          <p *ngIf="line.comsumes">服务:{{line.comsumes}}</p>
+          <p *ngIf="line.payments">支付:{{line.payments}}</p>
+          <ion-note item-right>{{line.type_display}}</ion-note>
+        </ion-item>
+        <ion-item-options>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

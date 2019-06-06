@@ -1,0 +1,99 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-app-name": {
+            "APP_NAME": "店尚",
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-sms-plugin": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-plugin-security": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "jpush-phonegap-plugin": {
+            "API_KEY": "cfae909b03f61b27f0ca1ff1",
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "cordova-hot-code-push-plugin": {
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.innovative.boss"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "cordova-plugin-photo-library": {
+            "PHOTO_LIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "cordova-plugin-qrscanner": {
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "cordova-plugin-wechat": {
+            "WECHATAPPID": "wx3e18cef36f359534",
+            "PACKAGE_NAME": "com.born.boss"
+        },
+        "cordova-alipay-base": {
+            "APP_ID": "2015092100308205",
+            "PACKAGE_NAME": "com.born.boss"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "cordova-plugin-add-swift-support": {
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        },
+        "cordova-plugin-swift-support": {
+            "PACKAGE_NAME": "com.born-innovative.boss"
+        }
+    }
+}

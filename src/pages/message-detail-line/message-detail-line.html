@@ -1,0 +1,15 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let line of msgLines" (tap)="read(line)">
+      <h2 class="{{line.class}}">{{line.title}}</h2>
+      <ion-note *ngIf="!line.readed" item-right>{{line.time}}</ion-note>
+      <ion-icon *ngIf="line.readed" item-right name="ios-checkmark"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

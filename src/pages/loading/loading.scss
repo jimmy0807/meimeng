@@ -1,0 +1,55 @@
+page-loading {
+
+    .loading-bg{
+        height:100%;
+        width:100%;
+         object-fit: cover;
+        background-size:cover;
+        background-position:center center;
+        background-repeat: no-repeat;
+        filter: alpha(opacity=70); opacity:0.7;
+        }
+    .loading-bg-filter{
+        height:100%;
+        width:100%;
+        position:absolute;
+        background-color: #000000;
+    }
+
+     .loading-center{
+        position:fixed;
+        top:110px;
+        margin-left:auto;
+        margin-right:auto;
+        text-align: center;
+        padding:0px 60px;
+        color:#FFFFFF;
+    }
+     .loading-center h1{
+       font-size: 40px;
+    }
+
+
+    .loading-bottom{
+        position:fixed;
+        bottom:10px;
+        margin-left:auto;
+        margin-right:auto;
+        text-align: center;
+        padding:0px 60px;
+    }
+    .loading-label{
+        text-align: center;
+        height: 100px;
+        color:#FFFFFF;
+        background-color: transparent;
+    }
+
+
+}
+
+
+
+
+
+

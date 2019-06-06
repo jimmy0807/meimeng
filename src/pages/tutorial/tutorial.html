@@ -1,0 +1,26 @@
+<ion-header no-border no-shadow>
+  <ion-navbar no-border>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (tap)="startApp()" color="primary">跳过</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides pager (ionWillChange)="onSlideChangeStart($event)">
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.image" class="slide-image"/>
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-5.png" class="slide-image"/>
+      <h2 class="slide-title">你准备好了吗?</h2>
+      <button ion-button icon-right large clear (tap)="startApp()">
+        马上体验
+
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

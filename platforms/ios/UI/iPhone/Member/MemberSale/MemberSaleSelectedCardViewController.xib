@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemberSaleSelectedCardViewController">
+            <connections>
+                <outlet property="sureBtn" destination="7ra-gU-ACc" id="5iY-mR-Hw9"/>
+                <outlet property="tableView" destination="zcf-KY-ivc" id="FOj-m6-tCj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zcf-KY-ivc">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="j8R-FI-DeO"/>
+                        <outlet property="delegate" destination="-1" id="Ymd-Ze-0mq"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wez-Wv-FwB">
+                    <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ra-gU-ACc">
+                            <rect key="frame" x="15" y="10" width="290" height="40"/>
+                            <state key="normal" title="确定" backgroundImage="member_green_bg.png"/>
+                            <state key="disabled" backgroundImage="member_gray_btn_bg.png"/>
+                            <connections>
+                                <action selector="sureBtnPressed:" destination="-1" eventType="touchUpInside" id="nvr-Ov-KOL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="7ra-gU-ACc" firstAttribute="centerY" secondItem="wez-Wv-FwB" secondAttribute="centerY" id="OrT-Qm-ot6"/>
+                        <constraint firstAttribute="trailing" secondItem="7ra-gU-ACc" secondAttribute="trailing" constant="15" id="mV8-Q0-fc9"/>
+                        <constraint firstAttribute="height" constant="60" id="quU-M8-vLH"/>
+                        <constraint firstItem="7ra-gU-ACc" firstAttribute="leading" secondItem="wez-Wv-FwB" secondAttribute="leading" constant="15" id="wcm-oW-3xz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="zcf-KY-ivc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QOM-Y1-Dyf"/>
+                <constraint firstItem="zcf-KY-ivc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SUs-V6-Xo8"/>
+                <constraint firstItem="wez-Wv-FwB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Z7E-TM-tTq"/>
+                <constraint firstItem="wez-Wv-FwB" firstAttribute="top" secondItem="zcf-KY-ivc" secondAttribute="bottom" id="Zjm-8O-pJ4"/>
+                <constraint firstAttribute="trailing" secondItem="zcf-KY-ivc" secondAttribute="trailing" id="eMO-T7-Kl0"/>
+                <constraint firstAttribute="bottom" secondItem="wez-Wv-FwB" secondAttribute="bottom" id="hR0-wg-9Db"/>
+                <constraint firstAttribute="trailing" secondItem="wez-Wv-FwB" secondAttribute="trailing" id="uhA-3y-MxY"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="236" y="133"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_gray_btn_bg.png" width="290" height="40"/>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

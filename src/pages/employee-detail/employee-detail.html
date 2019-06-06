@@ -1,0 +1,112 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div style="padding-right:16px">
+    <ion-item mode="ios" class="font-16">
+      <ion-label>员工姓名<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input type="text" text-right [(ngModel)]="employee.name" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>电话号码<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input type="tel" maxlength="11" text-right [(ngModel)]="employee.mobile_phone" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>业务区分</ion-label>
+      <ion-select [(ngModel)]="employee.hr_category" okText="确定" cancelText="关闭">
+        <ion-option value="designers">设计师</ion-option>
+        <ion-option value="director">设计总监</ion-option>
+        <ion-option value="adviser">顾问/业务员</ion-option>
+        <ion-option value="doctors">医师</ion-option>
+        <ion-option value="operater">仪器老师/操作员</ion-option>
+        <ion-option value="regional_manager">区域经理</ion-option>
+        <ion-option value="manager">业务经理</ion-option>
+        <ion-option value="other">办公人员</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>工号</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="employee.no" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <br />
+
+    <ion-item mode="ios" class="font-16">
+      <ion-label>生日</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="employee.birthday" doneText="确定" cancelText="取消"></ion-datetime>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>性别</ion-label>
+      <ion-select [(ngModel)]="employee.gender" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let g of genders" value="{{g.id}}">{{g.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>邮箱</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="employee.work_email" onfocus="this.select()"></ion-input>
+    </ion-item>
+    <button ion-item (tap)="selectShop()">
+      <ion-label>所属门店</ion-label>
+      <ion-note *ngIf="employee.shop_name" item-right>{{employee.shop_name}}</ion-note>
+      <ion-note *ngIf="!employee.shop_name" item-right>请选择门店</ion-note>
+    </button>
+    <br />
+
+    <ion-item>
+      <ion-label>开通账户</ion-label>
+      <ion-toggle text-right [(ngModel)]="employee.is_login"></ion-toggle>
+    </ion-item>
+    <div [hidden]="!employee.is_login">
+      <ion-item mode="ios" class="font-16">
+        <ion-label>角色</ion-label>
+        <ion-select [(ngModel)]="employee.role_option" cancelText="取消" okText="确定">
+          <ion-option *ngFor="let role of roles" value="{{role.id}}">{{role.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item mode="ios" class="font-16">
+        <ion-label>密码</ion-label>
+        <ion-input type="password" text-right [(ngModel)]="employee.password" onfocus="this.select()"></ion-input>
+      </ion-item>
+      <button ion-item (tap)="selectPosConfig()">
+        <ion-label>收银配置</ion-label>
+        <ion-note *ngIf="employee.pos_config_name" item-right>{{employee.pos_config_name}}</ion-note>
+        <ion-note *ngIf="!employee.pos_config_name" item-right>请选择收银配置</ion-note>
+      </button>
+    </div>
+    <br />
+
+    <ion-item mode="ios" class="font-16">
+      <ion-label>部门</ion-label>
+      <ion-select [(ngModel)]="employee.department_id" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let d of departments" value="{{d.id}}">{{d.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item mode="ios" class="font-16">
+      <ion-label>职位</ion-label>
+      <ion-select [(ngModel)]="employee.job_id" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let job of jobs" value="{{job.id}}">{{job.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>是否接受预约</ion-label>
+      <ion-toggle text-right [(ngModel)]="employee.isbook"></ion-toggle>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

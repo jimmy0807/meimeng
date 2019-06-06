@@ -1,0 +1,45 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>仓库</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="more()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-grid class="title-grid">
+      <ion-row class="title-row">
+        <ion-col class="title-col">
+          <div (tap)="show('pd')">
+            <ion-icon name="add" class="title-icon"></ion-icon>
+            <p class="title-p">盘点</p>
+          </div>
+        </ion-col>
+        <ion-col class="title-col">
+          <div (tap)="show('db')">
+            <ion-icon name="add" class="title-icon"></ion-icon>
+            <p class="title-p">调拨</p>
+          </div>
+        </ion-col>
+        <ion-col class="title-col">
+          <div (tap)="show('cp')">
+            <ion-icon name="add" class="title-icon"></ion-icon>
+            <p class="title-p">产品</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <div text-center class="no-item-div" *ngIf="!list.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>暂无进行中任务</p>
+    </div>
+  </div>
+</ion-content>

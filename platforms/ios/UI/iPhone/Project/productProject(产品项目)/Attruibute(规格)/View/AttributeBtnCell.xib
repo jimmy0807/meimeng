@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AttributeBtnCell" id="gTV-IL-0wX" customClass="AttributeBtnCell">
+            <rect key="frame" x="0.0" y="0.0" width="72" height="39"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="72" height="39"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5V-LR-BYA" customClass="BSButton">
+                        <state key="normal" backgroundImage="attribute_rect_blue.png"/>
+                        <connections>
+                            <action selector="btnPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="op7-58-GQr"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="011-Y9-Md7">
+                        <state key="normal" backgroundImage="attribute_delete.png"/>
+                        <connections>
+                            <action selector="deleteBtnPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="8Qi-jh-OdM"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="s5V-LR-BYA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="9GG-7k-gmm"/>
+                <constraint firstItem="s5V-LR-BYA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Hn2-4E-dtl"/>
+                <constraint firstAttribute="bottom" secondItem="s5V-LR-BYA" secondAttribute="bottom" constant="5" id="Kp2-X5-2tD"/>
+                <constraint firstAttribute="trailing" secondItem="s5V-LR-BYA" secondAttribute="trailing" constant="5" id="bnh-jB-qZR"/>
+                <constraint firstAttribute="trailing" secondItem="011-Y9-Md7" secondAttribute="trailing" id="bus-qo-MHB"/>
+                <constraint firstItem="011-Y9-Md7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="i7c-rf-wBb"/>
+            </constraints>
+            <size key="customSize" width="72" height="39"/>
+            <connections>
+                <outlet property="btn" destination="s5V-LR-BYA" id="C5A-EH-fJU"/>
+                <outlet property="deleteBtn" destination="011-Y9-Md7" id="GTa-X7-jc4"/>
+            </connections>
+            <point key="canvasLocation" x="44" y="72.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="attribute_delete.png" width="17" height="17"/>
+        <image name="attribute_rect_blue.png" width="65" height="25"/>
+    </resources>
+</document>

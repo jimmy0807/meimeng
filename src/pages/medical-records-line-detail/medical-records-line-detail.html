@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}履历</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="normal">
+        基本信息
+      </ion-segment-button>
+      <ion-segment-button value="prescription">
+        处方单
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list [hidden]="segment!=='normal'">
+    <button ion-item (tap)="select('doctors')">
+      <ion-label>主治医师</ion-label>
+      <ion-note *ngIf="r.doctors_name" item-right>{{r.doctors_name}}</ion-note>
+      <ion-note *ngIf="!r.doctors_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>病状描述</ion-label>
+      <ion-input text-right item-right [(ngModel)]="r.reason" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>主治医师建议</ion-label>
+      <ion-input text-right item-right [(ngModel)]="r.doctors_note" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list [hidden]="segment!=='prescription'">
+    <ion-item-sliding *ngFor="let i of r.prescription_ids">
+      <button ion-item (tap)="editPrescription(i)">
+        <h2>{{i.name}}</h2>
+        <ion-note item-right>{{i.state_name}}</ion-note>
+      </button>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button *ngIf="segment==='normal'" (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

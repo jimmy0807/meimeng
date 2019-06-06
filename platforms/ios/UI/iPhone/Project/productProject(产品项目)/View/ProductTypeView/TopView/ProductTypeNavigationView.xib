@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductTypeNavigationView">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="84"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytY-I3-KIr" userLabel="addBtn">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="AzQ-er-izC"/>
+                        <constraint firstAttribute="width" constant="32" id="mGV-tS-wKC"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="navi_add_n.png"/>
+                    <state key="highlighted" image="navi_add_h.png"/>
+                    <connections>
+                        <action selector="addBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="A8J-I9-FHA"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRr-OI-L4T" userLabel="titleLabel">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ajo-fm-IPx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV3-Ii-8Vh" userLabel="backBtn">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="XIU-yi-jMq"/>
+                        <constraint firstAttribute="width" constant="32" id="swp-4X-li6"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="navi_back_n.png"/>
+                    <state key="highlighted" image="navi_back_h.png"/>
+                    <connections>
+                        <action selector="backBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZE5-Zh-0ld"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale_selected_member_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="yQK-df-8Pd" userLabel="titleImage"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5d-dU-LoG" userLabel="titleBtn">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="titleBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZNh-3A-rwe"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.61960784313725492" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="1cC-hj-ycX"/>
+                <constraint firstItem="aV3-Ii-8Vh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="1iA-8a-vi6"/>
+                <constraint firstItem="yQK-df-8Pd" firstAttribute="centerY" secondItem="JRr-OI-L4T" secondAttribute="centerY" id="22h-eQ-xXR"/>
+                <constraint firstItem="ytY-I3-KIr" firstAttribute="top" secondItem="aV3-Ii-8Vh" secondAttribute="top" id="2fe-at-PsC"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="35T-La-cBW"/>
+                <constraint firstItem="yQK-df-8Pd" firstAttribute="leading" secondItem="JRr-OI-L4T" secondAttribute="trailing" constant="2" id="BLA-Zk-8So"/>
+                <constraint firstItem="k5d-dU-LoG" firstAttribute="trailing" secondItem="yQK-df-8Pd" secondAttribute="trailing" constant="10" id="Dy1-FQ-g58"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="G3U-j7-rEL"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HPh-XN-gWT"/>
+                <constraint firstItem="aV3-Ii-8Vh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="O2B-jV-WhL"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="Of2-zp-0MU"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="top" secondItem="aV3-Ii-8Vh" secondAttribute="top" id="Qq0-5Z-vVG"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="top" secondItem="aV3-Ii-8Vh" secondAttribute="top" id="RIa-UC-wK5"/>
+                <constraint firstItem="k5d-dU-LoG" firstAttribute="leading" secondItem="JRr-OI-L4T" secondAttribute="leading" constant="-10" id="ZLT-no-wBw"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="centerY" secondItem="aV3-Ii-8Vh" secondAttribute="centerY" id="a0G-Hj-qqg"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aHM-ON-pYo"/>
+                <constraint firstItem="k5d-dU-LoG" firstAttribute="top" secondItem="JRr-OI-L4T" secondAttribute="top" id="eeO-Ev-7d5"/>
+                <constraint firstAttribute="trailing" secondItem="ytY-I3-KIr" secondAttribute="trailing" constant="10" id="f7g-if-nVJ"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="width" secondItem="aV3-Ii-8Vh" secondAttribute="width" id="hvU-zO-vza"/>
+                <constraint firstItem="k5d-dU-LoG" firstAttribute="height" secondItem="JRr-OI-L4T" secondAttribute="height" id="k27-U1-zkW"/>
+                <constraint firstItem="yQK-df-8Pd" firstAttribute="centerX" secondItem="JRr-OI-L4T" secondAttribute="centerX" id="luC-NW-01H"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mRh-xY-mor"/>
+                <constraint firstItem="JRr-OI-L4T" firstAttribute="centerY" secondItem="aV3-Ii-8Vh" secondAttribute="centerY" id="u2i-ng-pYT"/>
+                <constraint firstItem="aV3-Ii-8Vh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="yxb-cA-LAU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="G3U-j7-rEL"/>
+                    <exclude reference="HPh-XN-gWT"/>
+                    <exclude reference="Of2-zp-0MU"/>
+                    <exclude reference="Qq0-5Z-vVG"/>
+                    <exclude reference="RIa-UC-wK5"/>
+                    <exclude reference="a0G-Hj-qqg"/>
+                    <exclude reference="aHM-ON-pYo"/>
+                    <exclude reference="hvU-zO-vza"/>
+                    <exclude reference="mRh-xY-mor"/>
+                    <exclude reference="u2i-ng-pYT"/>
+                    <exclude reference="O2B-jV-WhL"/>
+                    <exclude reference="luC-NW-01H"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="addBtn" destination="ytY-I3-KIr" id="NzR-HV-KZM"/>
+                <outlet property="backBtn" destination="aV3-Ii-8Vh" id="kfr-A1-QbD"/>
+                <outlet property="titleBtn" destination="k5d-dU-LoG" id="fGN-Rv-LiL"/>
+                <outlet property="titleImage" destination="yQK-df-8Pd" id="Rnu-pI-P6E"/>
+                <outlet property="titleLabel" destination="JRr-OI-L4T" id="fth-4s-1XW"/>
+            </connections>
+            <point key="canvasLocation" x="466" y="-71"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="navi_add_h.png" width="32" height="32"/>
+        <image name="navi_add_n.png" width="32" height="32"/>
+        <image name="navi_back_h.png" width="32" height="32"/>
+        <image name="navi_back_n.png" width="32" height="32"/>
+        <image name="sale_selected_member_arrow.png" width="12" height="7"/>
+    </resources>
+</document>

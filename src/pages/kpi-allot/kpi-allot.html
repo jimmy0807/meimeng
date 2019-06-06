@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+     {{employee.name}}{{currentDate.month}}月指标
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+      <ion-buttons end>
+      <button ion-button (tap)="updateEmployeeKpi()">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      目标营业额
+      <ion-badge item-right color="danger">{{royalties}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="1000" max="150000" step="1000" snaps="true" [(ngModel)]="royalties" color="primary">
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      目标消费额
+      <ion-badge item-right color="danger">{{spending}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="1000" max="150000" step="1000" snaps="true" [(ngModel)]="spending" color="primary">
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      目标客流数
+      <ion-badge item-right color="secondary">{{operate}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="150" pin="true" [(ngModel)]="operate" color="primary">
+        <ion-label range-left>0</ion-label>
+        <ion-label range-right>100</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      目标新入会数
+      <ion-badge item-right color="secondary">{{new_card}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="50" pin="true" [(ngModel)]="new_card" color="primary">
+        <ion-label range-left>0</ion-label>
+        <ion-label range-right>50</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      目标会员到店
+      <ion-badge item-right color="secondary">{{customer}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="50" pin="true" [(ngModel)]="customer" color="primary">
+        <ion-label range-left>0</ion-label>
+        <ion-label range-right>50</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      考核方式
+      <ion-badge item-right color="secondary">{{kpi_type == 'exclusive' ? '专属会员' : '实际业绩'}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-select okText="确定" cancelText="关闭" [(ngModel)]="kpi_type">
+        <ion-option value="exclusive">专属会员</ion-option>
+        <ion-option value="commission">实际业绩</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardPayCell" id="KGk-i7-Jjw" customClass="CardPayCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_vipcard_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="C2J-Pa-gR4">
+                        <rect key="frame" x="12" y="21" width="22" height="17"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="会员卡" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pog-Im-Kk0">
+                        <rect key="frame" x="46" y="10" width="48" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXC-Vb-7WS">
+                        <rect key="frame" x="126" y="25" width="30" height="30"/>
+                        <state key="normal" title="更换">
+                            <color key="titleColor" red="0.043137254899999998" green="0.66274509800000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="changeBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K1N-M5-Ost"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥1208.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-Ch-GKE">
+                        <rect key="frame" x="233" y="20" width="75" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vb3-SX-x8o">
+                        <rect key="frame" x="0.0" y="58" width="320" height="1"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2F2988000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dk-8p-jEa">
+                        <rect key="frame" x="46" y="32" width="77" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pog-Im-Kk0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="7XH-up-Bib"/>
+                    <constraint firstItem="Pog-Im-Kk0" firstAttribute="leading" secondItem="C2J-Pa-gR4" secondAttribute="trailing" constant="12" id="HJ1-Yx-Zeb"/>
+                    <constraint firstItem="Vb3-SX-x8o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HfM-fg-RHF"/>
+                    <constraint firstAttribute="bottom" secondItem="OXC-Vb-7WS" secondAttribute="bottom" constant="4" id="ITp-ll-sbj"/>
+                    <constraint firstItem="OXC-Vb-7WS" firstAttribute="leading" secondItem="0Dk-8p-jEa" secondAttribute="trailing" constant="3" id="J5z-oB-leZ"/>
+                    <constraint firstItem="C2J-Pa-gR4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LT6-xE-S5l"/>
+                    <constraint firstAttribute="trailing" secondItem="UpX-Ch-GKE" secondAttribute="trailing" constant="12" id="WrY-Mu-if6"/>
+                    <constraint firstItem="C2J-Pa-gR4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Zar-9e-glq"/>
+                    <constraint firstItem="0Dk-8p-jEa" firstAttribute="leading" secondItem="C2J-Pa-gR4" secondAttribute="trailing" constant="12" id="oAU-IA-M64"/>
+                    <constraint firstAttribute="bottom" secondItem="Vb3-SX-x8o" secondAttribute="bottom" id="tEJ-d8-n2B"/>
+                    <constraint firstItem="UpX-Ch-GKE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="v6Z-K2-Tud"/>
+                    <constraint firstItem="0Dk-8p-jEa" firstAttribute="top" secondItem="Pog-Im-Kk0" secondAttribute="bottom" constant="2" id="wd0-T2-kPU"/>
+                    <constraint firstAttribute="trailing" secondItem="Vb3-SX-x8o" secondAttribute="trailing" id="yGU-iw-JgG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="moneyLabel" destination="UpX-Ch-GKE" id="8Vl-e3-NyB"/>
+                <outlet property="numberLabel" destination="0Dk-8p-jEa" id="zIw-y0-uhG"/>
+            </connections>
+            <point key="canvasLocation" x="401" y="224"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+        <image name="member_vipcard_icon.png" width="22" height="17"/>
+    </resources>
+</document>

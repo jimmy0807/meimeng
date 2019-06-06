@@ -1,0 +1,27 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>折扣规则</ion-title>
+    <ion-buttons *ngIf="isAdmin" end>
+      <button ion-button (tap)="create()">
+        <span>添加</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of pricelist.items">
+      <ion-item (tap)="edit(item)">
+        <h2>{{item.name}}</h2>
+        <p item-right>{{item.first_price_discount}}折</p>
+        <p>应用在：{{item.display_name}}</p>
+      </ion-item>
+      <ion-item-options *ngIf="isAdmin" side="right">
+        <button ion-button color="danger" (tap)="unlink(item)">
+            删除
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

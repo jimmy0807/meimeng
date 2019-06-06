@@ -1,0 +1,15 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}模板</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color:#f5f5f5">
+  <ion-card *ngFor="let t of tmpls" (tap)="selected(t)" style="margin:16px;width:auto">
+    <ion-card-header>
+      {{t.template_name}}
+    </ion-card-header>
+    <ion-card-content>
+      {{t.template_content}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

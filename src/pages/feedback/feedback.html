@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>护理回访</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-group *ngFor="let item of operates">
+      <ion-item-divider sticky>
+        <ion-label>
+          {{item.date}}日
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let operate of item.operates" (tap)="goDetil(operate)">
+        <button ion-item>
+          <h3>{{operate.member_name}}</h3>
+          <p>单据:{{operate.name}}</p>
+          <p *ngIf="operate.products">项目:{{operate.products}}</p>
+          <p *ngIf="operate.employee_name">顾问:{{operate.employee_name}}</p>
+          <ion-note item-right>
+              <span>{{operate.total_cnt}}次回访</span>
+          </ion-note>
+        </button>
+        <ion-item-options>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

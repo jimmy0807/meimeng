@@ -1,0 +1,67 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}提成方案</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>类型</ion-label>
+      <ion-select [(ngModel)]="c.category" okText="确定" cancelText="关闭">
+        <ion-option value="v1">有督导无二级代理商</ion-option>
+        <ion-option value="v2">无督导有二级代理商</ion-option>
+        <ion-option value="v3">无督导无二级代理商</ion-option>
+        <ion-option value="v4">转介绍代理商</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>区域<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-select [(ngModel)]="c.region_id" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let i of regions" value="{{i.id}}">{{i.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>签约截止日期</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="c.sign_end_date" doneText="确定" cancelText="取消"></ion-datetime>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label>店家提成百分比</ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.dj_percent" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>督导店提成百分比</ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.dd_percent" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>代理商一级提成百分比</ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.dl1_percent" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>代理商二级提成百分比</ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.dl2_percent" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>转介绍代理商提成百分比</ion-label>
+      <ion-input text-right item-right [(ngModel)]="c.lead_percent" type="number"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

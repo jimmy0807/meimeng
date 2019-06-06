@@ -1,0 +1,55 @@
+﻿
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>群发助手</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color:#f5f5f5">
+  <div class="div-block">
+    <p class="p-line">
+      模板名称
+      <span class="span-line">{{sms.template_name}}</span>
+    </p>
+    <p class="p-line">
+      短信签名
+      <span class="span-line">{{sms.sign_name}}</span>
+    </p>
+    <p class="p-line">
+      模板ID/CODE
+      <span class="span-line">{{sms.template_id}}</span>
+    </p>
+    <p class="p-line">
+      模板类型
+      <span class="span-line">{{sms.template_type_name}}</span>
+    </p>
+    <p class="p-line">
+      服务商
+      <span class="span-line">{{sms.supplier_name}}</span>
+    </p>
+    <p class="p-line">
+      群发流水号
+      <span class="span-line">{{sms.no}}</span>
+    <p class="p-line">
+      创建人
+      <span class="span-line">{{sms.user_name}}</span>
+    </p>
+    <p class="p-line">
+      创建时间
+      <span class="span-line">{{sms.create_date}}</span>
+    </p>
+    <p class="p-line">
+      发送时间
+      <span class="span-line">{{sms.sent_date}}</span>
+    </p>
+  </div>
+  <br />
+  <div class="div-block">
+    <p class="p-line">{{count}}位收信人</p>
+    <p class="p-light">{{names}}</p>
+  </div>
+  <br />
+  <div class="div-block">
+    <p class="p-line">发送内容</p>
+    <p class="p-light">{{sms.template_content}}</p>
+  </div>
+</ion-content>

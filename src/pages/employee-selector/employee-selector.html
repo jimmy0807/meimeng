@@ -1,0 +1,29 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar placeholder="按名称搜索" color="danger" (ionCancel)="onCancel($event)"
+                   (ionInput)="onInput($event)" [(ngModel)]="keyword"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content style="margin-top:5px;">
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (tap)="onSelected(item)" class="item-p16">
+      {{item.name}}
+    </button>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!items.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有结果</p>
+    </div>
+  </div>
+</ion-content>

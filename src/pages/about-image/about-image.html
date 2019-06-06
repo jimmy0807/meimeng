@@ -1,0 +1,17 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>头像</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="getImage()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color:black">
+  <div class="image-div">
+    <img class="avatar" item-right *ngIf="value" [src]="value">
+    <img class="avatar" item-right *ngIf="!value" src="assets/img/avatar-default.png">
+  </div>
+</ion-content>

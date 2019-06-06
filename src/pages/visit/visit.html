@@ -1,0 +1,147 @@
+﻿<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-buttons start *ngIf="!readonly">
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+    <ion-title>回访内容</ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="normal">
+        基本信息
+      </ion-segment-button>
+      <ion-segment-button value="note">
+        回访任务
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-back">
+  <div [hidden]="segment!=='normal'">
+    <div class="div-block">
+      <h2>{{v.name}}</h2>
+      <p>
+        回访状态
+        <span class="p-{{v.state}}">{{v.state_name}}</span>
+      </p>
+      <p>
+        会员
+        <span>{{v.member_name}}</span>
+      </p>
+      <p>
+        电话
+        <span>{{v.mobile}}</span>
+      </p>
+      <p>
+        会员类别
+        <span>{{v.member_type_name}}</span>
+      </p>
+      <p>
+        城市区域
+        <span>{{v.area_city}}</span>
+      </p>
+    </div>
+    <div class="div-block m-top">
+      <p>
+        设计师
+        <span>{{v.designers_name}}</span>
+      </p>
+      <p>
+        设计总监
+        <span>{{v.director_employee_name}}</span>
+      </p>
+      <p *ngIf="v.dj_partner_name">
+        店家
+        <span>{{v.dj_partner_name}}</span>
+      </p>
+      <p *ngIf="v.dd_partner_name">
+        督导
+        <span>{{v.dd_partner_name}}</span>
+      </p>
+      <p *ngIf="v.dl_partner_name">
+        代理商
+        <span>{{v.dl_partner_name}}</span>
+      </p>
+    </div>
+    <div class="div-block m-top">
+      <p>
+        项目
+        <span>{{v.product_names}}</span>
+      </p>
+      <hr />
+      <p>
+        计划回访日期
+        <span>{{v.plant_visit_date}}</span>
+      </p>
+    </div>
+    <div *ngIf="v.state==='draft'" hidden>
+      <ion-item-divider class="divider-light">
+        回访结果
+      </ion-item-divider>
+      <div class="text-div">
+        <textarea class="text-area" rows="5"
+                  [(ngModel)]="v.note" placeholder="请输入回访结果"></textarea>
+      </div>
+      <ion-item-divider class="divider-light">
+        附件信息
+      </ion-item-divider>
+      <ion-list style="background-color:white;padding:10px 0">
+        <ion-card *ngFor="let img of v.visit_image_ids">
+          <img src="{{img.image_url}}" />
+          <ion-row *ngIf="v.state==='draft'">
+            <ion-col col-4 offset-8 style="text-align:right">
+              <button ion-button icon-left clear small (tap)="remove(img)" color="danger">
+                <ion-icon name="md-trash"></ion-icon>
+                <div>删除</div>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-list>
+    </div>
+    <div *ngIf="v.state!=='draft'" class="div-note">
+      <p class="p-note">{{v.note}}</p>
+      <div class="div-scroll" *ngIf="v.visit_image_ids && v.visit_image_ids.length">
+        <img *ngFor="let img of v.visit_image_ids" src="{{img.image_url}}" class="div-img"
+             (tap)="showImage(img)" />
+      </div>
+    </div>
+  </div>
+  <div [hidden]="segment!=='note'">
+    <ion-list>
+      <button ion-item *ngFor="let n of v.note_ids" (tap)="showNote(n)">
+        <h2>{{n.employee_name}}</h2>
+        <p>{{n.plant_visit_date}}</p>
+        <p item-right class="p-{{n.state}}" style="margin:0 8px;">{{n.state_name}}</p>
+      </button>
+    </ion-list>
+  </div>
+</ion-content>
+
+<!--<ion-footer *ngIf="readonly && v.state==='draft'">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col text-right>
+        <button ion-button (tap)="getImage()" color="primary" full>添加附件</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (tap)="done()" color="primary" full>完成回访</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-footer *ngIf="adminMode && v.state==='done'">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="draft()" color="danger" full>退回草稿</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (tap)="finish()" color="primary" full>审核确认</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>-->

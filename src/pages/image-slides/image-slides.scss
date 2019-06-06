@@ -1,0 +1,19 @@
+﻿page-image-slides {
+  .slide-image {
+    width: 100%;
+  }
+
+  .img-btn {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    z-index: 255;
+  }
+
+  .img-btn2 {
+    right: 60px;
+  }
+}

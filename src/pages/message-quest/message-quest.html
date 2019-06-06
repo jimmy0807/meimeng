@@ -1,0 +1,53 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>工作任务单</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-list>
+    <ion-item (tap)="showPage(4)" *ngIf="msgCount.cat4">
+      <h2>排班</h2>
+      <p>{{msgCount.cat4_content}}</p>
+      <ion-badge item-right color="danger">{{msgCount.cat4.length}}</ion-badge>
+    </ion-item>
+    <ion-item (tap)="showPage(5)" *ngIf="msgCount.cat5">
+      <h2>会员跟进</h2>
+      <p>{{msgCount.cat5_content}}</p>
+      <ion-badge item-right color="danger">{{msgCount.cat5.length}}</ion-badge>
+    </ion-item>
+    <ion-item (tap)="showPage(6)" *ngIf="msgCount.cat6">
+      <h2>生日跟进</h2>
+      <p>{{msgCount.cat6_content}}</p>
+      <ion-badge item-right color="danger">{{msgCount.cat6.length}}</ion-badge>
+    </ion-item>
+    <ion-item (tap)="showPage(7)" *ngIf="msgCount.cat7">
+      <h2>分配指标</h2>
+      <p>{{msgCount.cat7_content}}</p>
+      <ion-badge item-right color="danger">{{msgCount.cat7.length}}</ion-badge>
+    </ion-item>
+    <ion-item (tap)="showPage(8)" *ngIf="msgCount.cat8">
+      <h2>业绩规划</h2>
+      <p>{{msgCount.cat8_content}}</p>
+      <ion-badge item-right color="danger">{{msgCount.cat8.length}}</ion-badge>
+    </ion-item>
+    <ion-item (tap)="showPage(9)" *ngIf="msgCount.cat9">
+      <h2>规划跟进</h2>
+      <p>{{msgCount.cat9_content}}</p>
+      <ion-badge item-right color="danger">{{msgCount.cat9.length}}</ion-badge>
+    </ion-item>
+    <ion-item (tap)="showPage(10)" *ngIf="msgCount.cat10">
+      <h2>审批</h2>
+      <p>{{msgCount.cat10_content}}</p>
+      <ion-badge item-right color="danger">{{msgCount.cat10.length}}</ion-badge>
+    </ion-item>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="noItem">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有新的任务单</p>
+    </div>
+  </div>
+</ion-content>

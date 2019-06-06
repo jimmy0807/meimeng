@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberItemCell" id="TAi-ao-nHl" customClass="MemberItemCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAi-ao-nHl" id="ADe-HL-ec1">
+                <frame key="frameInset" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_card_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="apc-mu-xwJ"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="现金" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cca-lN-meN">
+                        <frame key="frameInset" minX="46" width="32" height="42"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="DI8-Ne-fGQ"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_common_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="V2g-pW-d4S">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="JvA-av-Dlt"/>
+                            <constraint firstAttribute="height" constant="16" id="vOw-sg-GLR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Da-u5-UIA">
+                        <frame key="frameInset" minX="88" width="200" height="42"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="4JZ-Ig-nvr"/>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="V2g-pW-d4S" firstAttribute="leading" secondItem="5Da-u5-UIA" secondAttribute="trailing" constant="6" id="15A-h5-2bd"/>
+                    <constraint firstItem="5Da-u5-UIA" firstAttribute="leading" secondItem="Cca-lN-meN" secondAttribute="trailing" constant="10" id="9Jh-U9-uyn"/>
+                    <constraint firstAttribute="trailing" secondItem="5Da-u5-UIA" secondAttribute="trailing" priority="750" constant="12" id="BVb-Vc-Lqr"/>
+                    <constraint firstItem="apc-mu-xwJ" firstAttribute="centerY" secondItem="ADe-HL-ec1" secondAttribute="centerY" id="KGN-Vh-znx"/>
+                    <constraint firstItem="5Da-u5-UIA" firstAttribute="top" secondItem="ADe-HL-ec1" secondAttribute="top" id="LDs-b7-Wyw"/>
+                    <constraint firstItem="V2g-pW-d4S" firstAttribute="centerY" secondItem="ADe-HL-ec1" secondAttribute="centerY" id="M9g-15-WGz"/>
+                    <constraint firstAttribute="bottom" secondItem="DI8-Ne-fGQ" secondAttribute="bottom" id="RDH-uH-Fpi"/>
+                    <constraint firstAttribute="trailing" secondItem="4JZ-Ig-nvr" secondAttribute="trailing" id="RHO-K7-f7n"/>
+                    <constraint firstItem="apc-mu-xwJ" firstAttribute="leading" secondItem="ADe-HL-ec1" secondAttribute="leading" constant="12" id="RkM-Sm-lgy"/>
+                    <constraint firstAttribute="trailing" secondItem="DI8-Ne-fGQ" secondAttribute="trailing" id="Tf6-EH-z1P"/>
+                    <constraint firstItem="DI8-Ne-fGQ" firstAttribute="top" secondItem="5Da-u5-UIA" secondAttribute="bottom" id="YES-5M-lLp"/>
+                    <constraint firstItem="DI8-Ne-fGQ" firstAttribute="top" secondItem="Cca-lN-meN" secondAttribute="bottom" id="ZOI-kq-n5B"/>
+                    <constraint firstItem="Cca-lN-meN" firstAttribute="centerY" secondItem="ADe-HL-ec1" secondAttribute="centerY" id="cCk-Hk-84a"/>
+                    <constraint firstItem="Cca-lN-meN" firstAttribute="top" secondItem="ADe-HL-ec1" secondAttribute="top" id="ecC-DX-3ca"/>
+                    <constraint firstItem="DI8-Ne-fGQ" firstAttribute="leading" secondItem="ADe-HL-ec1" secondAttribute="leading" id="iTo-ip-5cp"/>
+                    <constraint firstAttribute="trailing" secondItem="V2g-pW-d4S" secondAttribute="trailing" constant="10" id="lfV-Px-wNi"/>
+                    <constraint firstItem="Cca-lN-meN" firstAttribute="leading" secondItem="apc-mu-xwJ" secondAttribute="trailing" constant="12" id="lhA-ca-n4X"/>
+                    <constraint firstAttribute="bottom" secondItem="4JZ-Ig-nvr" secondAttribute="bottom" id="p88-gD-jaw"/>
+                    <constraint firstItem="4JZ-Ig-nvr" firstAttribute="leading" secondItem="ADe-HL-ec1" secondAttribute="leading" id="yIP-gT-d39"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="arrowImgLeaingConstraint" destination="15A-h5-2bd" id="7BQ-o8-ZHM"/>
+                <outlet property="arrowImgView" destination="V2g-pW-d4S" id="cPn-bf-z6A"/>
+                <outlet property="countLabel" destination="5Da-u5-UIA" id="H5J-Bq-RQO"/>
+                <outlet property="iconImgView" destination="apc-mu-xwJ" id="9aq-Rx-VyJ"/>
+                <outlet property="titleLabel" destination="Cca-lN-meN" id="H4S-el-Ozo"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bs_common_arrow.png" width="16" height="16"/>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+        <image name="member_card_icon.png" width="22" height="17"/>
+    </resources>
+</document>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>附件</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()">
+        <span>保存</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-item>
+    <ion-label>标题<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="text" text-right [(ngModel)]="img.name"></ion-input>
+  </ion-item>
+  <ion-item no-lines>
+    <ion-label>类型</ion-label>
+    <ion-select [(ngModel)]="img.type" cancelText="取消" okText="确定">
+      <ion-option *ngFor="let t of types" value="{{t.id}}">{{t.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-card class="img-card" (tap)="getImage()">
+    <img *ngIf="img.image_url" src="{{img.image_url}}" />
+    <ion-icon *ngIf="!img.image_url" class="img-icon" name="ios-add-circle-outline" color="primary"></ion-icon>
+  </ion-card>
+</ion-content>
+<!--<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col text-right>
+        <button ion-button (tap)="save()" color="primary" full>保存</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>-->

@@ -1,0 +1,68 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>选择{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top *ngIf="showSearch">
+    <ion-searchbar placeholder="{{searchHolder}}" color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)"
+                   (ionInput)="onInput($event)" [(ngModel)]="keyword"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content style="margin-top:5px;" [ngSwitch]="typeName">
+  <div *ngSwitchDefault>
+    <ion-list *ngIf="singleMode">
+      <ion-item *ngFor="let i of items" (tap)="onSelected(i)">
+        <h2>{{i.name}}</h2>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="!singleMode">
+      <ion-item *ngFor="let i of items">
+        <ion-label>{{i.name}}</ion-label>
+        <ion-checkbox [(ngModel)]="i.checked"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngSwitchCase="'VisitOperate'">
+    <ion-list>
+      <ion-item *ngFor="let i of items" (tap)="onSelected(i)">
+        <h2>{{i.name}}</h2>
+        <p class="pre">{{i.display_remark}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngSwitchCase="'DJ'">
+    <ion-list>
+      <ion-item *ngFor="let i of items" (tap)="onSelected(i)">
+        <h2>{{i.name}} </h2>
+        <p>店名：{{i.shop_name}}</p>  
+        <p>手机：{{i.mobile}}</p>
+        <p>区域：{{i.city_region}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div text-center class="no-item-div" *ngIf="!items.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有结果</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+<ion-footer *ngIf="!singleMode">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="save()" type="submit" color="primary" block>确定</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

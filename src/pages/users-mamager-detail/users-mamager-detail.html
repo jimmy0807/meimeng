@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title *ngIf="mode=='view' || mode=='edit'">
+      用户详情
+    </ion-title>
+    <ion-title *ngIf="mode=='new'">
+      新建用户
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button *ngIf="mode=='view'" (tap)="editConsumerData()">
+        编辑
+      </button>
+      <button ion-button *ngIf="mode=='edit' || mode=='new'" (tap)="updateConsumerData()">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset>
+    <ion-item-divider light>基本信息</ion-item-divider>
+    <ion-item>
+      <ion-label>用户名<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right [(ngModel)]="consumer.name" *ngIf="mode=='view'" class="item-disabled" readonly name="name" value="{{consumer.name}}"></ion-input>
+      <ion-input text-right [(ngModel)]="consumer.name" *ngIf="mode=='edit' || mode=='new'" name="name" required value="{{consumer.name}}"
+        placeholder="请输入用户名"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>登陆账号<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right [(ngModel)]="consumer.login" *ngIf="mode=='view'" class="item-disabled" readonly name="login" value="{{consumer.login}}"></ion-input>
+      <ion-input text-right [(ngModel)]="consumer.login" *ngIf="mode=='edit' || mode=='new'" name="login" required value="{{consumer.login}}"
+        placeholder="请输入登陆账号"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="is_changepwd || mode=='new'">
+      <ion-label>密码<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right [(ngModel)]="consumer.password"  name="login" type="password" required value="{{consumer.password}}"
+        placeholder="请输入密码"></ion-input>
+    </ion-item>
+    <!--<ion-item>
+      <ion-label>邮箱</ion-label>
+      <ion-input text-right [(ngModel)]="consumer.email" *ngIf="mode=='view'" class="item-disabled" readonly name="email" value="{{consumer.email}}"></ion-input>
+      <ion-input text-right [(ngModel)]="consumer.email" *ngIf="mode=='edit' || mode=='new'" name="email" required value="{{consumer.email}}"
+        placeholder="请输入邮箱"></ion-input>
+    </ion-item>-->
+
+    <ion-item>
+      <ion-label>用户角色<span color="danger" class="c-danger">*</span></ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{consumer.role_option}}</ion-note>-->
+      <ion-select [(ngModel)]="consumer.role_option" [disabled]="mode=='view'" cancelText="取消" okText="确定">
+        <ion-option value="1">公司管理员</ion-option>
+        <ion-option value="2">公司运维</ion-option>
+        <ion-option value="3">门店管理员</ion-option>
+        <ion-option value="4">收银员</ion-option>
+        <ion-option value="5">普通用户</ion-option>
+        <ion-option value="10">顾问/设计师</ion-option>
+        <ion-option value="11">业务操作员</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>公司<span color="danger" class="c-danger">*</span></ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{consumer.company_name}}</ion-note>-->
+      <ion-select [(ngModel)]="consumer.company_id" [disabled]="mode=='view'" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let company of companylist" value="{{company.id}}">{{company.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>当前门店</ion-label>
+      <!--<ion-note *ngIf="mode=='view'" item-right>{{consumer.shop_name}}</ion-note>-->
+      <ion-select [(ngModel)]="consumer.shop_id" [disabled]="mode=='view'" cancelText="取消" okText="确定" (ionChange)="shopid_selected($event, consumer.shop_id)">
+        <ion-option *ngFor="let shop of shoplist" value="{{shop.id}}">{{shop.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>是否允许后台登录</ion-label>
+      <ion-toggle [(ngModel)]="consumer.is_allow_login" [disabled]="mode=='view'?true:false" checked="{{consumer.is_allow_login}}"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-list  inset>
+    <ion-item-divider light>其他</ion-item-divider>
+    <!--<button ion-item (tap)="showCompany()">允许的公司</button>-->
+    <!--<ion-item>
+      <ion-label>允许公司<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-note *ngIf="mode=='view'" item-right>{{consumer.company_name}}</ion-note>
+      <ion-select [(ngModel)]="consumer.company_id" *ngIf="mode=='edit' || mode=='new'" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let company of companylist" value="{{company.id}}">{{company.name}}</ion-option>
+      </ion-select>
+    </ion-item>-->
+    <button ion-item (tap)="showShop()">允许的门店</button>
+  </ion-list>
+</ion-content>
+<ion-footer *ngIf="mode=='edit'">
+  <ion-toolbar>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button *ngIf="!is_changepwd" (tap)="change_password()" color="primary" block>修改密码</button>
+        <button ion-button *ngIf="is_changepwd" (tap)="change_password()" color="primary" block>取消修改密码</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

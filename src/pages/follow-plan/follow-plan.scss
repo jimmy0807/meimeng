@@ -1,0 +1,20 @@
+page-follow-plan {
+  .content-bg {
+    background-color: #EBEFED;
+  }
+  .no-data-box {
+    padding: 10px 0px;
+    background-color: #FFFFFF;
+  }
+  .plant {
+    background-color: #FFFFFF;
+    color: #888888
+  }
+  .item-disabled, item-disabled * { opacity: 0.3; }
+  // .toggle * {opacity: 0.3; pointer-events: none;}
+  .label .toggle-ios.toggle-disabled, .item-ios.item-toggle-disabled ion-label {opacity: 1; }
+  // input[readonly] {
+  //   pointer-events: none;
+  // }
+  .item-divider .label { opacity: 0.3;}
+}

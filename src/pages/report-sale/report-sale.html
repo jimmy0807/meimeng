@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title>
+      客流
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="filter()">
+        <span>筛选</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content style="background-color: #f7f7f7;">
+  <div class="report-segment">
+    <ion-segment [(ngModel)]="segment" (ionChange)="select_timezone(segment)">
+      <ion-segment-button value="today">
+        今日
+      </ion-segment-button>
+      <ion-segment-button value="yesterday">
+        昨日
+      </ion-segment-button>
+      <ion-segment-button value="week">
+        近七天
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        当月
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="report-card">
+    <ion-row class="row_report">
+      <ion-col class="col_left">
+        <div *ngIf="flag_left" text-center style="color:#F00;font-size: 30px">{{report_data.sale_year_last_rate}}%</div>
+        <div *ngIf="!flag_left" text-center style="color:#F00;font-size: 30px;"><b>- -</b></div>
+        <div text-center>同期比</div>
+      </ion-col>
+      <ion-col class="col_right">
+        <div *ngIf="flag_right" text-center style="color:#F00;font-size: 30px">{{report_data.sale_complete_rate}}%</div>
+        <div *ngIf="!flag_right" text-center style="color:#F00;font-size: 30px;"><b>- -</b></div>
+        <div text-center>目标达成率</div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="report-card">
+    <ion-item no-lines><b>客流（人）</b></ion-item>
+    <div text-center style="color:black;font-size: 30px">{{report_data.sale_all}}</div>
+  </div>
+  <div class="report-card">
+    <ion-item no-lines><b>日均客流（人）</b></ion-item>
+    <div text-center style="color:black;font-size: 30px">{{report_data.sale_per_day}}</div>
+  </div>
+</ion-content>

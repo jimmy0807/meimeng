@@ -1,0 +1,136 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>业绩</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment" (ionChange)="tabChange()">
+      <ion-segment-button value="day">
+        按天
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        按月
+      </ion-segment-button>
+      <ion-segment-button value="range">
+        按日期
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-back" [ngSwitch]="segment">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)" *ngIf="segment!=='range'">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngSwitchCase="'day'">
+    <div *ngFor="let a of dayList">
+      <div class="header-div">
+        {{a.date}}
+      </div>
+      <div class="div-card">
+        <div *ngFor="let t of a.items" (tap)="showTeamAchieve(a,t)">
+          <p class="p-team">{{t.name}}</p>
+          <p class="p-amount">{{t.amount | number :'1.0-0'}}</p>
+          <p class="p-arrow">
+            <ion-icon name="ios-arrow-forward" *ngIf="t.detail"></ion-icon>
+          </p>
+        </div>
+        <div *ngIf="a.person">
+          <p class="p-team">个人业绩</p>
+          <p class="p-amount">{{a.person | number :'1.0-0'}}</p>
+          <p class="p-arrow">
+          </p>
+        </div>
+      </div>
+    </div>
+    <div text-center class="no-item-div" *ngIf="!dayList.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有记录</p>
+      </div>
+    </div>
+    <div class="div-range">
+      <p class="p-range">{{daySStr}} - {{dayEStr}}</p>
+      <p (tap)="lastMonth()" class="c-primary p-tap">上一月</p>
+    </div>
+  </div>
+  <div *ngSwitchCase="'month'">
+    <div *ngFor="let a of monthList">
+      <div class="header-div">
+        {{a.date}}
+      </div>
+      <div class="div-card">
+        <div *ngFor="let t of a.items" (tap)="showTeamAchieve(a,t)">
+          <p class="p-team">{{t.name}}</p>
+          <p class="p-amount">{{t.amount | number :'1.0-0'}}</p>
+          <p class="p-arrow">
+            <ion-icon name="ios-arrow-forward" *ngIf="t.detail"></ion-icon>
+          </p>
+        </div>
+        <div *ngIf="a.person">
+          <p class="p-team">个人业绩</p>
+          <p class="p-amount">{{a.person | number :'1.0-0'}}</p>
+          <p class="p-arrow">
+          </p>
+        </div>
+      </div>
+    </div>
+    <div text-center class="no-item-div" *ngIf="!monthList.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有记录</p>
+      </div>
+    </div>
+    <div class="div-range">
+      <p class="p-range">{{monthSStr}} - {{monthEStr}}</p>
+      <p (tap)="lastYear()" class="c-primary p-tap">上一年</p>
+    </div>
+  </div>
+  <div *ngSwitchCase="'range'">
+    <ion-list style="margin:0">
+      <ion-item>
+        <ion-label>起始日期</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="rangeSt" doneText="确定" cancelText="取消"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>截至日期</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" max="{{rangeMax}}" [(ngModel)]="rangeEt" doneText="确定" cancelText="取消"></ion-datetime>
+      </ion-item>
+    </ion-list>
+    <div class="div-range-btn">
+      <button ion-button small (click)="getRange()">查询</button>
+    </div>
+    <div *ngFor="let a of rangeList">
+      <div class="header-div">
+        {{a.date}}
+      </div>
+      <div class="div-card">
+        <div *ngFor="let t of a.items" (tap)="showTeamAchieve(a,t)">
+          <p class="p-team">{{t.name}}</p>
+          <p class="p-amount">{{t.amount | number :'1.0-0'}}</p>
+          <p class="p-arrow">
+            <ion-icon name="ios-arrow-forward" *ngIf="t.detail"></ion-icon>
+          </p>
+        </div>
+        <div *ngIf="a.person">
+          <p class="p-team">个人业绩</p>
+          <p class="p-amount">{{a.person | number :'1.0-0'}}</p>
+          <p class="p-arrow">
+          </p>
+        </div>
+      </div>
+    </div>
+    <div text-center class="no-item-div" *ngIf="!monthList.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有记录</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowCombinationController">
+            <connections>
+                <outlet property="boomView" destination="0IA-wk-BFo" id="qt5-kv-39Q"/>
+                <outlet property="collectionView" destination="hQ0-JC-Z79" id="Ex8-7f-OMA"/>
+                <outlet property="seletedBtn" destination="Mhe-Tt-66i" id="EZ0-Gf-M0x"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7t0-eS-tlZ">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commom_navi_bk_IOS7.png" translatesAutoresizingMaskIntoConstraints="NO" id="8ME-EE-rZ7"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1d-dV-3ct">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="GOo-c4-k6d"/>
+                                <constraint firstAttribute="width" constant="32" id="nZE-Ep-cXj"/>
+                            </constraints>
+                            <state key="normal" image="navi_back_n.png"/>
+                            <connections>
+                                <action selector="backBtnClick:" destination="-1" eventType="touchUpInside" id="P0a-jM-Hb2"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="组合套" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddX-7p-1K4">
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="ddX-7p-1K4" firstAttribute="centerY" secondItem="b1d-dV-3ct" secondAttribute="centerY" id="4t9-IT-b6U"/>
+                        <constraint firstItem="b1d-dV-3ct" firstAttribute="leading" secondItem="7t0-eS-tlZ" secondAttribute="leading" constant="10" id="C2k-Xp-5N0"/>
+                        <constraint firstAttribute="bottom" secondItem="8ME-EE-rZ7" secondAttribute="bottom" id="NWV-sV-Jwg"/>
+                        <constraint firstItem="8ME-EE-rZ7" firstAttribute="top" secondItem="7t0-eS-tlZ" secondAttribute="top" id="T9h-ef-VNB"/>
+                        <constraint firstItem="8ME-EE-rZ7" firstAttribute="leading" secondItem="7t0-eS-tlZ" secondAttribute="leading" id="f5n-h6-ub0"/>
+                        <constraint firstAttribute="trailing" secondItem="8ME-EE-rZ7" secondAttribute="trailing" id="gm2-WW-R5f"/>
+                        <constraint firstAttribute="height" constant="64" id="htN-8i-Lgp"/>
+                        <constraint firstItem="ddX-7p-1K4" firstAttribute="centerX" secondItem="7t0-eS-tlZ" secondAttribute="centerX" id="q6m-5n-yQN"/>
+                        <constraint firstItem="b1d-dV-3ct" firstAttribute="top" secondItem="7t0-eS-tlZ" secondAttribute="top" constant="26" id="u2N-bN-zm0"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-JC-Z79">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TYE-Xf-mNM">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="tGp-IV-e8L"/>
+                        <outlet property="delegate" destination="-1" id="bL1-Rm-uBq"/>
+                    </connections>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0IA-wk-BFo" userLabel="boomView">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-Tt-66i">
+                            <state key="normal" title="请选择" backgroundImage="member_green_bg.png"/>
+                            <connections>
+                                <action selector="seletedBtnClick:" destination="-1" eventType="touchUpInside" id="kNW-oH-sIp"/>
+                            </connections>
+                        </button>
+                        <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6QV-TI-74g">
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="vU1-hR-jHH"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Mhe-Tt-66i" firstAttribute="top" secondItem="0IA-wk-BFo" secondAttribute="top" constant="10" id="7M1-ne-LB8"/>
+                        <constraint firstItem="6QV-TI-74g" firstAttribute="top" secondItem="0IA-wk-BFo" secondAttribute="top" id="ETX-X3-Bjm"/>
+                        <constraint firstAttribute="trailing" secondItem="Mhe-Tt-66i" secondAttribute="trailing" constant="20" id="Jcu-Yv-YpX"/>
+                        <constraint firstItem="Mhe-Tt-66i" firstAttribute="leading" secondItem="0IA-wk-BFo" secondAttribute="leading" constant="20" id="esg-io-zgp"/>
+                        <constraint firstItem="6QV-TI-74g" firstAttribute="leading" secondItem="0IA-wk-BFo" secondAttribute="leading" id="hrZ-sp-Qof"/>
+                        <constraint firstAttribute="bottom" secondItem="Mhe-Tt-66i" secondAttribute="bottom" constant="10" id="idO-Gq-Gx1"/>
+                        <constraint firstAttribute="height" constant="60" id="lHd-Zq-8uE"/>
+                        <constraint firstAttribute="trailing" secondItem="6QV-TI-74g" secondAttribute="trailing" id="qLC-Hh-vgS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hQ0-JC-Z79" secondAttribute="trailing" id="JGe-KK-7O6"/>
+                <constraint firstItem="0IA-wk-BFo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qrg-C7-q0p"/>
+                <constraint firstItem="hQ0-JC-Z79" firstAttribute="top" secondItem="7t0-eS-tlZ" secondAttribute="bottom" id="Sl7-m8-PTt"/>
+                <constraint firstAttribute="bottom" secondItem="0IA-wk-BFo" secondAttribute="bottom" id="TWO-ta-yGH"/>
+                <constraint firstItem="0IA-wk-BFo" firstAttribute="top" secondItem="hQ0-JC-Z79" secondAttribute="bottom" id="a1w-Nm-kJ3"/>
+                <constraint firstAttribute="trailing" secondItem="0IA-wk-BFo" secondAttribute="trailing" id="bPW-3c-vhY"/>
+                <constraint firstItem="7t0-eS-tlZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dfw-3R-A8W"/>
+                <constraint firstAttribute="trailing" secondItem="7t0-eS-tlZ" secondAttribute="trailing" id="jDx-vm-avJ"/>
+                <constraint firstItem="7t0-eS-tlZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pn3-JH-T6g"/>
+                <constraint firstItem="hQ0-JC-Z79" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uDt-hD-6XW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="-1" y="292"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="commom_navi_bk_IOS7.png" width="320" height="64"/>
+        <image name="member_green_bg.png" width="290" height="40"/>
+        <image name="navi_back_n.png" width="32" height="32"/>
+    </resources>
+</document>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemberFollowViewController">
+            <connections>
+                <outlet property="noView" destination="vMl-KY-39o" id="9li-1m-TSP"/>
+                <outlet property="tableView" destination="5zj-ZE-LIP" id="gnu-0y-c4S"/>
+                <outlet property="view" destination="SlN-Oq-uCx" id="g9u-Ez-Kqo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="SlN-Oq-uCx">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMl-KY-39o">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_no_record.png" translatesAutoresizingMaskIntoConstraints="NO" id="5sU-S1-YH8">
+                            <rect key="frame" x="120" y="100" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="nxb-ft-le1"/>
+                                <constraint firstAttribute="width" constant="80" id="t33-5E-Ky0"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有跟进哦~" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbu-gv-jgW">
+                            <rect key="frame" x="103" y="190" width="114" height="18"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="qbu-gv-jgW" firstAttribute="top" secondItem="5sU-S1-YH8" secondAttribute="bottom" constant="10" id="Ny2-fG-Ukk"/>
+                        <constraint firstItem="qbu-gv-jgW" firstAttribute="centerX" secondItem="vMl-KY-39o" secondAttribute="centerX" id="QPx-VH-WR7"/>
+                        <constraint firstItem="5sU-S1-YH8" firstAttribute="centerX" secondItem="vMl-KY-39o" secondAttribute="centerX" id="TIu-79-LwA"/>
+                        <constraint firstItem="5sU-S1-YH8" firstAttribute="top" secondItem="vMl-KY-39o" secondAttribute="top" constant="100" id="XMz-TG-QdF"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5zj-ZE-LIP">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="MFY-lY-6Tc"/>
+                        <outlet property="delegate" destination="-1" id="6ty-k3-zVc"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="vMl-KY-39o" firstAttribute="leading" secondItem="SlN-Oq-uCx" secondAttribute="leading" id="3qU-mH-FDH"/>
+                <constraint firstAttribute="trailing" secondItem="vMl-KY-39o" secondAttribute="trailing" id="6Ad-Ek-SqH"/>
+                <constraint firstItem="5zj-ZE-LIP" firstAttribute="top" secondItem="SlN-Oq-uCx" secondAttribute="top" id="6Jl-kp-xZX"/>
+                <constraint firstAttribute="bottom" secondItem="vMl-KY-39o" secondAttribute="bottom" id="CEs-V2-vWr"/>
+                <constraint firstItem="vMl-KY-39o" firstAttribute="top" secondItem="SlN-Oq-uCx" secondAttribute="top" id="TfF-AY-GoK"/>
+                <constraint firstAttribute="trailing" secondItem="5zj-ZE-LIP" secondAttribute="trailing" id="XTH-py-wk0"/>
+                <constraint firstItem="5zj-ZE-LIP" firstAttribute="leading" secondItem="SlN-Oq-uCx" secondAttribute="leading" id="aJh-6C-0GY"/>
+                <constraint firstAttribute="bottom" secondItem="5zj-ZE-LIP" secondAttribute="bottom" id="u3f-ru-T7f"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_no_record.png" width="80" height="80"/>
+    </resources>
+</document>

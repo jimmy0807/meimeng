@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>会员资料</ion-title>
+    <ion-buttons *ngIf="mode" end>
+      <button ion-button clear (tap)="showMember()">
+        <span>编辑</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-back">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="circles" pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-toolbar color="primary" no-border-top class="tools">
+    <div class="about-header">
+      <img class="avatar" *ngIf="member.image_url" [src]="member.image_url">
+      <img class="avatar" *ngIf="!member.image_url" src="assets/img/kpi-default-head.png">
+    </div>
+    <div class="title " text-center>{{member.name}}</div>
+    <div style="margin-top:5px;">
+      <ion-row class="member-amount">
+        <ion-col text-left>
+          <button color="primary" small ion-button icon-left (tap)="show('sta')">
+            卡余 {{member.amount}}
+          </button>
+        </ion-col>
+        <ion-col text-center>
+          <button color="primary" small ion-button icon-left (tap)="show('poi')">
+            积分 {{member.points}}
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button color="primary" small ion-button icon-left (tap)="show('car')">
+            院余 {{member.product_amount}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="member-consume">
+      <ion-row>
+        <ion-col text-center class="col-line" (tap)="show('ope')">
+          累计开单
+          <div class="number">{{member.coming_cnt}}次</div>
+        </ion-col>
+        <ion-col text-center class="center-box col-line">
+          累计充值
+          <div class="number">{{member.recharge_amount}}</div>
+        </ion-col>
+        <ion-col text-center class="col-line">
+          最后到店
+          <div class="number">{{member.last_date}}</div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-toolbar>
+  <!--<ion-list class="list" *ngIf="isMedical" (tap)="show('rec')">
+    <button ion-item class="list-btn">
+      <ion-icon name="ios-list-box-outline"></ion-icon>
+      病历卡
+    </button>
+  </ion-list>-->
+  <ion-list class="list" *ngIf="isMedical">
+    <button ion-item class="list-btn" (tap)="showAnalysis()">
+      <ion-icon name="ios-person-add"></ion-icon>
+      客情分析
+    </button>
+    <button ion-item class="list-btn" (tap)="showInfo()">
+      <ion-icon name="ios-contact"></ion-icon>
+      客源情报
+    </button>
+    <button ion-item class="list-btn" (tap)="showPrepare()">
+      <ion-icon name="ios-paper"></ion-icon>
+      铺垫信息
+    </button>
+  </ion-list>
+  <ion-list class="list">
+    <button ion-item class="list-btn" (tap)="showPlan()">
+      <ion-icon name="ios-list-box-outline"></ion-icon>
+      报单计划
+    </button>
+    <button ion-item (tap)="showVisit()" class="list-btn">
+      <ion-icon name="ios-text-outline"></ion-icon>
+      回访情况
+      <ion-note item-right *ngIf="member.visit_count">{{member.visit_count}}</ion-note>
+    </button>
+    <button ion-item (tap)="show('img')" class="list-btn">
+      <ion-icon name="ios-image-outline"></ion-icon>
+      术前、术后照
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,41 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div *ngIf="type==='info'">
+      <button ion-item (tap)="show('vis')">
+        回访记录
+      </button>
+      <button ion-item (tap)="show('ext')">
+        会员特征
+      </button>
+      <button ion-item (tap)="show('rel')">
+        家庭亲友
+      </button>
+      <button ion-item (tap)="show('img')" *ngIf="groupMedical">
+        术前/后照
+      </button>
+    </div>
+    <div *ngIf="type==='card'">
+      <button ion-item (tap)="show('ope')">
+        操作明细
+      </button>
+      <button ion-item (tap)="show('sta')">
+        金额变动明细
+      </button>
+      <button ion-item (tap)="show('poi')">
+        积分明细
+      </button>
+      <button ion-item (tap)="show('com')">
+        会员佣金明细
+      </button>
+      <button ion-item (tap)="show('pro')">
+        销售明细
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

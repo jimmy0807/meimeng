@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{day.date}} 业绩</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-back">
+  <ion-list class="list-item" *ngFor="let k of keys">
+    <h2>{{arr[k].name}}<span class="span-amount">{{arr[k].sum | number:'1.0-0'}}</span></h2>
+    <ion-item *ngFor="let c of arr[k].items">
+      <!--<h2>{{c.partner_name}}</h2>-->
+      <!--<p *ngIf="c.partner_category!=='dj'">店家：{{c.dj_name}}</p>
+      <p *ngIf="c.partner_category==='dj'">会员：{{c.member_name}}</p>-->
+      <p>会员：{{c.member_name}}</p>
+      <p class="p-date">{{c.date}}</p>
+      <p item-right class="p-amount">{{c.base_amount | number :'1.0-0'}}</p>
+    </ion-item>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!list.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+</ion-content>

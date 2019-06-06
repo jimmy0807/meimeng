@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneGiveViewController">
+            <connections>
+                <outlet property="tableView" destination="q2D-p6-12w" id="tLe-jY-OVd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weikaLabel" destination="DcA-bX-AOa" id="nl3-ds-jXy"/>
+                <outlet property="weikaLine" destination="Akk-KR-izD" id="fDp-Az-4iI"/>
+                <outlet property="weixinLabel" destination="cP5-U4-Lbg" id="359-PL-liU"/>
+                <outlet property="weixinLine" destination="P4n-5s-CRi" id="xXI-7y-ngC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rR9-VO-95d">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone_give_top_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="jzc-Jo-Gle">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
+                            <color key="backgroundColor" red="0.94905711209999999" green="0.17796336209999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auK-wF-DBC">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="58.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="普通送券" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcA-bX-AOa">
+                                    <rect key="frame" x="59" y="19" width="69.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone_give_selected_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="Akk-KR-izD">
+                                    <rect key="frame" x="59" y="55.5" width="69.5" height="3"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRB-uB-ID1">
+                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="55.5"/>
+                                    <connections>
+                                        <action selector="didWeikaBtnPressed:" destination="-1" eventType="touchUpInside" id="b7B-po-Ybb"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ZRB-uB-ID1" secondAttribute="trailing" id="AL1-mz-DWE"/>
+                                <constraint firstItem="DcA-bX-AOa" firstAttribute="centerY" secondItem="auK-wF-DBC" secondAttribute="centerY" id="BNN-MB-zG8"/>
+                                <constraint firstItem="ZRB-uB-ID1" firstAttribute="top" secondItem="auK-wF-DBC" secondAttribute="top" id="HW5-r2-zwW"/>
+                                <constraint firstItem="Akk-KR-izD" firstAttribute="leading" secondItem="DcA-bX-AOa" secondAttribute="leading" id="MCv-WN-pk5"/>
+                                <constraint firstItem="Akk-KR-izD" firstAttribute="trailing" secondItem="DcA-bX-AOa" secondAttribute="trailing" id="MV6-d4-IXg"/>
+                                <constraint firstItem="ZRB-uB-ID1" firstAttribute="leading" secondItem="auK-wF-DBC" secondAttribute="leading" id="Z1w-E0-7me"/>
+                                <constraint firstAttribute="bottom" secondItem="Akk-KR-izD" secondAttribute="bottom" id="kML-VB-vHM"/>
+                                <constraint firstItem="Akk-KR-izD" firstAttribute="top" secondItem="ZRB-uB-ID1" secondAttribute="bottom" id="lMS-N7-vUf"/>
+                                <constraint firstItem="DcA-bX-AOa" firstAttribute="centerX" secondItem="auK-wF-DBC" secondAttribute="centerX" id="sTM-fg-a5x"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3s-Ag-4H8">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="58.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信送券" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP5-U4-Lbg">
+                                    <rect key="frame" x="59" y="19" width="69.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone_give_selected_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="P4n-5s-CRi">
+                                    <rect key="frame" x="59" y="55.5" width="69.5" height="3"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lai-kO-gM3">
+                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="55.5"/>
+                                    <connections>
+                                        <action selector="didWeixinBtnPressed:" destination="-1" eventType="touchUpInside" id="WhZ-jU-tMt"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="lai-kO-gM3" firstAttribute="top" secondItem="B3s-Ag-4H8" secondAttribute="top" id="9Ds-vy-zgS"/>
+                                <constraint firstItem="P4n-5s-CRi" firstAttribute="leading" secondItem="cP5-U4-Lbg" secondAttribute="leading" id="AQo-IA-cc2"/>
+                                <constraint firstItem="cP5-U4-Lbg" firstAttribute="centerX" secondItem="B3s-Ag-4H8" secondAttribute="centerX" id="HC9-I3-VKo"/>
+                                <constraint firstItem="P4n-5s-CRi" firstAttribute="trailing" secondItem="cP5-U4-Lbg" secondAttribute="trailing" id="Mv0-Gi-Qdn"/>
+                                <constraint firstItem="cP5-U4-Lbg" firstAttribute="centerY" secondItem="B3s-Ag-4H8" secondAttribute="centerY" id="ZeE-DW-OXH"/>
+                                <constraint firstAttribute="bottom" secondItem="P4n-5s-CRi" secondAttribute="bottom" id="bTd-f6-mbP"/>
+                                <constraint firstItem="lai-kO-gM3" firstAttribute="leading" secondItem="B3s-Ag-4H8" secondAttribute="leading" id="igJ-EH-AmP"/>
+                                <constraint firstItem="P4n-5s-CRi" firstAttribute="top" secondItem="lai-kO-gM3" secondAttribute="bottom" id="lrH-ru-lme"/>
+                                <constraint firstAttribute="trailing" secondItem="lai-kO-gM3" secondAttribute="trailing" id="pKg-GQ-ufH"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="B3s-Ag-4H8" firstAttribute="top" secondItem="rR9-VO-95d" secondAttribute="top" id="4gE-m3-Xtw"/>
+                        <constraint firstItem="B3s-Ag-4H8" firstAttribute="leading" secondItem="auK-wF-DBC" secondAttribute="trailing" id="6tR-9y-J5N"/>
+                        <constraint firstItem="jzc-Jo-Gle" firstAttribute="leading" secondItem="rR9-VO-95d" secondAttribute="leading" id="7cG-19-0fc"/>
+                        <constraint firstItem="jzc-Jo-Gle" firstAttribute="top" secondItem="rR9-VO-95d" secondAttribute="top" id="8PO-DW-4w7"/>
+                        <constraint firstAttribute="bottom" secondItem="B3s-Ag-4H8" secondAttribute="bottom" id="8wh-id-PM7"/>
+                        <constraint firstAttribute="width" secondItem="rR9-VO-95d" secondAttribute="height" multiplier="32:5" id="CtB-Kf-xsP"/>
+                        <constraint firstAttribute="bottom" secondItem="jzc-Jo-Gle" secondAttribute="bottom" id="JSB-Jo-wEc"/>
+                        <constraint firstItem="B3s-Ag-4H8" firstAttribute="width" secondItem="auK-wF-DBC" secondAttribute="width" id="Mz4-BA-z6W"/>
+                        <constraint firstAttribute="trailing" secondItem="B3s-Ag-4H8" secondAttribute="trailing" id="NsN-6V-Sz7"/>
+                        <constraint firstItem="auK-wF-DBC" firstAttribute="leading" secondItem="rR9-VO-95d" secondAttribute="leading" id="OC1-gV-BaK"/>
+                        <constraint firstAttribute="bottom" secondItem="auK-wF-DBC" secondAttribute="bottom" id="OT6-EY-3dl"/>
+                        <constraint firstItem="auK-wF-DBC" firstAttribute="top" secondItem="rR9-VO-95d" secondAttribute="top" id="gN7-HM-Ttq"/>
+                        <constraint firstAttribute="trailing" secondItem="jzc-Jo-Gle" secondAttribute="trailing" id="nVe-s0-wFC"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q2D-p6-12w">
+                    <rect key="frame" x="0.0" y="58.5" width="375" height="608.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rR9-VO-95d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7iQ-sJ-OEm"/>
+                <constraint firstAttribute="bottom" secondItem="q2D-p6-12w" secondAttribute="bottom" id="Ftq-rF-sH3"/>
+                <constraint firstItem="q2D-p6-12w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="H9z-nF-sFd"/>
+                <constraint firstAttribute="trailing" secondItem="q2D-p6-12w" secondAttribute="trailing" id="Oel-dL-DZg"/>
+                <constraint firstItem="q2D-p6-12w" firstAttribute="top" secondItem="rR9-VO-95d" secondAttribute="bottom" id="Wps-Ip-efU"/>
+                <constraint firstItem="rR9-VO-95d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bg9-x5-FJT"/>
+                <constraint firstAttribute="trailing" secondItem="rR9-VO-95d" secondAttribute="trailing" id="vPC-cl-40v"/>
+            </constraints>
+            <point key="canvasLocation" x="323" y="-317"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="phone_give_selected_line.png" width="60" height="3"/>
+        <image name="phone_give_top_bg.png" width="375" height="51"/>
+    </resources>
+</document>

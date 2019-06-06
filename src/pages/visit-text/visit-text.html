@@ -1,0 +1,30 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end *ngIf="probMode">
+      <button ion-button (tap)="save()">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <div *ngIf="probMode">
+    <textarea class="text-area" rows="10" placeholder="请输入应对方案" [(ngModel)]="p.note"></textarea>
+  </div>
+  <div *ngIf="!probMode">
+    <textarea class="text-area" rows="10" placeholder="审核信息..." [(ngModel)]="v.review"></textarea>
+    <div class="div-10"></div>
+    <textarea class="text-area" rows="10" placeholder="评论..." [(ngModel)]="v.comments"></textarea>
+  </div>
+</ion-content>
+<ion-footer *ngIf="!probMode">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="done()" color="primary" full>完成</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

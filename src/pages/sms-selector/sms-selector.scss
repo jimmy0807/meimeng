@@ -1,0 +1,36 @@
+﻿page-sms-selector {
+  .item-p16 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .item-p10 {
+    padding-left: 10px;
+    padding-right: 0;
+  }
+
+  .item-div {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 10px;
+  }
+
+  .foot-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 7px;
+  }
+
+  .divider-light {
+    color: #878787;
+    background-color: #f5f5f5;
+  }
+
+  .birth-note {
+    font-size: 14px;
+    margin: 0 0 0 8px !important;
+  }
+}

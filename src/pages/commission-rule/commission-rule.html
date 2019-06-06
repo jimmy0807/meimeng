@@ -1,0 +1,42 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>提成方案</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="add()">
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list inset>
+    <button ion-item *ngFor="let commissionRule of groups" (tap)="showDetail(commissionRule)">
+      {{ commissionRule.name }}
+      <p>业绩计算方式:{{commissionRule.sale_price_sel_display}}</p>
+      <ion-note *ngIf="commissionRule.active == true" item-right>生效</ion-note>
+      <ion-note *ngIf="commissionRule.active == false" item-right>失效</ion-note>
+    </button>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!groups.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>暂无提成方案</p>
+    </div>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
+
+
+
+

@@ -1,0 +1,69 @@
+﻿<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      回访详情
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="feedback(fdForm)" type="submit">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar color="primary" no-border-top>
+    <div class="head-box">
+      <h2> {{operate.member_name}}</h2>
+      <div class="head-item">回访:该会员累计{{operate.total_cnt}}次回访记录 </div>
+      <div *ngIf="operate.products">项目:{{operate.products}}</div>
+      <div *ngIf="operate.employee_name">顾问:{{operate.employee_name}}</div>
+      <div class="head-item">
+        日期:{{operate.create_date}}
+        <ion-badge class="badge-right" (tap)="showMember()">查看资料</ion-badge>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let feedback of feedbacks">
+    <ion-item>
+      <h2>{{feedback.create_name}}</h2>
+      <p>{{feedback.create_date}}</p>
+    </ion-item>
+    <ion-card-content>
+      <p>{{feedback.note}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list padding>
+    <form #fdForm="ngForm" novalidate>
+      <ion-item>
+        <ion-label stacked color="primary">请填写本次回访信息</ion-label>
+        <ion-textarea row="10" [(ngModel)]="fd.note" name="note" #note="ngModel" placeholder="点击编写回访信息"></ion-textarea>
+      </ion-item>
+
+      <p [hidden]="note.valid || submitted == false" color="danger" padding-left>
+        请填写本次回访信息
+      </p>
+    </form>
+  </ion-list>
+  <ion-fab left bottom #fab3>
+    <button ion-fab color="primary"><ion-icon name="ios-call"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button color="primary" (tap)="call(fab3)" ion-fab><ion-icon name="ios-call"></ion-icon></button>
+      <button color="primary" (tap)="message(fab3)" ion-fab><ion-icon name="ios-mail"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="reserve()" color="primary" full>预约</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,74 @@
+﻿<ion-header>
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title>
+      预约管理
+    </ion-title>
+    <ion-buttons *ngIf="allowAdd" end>
+      <button ion-button (tap)="add()">
+        <!--<ion-icon name="ios-calendar"></ion-icon>-->
+        <span>添加</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="today">
+        今日
+      </ion-segment-button>
+      <ion-segment-button value="all">
+        全部
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-back">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)" (ionPull)="doPulling($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!--<ion-fab bottom left edge style="margin-bottom:50px;">
+    <button (tap)="add()" ion-fab mini><ion-icon name="add"></ion-icon></button>
+  </ion-fab>-->
+  <ion-list>
+    <ion-item-group *ngFor="let group of groups" [hidden]="segment==='today' &&  !group.is_today">
+      <ion-item-divider sticky>
+        <ion-label>
+          {{group.date}}日预约
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let reservation of group.reservations" #slidingItem [attr.track]="reservation.state | lowercase">
+        <button ion-item (tap)="showDetail(reservation)">
+          <h3>{{reservation.member_name}}&mdash;{{reservation.start_date_time}} {{reservation.ampm}}</h3>
+          <p>
+            到店:{{reservation.service_datetime}}
+          </p>
+          <p *ngIf="reservation.product_names">项目:{{reservation.product_names}}</p>
+          <p><span class="{{reservation.state}}">{{reservation.state_display}}</span> | 预约对象:{{reservation.technician_name}}</p>
+          <ion-note *ngIf="eid===reservation.technician_id" item-right><span color="danger">我</span></ion-note>
+        </button>
+        <ion-item-options>
+          <button (tap)="doCancel(reservation)" ion-button color="danger" *ngIf="reservation.state === 'approved'">
+            取消预约
+          </button>
+          <button (tap)="doConfirm(reservation)" ion-button color="primary" *ngIf="reservation.state === 'draft'">
+            确认预约
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+
+  <div text-center class="no-item-div" *ngIf="(segment==='today' && !todayList.length) || (segment==='all' && !groups.length)">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>{{segment==='all' ? '暂时' : '今日'}}没有预约信息</p>
+    </div>
+  </div>
+
+  <ion-infinite-scroll *ngIf="segment==='all'" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

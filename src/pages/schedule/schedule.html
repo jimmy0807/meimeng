@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>排班</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content no-bounce>
+  <ion-grid class="calendar" no-padding>
+    <ion-row class="calendar-header-row">
+      <ion-col>
+        <button (tap)="previousMonth()" small ion-button icon-left>
+        <ion-icon name="ios-arrow-dropleft"></ion-icon>
+        上月
+      </button>
+      </ion-col>
+      <ion-col text-center>
+        <button small ion-button>
+        {{seleted.getFullYear()}}/{{seleted.getMonth()+1}}/{{seleted.getDate()}}
+      </button>
+      </ion-col>
+      <ion-col text-right>
+        <button (tap)="nextMonth()" small ion-button icon-right>
+        下月
+        <ion-icon name="ios-arrow-dropright"></ion-icon>
+      </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="calendar-header-row">
+      <ion-col class="center calendar-header-col" width-14 *ngFor="let head of wHeadShort">
+        <b>{{head}}</b>
+      </ion-col>
+    </ion-row>
+    <ion-row class="calendar-row" *ngFor="let week of month; let i = index;">
+      <ion-col width-14 *ngFor="let day of week" [class.diff-month]="current.getMonth() !== day.date.getMonth()" class="center calendar-col"
+        [class.it-busy]="day.events">
+        <button [hidden]="current.getMonth() !== day.date.getMonth()" class="center calendar-col-btn" (tap)="selectDate(day.date)"
+          text-center full [class.today]="today.getDate()===day.date.getDate() && today.getMonth() === day.date.getMonth()"
+          [class.select-date]="day.date.getDate()===seleted.getDate() && day.date.getMonth()===seleted.getMonth()">
+          {{day.date.getDate()}}
+          </button>
+          </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list padding-top>
+    <ion-item-divider>
+      <ion-label>
+        {{seleted.getFullYear()}}.{{seleted.getMonth()+1}}.{{seleted.getDate()}} 星期{{wHeadShort[seleted.getDay()]}}
+      </ion-label>
+    </ion-item-divider>
+
+
+    <ion-item-group *ngFor="let schedule of schedules;">
+      <ion-list-header class="header">
+        {{schedule.name}}
+        <button (tap)="onSelectEmployee(schedule)" ion-button item-right small padding-left padding-right>
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-list-header>
+      <ion-item-sliding *ngFor="let emoloyee of schedule.emoloyees;">
+        <ion-item>
+          <span class="point">●</span> {{emoloyee.name}}
+        </ion-item>
+        <ion-item-options>
+          <button (tap)="deleteScheduleEmployee(schedule,emoloyee)" ion-button color="danger">
+            删除
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

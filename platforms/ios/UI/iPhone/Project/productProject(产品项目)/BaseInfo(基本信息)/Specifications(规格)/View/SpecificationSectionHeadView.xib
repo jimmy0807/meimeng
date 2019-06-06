@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="GVW-R4-c3s" customClass="SpecificationSectionHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="59"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKf-2p-QRl">
+                    <rect key="frame" x="15" y="19" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaO-Mm-mFM">
+                    <rect key="frame" x="0.0" y="0.0" width="323" height="59"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                    <state key="normal" title="添加">
+                        <color key="titleColor" red="0.13725490200000001" green="0.61960784310000006" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addBtnClick:" destination="GVW-R4-c3s" eventType="touchUpInside" id="Jxz-aw-Ucm"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tKf-2p-QRl" firstAttribute="centerY" secondItem="GVW-R4-c3s" secondAttribute="centerY" id="6QY-T5-lm6"/>
+                <constraint firstItem="ZaO-Mm-mFM" firstAttribute="width" secondItem="GVW-R4-c3s" secondAttribute="width" id="FsZ-G6-X9h"/>
+                <constraint firstAttribute="bottom" secondItem="ZaO-Mm-mFM" secondAttribute="bottom" id="U3s-nD-HkN"/>
+                <constraint firstItem="tKf-2p-QRl" firstAttribute="leading" secondItem="GVW-R4-c3s" secondAttribute="leading" constant="15" id="eBI-NL-f0B"/>
+                <constraint firstAttribute="trailing" secondItem="ZaO-Mm-mFM" secondAttribute="trailing" id="pPK-m0-T91"/>
+                <constraint firstItem="ZaO-Mm-mFM" firstAttribute="top" secondItem="GVW-R4-c3s" secondAttribute="top" id="tAK-EE-2oz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="tKf-2p-QRl" id="IU3-PB-24b"/>
+            </connections>
+            <point key="canvasLocation" x="158.5" y="101.5"/>
+        </view>
+    </objects>
+</document>

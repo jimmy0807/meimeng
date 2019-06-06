@@ -1,0 +1,46 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>选择产品</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar placeholder="按名称搜索" color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)"
+                   (ionInput)="onInput($event)" [(ngModel)]="keyword"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-back" style="margin-top:5px;">
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-checkbox ng-checked="false" [(ngModel)]="item.checked"></ion-checkbox>
+      <ion-label>{{item.name}}</ion-label>
+      <ion-note item-right>{{item.qty_available}}件</ion-note>
+    </ion-item>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!items.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有结果</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+<ion-footer>
+  <div class="div-footer">
+    <ion-item no-lines class="btn-w">
+      <ion-label>全选</ion-label>
+      <ion-checkbox [(ngModel)]="allProduct" (ionChange)="selectAll()"></ion-checkbox>
+    </ion-item>
+    <div class="btn-b" (tap)="confirm()">
+      <p style="margin:auto;">提交</p>
+    </div>
+  </div>
+</ion-footer>

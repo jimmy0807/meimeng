@@ -1,0 +1,36 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>调拨单</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="add()">
+        添加
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="content-back" style="padding:10px;">
+    <ion-segment [(ngModel)]="state">
+      <ion-segment-button value="draft">
+        草稿
+      </ion-segment-button>
+      <ion-segment-button value="confirmed">
+        已提交
+      </ion-segment-button>
+      <ion-segment-button value="processed">
+        待入库
+      </ion-segment-button>
+      <ion-segment-button value="done">
+        完成
+      </ion-segment-button>
+      <ion-segment-button value="cancel">
+        取消
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+<ion-content class="">
+  <ion-list>
+    <ion-item>
+    </ion-item>
+  </ion-list>
+</ion-content>

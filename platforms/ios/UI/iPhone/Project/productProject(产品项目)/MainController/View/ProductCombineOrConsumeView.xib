@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductCombineOrConsumeView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2c2-pg-RtP">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rh-Wv-ywu">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVV-Zo-o2F">
+                            <state key="normal" title="添加" backgroundImage="member_green_bg.png"/>
+                            <connections>
+                                <action selector="addBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="P2B-U5-fwd"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="eVV-Zo-o2F" firstAttribute="leading" secondItem="0Rh-Wv-ywu" secondAttribute="leading" constant="15" id="Mm6-Xo-nsb"/>
+                        <constraint firstAttribute="trailing" secondItem="eVV-Zo-o2F" secondAttribute="trailing" constant="15" id="eHA-ED-n3o"/>
+                        <constraint firstAttribute="height" constant="60" id="k8f-79-PKX"/>
+                        <constraint firstItem="eVV-Zo-o2F" firstAttribute="centerY" secondItem="0Rh-Wv-ywu" secondAttribute="centerY" id="pjP-Qf-zfv"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0Rh-Wv-ywu" secondAttribute="trailing" id="0PW-3p-YDC"/>
+                <constraint firstItem="0Rh-Wv-ywu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gze-EH-Iz3"/>
+                <constraint firstItem="0Rh-Wv-ywu" firstAttribute="top" secondItem="2c2-pg-RtP" secondAttribute="bottom" id="Iuk-UE-jnl"/>
+                <constraint firstItem="2c2-pg-RtP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JcG-hu-EyT"/>
+                <constraint firstItem="2c2-pg-RtP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ot1-sB-rRe"/>
+                <constraint firstAttribute="bottom" secondItem="0Rh-Wv-ywu" secondAttribute="bottom" id="Psj-5r-HSr"/>
+                <constraint firstAttribute="trailing" secondItem="2c2-pg-RtP" secondAttribute="trailing" id="lpH-z4-tsc"/>
+            </constraints>
+            <connections>
+                <outlet property="tableView" destination="2c2-pg-RtP" id="J1V-Fd-NIy"/>
+            </connections>
+            <point key="canvasLocation" x="-140.5" y="-14.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

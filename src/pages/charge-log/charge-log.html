@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>余额记录</ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="con">
+        消费记录
+      </ion-segment-button>
+      <ion-segment-button value="chr">
+        充值记录
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-back" [ngSwitch]="segment">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngSwitchCase="'con'">
+    <ion-list style="margin:0" *ngFor="let key of keys">
+      <div class="div-date">
+        {{key}}
+      </div>
+      <div class="div-item" *ngFor="let i of groups[key]">
+        <div class="div-l">
+          <p class="p-title">{{i.member_name}}</p>
+          <p class="p-content">{{i.operate_create_date}}</p>
+        </div>
+        <div class="div-r">
+          <p class="p-title">{{i.amount | number:'1.2-2'}}</p>
+          <p class="p-content">消费：{{i.commission_amount | number:'1.2-2'}}</p>
+        </div>
+      </div>
+    </ion-list>
+    <div text-center class="no-item-div" *ngIf="!list.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有记录</p>
+      </div>
+    </div>
+    <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  <div *ngSwitchCase="'chr'">
+    <ion-list style="margin:0">
+      <div class="div-item" *ngFor="let i of list2">
+        <div class="div-l">
+          <p class="p-title">{{i.recharge_type_str}}</p>
+          <p class="p-content">{{i.create_date}}</p>
+        </div>
+        <div class="div-r">
+          <p class="p-title">+{{i.amount | number:'1.2-2'}}</p>
+          <p class="p-content" style="font-size: 10px;">{{i.serial_number}}</p>
+          <!-- <p class="p-content">余额：1076.00</p>-->
+        </div>
+      </div>
+    </ion-list>
+    <div text-center class="no-item-div" *ngIf="!list2.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有记录</p>
+      </div>
+    </div>
+    <ion-infinite-scroll *ngIf="infiniteEnabled2" (ionInfinite)="doInfinite2($event)" threshold="100px">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

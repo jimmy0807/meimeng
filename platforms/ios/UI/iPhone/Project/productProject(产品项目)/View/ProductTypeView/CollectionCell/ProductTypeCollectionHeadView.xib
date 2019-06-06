@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductTypeCollectionHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="443" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stateRight.png" highlightedImage="stateLeft.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-0i-yCL">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="W3l-Hg-M5I"/>
+                        <constraint firstAttribute="height" constant="25" id="yDK-fQ-mc9"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgL-d6-VxU">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="O84-EF-CWB"/>
+                    </constraints>
+                    <connections>
+                        <action selector="statusChange:" destination="iN0-l3-epB" eventType="touchUpInside" id="uGZ-IG-JEK"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EB-Nc-riW">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3EB-Nc-riW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5wr-bZ-RK2"/>
+                <constraint firstAttribute="bottom" secondItem="SgL-d6-VxU" secondAttribute="bottom" id="HCD-9s-RRW"/>
+                <constraint firstItem="SgL-d6-VxU" firstAttribute="leading" secondItem="3EB-Nc-riW" secondAttribute="trailing" constant="-10" id="JaD-95-aEn"/>
+                <constraint firstAttribute="trailing" secondItem="Ozr-0i-yCL" secondAttribute="trailing" constant="15" id="Q81-qH-bUu"/>
+                <constraint firstAttribute="trailing" secondItem="SgL-d6-VxU" secondAttribute="trailing" id="S2d-8K-Aj9"/>
+                <constraint firstItem="SgL-d6-VxU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bHR-bj-Q8J"/>
+                <constraint firstAttribute="bottom" secondItem="3EB-Nc-riW" secondAttribute="bottom" id="igH-mc-whB"/>
+                <constraint firstItem="3EB-Nc-riW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="opL-Zp-bVw"/>
+                <constraint firstItem="Ozr-0i-yCL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="toe-p3-vTQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="changeBtn" destination="SgL-d6-VxU" id="Ta5-am-sbY"/>
+                <outlet property="searchView" destination="3EB-Nc-riW" id="fgY-18-JCb"/>
+                <outlet property="statuesImage" destination="Ozr-0i-yCL" id="nCu-a4-4JH"/>
+            </connections>
+            <point key="canvasLocation" x="-226.5" y="59"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="stateLeft.png" width="30" height="25"/>
+        <image name="stateRight.png" width="30" height="25"/>
+    </resources>
+</document>

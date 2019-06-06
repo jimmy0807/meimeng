@@ -1,0 +1,26 @@
+page-reservation-add {
+  .toast-success {
+    > div {
+      background-color: #32db64 !important;
+    }
+  }
+
+  .icon-time {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 30px;
+  }
+
+  .div-time {
+    position: relative;
+  }
+
+  .item-time {
+  }
+
+  .date-time {
+    padding-right: 40px;
+    margin: 0 !important;
+  }
+}

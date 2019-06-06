@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OperateProductCell" id="KGk-i7-Jjw" customClass="OperateProductCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpz-Sh-T4c">
+                        <rect key="frame" x="10" y="12" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="6vE-TS-C3D"/>
+                            <constraint firstAttribute="height" constant="50" id="7BP-an-7bZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="按摩疗程按摩疗程按摩疗程按摩疗程" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyK-XY-hES">
+                        <rect key="frame" x="12" y="18" width="239" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="299.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-ll-H0H">
+                        <rect key="frame" x="253" y="18" width="49" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqd-0v-8Ac">
+                        <rect key="frame" x="12" y="41" width="14" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OdQ-ll-H0H" firstAttribute="top" secondItem="dyK-XY-hES" secondAttribute="top" id="81y-zY-c9z"/>
+                    <constraint firstItem="gpz-Sh-T4c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="C2F-on-f8Z"/>
+                    <constraint firstItem="gpz-Sh-T4c" firstAttribute="top" secondItem="dyK-XY-hES" secondAttribute="top" constant="-6" id="L9u-Se-xID"/>
+                    <constraint firstItem="OdQ-ll-H0H" firstAttribute="leading" secondItem="dyK-XY-hES" secondAttribute="trailing" constant="2" id="R6H-GP-tdP"/>
+                    <constraint firstItem="tqd-0v-8Ac" firstAttribute="leading" secondItem="dyK-XY-hES" secondAttribute="leading" id="STC-Zd-50q"/>
+                    <constraint firstItem="dyK-XY-hES" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="cCL-Tk-IVs"/>
+                    <constraint firstItem="gpz-Sh-T4c" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dIQ-cl-m7y"/>
+                    <constraint firstItem="tqd-0v-8Ac" firstAttribute="bottom" secondItem="gpz-Sh-T4c" secondAttribute="bottom" constant="-4" id="dLt-JT-t0p"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OdQ-ll-H0H" secondAttribute="trailing" constant="10" id="sMe-Ce-Nb9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="countLabel" destination="tqd-0v-8Ac" id="EhL-ry-EQO"/>
+                <outlet property="imgView" destination="gpz-Sh-T4c" id="DZK-SF-GLO"/>
+                <outlet property="nameLabel" destination="dyK-XY-hES" id="1bT-Am-W91"/>
+                <outlet property="priceLabel" destination="OdQ-ll-H0H" id="Yoq-J4-CQ6"/>
+            </connections>
+            <point key="canvasLocation" x="314" y="178.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,31 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{member.name}}的会员卡</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (tap)="import()">
+        <span>导入</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item *ngFor="let c of cards" (tap)="show(c)">
+      <h2>{{c.no}}</h2>
+      <p>{{c.pricelist_name}}</p>
+    </ion-item>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!cards.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有会员卡</p>
+    </div>
+  </div>
+</ion-content>

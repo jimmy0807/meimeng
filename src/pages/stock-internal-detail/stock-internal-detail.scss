@@ -1,0 +1,41 @@
+﻿page-stock-internal-detail {
+  .div-footer {
+    display: flex;
+  }
+
+  .item-icon {
+    margin: 0 5px !important;
+    padding: 10px !important;
+  }
+
+  .item-div {
+    font-size: 20px;
+    color: #1d82d2;
+    margin: 0 !important;
+  }
+
+  .ele-f1 {
+    flex: 1;
+    margin: 0;
+  }
+
+  .ele-f2 {
+    flex: 2;
+    margin: 0;
+  }
+
+  .btn-b {
+    background-color: #1d82d2;
+    color: white;
+  }
+
+  .btn-w {
+    background-color: white;
+    color: #EF470E
+  }
+
+  .btn-y {
+    background-color: #F5A623;
+    color: white;
+  }
+}

@@ -1,0 +1,49 @@
+﻿page-achievement-detail {
+  .title-div {
+    background-color: white;
+    height: 45px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .line-div {
+    background-color: white;
+    padding-left: 15px;
+
+    div {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(29,29,38,0.06);
+      height: 50px;
+    }
+
+    div:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .p1 {
+    margin: 0;
+    flex: 1;
+    font-size: 15px;
+    color: rgb(37,37,37);
+  }
+
+  .pr1 {
+    margin: 0;
+    padding-right: 15px;
+    color: rgb(255,72,72);
+    font-size: 17px;
+  }
+
+  .pr2 {
+    margin: 0;
+    font-size: 15px;
+    padding-right: 15px;
+    color: rgb(112,109,110);
+  }
+}

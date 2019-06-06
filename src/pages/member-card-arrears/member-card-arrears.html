@@ -1,0 +1,42 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>欠款</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>欠款名称</ion-label>
+    <ion-input text-right [(ngModel)]="arr.name" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>类型</ion-label>
+    <ion-select [(ngModel)]="arr.type" okText="确定" cancelText="关闭">
+      <ion-option value="arrears">充值欠款</ion-option>
+      <ion-option value="course_arrears">消费欠款</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>欠款金额</ion-label>
+    <ion-input text-right [(ngModel)]="arr.arrears_amount" type="number" placeholder="请输入"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>备注</ion-label>
+    <ion-input text-right [(ngModel)]="arr.remark" type="text"></ion-input>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+

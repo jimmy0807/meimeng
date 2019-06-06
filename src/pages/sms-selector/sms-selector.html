@@ -1,0 +1,80 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>选择发送对象</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="member">
+        会员
+      </ion-segment-button>
+      <ion-segment-button value="employee">
+        员工
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div [hidden]="segment!=='member'">
+      <ion-item-group>
+        <label *ngFor="let item of people.members" class="item-div">
+          <ion-checkbox ng-checked="false" [(ngModel)]="item.checked"></ion-checkbox>
+          <ion-item class="item-p10">
+            <ion-avatar item-left>
+              <img *ngIf="item.image_url" [src]="item.image_url">
+              <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+            </ion-avatar>
+            <h2>{{item.name}}</h2>
+            <p>{{item.mobile}}</p>
+            <ion-note *ngIf="mode==='birth'" item-right class="birth-note">
+              {{item.birth_date}}
+            </ion-note>
+          </ion-item>
+        </label>
+      </ion-item-group>
+    </div>
+    <div [hidden]="segment!=='employee'">
+      <ion-item-group>
+        <label *ngFor="let item of people.employees" class="item-div">
+          <ion-checkbox ng-checked="false" [(ngModel)]="item.checked"></ion-checkbox>
+          <ion-item class="item-p10">
+            <ion-avatar item-left>
+              <img *ngIf="item.image_url" [src]="item.image_url">
+              <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+            </ion-avatar>
+            <h2>{{item.name}}</h2>
+            <p>{{item.mobile_phone}}</p>
+            <ion-note *ngIf="mode==='birth'" item-right class="birth-note">
+              {{item.birth_date}}
+            </ion-note>
+          </ion-item>
+        </label>
+      </ion-item-group>
+    </div>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <div class="foot-div" (tap)="selectAll('m')" *ngIf="segment==='member'">
+          <ion-checkbox [(ngModel)]="allMember" (ionChange)="selectChange('m')"></ion-checkbox>
+          <p style="margin-left:10px">全选</p>
+        </div>
+        <div class="foot-div" (tap)="selectAll('e')" *ngIf="segment==='employee'">
+          <ion-checkbox [(ngModel)]="allEmployee" (ionChange)="selectChange('e')"></ion-checkbox>
+          <p style="margin-left:10px">全选</p>
+        </div>
+      </ion-col>
+      <ion-col>
+        <button ion-button (tap)="confirm()" color="primary" full>确定</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eFU-OM-ouC">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Check Main View Controller-->
+        <scene sceneID="dxO-W1-qwy">
+            <objects>
+                <viewController id="eFU-OM-ouC" customClass="CheckMainViewController" customModule="meim" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wnx-kN-xe0"/>
+                        <viewControllerLayoutGuide type="bottom" id="faT-6Q-ypc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WGF-Lm-zkl">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pad_navi_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ynk-sY-lXX">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="49v-hh-t3l">
+                                <rect key="frame" x="420" y="22" width="184" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="待检查"/>
+                                    <segment title="已完成"/>
+                                </segments>
+                                <color key="tintColor" red="0.32156862749999998" green="0.79607843140000001" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="viewSelectInSegmentedControl:" destination="eFU-OM-ouC" eventType="valueChanged" id="6bZ-HM-DPG"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6P-zr-khk">
+                                <rect key="frame" x="24" y="27" width="27" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="common_menu_icon.png"/>
+                                <connections>
+                                    <action selector="didMenuButtonPressed:" destination="eFU-OM-ouC" eventType="touchUpInside" id="rlx-E1-7pe"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YfG-8J-EDg">
+                                <rect key="frame" x="151" y="95" width="722" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9rn-vY-RfX">
+                                <rect key="frame" x="151" y="161" width="722" height="617"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="eFU-OM-ouC" id="9og-Dn-SnS"/>
+                                    <outlet property="delegate" destination="eFU-OM-ouC" id="K95-1c-9Cw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="control" destination="49v-hh-t3l" id="hou-53-uTK"/>
+                        <outlet property="searchView" destination="YfG-8J-EDg" id="agJ-Tu-rSP"/>
+                        <outlet property="tableView" destination="9rn-vY-RfX" id="ecQ-Nx-2Zc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6l-fk-c0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-369" y="289"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="common_menu_icon.png" width="27" height="15"/>
+        <image name="pad_navi_background.png" width="12" height="78"/>
+    </resources>
+</document>

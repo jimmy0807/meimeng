@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberMessagePeopleCell" id="KGk-i7-Jjw" customClass="MemberMessagePeopleCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_message_people_selected_n.png" highlightedImage="member_message_people_selected_h.png" translatesAutoresizingMaskIntoConstraints="NO" id="yPF-AZ-Lxp">
+                        <rect key="frame" x="20" y="19" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="p7u-67-Q3C"/>
+                            <constraint firstAttribute="height" constant="22" id="zxw-ZK-RDm"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-cd-r8W">
+                        <rect key="frame" x="52" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="7C0-kf-M8P"/>
+                            <constraint firstAttribute="height" constant="40" id="9GB-nZ-S4h"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王丽丽" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDN-f6-Tqh">
+                        <rect key="frame" x="102" y="12" width="42" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_message_people_id_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Xx-CP-G2l">
+                        <rect key="frame" x="102" y="36" width="13" height="9"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1111111" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxw-6T-No7">
+                        <rect key="frame" x="121" y="33" width="42" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZdG-c5-MXz">
+                        <rect key="frame" x="52" y="58" width="268" height="1"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZdG-c5-MXz" firstAttribute="leading" secondItem="Cnf-cd-r8W" secondAttribute="leading" id="0Zc-3s-Pys"/>
+                    <constraint firstItem="oxw-6T-No7" firstAttribute="baseline" secondItem="2Xx-CP-G2l" secondAttribute="baseline" id="7Hy-ya-F0h"/>
+                    <constraint firstAttribute="bottom" secondItem="oxw-6T-No7" secondAttribute="bottom" constant="10" id="9Pb-aR-Dte"/>
+                    <constraint firstItem="Cnf-cd-r8W" firstAttribute="leading" secondItem="yPF-AZ-Lxp" secondAttribute="trailing" constant="10" id="AT9-7L-22L"/>
+                    <constraint firstAttribute="bottom" secondItem="2Xx-CP-G2l" secondAttribute="bottom" constant="14" id="Cwa-Tc-cFr"/>
+                    <constraint firstItem="2Xx-CP-G2l" firstAttribute="top" secondItem="IDN-f6-Tqh" secondAttribute="bottom" id="F7I-61-fRJ"/>
+                    <constraint firstItem="oxw-6T-No7" firstAttribute="leading" secondItem="2Xx-CP-G2l" secondAttribute="trailing" constant="6" id="I0O-TF-hlM"/>
+                    <constraint firstItem="Cnf-cd-r8W" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MKc-7L-O77"/>
+                    <constraint firstItem="IDN-f6-Tqh" firstAttribute="leading" secondItem="Cnf-cd-r8W" secondAttribute="trailing" constant="10" id="NkD-H0-XRB"/>
+                    <constraint firstItem="yPF-AZ-Lxp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="QxQ-PI-cqB"/>
+                    <constraint firstItem="IDN-f6-Tqh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="WBY-RS-C32"/>
+                    <constraint firstItem="2Xx-CP-G2l" firstAttribute="leading" secondItem="IDN-f6-Tqh" secondAttribute="leading" id="cdS-g8-ZXI"/>
+                    <constraint firstAttribute="bottom" secondItem="ZdG-c5-MXz" secondAttribute="bottom" id="eLC-0i-bNs"/>
+                    <constraint firstItem="yPF-AZ-Lxp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="v6K-WU-tFU"/>
+                    <constraint firstAttribute="trailing" secondItem="ZdG-c5-MXz" secondAttribute="trailing" id="xjd-z0-Naa"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="F7I-61-fRJ"/>
+                        <exclude reference="7Hy-ya-F0h"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="IDLabel" destination="oxw-6T-No7" id="F1g-YT-HGH"/>
+                <outlet property="headImgView" destination="Cnf-cd-r8W" id="Tbl-PL-yeW"/>
+                <outlet property="nameLabel" destination="IDN-f6-Tqh" id="Y3C-CW-wCY"/>
+                <outlet property="selectedImgView" destination="yPF-AZ-Lxp" id="e0R-uc-eYX"/>
+            </connections>
+            <point key="canvasLocation" x="261" y="186"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+        <image name="member_message_people_id_icon.png" width="13" height="9"/>
+        <image name="member_message_people_selected_h.png" width="22" height="22"/>
+        <image name="member_message_people_selected_n.png" width="22" height="22"/>
+        <image name="user_default.png" width="40" height="40"/>
+    </resources>
+</document>

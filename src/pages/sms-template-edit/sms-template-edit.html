@@ -1,0 +1,30 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>编辑短信</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: #f5f5f5;">
+  <div class="content-div">
+    <div *ngFor="let line of lines">
+      <p *ngIf="!line.input" class="content-p">{{line.value}}</p>
+      <div class="border-div" *ngIf="line.input">
+        <ion-input type="text" placeholder="{{line.desc}}" [(ngModel)]="line.value" onfocus="this.select()"></ion-input>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="confirm()" type="submit" color="primary" block>确定</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

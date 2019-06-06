@@ -1,0 +1,45 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}床位</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="b.name" type="text"></ion-input>
+    </ion-item>
+    <button ion-item (tap)="select('ward')" [disabled]="inWard">
+      <ion-label>病房</ion-label>
+      <ion-note *ngIf="b.ward_name" item-right>{{b.ward_name}}</ion-note>
+      <ion-note *ngIf="!b.ward_name" item-right>请选择</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>状态</ion-label>
+      <ion-select [(ngModel)]="b.state" okText="确定" cancelText="关闭">
+        <ion-option value="normal">空闲</ion-option>
+        <ion-option value="vip">保留</ion-option>
+        <ion-option value="special">占用</ion-option>
+        <ion-option value="cancel">不可用</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>备注</ion-label>
+      <ion-input text-right item-right [(ngModel)]="b.note" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

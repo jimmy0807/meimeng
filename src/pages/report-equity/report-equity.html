@@ -1,0 +1,199 @@
+<ion-header>
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title>
+      权益金
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="filter()">
+        <span>筛选</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content style="background-color: #f7f7f7;">
+  <div class="report-segment">
+    <ion-segment [(ngModel)]="segment" (ionChange)="select_timezone(segment)">
+      <ion-segment-button value="today">
+        今日
+      </ion-segment-button>
+      <ion-segment-button value="yesterday">
+        昨日
+      </ion-segment-button>
+      <ion-segment-button value="week">
+        近七天
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        当月
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="report-card">
+    <ion-row class="row_report">
+      <ion-col class="col_left">
+        <div *ngIf="flag_left" text-center style="color:#F00;font-size: 30px">{{report_data.equity_last_percent}}%</div>
+        <div *ngIf="!flag_left" text-center style="color:#F00;font-size: 30px;"><b>- -</b></div>
+        <div text-center>同期比</div>
+      </ion-col>
+      <ion-col class="col_right">
+        <div *ngIf="flag_right" text-center style="color:#F00;font-size: 30px">{{report_data.equity_goal_percent}}%</div>
+        <div *ngIf="!flag_right" text-center style="color:#F00;font-size: 30px;"><b>- -</b></div>
+        <div text-center>目标达成率</div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="report-card">
+    <div class="row_last">
+      <ion-item no-lines>
+        <ion-label text-left><b>总权益金</b></ion-label>
+        <ion-label text-right><b>¥{{report_data.equity_all}}</b></ion-label>
+      </ion-item>
+    </div>
+    <div class="chart">
+      <chart #chart [options]="options"></chart>
+    </div>
+    <div>
+      <ion-item no-lines><b>权益金明细（5）</b></ion-item>
+      <div>
+        <ion-row id="row_equity_recharge" class="row_not_last" center>
+          <ion-col width-10>
+            <div class="circle"></div>
+          </ion-col>
+          <ion-col width-90>
+            <ion-item no-lines>
+              <ion-label text-left>充值/开卡</ion-label>
+              <ion-label text-right>¥{{report_data.equity_recharge}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <!--<ion-row id="row_equity_new_commission" class="row_not_last" center>
+          <ion-col width-10>
+            <div class="circle"></div>
+          </ion-col>
+          <ion-col width-90>
+            <ion-item no-lines>
+              <ion-label text-left>开卡</ion-label>
+              <ion-label text-right>¥{{report_data.equity_new_commission}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>-->
+        <ion-row id="row_equity_sale" class="row_not_last" center>
+          <ion-col width-10>
+            <div class="circle"></div>
+          </ion-col>
+          <ion-col>
+            <ion-item no-lines>
+              <ion-label text-left>销售额</ion-label>
+              <ion-label text-right>¥{{report_data.equity_sale}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <!--<ion-row id="row_equity_item" class="row_not_last" center>
+          <ion-col width-10>
+            <div class="circle"></div>
+          </ion-col>
+          <ion-col>
+            <ion-item no-lines>
+              <ion-label text-left>产品项目</ion-label>
+              <ion-label text-right>¥{{report_data.equity_item}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>-->
+        <ion-row id="row_equity_repayment" class="row_not_last" center>
+          <ion-col width-10>
+            <div class="circle"></div>
+          </ion-col>
+          <ion-col>
+            <ion-item no-lines>
+              <ion-label text-left>还款</ion-label>
+              <ion-label text-right>¥{{report_data.equity_repayment}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row id="row_equity_arrear" class="row_not_last" center>
+          <ion-col width-10>
+            <div class="disable_square"></div>
+          </ion-col>
+          <ion-col>
+            <ion-item no-lines>
+              <ion-label style="color:#ccc" text-left>消费欠款</ion-label>
+              <ion-label style="color:#ccc" text-right>¥{{report_data.equity_arrear}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row id="row_equity_refund" class="row_last" center>
+          <ion-col width-10>
+            <div class="disable_square"></div>
+          </ion-col>
+          <ion-col>
+            <ion-item no-lines>
+              <ion-label style="color:#ccc" text-left>退款</ion-label>
+              <ion-label style="color:#ccc" text-right>¥{{report_data.equity_refund}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+  <div class="report-card">
+    <ion-item no-lines><b>支付方式</b></ion-item>
+    <div>
+      <ion-row *ngFor="let pay of report_data.pay_way" class="row_not_last" center no-lines>
+        <ion-col>
+          <ion-item no-lines>
+            <ion-label text-left>{{pay.way}}</ion-label>
+            <ion-label text-right>¥{{pay.amount}}</ion-label>
+          </ion-item>
+        </ion-col>        
+      </ion-row>
+      <!--<ion-row class="row_not_last" center>
+        <ion-col>
+          <ion-item>
+            <ion-label text-left>现金</ion-label>
+            <ion-label text-right>¥{{report_data.payment_cash}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row_not_last" center>
+        <ion-col>
+          <ion-item>
+            <ion-label text-left>银行卡</ion-label>
+            <ion-label text-right>¥{{report_data.payment_card}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row_not_last" center>
+        <ion-col>
+          <ion-item>
+            <ion-label text-left>微信</ion-label>
+            <ion-label text-right>¥{{report_data.payment_weixin}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row_not_last" center>
+        <ion-col>
+          <ion-item>
+            <ion-label text-left>支付宝</ion-label>
+            <ion-label text-right>¥{{report_data.payment_alipay}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row_not_last" center>
+        <ion-col>
+          <ion-item>
+            <ion-label text-left>团购</ion-label>
+            <ion-label text-right>¥{{report_data.payment_group}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row_last" center>
+        <ion-col>
+          <ion-item>
+            <ion-label text-left>赠券（不包含在营业额内）</ion-label>
+            <ion-label text-right>¥{{report_data.payment_coupon}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>-->
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      员工
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="specialEmployees.length>0">
+    <ion-list-header>客人常用技师</ion-list-header>
+    <button ion-item *ngFor="let employees of specialEmployees" (tap)="onSelectEmployee(employees)">
+      <ion-avatar item-left>
+        <img *ngIf="employees.image_url"  [src]="employees.image_url" >
+        <img *ngIf="!employees.image_url" src="assets/img/avatar-default.png"  >
+      </ion-avatar>
+      <h2>{{employees.name}}</h2>
+     <p  *ngFor="let recent of employees.recents" >{{recent}}</p>
+      <ion-note item-right>{{employees.qty}}</ion-note>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="idleEmployees.length>0">
+    <ion-list-header>较空闲技师</ion-list-header>
+    <button ion-item *ngFor="let employees of idleEmployees" (tap)="onSelectEmployee(employees)">
+      <ion-avatar item-left>
+        <img *ngIf="employees.image_url"  [src]="employees.image_url" >
+        <img *ngIf="!employees.image_url" src="assets/img/avatar-default.png" >
+      </ion-avatar>
+      <h2>{{employees.name}}</h2>
+       <p  *ngFor="let recent of employees.recents" >{{recent}}</p>
+      <ion-note item-right>{{employees.qty}}</ion-note>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="busyEmployees.length>0">
+    <ion-list-header>繁忙技师</ion-list-header>
+    <button ion-item *ngFor="let employees of busyEmployees" (tap)="onSelectEmployee(employees)">
+      <ion-avatar item-left>
+        <img *ngIf="employees.image_url"  [src]="employees.image_url" >
+        <img *ngIf="!employees.image_url" src="assets/img/avatar-default.png" >
+      </ion-avatar>
+      <h2>{{employees.name}}</h2>
+      <p  *ngFor="let recent of employees.recents" >{{recent}}</p>
+      <ion-note item-right>{{employees.qty}}</ion-note>
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,16 @@
+//
+//  module.modulemap
+//  WILLCore
+//
+//  Created by Joss Giffard-Burley on 22/05/2017.
+//  Copyright © 2017 Wacom. All rights reserved.
+//
+
+framework module WILLInk {
+    umbrella header "WILL.h"
+    
+    export *
+    module * { export * }
+}
+
+

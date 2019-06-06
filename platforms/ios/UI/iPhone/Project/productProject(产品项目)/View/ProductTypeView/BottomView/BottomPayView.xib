@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BottomPayView">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="52"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopCart.png" translatesAutoresizingMaskIntoConstraints="NO" id="guR-4d-TJa">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="1od-5A-K0Q"/>
+                        <constraint firstAttribute="width" constant="30" id="7NB-00-mn8"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFD-3l-bgj">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96O-DN-KbK">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="4rj-SU-5Mr"/>
+                    </constraints>
+                    <state key="normal" title="结算" backgroundImage="member_filter_sure_btn.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="btn_gray_bg.png"/>
+                    <connections>
+                        <action selector="payBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Pym-wD-sdJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDv-eC-ypS" userLabel="numBtn">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="17" id="ZWI-Nh-dhN"/>
+                        <constraint firstAttribute="height" constant="17" id="ezX-Bx-rfg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="0" backgroundImage="page.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFb-4E-MO7" userLabel="购物车">
+                    <connections>
+                        <action selector="shopCartBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Y0U-QU-f1H"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MK2-tr-1cv">
+                    <color key="backgroundColor" red="0.23529411764705882" green="0.792156862745098" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="挂单"/>
+                    <state key="disabled" backgroundImage="member_message_disable_bg.png"/>
+                    <connections>
+                        <action selector="guaDanBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="xS6-3f-s7X"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uFb-4E-MO7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="52y-Ac-PtC"/>
+                <constraint firstItem="MK2-tr-1cv" firstAttribute="leading" secondItem="uFb-4E-MO7" secondAttribute="trailing" id="78x-3q-SLR"/>
+                <constraint firstItem="MK2-tr-1cv" firstAttribute="width" secondItem="96O-DN-KbK" secondAttribute="width" id="8bV-Te-e48"/>
+                <constraint firstItem="96O-DN-KbK" firstAttribute="leading" secondItem="MK2-tr-1cv" secondAttribute="trailing" id="Cli-By-rDu"/>
+                <constraint firstItem="96O-DN-KbK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="E1U-v7-4KY"/>
+                <constraint firstItem="uFb-4E-MO7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EAi-hy-fWp"/>
+                <constraint firstItem="NFD-3l-bgj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qz9-Zp-zdQ"/>
+                <constraint firstItem="guR-4d-TJa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="VR6-wm-oOc"/>
+                <constraint firstItem="96O-DN-KbK" firstAttribute="leading" secondItem="uFb-4E-MO7" secondAttribute="trailing" id="WA2-Cu-4bm"/>
+                <constraint firstItem="uFb-4E-MO7" firstAttribute="trailing" secondItem="MK2-tr-1cv" secondAttribute="leading" id="cJL-Yd-EXd"/>
+                <constraint firstAttribute="bottom" secondItem="96O-DN-KbK" secondAttribute="bottom" id="dFZ-Zr-GoV"/>
+                <constraint firstItem="MK2-tr-1cv" firstAttribute="top" secondItem="96O-DN-KbK" secondAttribute="top" id="gVf-Sg-TQZ"/>
+                <constraint firstItem="guR-4d-TJa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gqq-FD-bcT"/>
+                <constraint firstAttribute="trailing" secondItem="96O-DN-KbK" secondAttribute="trailing" id="lZJ-Gi-6Jm"/>
+                <constraint firstAttribute="bottom" secondItem="uFb-4E-MO7" secondAttribute="bottom" id="p7Q-by-R2d"/>
+                <constraint firstItem="sDv-eC-ypS" firstAttribute="trailing" secondItem="guR-4d-TJa" secondAttribute="trailing" constant="10" id="ri3-Il-Icy"/>
+                <constraint firstItem="sDv-eC-ypS" firstAttribute="top" secondItem="guR-4d-TJa" secondAttribute="top" constant="-4" id="tUO-dh-YZh"/>
+                <constraint firstItem="MK2-tr-1cv" firstAttribute="height" secondItem="96O-DN-KbK" secondAttribute="height" id="zTt-q2-oCJ"/>
+                <constraint firstItem="NFD-3l-bgj" firstAttribute="leading" secondItem="guR-4d-TJa" secondAttribute="trailing" constant="10" id="zbQ-dE-H2p"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="WA2-Cu-4bm"/>
+                    <exclude reference="cJL-Yd-EXd"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="gudanBtn" destination="MK2-tr-1cv" id="0w9-Cv-9r1"/>
+                <outlet property="numBtn" destination="sDv-eC-ypS" id="0cH-wa-FUA"/>
+                <outlet property="payBtn" destination="96O-DN-KbK" id="JDx-Du-2A7"/>
+                <outlet property="priceLabel" destination="NFD-3l-bgj" id="OVn-X3-Jxp"/>
+                <outlet property="shopCatrBtn" destination="uFb-4E-MO7" id="Xum-EV-Btv"/>
+            </connections>
+            <point key="canvasLocation" x="86" y="-9"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_gray_bg.png" width="95" height="50"/>
+        <image name="member_filter_sure_btn.png" width="160" height="44"/>
+        <image name="member_message_disable_bg.png" width="121" height="44"/>
+        <image name="page.png" width="17" height="17"/>
+        <image name="shopCart.png" width="30" height="26"/>
+    </resources>
+</document>

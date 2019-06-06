@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemberCardPayViewController">
+            <connections>
+                <outlet property="tableView" destination="buv-mr-8v4" id="uc4-cq-nzV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="buv-mr-8v4">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="fVe-tP-Qmg"/>
+                        <outlet property="delegate" destination="-1" id="riq-qn-rfo"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmC-Ob-71l">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="KP4-sK-OZ4">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxe-i4-Lzw">
+                            <rect key="frame" x="12" y="10" width="351" height="40"/>
+                            <state key="normal" title="确认" backgroundImage="member_green_btn_bg.png"/>
+                            <connections>
+                                <action selector="didSureBtnPressed:" destination="-1" eventType="touchUpInside" id="N5l-ZT-1F0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Qxe-i4-Lzw" firstAttribute="top" secondItem="zmC-Ob-71l" secondAttribute="top" constant="10" id="GeY-02-6W6"/>
+                        <constraint firstAttribute="trailing" secondItem="Qxe-i4-Lzw" secondAttribute="trailing" constant="12" id="GfN-mY-DKs"/>
+                        <constraint firstAttribute="height" constant="60" id="KOG-0a-LBT"/>
+                        <constraint firstItem="KP4-sK-OZ4" firstAttribute="top" secondItem="zmC-Ob-71l" secondAttribute="top" id="dBY-z6-bl8"/>
+                        <constraint firstItem="KP4-sK-OZ4" firstAttribute="leading" secondItem="zmC-Ob-71l" secondAttribute="leading" id="gbc-8x-Ayu"/>
+                        <constraint firstAttribute="trailing" secondItem="KP4-sK-OZ4" secondAttribute="trailing" id="gci-PX-DB6"/>
+                        <constraint firstAttribute="bottom" secondItem="Qxe-i4-Lzw" secondAttribute="bottom" constant="10" id="tDw-Es-ieP"/>
+                        <constraint firstItem="Qxe-i4-Lzw" firstAttribute="leading" secondItem="zmC-Ob-71l" secondAttribute="leading" constant="12" id="wQL-ac-BMu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="buv-mr-8v4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AqM-Yv-cpp"/>
+                <constraint firstAttribute="bottom" secondItem="zmC-Ob-71l" secondAttribute="bottom" id="NFI-xB-lgr"/>
+                <constraint firstItem="buv-mr-8v4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fOX-Bn-6bW"/>
+                <constraint firstAttribute="trailing" secondItem="zmC-Ob-71l" secondAttribute="trailing" id="gA2-hr-eMi"/>
+                <constraint firstItem="zmC-Ob-71l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="omU-5W-Ocv"/>
+                <constraint firstItem="zmC-Ob-71l" firstAttribute="top" secondItem="buv-mr-8v4" secondAttribute="bottom" id="pJ5-Sd-Vlq"/>
+                <constraint firstAttribute="trailing" secondItem="buv-mr-8v4" secondAttribute="trailing" id="qKd-r4-RaM"/>
+            </constraints>
+            <point key="canvasLocation" x="283" y="131"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+        <image name="member_green_btn_bg.png" width="290" height="40"/>
+    </resources>
+</document>

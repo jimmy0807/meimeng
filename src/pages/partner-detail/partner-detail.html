@@ -1,0 +1,287 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}渠道商</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment" (ionChange)="tabChange()">
+      <ion-segment-button value="normal">
+        基本信息
+      </ion-segment-button>
+      <ion-segment-button value="shop" [hidden]="p.partner_category!=='dj'">
+        店情分析
+      </ion-segment-button>
+      <ion-segment-button value="detail">
+        更多信息
+      </ion-segment-button>
+      <ion-segment-button value="image">
+        附件信息
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-back" [ngSwitch]="segment">
+  <div *ngSwitchCase="'normal'">
+    <ion-list class="margin-0">
+      <ion-item no-lines>
+        <ion-label>类型<span color="danger" class="c-danger">*</span></ion-label>
+        <ion-select [(ngModel)]="p.partner_category" cancelText="取消" okText="确定">
+          <ion-option value="dj">店家</ion-option>
+          <ion-option value="dd">督导</ion-option>
+          <ion-option value="dl">代理商</ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="divider-light">
+        联系人
+      </div>
+      <ion-item>
+        <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.name"></ion-input>
+      </ion-item>
+      <ion-item [attr.no-lines]="p.partner_category==='dj'? null:true">
+        <ion-label>手机<span color="danger" class="c-danger">*</span></ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.mobile" maxlength="11"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="p.partner_category==='dj'">
+        <ion-label>店名</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.shop_name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="p.partner_category==='dj'" no-lines>
+        <ion-label>城市及区域</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.city_region"></ion-input>
+      </ion-item>
+      <div class="divider-light">
+        渠道商详情
+      </div>
+      <ion-item *ngIf="p.partner_category==='dj'">
+        <ion-label>资料是否已入库</ion-label>
+        <ion-toggle text-right [(ngModel)]="p.is_in"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>是否已终止合作</ion-label>
+        <ion-toggle text-right [(ngModel)]="p.is_end"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="p.partner_category==='dj'">
+        <ion-label>是否转介绍店家</ion-label>
+        <ion-toggle text-right [(ngModel)]="p.is_referral_shop"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="p.partner_category==='dl'">
+        <ion-label>是否转介绍代理商</ion-label>
+        <ion-toggle text-right [(ngModel)]="p.is_referral"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>签约日期<span color="danger" class="c-danger">*</span></ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="p.sign_date" doneText="确定" cancelText="取消"
+                      class="clr-146"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="p.partner_category==='dj'">
+        <ion-label>签约地址</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.sign_address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>身份证名</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.used_to_name"></ion-input>
+      </ion-item>
+      <ion-item [attr.no-lines]="p.partner_category==='dj'? null:true">
+        <ion-label>身份证号码</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.identification"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="p.partner_category==='dj'" no-lines>
+        <ion-label>店址</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.shop_address"></ion-input>
+      </ion-item>
+
+      <div class="divider-light">
+        来源信息
+      </div>
+      <ion-item *ngIf="p.partner_category==='dj'">
+        <ion-label>介绍人</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.introducer"></ion-input>
+      </ion-item>
+      <ion-item (tap)="select('partner')">
+        <ion-label>上级</ion-label>
+        <ion-note *ngIf="p.parent_name" item-right>{{p.parent_name}}</ion-note>
+        <ion-note *ngIf="!p.parent_name" item-right>请选择</ion-note>
+      </ion-item>
+
+      <ion-item (tap)="select('designer')" *ngIf="p.partner_category==='dj'">
+        <ion-label>设计师</ion-label>
+        <ion-note item-right>{{p.designer_employee_name || '请选择'}}</ion-note>
+      </ion-item>
+      <ion-item (tap)="select('designers')" *ngIf="p.partner_category==='dj'">
+        <ion-label>辅助设计师</ion-label>
+        <ion-note *ngIf="p.designer_employee_names" item-right>{{p.designer_employee_names}}</ion-note>
+        <ion-note *ngIf="!p.designer_employee_names" item-right>请选择</ion-note>
+      </ion-item>
+      <ion-item (tap)="select('business')" *ngIf="p.partner_category==='dj'">
+        <ion-label>业务员</ion-label>
+        <ion-note *ngIf="p.business_employee_name" item-right>{{p.business_employee_name}}</ion-note>
+        <ion-note *ngIf="!p.business_employee_name" item-right>请选择</ion-note>
+      </ion-item>
+      <div *ngIf="p.partner_category==='dj'">
+        <ion-item (tap)="select('dd_partner')">
+          <ion-label>督导</ion-label>
+          <ion-note *ngIf="p.dd_partner_name" item-right>{{p.dd_partner_name}}</ion-note>
+          <ion-note *ngIf="!p.dd_partner_name" item-right>请选择</ion-note>
+        </ion-item>
+        <ion-item (tap)="select('dl_partner')">
+          <ion-label>一级代理商</ion-label>
+          <ion-note *ngIf="p.dl_partner_name_1" item-right>{{p.dl_partner_name_1}}</ion-note>
+          <ion-note *ngIf="!p.dl_partner_name_1" item-right>请选择</ion-note>
+        </ion-item>
+        <ion-item (tap)="select('dl_partner2')" *ngIf="p.dl_partner_id_1">
+          <ion-label>二级代理商</ion-label>
+          <ion-note *ngIf="p.dl_partner_name_2" item-right>{{p.dl_partner_name_2}}</ion-note>
+          <ion-note *ngIf="!p.dl_partner_name_2" item-right>请选择</ion-note>
+        </ion-item>
+        <ion-item (tap)="select('dl_partner3')" *ngIf="p.dl_partner_id_2">
+          <ion-label>三级代理商</ion-label>
+          <ion-note *ngIf="p.dl_partner_name_3" item-right>{{p.dl_partner_name_3}}</ion-note>
+          <ion-note *ngIf="!p.dl_partner_name_3" item-right>请选择</ion-note>
+        </ion-item>
+      </div>
+    </ion-list>
+
+    <!--<ion-item *ngIf="p.partner_category==='dd'">
+      <ion-label>授权代表</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="p.representative"></ion-input>
+    </ion-item>-->
+    <!--<ion-item>
+      <ion-label>最后活动时间</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="p.last_active_date" doneText="确定" cancelText="取消"></ion-datetime>
+    </ion-item>-->
+    <!--<ion-item>
+      <ion-label>店家提成百分比</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="p.dj_percent"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="p.parent_id">
+      <ion-label>上级店家提成百分比</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="p.dj_parent_percent"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="p.dd_partner_id">
+      <ion-label>督导店提成百分比</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="p.dj_parent_percent"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="p.dl_partner_id_1">
+      <ion-label>一级代理商提成百分比</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="p.dl1_percent"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="p.dl_partner_id_2">
+      <ion-label>二级代理商提成百分比</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="p.dl2_percent"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="p.dl_partner_id_3">
+      <ion-label>三级代理商提成百分比</ion-label>
+      <ion-input type="text" text-right [(ngModel)]="p.dl3_percent"></ion-input>
+    </ion-item>-->
+  </div>
+  <div *ngSwitchCase="'shop'">
+    <ion-list class="margin-0">
+      <ion-item>
+        <ion-label>店面规模(平米)</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.shop_size"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>店成立日期</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="p.shop_create_date" doneText="确定" cancelText="取消"
+                      placeholder="请选择" class="clr-146"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>主营项目</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.shop_main_product"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>店内会员(人)</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.shop_member_cnt"></ion-input>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>店内顾问(人)</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.shop_employee_cnt"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="divider-light">店内经营情况</div>
+    <ion-textarea placeholder="请输入" [(ngModel)]="p.shop_operating_note" rows="5" class="text-area"></ion-textarea>
+  </div>
+  <div *ngSwitchCase="'detail'">
+    <ion-list class="margin-0">
+      <ion-item>
+        <ion-label>银行</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.bank"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>开户行</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.bank_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>银行账号</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.bank_account"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>银行开户人</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.bank_user"></ion-input>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>地址</ion-label>
+        <ion-input type="text" text-right [(ngModel)]="p.street"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="divider-light">
+      备注
+    </div>
+    <ion-textarea placeholder="请输入" [(ngModel)]="p.note" rows="5" class="text-area"></ion-textarea>
+    <br />
+    <div *ngIf="p.id">
+      <div *ngFor="let k of keys">
+        <div class="div-date">
+          {{k}}
+        </div>
+        <ion-list class="list-item">
+          <ion-item *ngFor="let c of groups[k]">
+            <p *ngIf="c.partner_category!=='dj'">店家：{{c.dj_name}}</p>
+            <p *ngIf="c.partner_category==='dj'">会员：{{c.member_name}}</p>
+            <p>日期：{{c.date}}</p>
+            <p item-right class="p-amount">{{c.base_amount | number :'1.0-0'}}</p>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="'image'">
+    <ion-row class="img-row">
+      <ion-col *ngFor="let img of p.image_ids" col-6 class="img-col">
+        <ion-card class="img-card">
+          <h2 style="margin-left:5px;">{{img.type_name ? img.type_name + '：' : ''}}{{img.name}}</h2>
+          <img src="{{img.image_url}}" />
+          <ion-row>
+            <ion-col col-6 style="text-align:left">
+              <button ion-button icon-left clear small (tap)="edit(img)" color="primary">
+                <ion-icon name="md-create"></ion-icon>
+                <div>编辑</div>
+              </button>
+            </ion-col>
+            <ion-col col-6 style="text-align:right">
+              <button ion-button icon-left clear small (tap)="remove(img)" color="danger">
+                <ion-icon name="md-trash"></ion-icon>
+                <div>删除</div>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button *ngIf="segment!=='image'" ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+        <button *ngIf="segment==='image'" ion-button (tap)="addImage()" type="submit" color="primary" block>添加附件</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

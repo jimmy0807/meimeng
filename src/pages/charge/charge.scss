@@ -1,0 +1,81 @@
+page-charge {
+  .div-remain {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    background-color: white;
+
+    .p-text {
+      font-size: 15px;
+      color: rgb(37,37,37);
+      margin: 0;
+    }
+
+    .p-amount {
+      font-size: 20px;
+      margin: 0 0 0 15px;
+      color: rgb(255,72,72);
+    }
+  }
+
+  ion-list {
+    padding: 15px;
+    margin: 0;
+  }
+
+  .div-type {
+    background-color: white;
+    height: 85px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .div-card {
+    flex: 1;
+    border: solid rgba(0,0,0,0.1);
+    border-width: 1px 0 1px 1px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    div {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    h2 {
+      margin: 0 0 0 15px;
+      font-size: 32px;
+      color: rgb(255,72,72);
+      width: 135px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 15px;
+      color: rgb(255,72,72);
+    }
+  }
+
+  .div-btn {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(29,130,210,0.7);
+
+    div {
+      width: 100%;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      color: white;
+      margin: 0;
+    }
+  }
+}

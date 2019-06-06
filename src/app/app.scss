@@ -1,0 +1,195 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.toolbar-title-md {
+  text-align: center;
+}
+
+.tabs-md .tab-button {
+  padding: 0;
+  min-height: 50px;
+  font-weight: normal;
+  color: rgba(60, 60, 60, 0.7);
+}
+
+.tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.toolbar-md {
+  padding: 4px;
+  min-height: 44px;
+}
+
+ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 90px 1px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.toolbar-content-md {
+  order: 4;
+  // Make sure the toolbar buttons are above the title or they can't be tapped!
+  z-index: -1;
+}
+
+.no-item-div {
+  margin-top: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-item-icon {
+  font-size: 20vw;
+  margin: auto;
+  color: #1d82d2;
+}
+
+.no-item-icon-div {
+  background-color: white;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 15vw;
+  display: flex;
+  align-items: center;
+}
+
+.no-item-p {
+  color: #8e9093;
+}
+
+.content-back {
+  background-color: #f5f5f5;
+}
+
+.divider-light {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  font-size: 13px;
+  height: 33px;
+  color: #999999;
+  background-color: #f5f5f5;
+}
+
+.c-primary {
+  color: #1d82d2
+}
+
+.c-danger {
+  color: #ef473a
+}
+
+.c-secondary {
+  color: #32db64,
+}
+
+.c-light {
+  color: #ccc,
+}
+
+.c-dark {
+  color: #222;
+}
+
+.c-white {
+  color: white
+}
+
+.modal-half {
+  padding-top: 40vh;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.div-10 {
+  height: 10px;
+  background-color: #f5f5f5;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.margin-0 input {
+  font-size: 15px;
+  color: rgb(146,146,146);
+}
+
+.margin-0 a {
+  font-size: 15px;
+}
+
+.margin-0 ion-note {
+  color: rgb(146,146,146);
+  font-size: 15px;
+}
+
+.margin-0 .select-text {
+  font-size: 15px;
+  color: rgb(146,146,146);
+}
+
+.margin-0 ion-label {
+  font-size: 15px;
+  color: rgb(37,37,37) !important;
+}
+
+.margin-0 h2 {
+  font-size: 15px;
+  color: rgb(37,37,37) !important;
+}
+
+.margin-0 ion-item {
+  min-height: 50px;
+}
+
+.margin-0 button {
+  min-height: 50px;
+}
+
+.margin-0 ion-textarea {
+  font-size: 14px;
+}
+
+.clr-146 {
+  color: rgb(146,146,146) !important;
+  font-size: 15px;
+}
+
+.text-area {
+  background-color: white;
+  width: 100%;
+  resize: none;
+  border: 0;
+  padding: 16px;
+}
+
+.text-area textarea {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.popover-content {
+  left: 0 !important;
+}

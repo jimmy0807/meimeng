@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemberRecordCollectionViewCell" id="gTV-IL-0wX" customClass="MemberRecordCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="245" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="245" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWI-zF-tEg">
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_no_record.png" translatesAutoresizingMaskIntoConstraints="NO" id="xUa-2E-veS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="h1j-Vs-cKQ"/>
+                                    <constraint firstAttribute="width" constant="80" id="t6D-Ud-qSn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="还没有记录哦~" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRl-uL-tti">
+                                <frame key="frameInset" minX="76" minY="175" width="93" height="17"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xUa-2E-veS" firstAttribute="centerX" secondItem="bWI-zF-tEg" secondAttribute="centerX" id="Ofe-lo-X7A"/>
+                            <constraint firstItem="xUa-2E-veS" firstAttribute="top" secondItem="bWI-zF-tEg" secondAttribute="top" constant="90" id="fZ8-uV-iGc"/>
+                            <constraint firstItem="cRl-uL-tti" firstAttribute="centerX" secondItem="bWI-zF-tEg" secondAttribute="centerX" id="oj2-hg-BDt"/>
+                            <constraint firstItem="cRl-uL-tti" firstAttribute="top" secondItem="xUa-2E-veS" secondAttribute="bottom" constant="5" id="zCT-W2-swh"/>
+                        </constraints>
+                    </view>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HDu-BD-SOi">
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tableView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCx-uZ-LPD">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="pSl-MG-Exo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="添加" backgroundImage="member_green_bg.png">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="addBtnPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="CH6-ic-avc"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bWI-zF-tEg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7LP-Ip-BHs"/>
+                <constraint firstItem="wCx-uZ-LPD" firstAttribute="top" secondItem="HDu-BD-SOi" secondAttribute="bottom" constant="10" id="EY9-iV-Y7y"/>
+                <constraint firstItem="bWI-zF-tEg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NW6-uf-9aE"/>
+                <constraint firstAttribute="trailing" secondItem="HDu-BD-SOi" secondAttribute="trailing" id="NZP-hQ-0XH"/>
+                <constraint firstAttribute="trailing" secondItem="wCx-uZ-LPD" secondAttribute="trailing" constant="10" id="WPJ-9a-Tk0"/>
+                <constraint firstItem="wCx-uZ-LPD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="YVu-6e-3E4"/>
+                <constraint firstItem="HDu-BD-SOi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kKb-yE-0ti"/>
+                <constraint firstAttribute="bottom" secondItem="bWI-zF-tEg" secondAttribute="bottom" id="qFv-fu-HO1"/>
+                <constraint firstAttribute="bottom" secondItem="HDu-BD-SOi" secondAttribute="bottom" priority="750" id="qWB-Yo-3zR"/>
+                <constraint firstItem="HDu-BD-SOi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sZF-Wp-FZq"/>
+                <constraint firstAttribute="trailing" secondItem="bWI-zF-tEg" secondAttribute="trailing" id="tJQ-Pd-JfZ"/>
+                <constraint firstAttribute="bottom" secondItem="wCx-uZ-LPD" secondAttribute="bottom" constant="10" id="xpR-DJ-sDz"/>
+            </constraints>
+            <size key="customSize" width="245" height="300"/>
+            <connections>
+                <outlet property="addBtn" destination="wCx-uZ-LPD" id="TRN-YA-l9S"/>
+                <outlet property="addBtnTopConstraint" destination="EY9-iV-Y7y" id="i0D-Dd-v0S"/>
+                <outlet property="noRecordImg" destination="xUa-2E-veS" id="iEu-xw-zfz"/>
+                <outlet property="noRecordLabel" destination="cRl-uL-tti" id="ITB-Ma-cnK"/>
+                <outlet property="noRecordView" destination="bWI-zF-tEg" id="nI6-xd-BPO"/>
+                <outlet property="tableView" destination="HDu-BD-SOi" id="LCE-sd-h64"/>
+            </connections>
+            <point key="canvasLocation" x="133.5" y="137"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="member_green_bg.png" width="290" height="40"/>
+        <image name="member_no_record.png" width="80" height="80"/>
+    </resources>
+</document>

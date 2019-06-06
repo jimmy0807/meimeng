@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberCheckboxCell" id="KGk-i7-Jjw" customClass="MemberCheckboxCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_checkbox_blue_n.png" highlightedImage="member_checkbox_blue_h.png" translatesAutoresizingMaskIntoConstraints="NO" id="KmV-7m-OcJ">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="2z1-k9-Zis"/>
+                            <constraint firstAttribute="width" constant="17" id="YQA-71-jyE"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAs-kE-JSu">
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="A5e-jY-FbC"/>
+                        </constraints>
+                        <connections>
+                            <action selector="checkBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bnm-p9-ZLR"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消费" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RT-4R-Qzv">
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="EI2-gR-DtC"/>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="EI2-gR-DtC" secondAttribute="bottom" id="7Tm-5h-g21"/>
+                    <constraint firstAttribute="trailing" secondItem="EI2-gR-DtC" secondAttribute="trailing" id="8Md-NX-PO3"/>
+                    <constraint firstItem="9RT-4R-Qzv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GRc-8B-gYP"/>
+                    <constraint firstAttribute="bottom" secondItem="cAs-kE-JSu" secondAttribute="bottom" id="Mok-V4-qPx"/>
+                    <constraint firstItem="9RT-4R-Qzv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="YSR-kX-245"/>
+                    <constraint firstItem="KmV-7m-OcJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="foI-0L-XLv"/>
+                    <constraint firstItem="EI2-gR-DtC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hcC-f7-OIw"/>
+                    <constraint firstAttribute="trailing" secondItem="cAs-kE-JSu" secondAttribute="trailing" id="mmM-gZ-YG6"/>
+                    <constraint firstItem="cAs-kE-JSu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="r9Y-ya-ZbL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="KmV-7m-OcJ" secondAttribute="trailing" constant="10" id="u6G-4o-k9j"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="checkBoxImg" destination="KmV-7m-OcJ" id="q6y-iC-hF6"/>
+                <outlet property="lineImgView" destination="EI2-gR-DtC" id="b5b-Ou-B9n"/>
+                <outlet property="titleLabel" destination="9RT-4R-Qzv" id="9lp-wQ-oj8"/>
+            </connections>
+            <point key="canvasLocation" x="336" y="123"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+        <image name="member_checkbox_blue_h.png" width="17" height="17"/>
+        <image name="member_checkbox_blue_n.png" width="17" height="17"/>
+    </resources>
+</document>

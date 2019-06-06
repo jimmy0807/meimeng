@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>活动签到</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list style="margin:0">
+    <div class="div-card" *ngFor="let e of list">
+      <div class="card-row">
+        <div class="card-col">
+          <h2>{{e.name}}</h2>
+          <p>活动时间：{{e.start_date}} - {{e.end_date}}</p>
+        </div>
+        <div class="b-sign b-sign-{{e.state}}" (tap)="sign(e)">
+          {{e.state_name}}
+        </div>
+      </div>
+      <img [src]="e.image" />
+    </div>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!list.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+  <!--<ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+</ion-content>

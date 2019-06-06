@@ -1,0 +1,30 @@
+﻿<ion-header>
+</ion-header>
+<ion-content no-bounce>
+  <div class="loading-bg-filter">
+    <div class="loading-bg" style="background-image: url('assets/img/loading-screen.png')">
+    </div>
+  </div>
+  <ion-row responsive-sm>
+    <ion-col class="loading-center">
+      <div>
+        <h1>店尚智慧收银</h1>
+        <p>店务多琐事 惟有用店尚</p>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row responsive-sm>
+    <ion-col class="loading-bottom">
+      <div *ngIf="!canLogin" text-center style="margin-top:40px;color:#FFFFFF;">
+        <ion-spinner item-left name="ios"></ion-spinner>
+        <h4>Loading ...</h4>
+      </div>
+      <button *ngIf="canLogin" (tap)="onLogin()" ion-button round block>登录</button>
+
+      <button class="btn-box" *ngIf="!isCordova" ion-button (tap)="onLoginTest()" color="primary" block>网页登录</button>
+      <br />
+      <a style="color:white" (tap)="resetPwd()">忘记密码</a>
+      <!-- <a *ngIf="canLogin" href="http://www.we-erp.com/site/register" ion-button color="light" clear>我要入驻</a>-->
+    </ion-col>
+  </ion-row>
+</ion-content>

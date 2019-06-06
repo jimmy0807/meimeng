@@ -1,0 +1,33 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>短信分类</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="add()">
+        <span>添加</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-list>
+    <ion-item-sliding *ngFor="let cat of cats">
+      <button ion-item (tap)="edit(cat)">
+        {{cat.name}}
+      </button>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (tap)="delete(cat)">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!cats.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>暂无分类</p>
+    </div>
+  </div>
+</ion-content>

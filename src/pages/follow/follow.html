@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{currentDate.month}}月考核指标</ion-title>
+  </ion-navbar>
+  <ion-toolbar color="primary" no-border no-padding text-center>
+    <ion-scroll #chatScroll scrollX="true" class="scroll-month" text-center>
+      <ion-row>
+        <ion-col text-center width-20 *ngFor="let item of months">
+          <button style="color:#ffffff;" (tap)="onChangerMonth(item)" clear ion-button small>
+            <div [class.select-month]="item.month===currentDate.month">{{item.month}}月</div>
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-bg">
+  <ion-refresher (ionRefresh)="doRefresh($event)" (ionPull)="doPulling($event)">
+    <ion-refresher-content refreshingSpinner="circles" pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-toolbar color="primary" no-border-top class="tools">
+    <div class="about-header">
+      <img class="avatar" *ngIf="kpi.employee_image_url" [src]="kpi.employee_image_url">
+      <img class="avatar" *ngIf="!kpi.employee_image_url" src="assets/img/kpi-default-head.png">
+    </div>
+    <div class="medal">
+      <img style="width:100px;" src="assets/img/first.png">
+    </div>
+    <div class="title " text-center>{{kpi.employee_name}}</div>
+    <div style="margin-top:5px;">
+      <ion-row style="border-top:solid 1px rgba(255, 255,255, 0.1);">
+        <ion-col text-left>
+          <button color="primary" small ion-button icon-left (tap)="changeOrderClick('royalties_amt')">
+             <ion-icon *ngIf="order==='royalties_amt'" color="danger" name="ios-arrow-round-down"></ion-icon>
+          营业额 {{kpi.current_royalties_amt}}
+           </button>
+        </ion-col>
+        <ion-col text-right>
+          <button color="primary" small ion-button icon-left (tap)="changeOrderClick('spending_amt')">
+              <ion-icon *ngIf="order==='spending_amt'" color="danger" name="ios-arrow-round-down"></ion-icon>
+          净消费额 {{kpi.current_spending_amt}}
+           </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!--
+    <div style="background-color:#FFFFFF;color:#888888">
+      <ion-row>
+        <ion-col text-center style="padding:15px 0px;">
+          客流
+          <div class="number">{{kpi.coming_customer_num}}</div>
+        </ion-col>
+        <ion-col text-center style="padding:15px 0px;border-left:solid 1px #e8e8e8;border-right:solid 1px #e8e8e8;">
+          新客入会
+          <div class="number">{{kpi.coming_customer_num}}</div>
+        </ion-col>
+        <ion-col text-center style="padding:15px 0px;">
+          会员到店
+          <div class="number">{{kpi.coming_num}}</div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    -->
+  </ion-toolbar>
+  <ion-item-divider  style="margin-top:10px;">{{currentDate.month}}月
+  </ion-item-divider>
+  <div text-center class="no-data-box" *ngIf="kpis.length<=0">
+    <h4 style="font-size:16px;">很遗憾，你还没有给员工分配指标</h4>
+    <p class="padding">为了业绩马上行动起来吧</p>
+  </div>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of kpis; let i=index;">
+      <button ion-item (tap)="openKip(item)">
+      <ion-avatar item-left>
+         <img *ngIf="item.employee_image_url"  [src]="item.employee_image_url" >
+        <img *ngIf="!item.employee_image_url" src="assets/img/kpi-default-head.png" >
+        <p style="margin-top:5px;" text-center><ion-badge samll color="danger">第{{i+1}}</ion-badge></p>
+      </ion-avatar>
+      <h2>{{item.employee_name}}  <small *ngIf="user_eid===item.employee_id"  color="danger">[我自己]</small>
+      </h2>
+      <p>营业额：{{item.current_royalties_amt}} / {{item.royalties_amt}}</p>
+      <p>净消费额：{{item.current_spending_amt}} / {{item.spending_amt}}</p>
+      <p>客流数：{{item.coming_customer_num}} / {{item.operate_num}}</p>
+      <p>新入会：{{item.new_member_num}} / {{item.new_card_num}}</p>
+      <p>会员到店：{{item.coming_num}} / {{item.customer_num}}</p>
+
+      <ion-note color="danger" item-right>{{item.reach_txt}}</ion-note>
+    </button>
+      <ion-item-options>
+        <button ion-button color="danger" (tap)="edit(item)">
+            更新指标
+          </button>
+        <button ion-button color="primary" (tap)="unlink(item)">
+            删除
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-item-divider   style="margin-top:10px;">{{currentDate.month}}月主推项目
+    <button *ngIf="user_role==='3'" ion-button (tap)="addFeaturedProduct()" outline item-right>
+        添加主推项目
+     </button>
+  </ion-item-divider>
+  <div text-center class="no-data-box" *ngIf="featureds.length<=0">
+    <h4 style="font-size:16px;">很遗憾，您还没有设置当月的主推项目</h4>
+    <p class="padding">点击右上角马上进行设置</p>
+    <button ion-button color="primary" *ngIf="user_role==='3'" (tap)="copyfeaturedProduct()">
+      复制最新一个的主推项目?
+    </button>
+  </div>
+  <ion-scroll scrollX="true" style="" class="ion-scroll-box">
+    <ion-row>
+      <ion-col  width-25 class="scroll-box" *ngFor="let item of featureds">
+        <a class="pic-card" (tap)="showFeaturedDetail(item)">
+          <img *ngIf="item.product_image_url" [src]="item.product_image_url">
+          <img *ngIf="!item.product_image_url" src="assets/img/default-product.png">
+          <div class="card-title">{{item.product_name}}</div>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+</ion-content>
+<ion-footer *ngIf="user_role==='3' || user_role==='1'">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col text-right>
+        <button (tap)="add()" ion-button color="primary" full>分配指标</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

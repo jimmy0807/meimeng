@@ -1,0 +1,72 @@
+﻿page-visit-note {
+  .divider-light {
+    color: #878787;
+    background-color: #f5f5f5;
+    padding-left: 16px;
+    padding-right: 8px;
+  }
+
+  .text-p {
+    background-color: white;
+    width: 100%;
+    resize: none;
+    border: 0;
+    padding: 16px;
+    margin: 0;
+  }
+
+  .text-area {
+    background-color: white;
+    width: 100%;
+    resize: none;
+    border: 0;
+    padding: 16px;
+  }
+
+  .text-div {
+    background-color: white;
+    width: 100%;
+  }
+
+  .div-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .div-scroll {
+    background-color: white;
+    padding: 7px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+  }
+
+  .div-add {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    display: flex;
+    position: relative;
+    margin: 7px;
+  }
+
+  .icon-add {
+    margin: auto;
+    font-size: 100px;
+    color: #ccc;
+  }
+
+  .icon-del {
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 20px;
+  }
+}

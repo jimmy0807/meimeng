@@ -1,0 +1,92 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>会员卡详情</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="normal">
+        基本信息
+      </ion-segment-button>
+      <ion-segment-button value="lines">
+        卡内项目
+      </ion-segment-button>
+      <ion-segment-button *ngIf="!view" value="arrears">
+        欠款
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [hidden]="segment!=='normal'">
+    <ion-item>
+      <ion-label>会员卡号<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right readonly="{{view}}" [(ngModel)]="card.no" type="text" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>折扣方案</ion-label>
+      <ion-note *ngIf="view" item-right>{{card.pricelist_name}}</ion-note>
+      <ion-select *ngIf="!view" [(ngModel)]="card.pricelist_id" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let pl of pricelists" value="{{pl.id}}">{{pl.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>储值余额</ion-label>
+      <ion-input text-right readonly="{{view}}" [(ngModel)]="card.amount" type="number" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>积分</ion-label>
+      <ion-input text-right readonly="{{view}}" [(ngModel)]="card.points" type="number" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="opacity:1">失效日期</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" max="{{year}}" [(ngModel)]="card.invalid_date" doneText="确定" cancelText="取消"
+                    disabled="{{view}}"></ion-datetime>
+    </ion-item>
+  </div>
+  <div [hidden]="segment!=='lines'">
+    <ion-list>
+      <ion-item-sliding *ngFor="let line of card.product_ids">
+        <ion-item (tap)="editLine(line)">
+          <h2>{{line.name}}</h2>
+          <p color="danger">￥{{line.price_unit}}</p>
+          <p item-right *ngIf="view">x{{line.remain_qty}}</p>
+          <p item-right *ngIf="!view">x{{line.qty}}</p>
+        </ion-item>
+        <ion-item-options side="right" *ngIf="!view">
+          <button ion-button color="danger" (tap)="deleteLine(line)">
+            删除
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+
+  <div [hidden]="segment!=='arrears'">
+    <ion-list>
+      <ion-item-sliding *ngFor="let arr of card.arrears_ids">
+        <ion-item (tap)="editArrears(arr)">
+          <h2>{{arr.name}}</h2>
+          <p item-right>￥{{arr.arrears_amount}}</p>
+        </ion-item>
+        <ion-item-options side="right" *ngIf="!view">
+          <button ion-button color="danger" (tap)="deleteArrears(arr)">
+            删除
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer *ngIf="!view">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button *ngIf="segment==='normal'" ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+        <button *ngIf="segment==='lines'" ion-button (tap)="createLine()" type="submit" color="primary" block>添加</button>
+        <button *ngIf="segment==='arrears'" ion-button (tap)="createArrears()" type="submit" color="primary" block>添加</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+

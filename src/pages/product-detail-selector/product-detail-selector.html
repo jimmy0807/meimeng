@@ -1,0 +1,48 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>选择产品</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar placeholder="按名称搜索" showCancelButton color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)"
+                   (ionInput)="onInput($event)" [(ngModel)]="keyword"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content style="margin-top:5px;">
+  <ion-list *ngIf="mode=='single'">
+    <button ion-item *ngFor="let item of items" (tap)="onSelected(item)" class="item-p16">
+      {{item.name}}
+    </button>
+  </ion-list>
+  <ion-list *ngIf="mode=='multiple'">
+    <ion-item *ngFor="let item of items" class="item-p16">
+      <ion-checkbox ng-checked="false" [(ngModel)]="item.checked"></ion-checkbox>
+      <ion-label>{{item.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!items.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有结果</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+<ion-footer *ngIf="mode=='multiple'">
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="save()" type="submit" color="primary" block>添加</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

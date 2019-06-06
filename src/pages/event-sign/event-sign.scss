@@ -1,0 +1,92 @@
+page-event-sign {
+  .div-card {
+    margin: 20px;
+    border-radius: 6px;
+    background-color: white;
+  }
+
+  .div-img {
+    height: 140px;
+    border-radius: 6px 6px 0 0;
+    background-size: 100% 100%;
+
+    h2 {
+      font-size: 24px;
+      color: white;
+      margin: 0;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 12px 0 0 0;
+      color: white;
+    }
+  }
+
+  .div-color {
+    display: flex;
+    align-items: center;
+    border-radius: 6px 6px 0 0;
+    background-color: rgba(253, 26, 119,0.8);
+    height: 100%;
+  }
+
+  .div-title {
+    text-align: center;
+    width: 100%;
+  }
+
+  .div-input {
+    margin: 50px 38px 30px 38px;
+    border-top: 1px solid rgb(206,206, 210);
+    border-bottom: 1px solid rgb(206,206, 210);
+    display: flex;
+    align-items: center;
+
+    ion-input {
+      font-size: 18px;
+    }
+
+    ion-icon {
+      color: rgb(253, 26, 119);
+      font-size: 40px;
+    }
+  }
+
+  .b-sign {
+    border-radius: 2.5px;
+    height: 37px;
+    margin: 0 38px 50px 38px;
+    font-size: 16px;
+    line-height: 37px;
+    text-align: center;
+  }
+
+  .b-sign-a {
+    background-color: rgb(253, 26, 119);
+    color: white;
+  }
+
+  .b-sign-d {
+    background-color: rgb(235,239,243);
+    color: rgb(131,143,154);
+  }
+
+  .div-bottom {
+    border-top: 1px dashed rgba(206,206,210, 0.7);
+    padding: 16px 0;
+    text-align: center;
+
+    p {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      color: rgb( 131,143,154);
+    }
+
+    a {
+      margin: 0;
+      color: rgb(253, 26, 119);
+      text-decoration: underline;
+    }
+  }
+}

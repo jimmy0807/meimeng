@@ -1,0 +1,16 @@
+PODS:
+  - SIOSocket (0.2.0)
+
+DEPENDENCIES:
+  - SIOSocket
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SIOSocket
+
+SPEC CHECKSUMS:
+  SIOSocket: 2facc0bd02ae72d98c223634a46dd8ebdf9be321
+
+PODFILE CHECKSUM: 21f040e63f89eccc953f47d1343a310db50b435f
+
+COCOAPODS: 1.5.3

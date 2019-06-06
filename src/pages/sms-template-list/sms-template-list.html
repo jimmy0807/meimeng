@@ -1,0 +1,36 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>短信模板</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="add()">
+        <span>添加</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of list">
+      <ion-item (tap)="edit(item)">
+        <h2>{{item.template_name}}</h2>
+        <p>短信模板ID：{{item.template_id}}</p>
+        <p>模板分类：{{item.category_display_name}}</p>
+        <p>发送平台：{{item.supplier_display_name}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (tap)="delete(item)">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!list.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+</ion-content>

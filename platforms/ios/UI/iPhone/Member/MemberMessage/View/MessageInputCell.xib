@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageInputCell" id="KGk-i7-Jjw" customClass="MessageInputCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_message_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="qsU-OV-6uK">
+                        <rect key="frame" x="15" y="4" width="290" height="35"/>
+                    </imageView>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTD-Z0-tWl">
+                        <rect key="frame" x="25" y="4" width="270" height="35"/>
+                        <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aTD-Z0-tWl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="1Ey-7N-1UF"/>
+                    <constraint firstAttribute="bottom" secondItem="qsU-OV-6uK" secondAttribute="bottom" constant="4" id="LqA-Gk-bLF"/>
+                    <constraint firstItem="aTD-Z0-tWl" firstAttribute="bottom" secondItem="qsU-OV-6uK" secondAttribute="bottom" id="MUz-HA-HAY"/>
+                    <constraint firstItem="qsU-OV-6uK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Pue-e0-R1N"/>
+                    <constraint firstItem="qsU-OV-6uK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="WT8-Xx-Dv4"/>
+                    <constraint firstItem="aTD-Z0-tWl" firstAttribute="top" secondItem="qsU-OV-6uK" secondAttribute="top" id="ahK-PX-OU3"/>
+                    <constraint firstAttribute="trailing" secondItem="aTD-Z0-tWl" secondAttribute="trailing" constant="25" id="gRt-bC-lFP"/>
+                    <constraint firstAttribute="trailing" secondItem="qsU-OV-6uK" secondAttribute="trailing" constant="15" id="pGb-Bk-2Zx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="aTD-Z0-tWl" id="32n-JX-Es7"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="member_message_input_bg.png" width="285" height="40"/>
+    </resources>
+</document>

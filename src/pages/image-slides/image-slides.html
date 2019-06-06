@@ -1,0 +1,9 @@
+﻿<ion-content no-bounce style="background-color:black">
+  <ion-slides pager #Slides>
+    <ion-slide *ngFor="let i of imgs">
+      <img [src]="i" class="slide-image" />
+    </ion-slide>
+  </ion-slides>
+  <button (tap)="save()" color="primary" class="img-btn img-btn2">保存</button>
+  <button (tap)="close()" color="primary" class="img-btn">关闭</button>
+</ion-content>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="courseBaseController">
+            <connections>
+                <outlet property="baseInfoBtn" destination="SB9-gQ-lk6" id="Yw4-JJ-g8j"/>
+                <outlet property="combiBtn" destination="5dD-dK-4WV" id="mW1-du-Y5Q"/>
+                <outlet property="instructLine" destination="DAs-ja-gaC" id="8Ml-Cv-XQa"/>
+                <outlet property="subControllerView" destination="hpG-Kg-ey0" id="zNU-75-Pnb"/>
+                <outlet property="view" destination="PQ0-tW-w6N" id="Fkv-4G-oLH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="PQ0-tW-w6N">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0A0-TO-w4o" userLabel="titleView">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commom_navi_bk_IOS7.png" translatesAutoresizingMaskIntoConstraints="NO" id="BOt-oL-XSF"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dD-dK-4WV">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="组合套">
+                                <color key="titleColor" red="0.84735629359999998" green="0.84735629359999998" blue="0.84735629359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="0.96935948579999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="combinationBtn:" destination="-1" eventType="touchUpInside" id="MWk-SC-ZD4"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAs-ja-gaC">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="3n8-VT-ACP"/>
+                                <constraint firstAttribute="height" constant="2" id="che-aC-YRQ"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB9-gQ-lk6">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="基本信息">
+                                <color key="titleColor" red="0.84735629359999998" green="0.84735629359999998" blue="0.84735629359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="0.96935948579999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="baseInfoBtnClick:" destination="-1" eventType="touchUpInside" id="XLa-Pv-Hng"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="5dD-dK-4WV" secondAttribute="bottom" id="2JV-bF-czx"/>
+                        <constraint firstItem="SB9-gQ-lk6" firstAttribute="top" secondItem="0A0-TO-w4o" secondAttribute="top" id="5P8-I2-do8"/>
+                        <constraint firstAttribute="trailing" secondItem="BOt-oL-XSF" secondAttribute="trailing" id="ADA-3Z-mX4"/>
+                        <constraint firstAttribute="bottom" secondItem="SB9-gQ-lk6" secondAttribute="bottom" id="GwS-xh-tr1"/>
+                        <constraint firstItem="DAs-ja-gaC" firstAttribute="centerX" secondItem="SB9-gQ-lk6" secondAttribute="centerX" id="Opg-4g-jnN"/>
+                        <constraint firstAttribute="bottom" secondItem="BOt-oL-XSF" secondAttribute="bottom" id="PLK-Zl-tDK"/>
+                        <constraint firstItem="5dD-dK-4WV" firstAttribute="leading" secondItem="SB9-gQ-lk6" secondAttribute="trailing" id="ayb-Nj-0dC"/>
+                        <constraint firstAttribute="bottom" secondItem="DAs-ja-gaC" secondAttribute="bottom" constant="5" id="e3h-pU-X1Z"/>
+                        <constraint firstItem="SB9-gQ-lk6" firstAttribute="leading" secondItem="0A0-TO-w4o" secondAttribute="leading" id="f5h-fY-wSL"/>
+                        <constraint firstItem="BOt-oL-XSF" firstAttribute="leading" secondItem="0A0-TO-w4o" secondAttribute="leading" id="hBF-Xv-uGv"/>
+                        <constraint firstAttribute="height" constant="50" id="i2V-qP-CrB"/>
+                        <constraint firstItem="5dD-dK-4WV" firstAttribute="top" secondItem="0A0-TO-w4o" secondAttribute="top" id="kRn-6z-23f"/>
+                        <constraint firstAttribute="trailing" secondItem="5dD-dK-4WV" secondAttribute="trailing" id="kVj-g6-lAb"/>
+                        <constraint firstItem="SB9-gQ-lk6" firstAttribute="width" secondItem="BOt-oL-XSF" secondAttribute="width" multiplier="0.5" id="lCs-lL-Vj0"/>
+                        <constraint firstItem="BOt-oL-XSF" firstAttribute="top" secondItem="0A0-TO-w4o" secondAttribute="top" id="qZ7-hF-Q6E"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpG-Kg-ey0" userLabel="subControllerView">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0A0-TO-w4o" firstAttribute="top" secondItem="PQ0-tW-w6N" secondAttribute="top" id="2sw-Md-IiJ"/>
+                <constraint firstAttribute="trailing" secondItem="0A0-TO-w4o" secondAttribute="trailing" id="SZA-ZJ-R9a"/>
+                <constraint firstAttribute="trailing" secondItem="hpG-Kg-ey0" secondAttribute="trailing" id="TBC-do-b2h"/>
+                <constraint firstItem="hpG-Kg-ey0" firstAttribute="leading" secondItem="PQ0-tW-w6N" secondAttribute="leading" id="e2b-eN-n84"/>
+                <constraint firstItem="0A0-TO-w4o" firstAttribute="leading" secondItem="PQ0-tW-w6N" secondAttribute="leading" id="qPf-tH-iHJ"/>
+                <constraint firstItem="hpG-Kg-ey0" firstAttribute="top" secondItem="0A0-TO-w4o" secondAttribute="bottom" id="xIv-PB-jkL"/>
+                <constraint firstAttribute="bottom" secondItem="hpG-Kg-ey0" secondAttribute="bottom" id="zmq-LQ-NZy"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="271" y="80"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="commom_navi_bk_IOS7.png" width="320" height="64"/>
+    </resources>
+</document>

@@ -1,0 +1,34 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>短信配置</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="add()">
+        <span>添加</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-list>
+    <ion-item-sliding *ngFor="let cfg of cfgs">
+      <ion-item (tap)="edit(cfg)">
+        <h2>{{cfg.name}}</h2>
+        <p>服务商：{{cfg.supplier_name}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (tap)="remove(cfg)">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!cfgs.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+</ion-content>

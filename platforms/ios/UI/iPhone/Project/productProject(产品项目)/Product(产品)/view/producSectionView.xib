@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10089" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10072.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="producSectionView">
+            <rect key="frame" x="0.0" y="0.0" width="487" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_triangle_left.png" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-tA-oIZ" userLabel="icon">
+                    <rect key="frame" x="16" y="22" width="7" height="7"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="7" id="246-qn-gl7"/>
+                        <constraint firstAttribute="height" constant="7" id="A34-zl-GHw"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多消息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45L-bq-8Nb" userLabel="title">
+                    <rect key="frame" x="28" y="17" width="52" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlm-tN-oJi">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                    <connections>
+                        <action selector="btnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Yia-a6-Uca"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="SEG-tA-oIZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5ej-rw-9va"/>
+                <constraint firstItem="45L-bq-8Nb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Jga-vR-OID"/>
+                <constraint firstAttribute="bottom" secondItem="Hlm-tN-oJi" secondAttribute="bottom" id="RyV-MY-6Px"/>
+                <constraint firstItem="SEG-tA-oIZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="gea-vZ-T2V"/>
+                <constraint firstItem="45L-bq-8Nb" firstAttribute="leading" secondItem="SEG-tA-oIZ" secondAttribute="trailing" constant="5" id="lOG-mC-FkZ"/>
+                <constraint firstItem="Hlm-tN-oJi" firstAttribute="trailing" secondItem="45L-bq-8Nb" secondAttribute="trailing" id="nld-5r-vN1"/>
+                <constraint firstItem="Hlm-tN-oJi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rOq-Xm-1QI"/>
+                <constraint firstItem="Hlm-tN-oJi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yaR-0o-F7K"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btn" destination="Hlm-tN-oJi" id="gRX-po-MZz"/>
+                <outlet property="iconView" destination="SEG-tA-oIZ" id="cyY-7z-NwY"/>
+                <outlet property="titleView" destination="45L-bq-8Nb" id="7oz-ic-bcE"/>
+            </connections>
+            <point key="canvasLocation" x="435.5" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_triangle_left.png" width="5" height="7"/>
+    </resources>
+</document>

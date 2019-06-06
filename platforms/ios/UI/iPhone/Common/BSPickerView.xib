@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BSPickerView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1A-Hr-Pi6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <action selector="bgBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="jpl-no-NtX"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUx-hZ-MKI">
+                    <rect key="frame" x="0.0" y="407" width="375" height="260"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tos-Y7-OHC">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择日期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCe-XG-x6b">
+                                    <rect key="frame" x="156" y="12" width="64" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDp-Ib-uuK">
+                                    <rect key="frame" x="315" y="0.0" width="60" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="bvA-1Q-jQM"/>
+                                    </constraints>
+                                    <state key="normal" title="确定"/>
+                                    <connections>
+                                        <action selector="sureBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="tJX-qn-nZM"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U4-C3-Q0r">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="Q8s-ow-bwf"/>
+                                    </constraints>
+                                    <state key="normal" title="取消"/>
+                                    <connections>
+                                        <action selector="cancelBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="HUG-36-ljP"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="FDp-Ib-uuK" secondAttribute="bottom" id="0p2-Vo-ghs"/>
+                                <constraint firstAttribute="height" constant="44" id="1CO-Qv-hBf"/>
+                                <constraint firstItem="FDp-Ib-uuK" firstAttribute="top" secondItem="Tos-Y7-OHC" secondAttribute="top" id="8gL-Ll-jdX"/>
+                                <constraint firstItem="NCe-XG-x6b" firstAttribute="centerX" secondItem="Tos-Y7-OHC" secondAttribute="centerX" id="8tP-CX-rUr"/>
+                                <constraint firstItem="NCe-XG-x6b" firstAttribute="centerY" secondItem="Tos-Y7-OHC" secondAttribute="centerY" id="9XO-3l-3GV"/>
+                                <constraint firstItem="8U4-C3-Q0r" firstAttribute="top" secondItem="Tos-Y7-OHC" secondAttribute="top" id="Cbg-Yq-YHe"/>
+                                <constraint firstAttribute="bottom" secondItem="8U4-C3-Q0r" secondAttribute="bottom" id="QQH-w8-22A"/>
+                                <constraint firstItem="8U4-C3-Q0r" firstAttribute="leading" secondItem="Tos-Y7-OHC" secondAttribute="leading" id="QXc-sE-vH3"/>
+                                <constraint firstAttribute="trailing" secondItem="FDp-Ib-uuK" secondAttribute="trailing" id="uj2-Fq-KEP"/>
+                            </constraints>
+                        </view>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCO-Pp-fwF">
+                            <rect key="frame" x="0.0" y="44" width="375" height="216"/>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Tos-Y7-OHC" firstAttribute="top" secondItem="BUx-hZ-MKI" secondAttribute="top" id="4MY-k2-vf0"/>
+                        <constraint firstItem="Tos-Y7-OHC" firstAttribute="leading" secondItem="BUx-hZ-MKI" secondAttribute="leading" id="7LG-Gf-dkh"/>
+                        <constraint firstItem="fCO-Pp-fwF" firstAttribute="leading" secondItem="BUx-hZ-MKI" secondAttribute="leading" id="CJ9-dq-BrO"/>
+                        <constraint firstAttribute="bottom" secondItem="fCO-Pp-fwF" secondAttribute="bottom" id="JZk-hw-wSh"/>
+                        <constraint firstItem="fCO-Pp-fwF" firstAttribute="top" secondItem="Tos-Y7-OHC" secondAttribute="bottom" id="Lfu-VJ-xoC"/>
+                        <constraint firstAttribute="trailing" secondItem="Tos-Y7-OHC" secondAttribute="trailing" id="oZI-Dt-P8v"/>
+                        <constraint firstAttribute="trailing" secondItem="fCO-Pp-fwF" secondAttribute="trailing" id="tRt-Id-fCN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Z1A-Hr-Pi6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="08u-5p-YxS"/>
+                <constraint firstAttribute="trailing" secondItem="BUx-hZ-MKI" secondAttribute="trailing" id="0ER-mZ-CND"/>
+                <constraint firstItem="Z1A-Hr-Pi6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0vL-aZ-tIz"/>
+                <constraint firstAttribute="bottom" secondItem="Z1A-Hr-Pi6" secondAttribute="bottom" id="699-Zj-k87"/>
+                <constraint firstAttribute="bottom" secondItem="BUx-hZ-MKI" secondAttribute="bottom" id="i9c-Jm-b2R"/>
+                <constraint firstAttribute="trailing" secondItem="Z1A-Hr-Pi6" secondAttribute="trailing" id="mg3-pI-KTV"/>
+                <constraint firstItem="BUx-hZ-MKI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wLu-6x-HAK"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <connections>
+                <outlet property="bgBtn" destination="Z1A-Hr-Pi6" id="Y2z-Hx-Ocz"/>
+                <outlet property="containerView" destination="BUx-hZ-MKI" id="rr4-Qd-GpK"/>
+                <outlet property="containerViewBottomConstraint" destination="i9c-Jm-b2R" id="FMF-Xm-vZt"/>
+                <outlet property="pickerView" destination="fCO-Pp-fwF" id="uus-PQ-b76"/>
+            </connections>
+            <point key="canvasLocation" x="356.5" y="-326.5"/>
+        </view>
+    </objects>
+</document>

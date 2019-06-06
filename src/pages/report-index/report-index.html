@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>报表</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-bg">
+  <div class="card-box" (tap)="report_detail('equity')">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-row text-center>
+          <ion-col width-50 text-left>
+            <h2><b>权益金</b></h2>
+            <p>目标达成率:{{reportIndex.amount_complete_rate}}%</p>
+            <p *ngIf="reportIndex.payment_count>0">支付方式:{{reportIndex.payment_count}}</p>
+          </ion-col>
+          <ion-col width-50 text-right>
+            <h1 *ngIf="reportIndex.amount_status ==='up'">
+              <span *ngIf="reportIndex.amount>=1000" class="arrow-up">{{(reportIndex.amount/10000).toFixed(2)}}</span>
+              <span *ngIf="reportIndex.amount<1000" class="arrow-up">{{reportIndex.amount}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-up"></ion-icon>
+            </h1>
+            <h1 *ngIf="reportIndex.amount_status ==='down'">
+              <span *ngIf="reportIndex.amount>=1000" class="arrow-down">{{(reportIndex.amount/10000).toFixed(2)}}</span>
+              <span *ngIf="reportIndex.amount<1000" class="arrow-down">{{reportIndex.amount}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-down"></ion-icon>
+            </h1>
+            <p *ngIf="reportIndex.amount>=1000">本月营业额(万元)</p>
+            <p *ngIf="reportIndex.amount<1000">本月营业额(元)</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="card-box" (tap)="report_detail('income')">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-row text-center>
+          <ion-col width-50 text-left>
+            <h2><b>净消费额</b></h2>
+            <p>目标达成率:{{reportIndex.income_complete_rate}}%</p>
+          </ion-col>
+          <ion-col width-50 text-right>
+            <h1 *ngIf="reportIndex.income_amount_status ==='up'">
+              <span *ngIf="reportIndex.income_amount>=1000" class="arrow-up">{{(reportIndex.income_amount/10000).toFixed(2)}}</span>
+              <span *ngIf="reportIndex.income_amount<1000" class="arrow-up">{{reportIndex.income_amount}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-up"></ion-icon>
+            </h1>
+            <h1 *ngIf="reportIndex.income_amount_status ==='down'">
+              <span *ngIf="reportIndex.income_amount>=1000" class="arrow-down">{{(reportIndex.income_amount/10000).toFixed(2)}}</span>
+              <span *ngIf="reportIndex.income_amount<1000" class="arrow-down">{{reportIndex.income_amount}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-down"></ion-icon>
+            </h1>
+            <p *ngIf="reportIndex.income_amount>=1000">本月净消费额(万元)</p>
+            <p *ngIf="reportIndex.income_amount<1000">本月净消费额(元)</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="card-box" (tap)="report_detail('sale')">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-row text-center>
+          <ion-col width-50 text-left>
+            <h2><b>客流</b></h2>
+            <p>目标达成率:{{reportIndex.sale_complete_rate}}%</p>
+            <p>日均客流(人):{{reportIndex.sale_day_qty}}</p>
+          </ion-col>
+          <ion-col width-50 text-right>
+            <h1 *ngIf="reportIndex.sale_order_status ==='up'">
+              <span class="arrow-up">{{reportIndex.sale_order_qty}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-up"></ion-icon>
+            </h1>
+            <h1 *ngIf="reportIndex.sale_order_status ==='down'">
+              <span class="arrow-down">{{reportIndex.sale_order_qty}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-down"></ion-icon>
+            </h1>
+            <p>本月客流(人)</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="card-box" (tap)="report_detail('member_new')">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-row text-center>
+          <ion-col width-50 text-left>
+            <h2><b>新入会</b></h2>
+            <p>目标达成率:{{reportIndex.new_complete_rate}}%</p>
+            <p>本月体验客(人):{{reportIndex.new_trial_qty}}</p>
+          </ion-col>
+          <ion-col width-50 text-right>
+            <h1 *ngIf="reportIndex.new_qty_status ==='up'">
+              <span class="arrow-up">{{reportIndex.new_qty}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-up"></ion-icon>
+            </h1>
+            <h1 *ngIf="reportIndex.new_qty_status ==='down'">
+              <span class="arrow-down">{{reportIndex.new_qty}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-down"></ion-icon>
+            </h1>
+            <p>本月新入会(人)</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="card-box"(tap)="report_detail('pct')">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-row text-center>
+          <ion-col width-50 text-left>
+            <h2><b>客单价</b></h2>
+            <p>客单价(会员):</p>
+            <p>¥{{reportIndex.per_order_member_amount}}</p>
+            <p>客单价(散客):</p>
+            <p>¥{{reportIndex.per_order_guest_amount}}</p>
+          </ion-col>
+          <ion-col width-50 text-right>
+            <h1 *ngIf="reportIndex.per_order_status ==='up'">
+              <span *ngIf="reportIndex.per_order_amount>=1000" class="arrow-up">{{(reportIndex.per_order_amount/10000).toFixed(2)}}</span>
+              <span *ngIf="reportIndex.per_order_amount<1000" class="arrow-up">{{reportIndex.per_order_amount}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-up"></ion-icon>
+            </h1>
+            <h1 *ngIf="reportIndex.per_order_status ==='down'">
+              <span *ngIf="reportIndex.per_order_amount>=1000" class="arrow-down">{{(reportIndex.per_order_amount/10000).toFixed(2)}}</span>
+              <span *ngIf="reportIndex.per_order_amount<1000" class="arrow-down">{{reportIndex.per_order_amount}}</span>
+              <ion-icon class="icon-arrow" name="ios-arrow-round-down"></ion-icon>
+            </h1>
+            <p *ngIf="reportIndex.per_order_amount>=1000">本月客单价总计(万元)</p>
+            <p *ngIf="reportIndex.per_order_amount<1000">本月客单价总计(元)</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

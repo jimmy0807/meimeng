@@ -1,0 +1,28 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>打印机设置</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding="">
+ <ion-list>
+   <ion-item>
+      <ion-label>打印服务</ion-label>
+      <ion-note *ngIf="connect" item-right>已发现</ion-note>
+       <ion-note *ngIf="!connect"   item-right>正在发现...</ion-note>
+      <ion-spinner *ngIf="!connect"  item-right name="ios"></ion-spinner>
+    </ion-item>
+</ion-list>
+
+<ion-list *ngIf="connect" >
+    <ion-item>
+      <ion-label color="primary">WIFI名称</ion-label>
+      <ion-input [(ngModel)]="blf.username" name="username" placeholder="请输入WIFI名称"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">WIFI密码</ion-label>
+      <ion-input [(ngModel)]="blf.password" name="password" placeholder="请输入WIFI密码"></ion-input>
+    </ion-item>
+  </ion-list>
+   <button *ngIf="connect"  (tap)="onWrite()" ion-button color="primary" full>连接</button>
+</ion-content>

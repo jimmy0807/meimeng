@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemberCardExchangeViewController">
+            <connections>
+                <outlet property="sureBtn" destination="u56-lv-OUN" id="jde-IE-7YQ"/>
+                <outlet property="tableView" destination="EaJ-Yf-EEj" id="sc1-Z9-HuF"/>
+                <outlet property="view" destination="q0i-gz-fnU" id="e2g-E3-Shf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="q0i-gz-fnU">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EaJ-Yf-EEj">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="HTy-Ag-ufi"/>
+                        <outlet property="delegate" destination="-1" id="NGk-VO-6Id"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u56-lv-OUN">
+                    <rect key="frame" x="10" y="617" width="355" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="确认" backgroundImage="member_green_bg.png"/>
+                    <state key="disabled" backgroundImage="member_gray_btn_bg.png"/>
+                    <connections>
+                        <action selector="sureBtnPressed:" destination="-1" eventType="touchUpInside" id="Vwq-Kl-3dD"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EaJ-Yf-EEj" firstAttribute="top" secondItem="q0i-gz-fnU" secondAttribute="top" id="00X-kt-1Lv"/>
+                <constraint firstAttribute="trailing" secondItem="u56-lv-OUN" secondAttribute="trailing" constant="10" id="D1i-rv-lPj"/>
+                <constraint firstAttribute="trailing" secondItem="EaJ-Yf-EEj" secondAttribute="trailing" id="DS0-CE-IzN"/>
+                <constraint firstItem="u56-lv-OUN" firstAttribute="leading" secondItem="q0i-gz-fnU" secondAttribute="leading" constant="10" id="LNb-RR-dsY"/>
+                <constraint firstItem="EaJ-Yf-EEj" firstAttribute="leading" secondItem="q0i-gz-fnU" secondAttribute="leading" id="ZPi-pR-F4C"/>
+                <constraint firstAttribute="bottom" secondItem="u56-lv-OUN" secondAttribute="bottom" constant="10" id="mD4-GT-uHp"/>
+                <constraint firstItem="u56-lv-OUN" firstAttribute="top" secondItem="EaJ-Yf-EEj" secondAttribute="bottom" constant="10" id="oKv-Yj-fpq"/>
+            </constraints>
+            <point key="canvasLocation" x="153.5" y="232.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_gray_btn_bg.png" width="290" height="40"/>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

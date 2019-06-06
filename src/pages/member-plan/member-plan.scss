@@ -1,0 +1,66 @@
+﻿page-member-plan {
+  .bottom-10 {
+    margin: 0 0 0 0;
+  }
+
+  .bottom-10 input {
+    font-size: 15px;
+    color: rgb(146,146,146);
+  }
+
+  .bottom-10 ion-note {
+    color: rgb(146,146,146);
+    font-size: 15px;
+  }
+
+  .bottom-10 .select-text {
+    font-size: 15px;
+    color: rgb(146,146,146);
+  }
+
+  .bottom-10 ion-label {
+    font-size: 15px;
+  }
+
+  .bottom-10 ion-item {
+    min-height: 50px;
+  }
+
+  .bottom-10 button {
+    min-height: 50px;
+  }
+
+  .clr-146 {
+    color: rgb(146,146,146);
+  }
+
+  .list-line {
+    background-color: white;
+    margin: 0;
+    min-height: 50px;
+  }
+
+  .div-line {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+
+  .div-line ion-icon {
+    font-size: 26px;
+  }
+
+  .p-name {
+    flex: 1;
+    margin: 0;
+  }
+
+  .p-qty {
+    width: 50px;
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>铺垫详情</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()">
+        <span>提交</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-back">
+  <ion-list class="margin-0">
+    <ion-item>
+      <ion-label>顾客姓名</ion-label>
+      <ion-note item-right>{{p.member_name}}</ion-note>
+    </ion-item>
+    <button ion-item (tap)="select('emp')">
+      <ion-label>铺垫人员</ion-label>
+      <ion-note item-right>{{p.employee_name || '请选择'}}</ion-note>
+    </button>
+    <button ion-item (tap)="select('par')">
+      <ion-label>铺垫部位<span class="c-danger">*</span></ion-label>
+      <ion-note item-right>{{p.part_names || '请选择'}}</ion-note>
+    </button>
+  </ion-list>
+  <div class="div-10"></div>
+  <ion-list class="margin-0">
+    <button ion-item (tap)="select('res')">
+      <ion-label>主要抗拒点</ion-label>
+      <ion-note item-right>{{p.resist_names || '请选择'}}</ion-note>
+    </button>
+    <ion-item>
+      <ion-label>铺垫日期<span class="c-danger">*</span></ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="p.prepare_date" doneText="确定" cancelText="取消" class="clr-146"></ion-datetime>
+    </ion-item>
+    <button ion-item (tap)="order()">
+      <ion-label>预约报单</ion-label>
+      <ion-note item-right>{{p.is_consume ? '已报单' : '未报单'}}</ion-note>
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,65 @@
+<div>
+  <div class="div-hot">
+    <p class="p-hot">最近筛选</p>
+    <ion-row text-center class="row-line">
+      <ion-col text-center col-4 class="row-col" (tap)="today()">
+        <p>今日回访</p>
+      </ion-col>
+      <ion-col text-center col-4 class="row-col" (tap)="defer()">
+        <p>已延期</p>
+      </ion-col>
+      <ion-col text-center col-4 class="row-col" *ngFor="let i of items" (tap)="hotTap(i)">
+        <p>{{i.display}}</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label>会员</ion-label>
+      <ion-input type="text" [(ngModel)]="f.m" text-right placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>类型</ion-label>
+      <ion-input type="text" [(ngModel)]="f.l" text-right placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>市场团队</ion-label>
+      <ion-input type="text" [(ngModel)]="f.t" text-right placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>回访人</ion-label>
+      <ion-input type="text" [(ngModel)]="f.e" text-right placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>操作项目</ion-label>
+      <ion-input type="text" [(ngModel)]="f.p" text-right placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>状态</ion-label>
+      <ion-select [(ngModel)]="f.s" okText="确定" cancelText="关闭" placeholder="请选择">
+        <ion-option value="draft">待回访</ion-option>
+        <ion-option value="done">已回访</ion-option>
+        <ion-option value="unapprove">待修改</ion-option>
+        <ion-option value="sure">已修改</ion-option>
+        <ion-option value="finish">已完成</ion-option>
+        <ion-option value="cancel">已取消</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>开始时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="f.ds" doneText="确定" cancelText="取消" placeholder="请选择" class="clr-146"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>结束时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="f.de" doneText="确定" cancelText="取消" placeholder="请选择" class="clr-146"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <div class="div-btn">
+    <div class="div-btn-1" (tap)="clear()">
+      清除筛选
+    </div>
+    <div class="div-btn-2" (tap)="done()">
+      完成
+    </div>
+  </div>
+</div>

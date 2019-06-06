@@ -1,0 +1,42 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}工作流</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item no-lines>
+      <ion-label>名称<span class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="w.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">活动
+      <span class="c-primary" style="float:right" (tap)="addActivity()">添加</span>
+    </ion-item-divider>
+    <ion-item-sliding *ngFor="let i of w.activity_ids">
+      <button ion-item (tap)="editActivity(i)">
+        <h2>{{i.name}}</h2>
+        <p>上级活动：{{i.parent_activity_name}}</p>
+        <p *ngIf="i.flow_start">流程开始</p>
+        <p *ngIf="i.flow_end">流程结束</p>
+      </button>
+      <ion-item-options>
+        <button (tap)="deleteActivity(i)" ion-button color="danger">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10089" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10072.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="goodsBoomView">
+            <rect key="frame" x="0.0" y="0.0" width="441" height="59"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSh-sT-2hg">
+                    <rect key="frame" x="0.0" y="0.0" width="441" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="msc-1W-HY3"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFB-7W-9ll" userLabel="addBtn">
+                    <rect key="frame" x="15" y="9" width="411" height="40"/>
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="KDH-nT-yZx"/>
+                    </constraints>
+                    <state key="normal" title="添加" backgroundImage="member_green_bg.png"/>
+                    <connections>
+                        <action selector="addBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="8Ie-Xa-T6L"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="tintColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="QSh-sT-2hg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="02u-EU-BNq"/>
+                <constraint firstItem="hFB-7W-9ll" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Kxf-Sz-HkX"/>
+                <constraint firstItem="QSh-sT-2hg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dMs-1s-93P"/>
+                <constraint firstAttribute="trailing" secondItem="QSh-sT-2hg" secondAttribute="trailing" id="lYd-cq-ws5"/>
+                <constraint firstAttribute="trailing" secondItem="hFB-7W-9ll" secondAttribute="trailing" constant="15" id="mby-bc-gZL"/>
+                <constraint firstItem="hFB-7W-9ll" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="zdQ-vI-HIO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="154.5" y="-350.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_green_bg.png" width="290" height="40"/>
+    </resources>
+</document>

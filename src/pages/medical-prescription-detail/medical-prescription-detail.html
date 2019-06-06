@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>处方单</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="normal">
+        基本信息
+      </ion-segment-button>
+      <ion-segment-button value="product">
+        药品
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list [hidden]="segment!=='normal'">
+    <ion-item>
+      <ion-label>名称</ion-label>
+      <ion-input text-right item-right [(ngModel)]="p.name" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>单据</ion-label>
+      <ion-input text-right item-right [(ngModel)]="p.operate_name" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>病人</ion-label>
+      <ion-input text-right item-right [(ngModel)]="p.member_name" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>医生</ion-label>
+      <ion-input text-right item-right [(ngModel)]="p.doctor_name" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>公司</ion-label>
+      <ion-input text-right item-right [(ngModel)]="p.company_name" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>药房</ion-label>
+      <ion-input text-right item-right [(ngModel)]="p.pharmacy_name" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>状态</ion-label>
+      <ion-input text-right item-right [(ngModel)]="p.state_name" type="text" disabled="disabled"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list [hidden]="segment!=='product'">
+    <ion-item-sliding *ngFor="let i of p.line_ids">
+      <button ion-item>
+        <h2>{{i.product_name}}</h2>
+        <ion-note item-right>{{i.qty}}{{i.uom}}</ion-note>
+        <p>{{i.note}}</p>
+      </button>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

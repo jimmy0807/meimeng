@@ -1,0 +1,17 @@
+﻿<ion-header>
+  <div class="div-title">
+    <p>查看空闲时间</p>
+    <ion-icon name="ios-close" class="icon-right" (tap)="close()"></ion-icon>
+  </div>
+</ion-header>
+<ion-content no-bounce>
+  <ion-grid>
+    <ion-row class="time-row">
+      <ion-col col-3 *ngFor="let t of times">
+        <div class="{{t.active ? 'time-act' : 'time'}}" (tap)="tapped(t)">
+          {{t.time}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

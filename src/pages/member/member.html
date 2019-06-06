@@ -1,0 +1,98 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>会员</ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar placeholder="按姓名、手机搜索" showCancelButton color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)"
+                   (ionInput)="onInput($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="members_new.length>0">
+    <ion-list-header>新会员</ion-list-header>
+    <button ion-item *ngFor="let item of members_new" (tap)="onSelectMember(item)">
+      <ion-avatar item-left>
+        <img *ngIf="item.image_url" [src]="item.image_url">
+        <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <p>卡余 {{item.amount}}</p>
+      <p>院余 {{item.product_amount}}</p>
+      <p>入会日期 {{item.create_date}}</p>
+      <ion-note item-right>
+        <span *ngIf="item.last_date">最后到店日</span>
+        <span *ngIf="!item.last_date">未到店</span>
+        <p>{{item.last_date}}</p>
+      </ion-note>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="members_normal.length>0">
+    <ion-list-header>普通会员</ion-list-header>
+    <button ion-item *ngFor="let item of members_normal" (tap)="onSelectMember(item)">
+      <ion-avatar item-left>
+        <img *ngIf="item.image_url" [src]="item.image_url">
+        <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <p>卡余 {{item.amount}}</p>
+      <p>院余 {{item.product_amount}}</p>
+      <p>入会日期 {{item.create_date}}</p>
+      <ion-note item-right>
+        <span *ngIf="item.last_date">最后到店日</span>
+        <span *ngIf="!item.last_date">未到店</span>
+        <p>{{item.last_date}}</p>
+      </ion-note>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="members_vip.length>0">
+    <ion-list-header>VIP会员</ion-list-header>
+    <button ion-item *ngFor="let item of members_vip" (tap)="onSelectMember(item)">
+      <ion-avatar item-left>
+        <img *ngIf="item.image_url" [src]="item.image_url">
+        <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <p>卡余 {{item.amount}}</p>
+      <p>院余 {{item.product_amount}}</p>
+      <p>入会日期 {{item.create_date}}</p>
+      <ion-note item-right>
+        最后到店日
+        <p>{{item.last_date}}</p>
+      </ion-note>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="members_mvp.length>0">
+    <ion-list-header>MVP会员</ion-list-header>
+    <button ion-item *ngFor="let item of members_mvp" (tap)="onSelectMember(item)">
+      <ion-avatar item-left>
+        <img *ngIf="item.image_url" [src]="item.image_url">
+        <img *ngIf="!item.image_url" src="assets/img/avatar-default.png">
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <p>卡余 {{item.amount}}</p>
+      <p>院余 {{item.product_amount}}</p>
+      <p>入会日期 {{item.create_date}}</p>
+      <ion-note item-right>
+        最后到店日
+        <p>{{item.last_date}}</p>
+      </ion-note>
+    </button>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!members.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有搜索到会员</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="keyword===''" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

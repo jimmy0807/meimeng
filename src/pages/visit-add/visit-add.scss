@@ -1,0 +1,66 @@
+page-visit-add {
+  .note-div {
+    border-top: 1px solid rgba(29,29,38,0.1);
+    background-color: white;
+  }
+
+  .plan-div {
+    border-top: 1px solid rgba(29,29,38,0.1);
+    padding: 6px 16px 1px 16px;
+    background-color: white;
+  }
+
+  .note-div ion-label {
+    margin: 0;
+  }
+
+  .note-div h2 {
+    font-size: 15px;
+    color: rgb(74,74,74);
+    margin: 15px 0 0 0;
+  }
+
+  .note-button {
+  }
+
+  .p-span {
+    font-size: 13px;
+    color: rgb(160,160,160);
+  }
+
+  .p-note {
+    white-space: pre-line;
+    font-size: 13px;
+    color: rgb(160,160,160);
+    margin: 9px 0 0 0;
+  }
+
+  .p-state {
+    font-size: 13px !important;
+    margin: 6px 0 15px 0 !important;
+  }
+
+  .p-draft {
+    color: #ef473a !important;
+  }
+
+  .p-unapprove {
+    color: #ef473a;
+  }
+
+  .p-done {
+    color: #1d82d2;
+  }
+
+  .p-sure {
+    color: #1d82d2;
+  }
+
+  .p-finish {
+    color: #ccc !important;
+  }
+
+  .p-cancel {
+    color: #ccc !important;
+  }
+}

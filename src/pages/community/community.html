@@ -1,0 +1,56 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      发现
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="content-bg">
+  <div class="list-box" *ngIf="banners.length">
+    <ion-slides autoplay="10000" initialSlide="1" loop="true" class="sides">
+      <ion-slide *ngFor="let item of banners">
+        <img [src]="item.url" (tap)="onBannerClick(item)" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-scroll scrollX="true" class="ion-scroll-box">
+    <ion-row>
+      <ion-col width-33 *ngFor="let item of categorys" class="scroll-box">
+        <img [src]="item.url" (tap)="onBannerClick(item)" />
+        <div>{{item.title}}</div>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+  <div>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-icon color="primary" name="ios-alarm" item-left></ion-icon>
+        <h3>我的课程</h3>
+        <p>每日轻松学，店务管理更轻松</p>
+      </ion-item>
+      <ion-item>
+        <div text-center>
+          <h4 style="font-size:14px;">很遗憾，没有找到课程资源</h4>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div text-center>
+          <div class="more">
+            <a>立即查看</a>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-list no-lines>
+    <ion-item *ngFor="let item of shows" style="border-bottom:solid 1px #F8F8F8;">
+      <ion-thumbnail item-left (tap)="onBannerClick(item)">
+        <img [src]="item.url" />
+      </ion-thumbnail>
+      <h2>{{item.title}}</h2>
+      <p>{{item.note}}</p>
+      <ion-icon item-right color="primary" name="md-share" (tap)="showQrCode(item.url)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

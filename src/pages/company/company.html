@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title>
+      公司
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item text-wrap>
+      <button ion-item *ngFor="let com of company" (tap)="companySelected(com)">
+          <h3>{{com.name}}</h3>
+          <p>{{com.state_name}}{{com.area_name}}{{com.subdivide_name}}{{com.street}}</p>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

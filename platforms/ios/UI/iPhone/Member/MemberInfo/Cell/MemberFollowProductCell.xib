@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberFollowProductCell" id="KGk-i7-Jjw" customClass="MemberFollowProductCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVS-LQ-0fA">
+                        <rect key="frame" x="12" y="0.0" width="43" height="43"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmS-ip-mfU">
+                        <rect key="frame" x="57" y="8" width="0.0" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="vOv-ZJ-CBd">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="BQe-9C-Gxd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" text="value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAx-SC-qFb">
+                        <rect key="frame" x="67" y="0.0" width="233" height="43"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NVS-LQ-0fA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2du-Qi-Xva"/>
+                    <constraint firstItem="zmS-ip-mfU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="7yk-35-cgb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="zmS-ip-mfU" secondAttribute="bottom" id="845-YF-ILj"/>
+                    <constraint firstItem="VAx-SC-qFb" firstAttribute="leading" secondItem="zmS-ip-mfU" secondAttribute="trailing" constant="10" id="DDe-Lz-tFT"/>
+                    <constraint firstAttribute="trailing" secondItem="vOv-ZJ-CBd" secondAttribute="trailing" id="IHy-qA-9vv"/>
+                    <constraint firstAttribute="bottom" secondItem="vOv-ZJ-CBd" secondAttribute="bottom" id="Ugy-k8-2Ir"/>
+                    <constraint firstAttribute="bottom" secondItem="VAx-SC-qFb" secondAttribute="bottom" id="VBx-qc-i5a"/>
+                    <constraint firstAttribute="bottom" secondItem="NVS-LQ-0fA" secondAttribute="bottom" id="Vcv-3e-k4h"/>
+                    <constraint firstItem="VAx-SC-qFb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Xhu-f0-VAc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="VAx-SC-qFb" secondAttribute="trailing" constant="12" id="Xhx-su-QgH"/>
+                    <constraint firstItem="NVS-LQ-0fA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="rdW-Vd-dVO"/>
+                    <constraint firstItem="vOv-ZJ-CBd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sUW-Pe-v19"/>
+                    <constraint firstItem="zmS-ip-mfU" firstAttribute="leading" secondItem="NVS-LQ-0fA" secondAttribute="trailing" constant="2" id="w9Z-i0-iyA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="NVS-LQ-0fA" id="s6X-36-0Fp"/>
+                <outlet property="otherLabel" destination="zmS-ip-mfU" id="4iC-g5-Opr"/>
+                <outlet property="valueLabel" destination="VAx-SC-qFb" id="TLJ-5R-N59"/>
+            </connections>
+            <point key="canvasLocation" x="224" y="204"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+    </resources>
+</document>

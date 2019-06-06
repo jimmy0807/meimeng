@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BSPopupArrowView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7A-lg-3Rq">
+                    <connections>
+                        <action selector="bgBtnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="hLd-96-iNp"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTJ-1h-aIV">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hiu-oP-lBi"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kwF-d7-z67">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="hiu-oP-lBi" firstAttribute="leading" secondItem="gTJ-1h-aIV" secondAttribute="leading" id="1XI-dS-lly"/>
+                        <constraint firstAttribute="trailing" secondItem="hiu-oP-lBi" secondAttribute="trailing" id="3N0-Gj-Jeo"/>
+                        <constraint firstItem="kwF-d7-z67" firstAttribute="leading" secondItem="gTJ-1h-aIV" secondAttribute="leading" id="5Wm-1l-Z3O"/>
+                        <constraint firstItem="kwF-d7-z67" firstAttribute="top" secondItem="gTJ-1h-aIV" secondAttribute="top" constant="5" id="A4s-eA-dEf"/>
+                        <constraint firstAttribute="bottom" secondItem="kwF-d7-z67" secondAttribute="bottom" id="J8L-6M-12U"/>
+                        <constraint firstAttribute="bottom" secondItem="hiu-oP-lBi" secondAttribute="bottom" id="abS-sK-bOR"/>
+                        <constraint firstItem="hiu-oP-lBi" firstAttribute="top" secondItem="gTJ-1h-aIV" secondAttribute="top" id="b6a-Pn-QsQ"/>
+                        <constraint firstAttribute="trailing" secondItem="kwF-d7-z67" secondAttribute="trailing" id="miQ-RS-Xn7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="gTJ-1h-aIV" secondAttribute="bottom" id="FsC-1M-45Z"/>
+                <constraint firstItem="gTJ-1h-aIV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ggt-YB-94z"/>
+                <constraint firstAttribute="trailing" secondItem="U7A-lg-3Rq" secondAttribute="trailing" id="Qw8-nv-dQO"/>
+                <constraint firstAttribute="trailing" secondItem="gTJ-1h-aIV" secondAttribute="trailing" id="UBZ-LY-OQ2"/>
+                <constraint firstItem="U7A-lg-3Rq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gvT-av-2zo"/>
+                <constraint firstItem="U7A-lg-3Rq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="il6-fO-iZK"/>
+                <constraint firstItem="gTJ-1h-aIV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="spN-GE-fwy"/>
+                <constraint firstAttribute="bottom" secondItem="U7A-lg-3Rq" secondAttribute="bottom" id="znP-pW-OFY"/>
+            </constraints>
+            <connections>
+                <outlet property="arrowImgView" destination="hiu-oP-lBi" id="RHR-IV-qwb"/>
+                <outlet property="arrowView" destination="gTJ-1h-aIV" id="78r-dO-k4k"/>
+                <outlet property="bgBtn" destination="U7A-lg-3Rq" id="0gL-Sl-hq3"/>
+                <outlet property="tableView" destination="kwF-d7-z67" id="Isd-2I-HmW"/>
+            </connections>
+            <point key="canvasLocation" x="37" y="-1"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,61 @@
+﻿<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+    <ion-title>{{model.title}}折扣规则</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>名称<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="text" text-right required [(ngModel)]="item.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>折扣(几折)<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="number" text-right required [(ngModel)]="item.first_price_discount"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>优先级<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="number" text-right required [(ngModel)]="item.sequence"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>应用于：</ion-label>
+    <ion-select [(ngModel)]="item.applied_on" cancelText="取消" okText="确定" (ionChange)="typeSelected(type)">
+      <ion-option *ngFor="let type of appliedTypes" value="{{type.type}}">{{type.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item *ngIf="item.applied_on!='3_global' && model.itemName">
+    <ion-label>{{appliedType.name}}：</ion-label>
+    <ion-note item-right>{{model.itemName}}</ion-note>
+  </ion-item>
+
+  <div *ngIf="item.applied_on!='3_global'">
+    <ion-searchbar placeholder="按名称搜索" showCancelButton color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)" (ionInput)="onInput($event)"></ion-searchbar>
+    <ion-list radio-group (ionChange)="itemSelected()" [(ngModel)]="model.itemId">
+      <ion-item *ngFor="let i of applyItems">
+        <ion-label>{{i.name}}</ion-label>
+        <ion-radio value="{{i.id}}"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <ion-list-header text-center [hidden]="applyItems.length>0">
+      没有搜索到{{appliedType.name}}
+    </ion-list-header>
+    <!--<ion-infinite-scroll *ngIf="keyword===''" (ionInfinite)="doInfinite($event)" threshold="100px">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>-->
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

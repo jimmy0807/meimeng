@@ -1,0 +1,74 @@
+page-follow {
+  .about-header {
+    width: 100%;
+    text-align: center;
+  }
+  .about-header .avatar {
+    margin-top: 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 2px #FFC300;
+  }
+  .tools {
+    color: #FFFFFF;
+    padding: 0px;
+    margin: 0px;
+    background-color: #1d82d2;
+  }
+  .title {
+    font-size: 22px;
+    margin: 6px 0px 10px 0px;
+  }
+  .number {
+    margin-top: 2px;
+    color: #f35833;
+  }
+  .content-bg {
+    background-color: #EBEFED;
+  }
+  .ion-scroll-box {
+    height: 140px;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+  .scroll-box {
+    text-align: center;
+    font-size: 11px;
+  }
+  .scroll-month {
+    height: 50px;
+    color: #FFFFFF;
+  }
+  .select-month {
+    background-color: #32db64;
+    padding: 6px;
+    border-radius: 20px;
+    width:45px;
+  }
+  .list-ios {
+    margin: -1px 0px 0px 0px;
+  }
+  .no-data-box {
+    padding: 10px 0px;
+    background-color: #FFFFFF;
+  }
+  .card-title {
+    font-size: 12px;
+    width: 100%;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+  .pic-card {
+    position: relative;
+    text-align: center;
+  }
+  .medal {
+     width: 100%;
+    text-align: center;
+    margin-top:-30px;
+  }
+  .has-refresher .scroll-content {
+    border-top: 0px;
+  }
+}

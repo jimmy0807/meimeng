@@ -1,0 +1,70 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>选择项目</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="prd">
+        <span>所有项目</span>
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        <span>卡内项目</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <div [hidden]="segment!='prd'">
+    <ion-toolbar no-border-top *ngIf="segment==='prd'">
+      <ion-searchbar placeholder="按名称搜索" color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)"
+                     (ionInput)="onInput($event)" [(ngModel)]="keyword"></ion-searchbar>
+    </ion-toolbar>
+    <ion-list>
+      <ion-item *ngFor="let i of prds">
+        <ion-label>{{i.name}}</ion-label>
+        <ion-checkbox [(ngModel)]="i.checked"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <div text-center class="no-item-div" *ngIf="!prds.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有项目</p>
+      </div>
+    </div>
+    <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  <div [hidden]="segment!='card'">
+    <ion-list>
+      <ion-item *ngFor="let i of cardLines">
+        <ion-label>{{i.name}}</ion-label>
+        <ion-checkbox [(ngModel)]="i.checked"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <div text-center class="no-item-div" *ngIf="!cardLines.length">
+      <div class="no-item-icon-div">
+        <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+      </div>
+      <div class="no-item-p">
+        <p>没有项目</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>确定</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

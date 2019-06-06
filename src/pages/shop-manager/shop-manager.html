@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>门店</ion-title>
+    <ion-buttons end>
+      <button      *ngIf="user_role==='3' ||user_role==='2' || user_role==='1'"  ion-button (tap)="addShop()">
+        <span>新建</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list  >
+    <button ion-item *ngFor="let item of shops" (tap)="itemSelected(item)">
+      {{item.name}}
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,50 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>商品</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="create()" *ngIf="isAdmin">
+        <span>添加</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <div style="display:flex">
+      <ion-searchbar placeholder="按名称、编号搜索" showCancelButton color="danger" cancelButtonText="取消" (ionCancel)="onCancel($event)"
+                     (ionInput)="onInput($event)" [(ngModel)]="keyword"></ion-searchbar>
+      <button ion-button icon-only (tap)="scan()">
+        <ion-icon name="ios-barcode-outline"></ion-icon>
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let prd of products">
+      <ion-item (tap)="show(prd)">
+        <ion-thumbnail item-left>
+          <img *ngIf="prd.image_url" src="{{prd.image_url}}" onerror="this.src='assets/img/default-product.png'" />
+          <img *ngIf="!prd.image_url" src="assets/img/default-product.png" />
+        </ion-thumbnail>
+        <h2>{{prd.name}}</h2>
+        <p color="danger" style="margin-top:8px">￥{{prd.list_price}}</p>
+      </ion-item>
+      <ion-item-options side="right" *ngIf="isAdmin">
+        <button ion-button color="danger" (tap)="delete(prd)">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!products.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有商品</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,64 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>业绩提成</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="day">
+        按天
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        按月
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list [hidden]="segment === 'month'">
+    <ion-item-group *ngFor="let day of commissionDays">
+      <ion-item-divider sticky>
+        <ion-label>
+          {{day.date}}
+        </ion-label>
+        <ion-badge color="favorite" item-right>{{day.sub_total}}</ion-badge>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let commission of day.commissions">
+        <button ion-item (tap)="goDetail(commission)">
+          <p>{{commission.employee_name}} {{commission.date_time}} {{commission.ampm}}</p>
+          <p>客户：{{commission.member_name}} / {{commission.sale_or_do}}: {{commission.base_amount}} / 提成:  {{commission.commission_money_format}}</p>
+        </button>
+        <ion-item-options>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+  <ion-list [hidden]="segment === 'day'">
+    <ion-item-group *ngFor="let month of commissionMonths">
+      <ion-item-divider sticky>
+        <ion-label>
+          {{month.month}}
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let worksheet of month.worksheets">
+        <button ion-item (tap)="goMonthDetail(worksheet)">
+          <p>{{worksheet.employee_name}} {{worksheet.day_qty}}单</p>
+          <p>总业绩: {{worksheet.commission_total}} / 提成: {{worksheet.amount_total_format}}</p>
+        </button>
+        <ion-item-options>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="(segment==='month' && !commissionMonths.length) || (segment==='day' && !commissionDays.length)">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="segment === 'day'" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

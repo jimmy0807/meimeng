@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AttributePriceCell" id="KGk-i7-Jjw" customClass="AttributePriceCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh9-b5-g7p">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="7Sh-YC-EzJ"/>
+                            <constraint firstAttribute="width" constant="65" id="gWz-Nj-kC7"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="attribute_rect_blue.png"/>
+                    </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WtD-Bj-dB9">
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bs_table_view_cell_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="2td-rY-aYX"/>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="2td-rY-aYX" secondAttribute="bottom" id="10j-Dg-DJ5"/>
+                    <constraint firstItem="2td-rY-aYX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="4hn-hE-vaW"/>
+                    <constraint firstItem="WtD-Bj-dB9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CZ9-ro-K7I"/>
+                    <constraint firstItem="WtD-Bj-dB9" firstAttribute="leading" secondItem="Eh9-b5-g7p" secondAttribute="trailing" constant="10" id="Ddp-GV-TU8"/>
+                    <constraint firstItem="Eh9-b5-g7p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Fj1-8U-c1e"/>
+                    <constraint firstAttribute="trailing" secondItem="2td-rY-aYX" secondAttribute="trailing" id="Kno-Jv-hGA"/>
+                    <constraint firstAttribute="trailing" secondItem="WtD-Bj-dB9" secondAttribute="trailing" constant="15" id="Qrd-BC-HKo"/>
+                    <constraint firstAttribute="bottom" secondItem="WtD-Bj-dB9" secondAttribute="bottom" id="SOe-vz-zn2"/>
+                    <constraint firstItem="Eh9-b5-g7p" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Zmz-W4-3bc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lineImgView" destination="2td-rY-aYX" id="FZU-sa-yIL"/>
+                <outlet property="priceTextField" destination="WtD-Bj-dB9" id="iuv-1D-UD3"/>
+                <outlet property="titleBtn" destination="Eh9-b5-g7p" id="uzK-JY-GMk"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="attribute_rect_blue.png" width="65" height="25"/>
+        <image name="bs_table_view_cell_line.png" width="1" height="1"/>
+    </resources>
+</document>

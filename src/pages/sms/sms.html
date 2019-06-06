@@ -1,0 +1,39 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>短信群发</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color:#f5f5f5;">
+  <ion-item-group>
+    <ion-item-divider class="divider-light">发送对象
+      <!--<span color="primary" style="float:right" (tap)="selectNum()">选择</span>-->
+    </ion-item-divider>
+    <div class="text-div">
+      <textarea readonly class="sms-area" rows="2">{{names}}</textarea>
+    </div>
+    <ion-item-divider class="divider-light">
+      发送内容
+      <span color="primary" style="float:right" (tap)="selectTmpl()">选择短信模板</span>
+    </ion-item-divider>
+    <div class="text-div" (tap)="edit()">
+      <textarea readonly class="sms-area" rows="5">{{smsEntity.content}}</textarea>
+    </div>
+    <ion-item-divider class="divider-light">
+      签名
+      <span color="primary" style="float:right" (tap)="selectSign()" *ngIf="signs.length">选择签名</span>
+    </ion-item-divider>
+    <div class="text-div">
+      <textarea readonly class="sms-area" rows="1">{{sign.name}}</textarea>
+    </div>
+  </ion-item-group>
+</ion-content>
+<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button (tap)="send()" type="submit" color="primary" block>确认发送</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

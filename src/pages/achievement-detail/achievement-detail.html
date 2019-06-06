@@ -1,0 +1,19 @@
+﻿<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{a.date}}业绩</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <div class="title-div">
+    <p class="p1">{{t.name}}业绩</p>
+    <p class="pr1">{{t.amount | number :'1.0-0'}}</p>
+  </div>
+
+  <div class="line-div">
+    <div *ngFor="let a of list">
+      <p class="p1">{{a.name}}</p>
+      <p class="pr2">{{a.amount | number :'1.0-0'}}</p>
+    </div>
+  </div>
+</ion-content>

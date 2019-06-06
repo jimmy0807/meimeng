@@ -1,0 +1,39 @@
+<!--
+  Generated template for the ShopManagerDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{shop.name}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="saveShopData()">
+        <span>保存</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label>门店名称<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="text" required [(ngModel)]="shop.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>地址<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="text" required [(ngModel)]="shop.street"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>座机<span color="danger" class="c-danger">*</span></ion-label>
+    <ion-input type="text" required [(ngModel)]="shop.phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>店长手机</ion-label>
+    <ion-input type="text" required [(ngModel)]="shop.mobile"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>品牌</ion-label>
+    <ion-input type="text" required [(ngModel)]="shop.brand"></ion-input>
+  </ion-item>
+</ion-content>
+

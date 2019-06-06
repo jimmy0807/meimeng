@@ -1,0 +1,577 @@
+/*
+ Localizable.strings
+ Boss
+ 
+ Created by lining on 15/3/30.
+ Copyright (c) 2015年 BORN. All rights reserved.
+ */
+
+// Common
+"OK"="确定";
+"Cancel"="取消";
+"UnknownError"="未知错误";
+"ServerNotWork"="服务器异常，请稍后重试";
+"NoNetwork"="无网络连接, 请检查您的网络";
+"IKnewButtonTitle"="我知道了";
+"Camera"="拍照";
+"ChooseFromAlbum"="从相册选择";
+"Delete"="删除";
+"PullDownToRefresh"="下拉更新...";
+"PullUpToLoadMore"="加载更多...";
+"ReleaseToRefresh"="放开刷新...";
+"IsLoading"="正在载入...";
+"WebViewNaviClose"="关闭";
+
+//Home
+"home_upgrade"="卡升级";
+"home_refund"="退款";
+"home_recheat"="退货";
+"home_consume"="消费";
+"home_card"="开卡";
+"home_lost"="挂失";
+"home_active"="激活";
+"home_exchange"="退换";
+"home_merger"="并卡";
+"home_buy"="消费";
+"home_replacement"="换卡";
+"home_repayment"="还款";
+"home_recharge"="充值";
+
+// Warning
+"OnlyManagerCanImportMemberCard"="非经理帐户不能导入会员卡";
+"PleaseVisitTheWebAndSetUserProfiles"="请登录网站设置用户默认的收银配置";
+
+// QRCode
+"QRAllowAccessCamera"="请到手机系统的[设置]>[隐私]>[相机]中允许店尚访问你的相机.";
+"QRCodeFormatError"="二维码格式错误";
+"QRScanInfomation"="请将取景框对准二维码/条形码";
+
+// Gesture
+"SetGestureLockPassword"="设置手势密码";
+"PleaseDrawUnlockGesture"="请绘制解锁手势";
+"DrawUnlockGestureAgain"="再次绘制解锁手势";
+"PhoneNumberGestureLogin"="登录";
+"GestureAtLeast3PleaseReEnter"="密码太短, 最少3位, 请重新输入";
+"InconsistentWithPreviousInput"="与上次输入不一致, 请重新设置";
+"PassStep"="跳过";
+"UnlockFailedAndTimesAgain"="手势错误, 还可以再输入%d次";
+"ForgetGesturepassWord"="忘记手势密码";
+"ChangeUserAccount"="切换帐户";
+"ForgetGesturePasswordNeedReLogin"="忘记手势密码需要重新登录";
+"LoginFailed"="用户名或密码错误，请重新输入";
+
+// login
+"login_title_1"="BORN";
+"login_title_2"="条形视图";
+"login_title_3"="饼状视图";
+"login_detail_title_1"="你的商户数据专家";
+"login_detail_title_2"="一目了然";
+"login_detail_title_3"="让你不再恐惧冗长报告";
+"login"="登录";
+
+// message
+"MessageNaviTitle"="消息";
+
+
+//type
+"product"="库存商品";
+"consu"="消耗品";
+"service"="服务";
+
+"bigger"="大于参考单位";
+"reference"="这个类别的参考计量单位";
+"smaller"="小于参考计量单位";
+
+"arrears"="充值欠款";
+"course_arrears"="消费欠款";
+
+"draft"="消耗中";
+"done"="已耗完";
+
+"upgrade"="卡升级";
+"refund"="退款";
+"retreat"="退货";
+"consume"="消费";
+"card"="开卡";
+"lost"="挂失";
+"active"="激活";
+"exchange"="退换";
+"merger"="并卡";
+"buy"="消费";
+"replacement"="换卡";
+"repayment"="还款";
+"recharge"="充值";
+
+
+// Project
+"BornCategory0"="全部";
+"BornCategory1"="产品";
+"BornCategory2"="项目";
+"BornCategory3"="疗程";
+"BornCategory4"="套餐";
+"ProjectNaviTitle"="产品项目";
+"ProjectSelectPurchaseTitle"="选择采购商品";
+"ProjectSelectCardBuyItem"="选择要购买的产品";
+"ProjectSelectPanDianItem"="选择要盘点的产品";
+"ProjectCategory"="分类";
+"ProjectSortByPrice"="价格";
+"Other"="其它";
+"Total"="全部";
+"GoBack"="返回";
+"GoBackTo"="返回%@";
+"SearchPlaceholder"="搜索";
+"SearchPlaceholderProject"="搜索项目";
+"ProjectItemDetail"="¥%.2f/%@ %@ %@";
+"ProjectTypeNaviTitle"="选择新建类型";
+"ProjectCreateNaviTitle"="新建%@";
+"Save"="保存";
+"Finish"="完成";
+"ProjectInfoNameTitle"="名称";
+"ProjectInfoPriceTitle"="售价";
+"ProjectInfoTypeTitle"="类型";
+"IsActive"="可用";
+"CanSale"="可销售";
+"CanBook"="可预约";
+"CanPurchase"="可采购";
+"ProjectInfoPosCategoryTitle"="Pos分类";
+"ProjectDetailBarCodeTitle"="条码";
+"ProjectDetailInternalNumTitle"="内部编号";
+"ProjectDetailTemplateTitle"="规格";
+"ProjectDetailConsumableTitle"="项目消耗";
+"ProjectDetailSubItemTitle"="组合清单";
+"PleaseEnter"="请输入";
+"PleaseSelect"="请选择";
+"PleaseScanCode"="请扫描";
+"PleaseSet"="请设置";
+"ConsumableNum"="%d个";
+"SubItemsNum"="%d个";
+"PosCategoryTitle"="Pos分类";
+"ParentPosCategoryTitle"="上级Pos分类";
+"PosCategoryCreateTitle"="新建Pos分类";
+"PosCategoryCreateParentTitle"="新建上级Pos分类";
+"PosCategoryNameCanNotBeNULL"="Pos分类名称不能为空";
+"PosCategoryName"="名称";
+"ParentPosCategory"="上级类别";
+"PosCategorySequence"="序号";
+"AttributePrice"="价格规格";
+"TemplateItemList"="规格列表";
+"TemplateCreateTitle"="添加规格";
+"TemplateInfoIncomplete"="规格信息不全";
+"AttributeTitle"="属性: %@";
+"AttributeValueTitle"="产品属性值: %@";
+"Attribute"="属性";
+"AttributeName"="属性名称";
+"AttributeCreateTitle"="添加属性";
+"AttributeNameCanNotBeNULL"="属性名称不能为空";
+"AttributeValue"="产品属性值";
+"AttributeValueCreateTitle"="添加产品属性值";
+"AttributeOrValueCanNotBeNULL"="属性或产品属性值未填写";
+"AttributeValueCanNotBeNULL"="产品属性值不能为空";
+"AttributeNameAndValue"="%@: %@";
+"SetAttributePrice"="设置附加值";
+"AttributePriceInfoName"="属性";
+"AttributePriceInfoValue"="产品属性值";
+"AttributePriceInfoPrice"="附加价格属性";
+"ConsumableDetailTitle"="消耗量: %d%@";
+"ConsumableCreateTitle"="添加项目消耗";
+"ConsumableItemName"="消耗品";
+"ConsumableInfoIsStock"="是否直接出库";
+"ConsumableInfoAmount"="数量";
+"ConsumableInfoUom"="计量单位";
+"SelectConsumable"="选择耗品";
+"UomNaviTitle"="计量单位";
+"UomCreateTitle"="添加计量单位";
+"UomInfoUomName"="名称";
+"UomInfoUomCategory"="产品分类";
+"UomInfoUomType"="类型";
+"UomNameCanNotBeNULL"="计量单位名称不能为空";
+"UomCategoryNaviTitle"="产品分类";
+"UomCategoryCreateTitle"="新建产品分类";
+"UomCategoryName"="名称";
+"UomCategoryNameCanNotBeNULL"="产品分类名称不能为空";
+"ConsumableInfoIncomplete"="项目消耗信息不全";
+"SelectSubItem"="选择组合清单";
+"SubItemDetailTitle"="组合数量: %d";
+"SubItemCreateTitle"="添加组合清单";
+"SubItemInfoName"="产品";
+"SubItemInfoAmount"="组合数量";
+"SubItemInfoPrice"="公开价";
+"SubItemInfoSetPrice"="套装单价";
+"UnlimitedInValidity"="有效期内无限使用";
+"UnlimitedDays"="有效期限(天)";
+"SubItemReplaceItem"="可替换的项目";
+"SelectSameItem"="选择可替换项目";
+"SubItemInfoIncomplete"="未选择产品";
+"ProjectNameCanNotBeNULL"="%@名称不能为空";
+"ProjectTypeCanNotBeNULL"="%@类型不能为空";
+"ProjectInfoIsModified"="产品项目信息已修改, 是否保存修改？";
+"SaveModified"="保存";
+"NotSave"="不保存";
+"ContinueEdit"="继续编辑";
+
+// Member
+"MemberManage"="会员管理";
+"TotalStore"="所有门店";
+"ImportMemberCard"="导入会员卡";
+"UserInfoUserName"="会员";
+"CreateCardCompany"="开卡公司";
+"CardInfoCardNumber"="会员卡号";
+"CardInfoCreateCardStore"="开卡门店";
+"CardInfoDiscountScheme"="会员卡折扣方案";
+"CardInfoTotalOverage"="卡内总余额(含赠送金额)";
+"CardInfoOverage"="余额";
+"CardInfoCardAmount"="卡内余额";
+"CardInfoPresentAmount"="赠送金额";
+"CardInfoIntegration"="积分";
+"CardItem"="卡内项目";
+"DetailInfoNum"="%d个";
+"CardItemDetailTitle"="购买数量: %d";
+"CreateCardItem"="添加卡内项目";
+"CardItemInfoName"="产品";
+"CardItemInfoPrice"="原价";
+"CardItemInfoBuyQTY"="购买数量";
+"CardItemInfoUnitPrice"="购买单价";
+"CardItemInfoImportQTY"="剩余数量";
+"CardItemInfoRemark"="备注";
+"CardItemLimitedIsLimited"="有效期内无限使用";
+"CardItemLimitedLimitedDate"="有效期限至";
+"CardItemInfoIncomplete"="卡内项目信息不全";
+"Overdraft"="欠款";
+"OverdraftDetailTitle"="类型: %@";
+"CreateOverdraft"="添加欠款";
+"OverdraftInfoName"="欠款标题";
+"OverdraftInfoType"="类型";
+"OverdraftInfoAmount"="欠款金额";
+"OverdraftInfoRemark"="备注";
+"OverdraftInfoNameFormatter"="yyyy年M月d日欠款";
+"OverdraftInfoNameCanNotBeNULL"="欠款标题不能为空";
+"ImportMemberCardInfoIncomplete"="导入会员卡信息不全";
+
+
+// Pad
+
+// SideBar
+"PadSideBarTypePos"="收银开单";
+"PadSideBarTypeReserve"="预约";
+"PadSideBarTypeMember"="会员中心";
+"PadSideBarTypeHistory"="历史单据";
+"PadSideBarTypeStatistic"="统计";
+"PadSideBarTypeSetting"="设置";
+"PadSideBarTypeAccount"="账户";
+"PadSideBarBillOpen"="开账";
+"PadSideBarBillClose"="关账";
+"PadSideBarLastOpen"="上次开账";
+"PadSideBarLastClosed"="上次关账";
+
+
+// Member
+"Male"="男";
+"Female"="女";
+"PadMemberSearchPlaceholder"="姓名或手机号";
+"PadCreateMember"="新建会员";
+"PadChangeMember"="切换会员";
+"PadMemberAvatar"="头像";
+"PadMemberName"="姓名";
+"PadMemberGender"="性别";
+"PadMemberBirthday"="生日";
+"PadMemberPhoneNumber"="手机";
+"PadMemberNamePlaceholder"="请输入姓名";
+"PadMemberBirthdayPlaceholder"="请设置生日";
+"PadMemberPhoneNumberPlaceholder"="请输入手机号";
+"PadGenderMale"="男";
+"PadGenderFemale"="女";
+"PadMemberPhoneIsExist"="号码已存在";
+"PadMemberView"="查看该会员";
+"PadMemberCreateSuccess"="会员新建成功";
+"PadMemberNameAndPhoneCanNotBeNULL"="会员名和手机号不能为空";
+"PadMemberPhoneNumberNotCorrect"="请输入正确的手机号";
+"PadMemberCardTypeCanNotBeNULL"="会员卡卡类型不能为空";
+"PadMemberCardNumberAtLeastSixCharacters"="会员卡卡号不能少于6位";
+"PadMemberCardPointsIsNuLL"="该会员卡没有积分";
+
+"PadCardType0"="会员卡";
+"PadCardType1"="礼品券";
+"PadCardType2"="礼品卡";
+"PadMemberCardStateDraft"="草稿";
+"PadMemberCardStateActive"="已激活";
+"PadMemberCardStateLost"="已挂失";
+"PadMemberCardStateReplacement"="已换卡";
+"PadMemberCardStateMerger"="已并卡";
+"PadMemberCardStateUnlink"="已取消";
+"PadCouponCardStateDraft"="草稿";
+"PadCouponCardStatePublished"="已发布";
+"PadCouponCardStateActive"="已激活";
+"PadCouponCardStateUsed"="已核销";
+"PadCouponCardStateInvalid"="无效";
+"PadCouponCardStateUnlink"="已删除";
+"PadMemberPersonalInfo"="个人资料";
+"PadMemberInfoJobTitle"="职称";
+"PadMemberInfoQQ"="QQ";
+"PadMemberInfoWeiXin"="微信";
+"PadMemberInfoEmail"="邮件";
+"PadMemberInfoIDNumber"="身份证号";
+"PadMemberInfoAddress"="地址";
+"PadMemberInfoRelatives"="亲友";
+"PadMemberInfoOperates"="最近操作明细";
+
+"PadMemberCard"="会员卡";
+"PadGiftCardCoupons"="礼品卡券";
+"PadMemberCardNum"="卡号";
+"PadMemberCardNumPlaceholder"="请输入卡号";
+"PadMemberCardType"="类型";
+"PadMemberCardTypePlaceholder"="这里是卡的类型会有很多种";
+"PadMemberCardType"="会员卡类型";
+"PadMemberCardNumber"="会员卡卡号";
+"PadMemberCardInvalid"="该卡已失效";
+"PadCreateCard"="开卡";
+"PadCardOverage"="余额";
+"PadCardArrears"="欠款";
+"PadCardRepayment"="去还款";
+"PadCardStartAmount"="%d元起充";
+"PadPriceListStartAmount"="%@(%d元起充)";
+"PadCardCreateAmountLimit"="充值金额必须大于起充金额";
+"PadCardRefillAmount"="%d元续充";
+"PadCardRechargeAmountLimit"="充值金额必须大于续充金额";
+"PadMemberCardInsufficient"="卡内余额不足";
+"PadMemberCardPointInsufficient"="卡内积分不足";
+"PadCardRepaymentAmount"="待还金额 ¥%.2f";
+"PadCardRepaymentAmountLimit"="还款金额不能大于待还金额";
+"PadMemberCardOverageRemind"="%@(余额:¥%.2f)";
+"PadCouponCardOverageRemind"="%@(余额:¥%.2f)";
+"PadMemberCardPointPaymentRemind"="%@(当前积分%.2f,最高可抵扣%.2f元)";
+"PadCardPaymentSelectPayMode"="请先选择支付方式";
+"PadCardRepaymentSelectPayMode"="请先选择还款方式";
+"PadMorePaymentMode"="更多支付方式";
+"PadCardPrePaidAmount"="已充值  ¥%.2f";
+"PadCardPreRepaymentAmount"="已还款  ¥%.2f";
+"PadCardPaymemtTitle"="%@:  ¥%.2f";
+"PadCardPayModeCash"="现金支付";
+"PadCardPayModeBankCard"="银行卡支付";
+"PadCardPayModeArrears"="欠款支付";
+"PadCardPayModePresent"="赠送金额";
+"PadCardUpgradeSelectPayMode"="不需支付任何升级费用请直接确认";
+"PadMemberCardCreateSuccess"="会员卡创建成功";
+"PadMemberCardRechargeSuccess"="会员卡充值成功";
+"PadMemberCardRepaymentRemind"="请先选择本次要还的欠款";
+"PadMemberCardRepaymentSuccess"="会员卡还款成功";
+"PadCardInfoNumber"="卡号: %@";
+"PadCardInfoAmount"="金额: ¥ %.2f";
+"PadPosOperatePaymentSuccess"="支付成功";
+"PadContinueCashier"="继续收银";
+"PadAllotPerformance"="分配业绩";
+"PadGiveGiftCard"="赠送卡券";
+"PadMemberCardOverage"="卡内余额";
+"PadMemberCardItemWorth"="卡内项目";
+"PadCardRemainAmount"="卡内价值:¥%.2f";
+"PadCardStore"="所属门店";
+"PadWeCardActiveCode"="微卡激活码";
+"PadGiftCardNumber"="礼品卡券号";
+"PadGiftCardAmount"="礼品卡券金额";
+"PadGiftCardItemWorth"="礼品券内项目";
+"PadGiftCardValidity"="有效期";
+"PadGiftCardTermsOfUse"="使用条款";
+
+
+// Project
+"PadBornCategoryCustomPrice"="定制价格";
+"PadBornCategoryCardItem"="卡内项目";
+"PadSelectType"="选择分类";
+"PadTotalBornCategoryType"="全部%@";
+"PadCreateFreeCombinationProject"="创建您的\n定制组合";
+"PadCardItemTipsText"="本次购买";
+"PadItemNonStocked"="无库存";
+"PadItemInStock"="剩余%d件";
+"PadItemInternalAndName"="[%@]%@";
+"PadProjectDetailTitle"="[%@]%@ 单价:¥%.2f";
+"PadProjectNoDefaultCodeTitle"="%@ 单价:¥%.2f";
+"PadProjectUsingTitle"="[%@]%@ %d%@";
+"PadDefaultUomName"="件";
+"PadPosProductsCanNotBeNULL"="请先选择要购买的项目";
+"PadTechnicianNoReservation"="今天暂无预约";
+"PadTechnicianLatestReservation"="最近的预约%@-%@";
+
+"PadPosProductNum"="x %d";
+"PadInternalInfo"="[%@]";
+"PadPriceInfo"="¥ %.02f";
+"PadQuantityInfo"="%d %@";
+"PadMoneySymbol"="¥";
+"PadSettleTitle"="结算";
+"PadUnPaidMoney"="未付: ¥%.2f";
+"PadChangeMoney"="找零: ¥%.2f";
+"now_arrears_amount"="欠款";
+"PadKeyboardDeleteButton"="撤销";
+"PadKeyboardAddButton"="添加";
+"PadKeyboardCloseButton"="关闭";
+
+"PadPayModeTypeCash"="现金";
+"PadPayModeTypeBankCard"="银行卡";
+"PadPayModeTypeWeChat"="微信";
+"PadPayModeTypeAlipay"="支付宝";
+"PadPayModeTypeMemberCard"="会员卡";
+"PadPayModeTypeWeVIPCoupon"="微卡优惠券";
+"PadPayModeTypeJustImport"="导入专用";
+"PadPayModeTypeArrears"="欠款支付";
+"PadDeletePaymemtRemindInfo"="确定删除该项支付吗?";
+"PadPayAmountError"="付款金额不对";
+"PadPaymentSuccess"="支付成功";
+"PadDeletePaymentCancel"="保留";
+"PadDeletePaymentConfirm"="删除";
+
+"PadCustomItemsTitle"="选择的品项";
+"PadCreateTitle"="创建";
+"PadCreateItemCustomName"="自定义名称";
+"PadCommissionPercentage"="提成比例";
+"PadCardDeduct"="卡扣(百分比)";
+"PadFixedCardDeduct"="卡扣(固定)";
+"PadNotCardDeduct"="非卡扣(百分比)";
+"PadNotFixedCardDeduct"="非卡扣(固定)";
+"PadCreateSuccessTitle"="定制组合创建成功";
+"PadCreateItemName"="名称:  %@";
+"PadCreateItemPrice"="总计:  ¥ %.2f";
+"PadCreateConfirmTitle"="总计: ¥ %.2f(%d件)";
+"PadFinishButton"="完成";
+"PadTechnicianTitle"="美疗师";
+"PadTechnicianPlaceholder"="请选择一个美疗师";
+"PadAppointmentTitle"="上钟时间";
+"PadItemDetailTotalPrice"="总价";
+"PadItemDetailQuantity"="数量";
+"PadItemDetailDiscount"="折扣";
+"PadReturnItemReturnAmount"="退回卡内金额";
+"PadItemDetailSubItems"="所含品项";
+"PadItemUsingTitle"="本次使用";
+"PadItemUsingItem"="项目";
+"PadItemUsingQuantity"="本次使用数量";
+"PadItemDetailPointDiscount"="积分抵用";
+"PadItemDetailCashDiscount"="现金抵扣券";
+"PadDefaultCustomer"="散客";
+"PadBookedCustomer"="散客(%@)";
+"PadSelectMember"="选择会员";
+"PadSearchMemberWithNumberFilters"="搜索必须输入至少4位数字";
+"PadSearchMemberWithNameFilters"="姓名搜索会员必须输入至少1个字符";
+"PadAddHandGrade"="添加手牌号";
+"PadSelectGiftCardVouchers"="选择礼品卡券";
+"PadSelectGiftCardNum"="选择礼品卡券(%d张)";
+"PadDeleteButton"="删除";
+"PadConfirmButton"="确定";
+"PadMakeSureButton"="确认";
+"PadBackConfirmButton"="取消支付";
+"PadPleaseScanOrInputHandNum"="请输入手牌号";
+"PadPleaseScanOrInputCouponNum"="请扫描或输入微卡优惠券编码";
+"PadPurchaseUseItemCountLimit"="本次使用数量不能超过本次该项目的购买数";
+"PadCardUseItemCountLimit"="卡扣数量不能超过卡内该项目数";
+
+"PadGiveGiftCardValidityDate"="有效期: %@";
+"PadGiveGiftCardSuccessTitle"="礼品券赠送成功";
+
+"PadTodayReserveList"="今日预约列表";
+"PadReserveTechnician"="技师: %@";
+"PadReserveItemName"="项目: %@";
+
+"PadMemberCardCreate"="开卡";
+"PadMemberCardRecharge"="充值";
+"PadMemberCardRepayment"="还款";
+"PadMemberCardReturnItem"="退项目";
+"PadMemberCardReturnCard"="退款(卡)";
+"PadMemberCardExchange"="换卡";
+"PadMemberCardMerge"="并卡";
+"PadMemberCardActive"="激活";
+"PadMemberCardLost"="挂失";
+"PadMemberCardUpgrade"="卡升级";
+"PadMemberCardTurnStore"="转店";
+"PadMemberCardRedeem"="积分兑换";
+
+"PadCanReturnItemList"="可退项目列表";
+"PadCanReturnItemCount"="可退数量: %d";
+"PadReturnItemAmount"="退回卡内金额: %.2f";
+"PadCardReturnItemCountLimit"="项目数量不能超过卡内该项目数量";
+"PadSetMemberCardToBeInvalid"="会员卡设置为无效(退卡)";
+"PadRefundCardRemindInfo"="确定退卡吗? 退卡后将无法恢复。";
+"PadRefundCardRemindOverage"="卡内还有余额和项目, 确定退卡吗? 退卡后将无法恢复。";
+"PadRefundCardSure"="确定退卡";
+"PadMemberCardIsDeductionPoints"="是否扣除积分";
+"PadMemberCardDeductionPoints"="扣除积分数量";
+"PadMasterCardNum"="主卡号: %@";
+"PadNewCardNum"="新卡号";
+"PadViceCardNumber"="副卡编号";
+"PadCardOperateCardType"="类型";
+"PadCardOperateInvalidDate"="失效日期";
+"PadCardOperateRemark"="备注";
+"PadCardOperateMergerInfo"="主卡号: %@, 合并会员卡后无法撤销，请确认后处理。";
+"PadPickerViewModifyCardType"="点击修改卡的类型";
+"PadDatePickerSetInvalidDate"="点击设置失效日期";
+"PadCardUpgradeCardType"="请选择升降级类型";
+"PadCardUpgradeNextStep"="下一步";
+"PadTurnStoreCardStore"="请选择更改卡所属门店";
+"PadTurnStoreModifyMemberStore"="修改会员的所属门店";
+"PadTurnStoreMemberStore"="请选择更改会员所属门店";
+"RemarkCanNotBeNULL"="备注不能为空";
+"PadCardOperateCurrentIntegral"="当前积分: %d";
+"PadCardOperateRedeemIntegral"="本次兑换积分";
+"PadCardOperateRedeemProduct"="商品";
+"PadCardOperateSelectProduct"="请选择一个要兑换的商品";
+
+//Restaurant
+"PadRestaurantTakeout"="外卖";
+"PadAddTakeoutPosOperate"="新建外卖单";
+"PadTakeoutCurrentPosOperate"="当前单据";
+"PadRestaurantEdit"="编辑";
+"PadCurrentCustomer"="当前顾客";
+"PadReservationCustomer"="预约顾客";
+"PadRestaurantBilling"="开单";
+"PadTableCurrentNumber"="%@人";
+"PadTableNameTitle"="名称";
+"PadTableNumberTitle"="人数";
+
+
+//Setting
+"PadSetting"="设置";
+"PadSettingPos"="Pos收银";
+"PadSettingHardware"="硬件";
+"PadSettingPayAccount"="账号";
+"PadSettingPosAccount"="收银员账号";
+"kPadSettingHandNumber"="手牌号";
+"kPadSettingFreeCombination"="定制组合";
+"kPadHandHandNumberRemindInfo"="启动手牌号功能后, 可通过开单时输入手牌号进入, 设置手牌号码。";
+"kPadFreeCombinationRemindInfo"="启动定制组合功能后, 可通过品项分类菜单中进入, 您可以将任何产品、项目甚至疗程或套餐中的品项打包成您需要的组合。";
+"kPadSettingPrinter"="一体机";
+"kPadSettingCodeScanner"="扫码枪";
+"kPadSettingPosMachine"="刷卡设备";
+"kPadSettingHandWriteBook"="手写本";
+"kPadSettingCamera"="相机";
+"PadSettingPayAccount"="支付账号";
+"kPadSettingOpen"="开";
+"kPadSettingClose"="关";
+"kPadSettingHelpInfo"="帮助";
+"PadCurrentDevice"="当前设备";
+"PadSelectDevice"="选取%@";
+"kPadSettingConnected"="已连接";
+"kPadSettingConnecting"="正在连接";
+"kPadSettingConnectHasSet"="已设置";
+"kPadSettingConnectionFailed"="连接失败";
+"kPadSettingSearchDevice"="正在搜索该设备...";
+"kPadSettingDeviceNotFound"="未找到该设备";
+"PadPayAccountAddAccount"="添加账号";
+"PadPayAccountAccountName"="账号";
+"PadPayAccountAccountPassword"="密码";
+"PadPayAccountNamePlaceholder"="请输入账户";
+"PadPayAccountPasswordPlaceholder"="请输入密码";
+"PadPayAccountAccountAdd"="添加";
+"PadPayAccountAccountDelete"="删除";
+"kPadPayAccountWholeMachine"="一体刷卡机";
+"kPadPayAccountBluetoothMachine"="蓝牙刷卡机";
+
+//Account
+"PadAccount"="当前账户";
+"PadAccountChange"="切换账户";
+"PadAccountChangeConfirm"="确定要切换当前账号吗?";
+"PadAccountLogout"="退出";
+"PadAccountLogoutConfirm"="确认退出";
+"PadAccountCurrentPosOperate"="当前%d单";
+"PadAccountCashier"="收银员";
+"PadAccountLoginTime"="登录时间";
+"PadAccountPointOfSale"="销售点";
+"PadAccountMembershipCardIncome"="会员卡收入";
+"PadAccountBankCardIncome"="银行卡收入";
+"PadAccountCashIncome"="现金收入";
+"PadAccountAmount"="¥%.2f";
+

@@ -1,0 +1,9 @@
+page-company-detail {
+.item-disabled, item-disabled * { opacity: 0.3; }
+// .toggle * {opacity: 0.3; pointer-events: none;}
+.label .toggle-ios.toggle-disabled, .item-ios.item-toggle-disabled ion-label {opacity: 1; }
+// input[readonly] {
+//   pointer-events: none;
+// }
+.item-divider .label { opacity: 0.3;}
+}

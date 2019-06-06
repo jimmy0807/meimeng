@@ -1,0 +1,180 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start *ngIf="editMode">
+      <button ion-button (tap)="dismiss()">
+        <span>取消</span>
+      </button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()">
+        <span>保存</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <div class="divider-light">
+    院内详情
+  </div>
+  <ion-list class="margin-0">
+    <ion-item *ngIf="groupMedical">
+      <ion-label>客户归属</ion-label>
+      <ion-select [(ngModel)]="member.belong_id" okText="确定" cancelText="关闭">
+        <ion-option *ngFor="let b of belongs" value="{{b.id}}">{{b.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>会员类别</ion-label>
+      <ion-select [(ngModel)]="member.member_type" okText="确定" cancelText="关闭">
+        <ion-option value="wip">WIP</ion-option>
+        <ion-option value="vip">VIP</ion-option>
+        <ion-option value="pt">PT</ion-option>
+        <ion-option value="dj">DJ</ion-option>
+        <ion-option value="dd">DD</ion-option>
+        <ion-option value="dl">DL</ion-option>
+        <ion-option value="yg">YG</ion-option>
+        <ion-option value="dq">DQ</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>会员登记日期</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="member.sign_date" doneText="确定" cancelText="取消" class="clr-146"></ion-datetime>
+    </ion-item>
+    <button ion-item (tap)="selectEmployee('designers')">
+      <ion-label>设计师</ion-label>
+      <ion-note *ngIf="member.designers_name" item-right>{{member.designers_name}}</ion-note>
+      <ion-note *ngIf="!member.designers_name" item-right>请选择</ion-note>
+    </button>
+    <button ion-item (tap)="selectEmployee('director')" no-lines>
+      <ion-label>设计总监</ion-label>
+      <ion-note *ngIf="member.director_employee_name" item-right>{{member.director_employee_name}}</ion-note>
+      <ion-note *ngIf="!member.director_employee_name" item-right>请选择</ion-note>
+    </button>
+  </ion-list>
+  <div class="divider-light">身份详情</div>
+  <ion-list class="margin-0">
+    <ion-item>
+      <ion-label>头像</ion-label>
+      <img class="avatar" item-right *ngIf="member.image_url" [src]="member.image_url" (tap)="getImage()">
+      <img class="avatar" item-right *ngIf="!member.image_url" src="assets/img/avatar-default.png" (tap)="getImage()">
+    </ion-item>
+    <ion-item>
+      <ion-label>姓名<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="member.name" type="text" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>手机<span color="danger" class="c-danger">*</span></ion-label>
+      <ion-input text-right item-right [(ngModel)]="member.mobile" maxlength="11" required type="tel" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>性别</ion-label>
+      <ion-select [(ngModel)]="member.gender" okText="确定" cancelText="关闭">
+        <ion-option value="Female">女</ion-option>
+        <ion-option value="Male">男</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>血型</ion-label>
+      <ion-select [(ngModel)]="member.blood_type" okText="确定" cancelText="关闭">
+        <ion-option value="a">A型</ion-option>
+        <ion-option value="b">B型</ion-option>
+        <ion-option value="ab">AB型</ion-option>
+        <ion-option value="o">O型</ion-option>
+        <ion-option value="a+">A型 Rh(阳性)</ion-option>
+        <ion-option value="b+">B型 Rh(阳性)</ion-option>
+        <ion-option value="ab+">AB型 Rh(阳性)</ion-option>
+        <ion-option value="o+">O型 Rh(阳性)</ion-option>
+        <ion-option value="a-">A型 h(阴性)</ion-option>
+        <ion-option value="b-">B型 Rh(阴性)</ion-option>
+        <ion-option value="ab-">AB型 Rh(阴性)</ion-option>
+        <ion-option value="o-">O型 Rh(阴性)</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>生日</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="member.birth_date" doneText="确定" cancelText="取消" class="clr-146"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>星座</ion-label>
+      <ion-select [(ngModel)]="member.astro" okText="确定" cancelText="关闭">
+        <ion-option value="Aries">白羊座</ion-option>
+        <ion-option value="Taurus">金牛座</ion-option>
+        <ion-option value="Gemini">双子座</ion-option>
+        <ion-option value="Cancer">巨蟹座</ion-option>
+        <ion-option value="Leo">狮子座</ion-option>
+        <ion-option value="Virgo">处女座</ion-option>
+        <ion-option value="Libra">天秤座</ion-option>
+        <ion-option value="Scorpio">天蝎座</ion-option>
+        <ion-option value="Sagittarius">射手座</ion-option>
+        <ion-option value="Capricorn">魔羯座</ion-option>
+        <ion-option value="Aquarius">水瓶座</ion-option>
+        <ion-option value="Pisces">双鱼座</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>QQ号</ion-label>
+      <ion-input [(ngModel)]="member.qq" text-right item-right type="text" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>微信号</ion-label>
+      <ion-input [(ngModel)]="member.wx" text-right item-right type="text" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>邮箱</ion-label>
+      <ion-input [(ngModel)]="member.email" text-right item-right type="text" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>地址</ion-label>
+      <ion-input [(ngModel)]="member.street" text-right item-right type="text" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>身份证号</ion-label>
+      <ion-input [(ngModel)]="member.id_card_no" text-right item-right type="text" placeholder="请输入"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>所属区域</ion-label>
+      <ion-select [(ngModel)]="member.member_source" okText="确定" cancelText="关闭" required>
+        <ion-option value="">无</ion-option>
+        <ion-option *ngFor="let ms of source" value="{{ms.id}}">{{ms.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <div *ngIf="groupMedical">
+      <button ion-item (tap)="select('dj')">
+        <ion-label>DJ</ion-label>
+        <ion-note item-right>{{member.dj_partner_name || '请选择'}}</ion-note>
+      </button>
+      <div *ngIf="seePartner">
+        <ion-item *ngIf="member.dd_partner_name">
+          <ion-label>督导</ion-label>
+          <ion-note item-right>{{member.dd_partner_name}}</ion-note>
+        </ion-item>
+        <ion-item *ngIf="member.dl_partner_name">
+          <ion-label>代理商</ion-label>
+          <ion-note item-right>{{member.dl_partner_name}}</ion-note>
+        </ion-item>
+      </div>
+    </div>
+  </ion-list>
+  <div class="divider-light">备注</div>
+  <ion-textarea [(ngModel)]="member.note" rows="5" class="text-area"></ion-textarea>
+</ion-content>
+
+<!--<button ion-item (tap)="selectEmployee('adviser')">
+  <ion-label>顾问</ion-label>
+  <ion-note *ngIf="member.employee_name" item-right>{{member.employee_name}}</ion-note>
+  <ion-note *ngIf="!member.employee_name" item-right>请选择</ion-note>
+</button>-->
+<!--<button ion-item (tap)="selectMember('member')">
+  <ion-label>推荐人</ion-label>
+  <ion-note *ngIf="member.parent_name" item-right>{{member.parent_name}}</ion-note>
+  <ion-note *ngIf="!member.parent_name" item-right>请选择</ion-note>
+</button>-->
+<!--<ion-footer>
+  <ion-toolbar no-border-top no-border-bottom>
+    <ion-row text-center>
+      <button ion-button (tap)="save()" type="submit" color="primary" block>保存</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>-->

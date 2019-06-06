@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{name}}的报单</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="add()">
+        <span>添加</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-refresher color="primary" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新..." refreshingText="正在努力加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngFor="let key of keys">
+    <div class="div-date">
+      {{key}}
+    </div>
+    <ion-list style="margin:0">
+      <ion-item-sliding *ngFor="let i of groups[key]">
+        <button ion-item (tap)="edit(i)">
+          <h2>{{i.no}} - {{i.time}}</h2>
+          <p>报单人：{{i.create_name}}</p>
+          <p style="white-space:pre-wrap">项目：{{i.line_names}}</p>
+          <p *ngIf="i.remark">备注：{{i.remark}}</p>
+          <div *ngIf="i.operate">
+            <p>开单人：{{i.operate.create_name}}</p>
+            <p>开单时间：{{i.operate.create_date}}</p>
+            <p>排号：{{i.operate.queue_no}}</p>
+          </div>
+          <ion-note item-right class="n-{{i.state}}">{{i.state_name}}</ion-note>
+        </button>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="delete(i)">删除</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  <div text-center class="no-item-div" *ngIf="!keys.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>没有记录</p>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="infiniteEnabled" (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

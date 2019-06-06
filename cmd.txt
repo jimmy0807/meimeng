@@ -1,0 +1,35 @@
+cordova plugin add cordova-plugin-console --force
+cordova-plugin-device --force
+cordova-plugin-jcore --force
+cordova-plugin-splashscreen --force
+cordova-plugin-statusbar --force
+cordova-plugin-wechat --variable wechatappid=wx3e18cef36f359534 --force
+cordova-plugin-whitelist --force
+ionic-plugin-keyboard --force
+jpush-phonegap-plugin --force
+
+
+cordova-hot-code-push-plugin 1.5.2 "Hot Code Push Plugin"
+cordova-plugin-add-swift-support 1.6.0 "AddSwiftSupport"
+cordova-plugin-app-name 1.0.0 "App Namer"
+cordova-plugin-camera 2.3.1 "Camera"
+cordova-plugin-compat 1.1.0 "Compat"
+cordova-plugin-console 1.0.4 "Console"
+cordova-plugin-crosswalk-webview 2.3.0 "Crosswalk WebView
+cordova-plugin-device 1.1.3 "Device"
+#cordova-plugin-file 4.3.3 "File"
+#cordova-plugin-jcore 1.1.0 "cordova-plugin-jcore"
+#cordova-plugin-nativestorage 2.0.2 "NativeStorage"
+#cordova-plugin-network-information 1.3.1 "Network Informat
+#cordova-plugin-photo-library 2.0.4 "Photo Library"
+#cordova-plugin-security 0.0.1 "Security"
+#cordova-plugin-splashscreen 4.0.0 "Splashscreen"
+#cordova-plugin-statusbar 2.2.0 "StatusBar"
+#cordova-plugin-wechat 1.4.0 "Wechat"
+#cordova-plugin-whitelist 1.3.0 "Whitelist"
+cordova-sms-plugin 0.1.11 "Cordova SMS Plugin"
+ionic-plugin-keyboard 2.2.1 "Keyboard"
+jpush-phonegap-plugin 3.1.0 "JPush Plugin"
+mx.ferreyra.callnumber 0.0.2 "Cordova Call Number Plugin"
+
+cordova plugin add jpush-phonegap-plugin --variable APP_KEY=cfae909b03f61b27f0ca1ff1 --force

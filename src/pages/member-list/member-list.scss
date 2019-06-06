@@ -1,0 +1,22 @@
+﻿page-member-list {
+  .div-light {
+    background-color: rgb(245,245,245);
+    color: rgb(93,93,93);
+    font-size: 13px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .list {
+    margin: 0;
+  }
+
+  .list p {
+    margin: 6px 0 0 0;
+  }
+
+  .div-light span {
+    margin-left: 15px;
+  }
+}

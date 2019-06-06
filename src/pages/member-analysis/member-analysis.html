@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>客情分析</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()">
+        <span>保存</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content-back">
+  <ion-list class="margin-0">
+    <button ion-item (tap)="select('bea')">
+      <ion-label>求美初发心</ion-label>
+      <ion-note item-right>{{info.beauty_names || '请选择'}}</ion-note>
+    </button>
+    <button ion-item (tap)="select('cha')">
+      <ion-label>性格分析</ion-label>
+      <ion-note item-right>{{info.character_names || '请选择'}}</ion-note>
+    </button>
+    <button ion-item (tap)="select('con')">
+      <ion-label>消费习惯</ion-label>
+      <ion-note item-right>{{info.consumption_names || '请选择'}}</ion-note>
+    </button>
+    <button ion-item (tap)="select('int')">
+      <ion-label>兴趣爱好</ion-label>
+      <ion-note item-right>{{info.interest_names || '请选择'}}</ion-note>
+    </button>
+    <button ion-item (tap)="select('att')">
+      <ion-label>消费关注</ion-label>
+      <ion-note item-right>{{info.attention_names || '请选择'}}</ion-note>
+    </button>
+  </ion-list>
+  <div class="divider-light">求美经历</div>
+  <ion-textarea [(ngModel)]="info.be_beauty_cnt" rows="5" class="text-area"></ion-textarea>
+</ion-content>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PosOperateDayView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBH-0s-cgc">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="member_no_record.png" translatesAutoresizingMaskIntoConstraints="NO" id="LRa-eu-Z6U">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="fuJ-S4-7Td"/>
+                                <constraint firstAttribute="width" constant="80" id="ldC-r8-kFl"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有记录哦~" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="li4-oa-3nS">
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="li4-oa-3nS" firstAttribute="centerX" secondItem="LBH-0s-cgc" secondAttribute="centerX" id="XJg-kI-BPD"/>
+                        <constraint firstItem="LRa-eu-Z6U" firstAttribute="top" secondItem="LBH-0s-cgc" secondAttribute="top" constant="90" id="j8a-2n-NZg"/>
+                        <constraint firstItem="li4-oa-3nS" firstAttribute="top" secondItem="LRa-eu-Z6U" secondAttribute="bottom" constant="5" id="mDY-E8-yKx"/>
+                        <constraint firstItem="LRa-eu-Z6U" firstAttribute="centerX" secondItem="LBH-0s-cgc" secondAttribute="centerX" id="r2J-G1-e7J"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GiB-Gx-XaP">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GiB-Gx-XaP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3u2-F3-Pic"/>
+                <constraint firstAttribute="trailing" secondItem="GiB-Gx-XaP" secondAttribute="trailing" id="7kU-Yz-Zdx"/>
+                <constraint firstAttribute="bottom" secondItem="LBH-0s-cgc" secondAttribute="bottom" id="NOe-lZ-fkD"/>
+                <constraint firstAttribute="bottom" secondItem="GiB-Gx-XaP" secondAttribute="bottom" id="Ntd-Z2-ee3"/>
+                <constraint firstItem="LBH-0s-cgc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SHm-fe-8BC"/>
+                <constraint firstItem="LBH-0s-cgc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tpu-Yz-MwC"/>
+                <constraint firstItem="GiB-Gx-XaP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="c5E-D4-MBl"/>
+                <constraint firstAttribute="trailing" secondItem="LBH-0s-cgc" secondAttribute="trailing" id="nOG-o3-wBX"/>
+            </constraints>
+            <connections>
+                <outlet property="noOperateView" destination="LBH-0s-cgc" id="fDL-bk-PTP"/>
+                <outlet property="tableView" destination="GiB-Gx-XaP" id="Ssu-zF-g5g"/>
+            </connections>
+            <point key="canvasLocation" x="224.5" y="156.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="member_no_record.png" width="80" height="80"/>
+    </resources>
+</document>

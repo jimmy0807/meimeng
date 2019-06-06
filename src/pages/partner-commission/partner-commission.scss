@@ -1,0 +1,37 @@
+page-partner-commission {
+  .p-amount {
+    color: rgb(255,72,72);
+    font-size: 17px;
+    margin: 0 7px 0 0 !important;
+  }
+
+  .div-line {
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .div-date {
+    color: rgb(153,153,153);
+    margin-left: 15px;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid rgba(29,29,38,0.05);
+  }
+
+  .list-item {
+    margin-bottom: 10px;
+  }
+
+  .div-range {
+    text-align: center;
+    margin: 10px 0;
+
+    .p-range {
+      margin: 0 0 10px 0;
+      color: rgb(153,153,153);
+    }
+
+    .p-tap {
+      margin: 0;
+    }
+  }
+}

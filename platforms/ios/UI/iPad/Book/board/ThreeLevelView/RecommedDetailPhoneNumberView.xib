@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecommedDetailPhoneNumberView">
+            <connections>
+                <outlet property="phoneNumberTextField" destination="rEt-FQ-7SB" id="Car-bz-NvP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSZ-bA-idJ" userLabel="rightBgView">
+                    <rect key="frame" x="684" y="0.0" width="340" height="768"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zk0-zq-lVv" userLabel="NaviView">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="75"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYn-Jy-OId">
+                                    <rect key="frame" x="280" y="0.0" width="60" height="75"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="lSB-01-Szm"/>
+                                        <constraint firstAttribute="height" constant="75" id="wAa-Ye-ZWu"/>
+                                    </constraints>
+                                    <state key="normal" title="确定">
+                                        <color key="titleColor" red="0.37647058823529411" green="0.82745098039215681" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="okButtonPressed:" destination="-1" eventType="touchUpInside" id="gL3-GZ-1Ep"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYd-9G-BN7">
+                                    <rect key="frame" x="8" y="10" width="65" height="65"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="65" id="GTs-l1-4D1"/>
+                                        <constraint firstAttribute="height" constant="65" id="J6g-UX-abI"/>
+                                    </constraints>
+                                    <state key="normal" image="pad_navi_close_h.png"/>
+                                    <connections>
+                                        <action selector="cancelButtonPressed:" destination="-1" eventType="touchUpInside" id="l2q-N6-TNP"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="UYn-Jy-OId" secondAttribute="trailing" id="Fn4-go-t5T"/>
+                                <constraint firstItem="MYd-9G-BN7" firstAttribute="leading" secondItem="Zk0-zq-lVv" secondAttribute="leading" constant="8" id="Q5j-Ay-Pqb"/>
+                                <constraint firstItem="MYd-9G-BN7" firstAttribute="top" secondItem="Zk0-zq-lVv" secondAttribute="top" constant="10" id="XW0-xW-O65"/>
+                                <constraint firstItem="UYn-Jy-OId" firstAttribute="top" secondItem="Zk0-zq-lVv" secondAttribute="top" id="hn7-fg-Xi9"/>
+                                <constraint firstAttribute="height" constant="75" id="iTd-E2-cCT"/>
+                                <constraint firstAttribute="width" constant="340" id="kdq-mX-Ngc"/>
+                            </constraints>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入推荐人的手机号码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEt-FQ-7SB">
+                            <rect key="frame" x="0.0" y="78" width="340" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="ViG-6v-0cR"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97148980034722221" green="0.96682400173611116" blue="0.96530490451388884" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Zk0-zq-lVv" secondAttribute="trailing" id="Oa7-SW-Ey2"/>
+                        <constraint firstAttribute="trailing" secondItem="rEt-FQ-7SB" secondAttribute="trailing" id="af1-Ag-ORV"/>
+                        <constraint firstAttribute="width" constant="340" id="bi0-dw-I2I"/>
+                        <constraint firstItem="rEt-FQ-7SB" firstAttribute="leading" secondItem="wSZ-bA-idJ" secondAttribute="leading" id="cBF-3H-NkY"/>
+                        <constraint firstItem="rEt-FQ-7SB" firstAttribute="top" secondItem="Zk0-zq-lVv" secondAttribute="bottom" constant="3" id="cwk-69-9pI"/>
+                        <constraint firstItem="Zk0-zq-lVv" firstAttribute="top" secondItem="wSZ-bA-idJ" secondAttribute="top" id="rjV-tx-Lda"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.40988869863013699" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wSZ-bA-idJ" secondAttribute="trailing" id="4OU-v6-NYF"/>
+                <constraint firstItem="wSZ-bA-idJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c7a-wC-PBR"/>
+                <constraint firstAttribute="bottom" secondItem="wSZ-bA-idJ" secondAttribute="bottom" id="pXF-cV-WPQ"/>
+            </constraints>
+            <point key="canvasLocation" x="-240" y="-292"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pad_navi_close_h.png" width="75" height="75"/>
+    </resources>
+</document>

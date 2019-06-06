@@ -1,0 +1,55 @@
+﻿
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>审批</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-group *ngFor="let item of authorizations">
+      <ion-item-divider sticky>
+        <ion-label>
+          {{item.date}}日
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let authorization of item.authorizations">
+        <button ion-item (tap)="goDetil(authorization)">
+          <h3>{{authorization.user_name}} - {{authorization.ampm}}</h3>
+          <p>申请内容：{{authorization.name}}</p>
+          <p *ngIf="authorization.member_name">客户：{{authorization.member_name}}</p>
+          <p *ngIf="authorization.author_user_name">审核人：{{authorization.author_user_name}}</p>
+          <p *ngIf="authorization.author_date">审核时间：{{authorization.author_date}}</p>
+          <p *ngIf="authorization.remark">批注：{{authorization.remark}}</p>
+          <ion-note *ngIf="authorization.state==='draft'" item-right>
+            <span color="primary">待审核</span>
+          </ion-note>
+          <ion-note *ngIf="authorization.state==='confirm'" item-right>
+            <span color="primary">已同意</span>
+          </ion-note>
+          <ion-note *ngIf="authorization.state==='cancel'" item-right>
+            <span color="danger" class="c-danger">未同意</span>
+          </ion-note>
+        </button>
+        <ion-item-options>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+  <div text-center class="no-item-div" *ngIf="!authorizations.length">
+    <div class="no-item-icon-div">
+      <ion-icon name="ios-paper-outline" class="no-item-icon"></ion-icon>
+    </div>
+    <div class="no-item-p">
+      <p>今天没有新的审批</p>
+    </div>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在努力加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+

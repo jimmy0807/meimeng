@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11542"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MemberCardOperateView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="208" translatesAutoresizingMaskIntoConstraints="NO" id="uiH-ys-gOm">
+                    <rect key="frame" x="0.0" y="429.5" width="375" height="237.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7s-RZ-yHK">
+                            <rect key="frame" x="40" y="40" width="295" height="157.5"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="H7s-RZ-yHK" secondAttribute="height" multiplier="15:8" id="GGB-Fc-v13"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="H7s-RZ-yHK" firstAttribute="leading" secondItem="uiH-ys-gOm" secondAttribute="leading" constant="40" id="CUK-Lo-90m"/>
+                        <constraint firstAttribute="bottom" secondItem="H7s-RZ-yHK" secondAttribute="bottom" constant="40" id="RIT-QF-H4M"/>
+                        <constraint firstItem="H7s-RZ-yHK" firstAttribute="top" secondItem="uiH-ys-gOm" secondAttribute="top" constant="40" id="aeq-C5-kbu"/>
+                        <constraint firstAttribute="trailing" secondItem="H7s-RZ-yHK" secondAttribute="trailing" constant="40" id="bxQ-Io-XiC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="uiH-ys-gOm" secondAttribute="bottom" id="FIP-Ix-sUW"/>
+                <constraint firstAttribute="trailing" secondItem="uiH-ys-gOm" secondAttribute="trailing" id="TAM-6q-AZA"/>
+                <constraint firstItem="uiH-ys-gOm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fg1-Hd-Zlm"/>
+            </constraints>
+            <point key="canvasLocation" x="247" y="218"/>
+        </view>
+    </objects>
+</document>
