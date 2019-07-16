@@ -6,6 +6,7 @@
 //  Copyright © 2015年 BORN. All rights reserved.
 //
 
+#import "PosMachineManager.h"
 #import "PadHomeViewController.h"
 #import "PadProjectViewController.h"
 #import "PadSettingViewController.h"
@@ -2502,6 +2503,7 @@ typedef enum HomeTableviewSection
         
     } else {
         
+#if 1
         // Show the response APDU.
         //self.responseApduLabel.text = [ABDHex hexStringFromByteArray:apdu];
         HomeMemberSearchTableViewCell* cell = [self.homeTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
@@ -2519,6 +2521,18 @@ typedef enum HomeTableviewSection
             [TempManager sharedInstance].notSearchAll = TRUE;
             [self willSearchContent:newString];
         }
+#else
+        NSString *newString = [[ABDHex hexStringFromByteArray:apdu] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        if ( newString.length > 4 )
+        {
+            NSString* testString = [newString substringFromIndex:newString.length - 4];
+            if ( [testString isEqualToString:@"9000"] )
+            {
+                newString = [newString substringToIndex:newString.length - 4];
+            }
+        }
+        [[PosMachineManager sharedManager] showMemberSignInView:newString];
+#endif
     }
 }
 

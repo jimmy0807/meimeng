@@ -93,8 +93,8 @@
     }
     
     PersonalProfile *profile = [[PersonalProfile alloc] init];
-    profile.baseUrl = @"http://ds.mega.wang";
-    profile.sql = @"V9N00000059";
+    profile.baseUrl = @"http://hengshi.we-erp.com";
+    profile.sql = @"V9N00000091";
     profile.born_uuid = @"born_uuid";
     [profile save];
     

@@ -25,6 +25,8 @@ InterfaceSharedManager(PosMachineManager)
 - (void)didReadCharacteristicNotify:(CBCharacteristic*)characteristic;
 - (void)didPosMachineConnect:(CBPeripheral *)peripheral;
 
+- (void)showMemberSignInView:(NSString*)cardNo;
+
 @property(nonatomic, weak)id<PosMachineManagerDelegate> delegate;
 
 - (BOOL)isSwipeCardConnected;

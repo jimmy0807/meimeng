@@ -53,16 +53,16 @@ IMPSharedManager(PosMachineManager)
     {
         [self registerNofitificationForMainThread:@""];
         
-        self.bluetoothManager = [CBBluetoothManager shareManager];
-        self.readCharacteristicData = [[ReadCharacteristicDataObject alloc] init];
-        [self connectPosMachine];
-        
-#if !TARGET_IPHONE_SIMULATOR
-        self.zft_qpos = [BluetoothZXBLib getInstance];
-        [self.zft_qpos setLister:self];
-        [BluetoothZXBLib getInstance];
-        [self connectSwipeCard];
-#endif
+//        self.bluetoothManager = [CBBluetoothManager shareManager];
+//        self.readCharacteristicData = [[ReadCharacteristicDataObject alloc] init];
+//        [self connectPosMachine];
+//
+//#if !TARGET_IPHONE_SIMULATOR
+//        self.zft_qpos = [BluetoothZXBLib getInstance];
+//        [self.zft_qpos setLister:self];
+//        [BluetoothZXBLib getInstance];
+//        [self connectSwipeCard];
+//#endif
     }
     
     return self;
@@ -70,51 +70,51 @@ IMPSharedManager(PosMachineManager)
 
 - (void)active
 {
-    self.bluetoothManager.delegate = self;
-    [self disConnectSwipeCard];
-    if ( self.posMachine.peripheral )
-    {
-        [self.bluetoothManager cancelPeripheralConnection:self.posMachine.peripheral];
-        self.posMachine.peripheral = nil;
-    }
+//    self.bluetoothManager.delegate = self;
+//    [self disConnectSwipeCard];
+//    if ( self.posMachine.peripheral )
+//    {
+//        [self.bluetoothManager cancelPeripheralConnection:self.posMachine.peripheral];
+//        self.posMachine.peripheral = nil;
+//    }
     
     //[self GetCardNumber:@"123"];
 }
 
 - (void)connectPosMachine
 {
-    self.bluetoothManager.delegate = self;
-    
-    NSDictionary* dict = [BSUserDefaultsManager sharedManager].mPadPosMachineRecord;
-    self.posMachine = [[BSPadPeripheral alloc] init];
-    self.posMachine.deviceName = [dict objectForKey:@"name"];
-    self.posMachine.deviceUUID = [dict objectForKey:@"uuid"];
-    
-    if ( self.posMachine.deviceName.length > 0 )
-    {
-        if ( self.posMachine.peripheral )
-        {
-            [self.bluetoothManager connectPeripheral:self.posMachine.peripheral];
-        }
-        else
-        {
-            [self.bluetoothManager startScan];
-        }
-    }
+//    self.bluetoothManager.delegate = self;
+//
+//    NSDictionary* dict = [BSUserDefaultsManager sharedManager].mPadPosMachineRecord;
+//    self.posMachine = [[BSPadPeripheral alloc] init];
+//    self.posMachine.deviceName = [dict objectForKey:@"name"];
+//    self.posMachine.deviceUUID = [dict objectForKey:@"uuid"];
+//
+//    if ( self.posMachine.deviceName.length > 0 )
+//    {
+//        if ( self.posMachine.peripheral )
+//        {
+//            [self.bluetoothManager connectPeripheral:self.posMachine.peripheral];
+//        }
+//        else
+//        {
+//            [self.bluetoothManager startScan];
+//        }
+//    }
 }
 
 - (void)connectSwipeCard
 {
-    [self.zft_qpos starScan];
-    NSDictionary* dict = [BSUserDefaultsManager sharedManager].mPadPrinterRecord;
-    self.swipeCard = [[BSPadPeripheral alloc] init];
-    self.swipeCard.deviceName = [dict objectForKey:@"name"];
-    self.swipeCard.deviceUUID = [dict objectForKey:@"uuid"];
-    
-    if ( self.swipeCard.deviceName.length > 0 )
-    {
-        [self connectSwipeCardDevice:self.swipeCard.deviceName];
-    }
+//    [self.zft_qpos starScan];
+//    NSDictionary* dict = [BSUserDefaultsManager sharedManager].mPadPrinterRecord;
+//    self.swipeCard = [[BSPadPeripheral alloc] init];
+//    self.swipeCard.deviceName = [dict objectForKey:@"name"];
+//    self.swipeCard.deviceUUID = [dict objectForKey:@"uuid"];
+//
+//    if ( self.swipeCard.deviceName.length > 0 )
+//    {
+//        [self connectSwipeCardDevice:self.swipeCard.deviceName];
+//    }
 }
 
 - (void)disConnectSwipeCard
