@@ -92,9 +92,27 @@
         return;
     }
     
+    /*
+     
+     V9N00000060 http://dianshang.xinzhuiguoji.com
+     V9N00000059 http://ds.mega.wang
+     V9N00000080 http://ds.xyam999.com
+     V9N00000091 http://hengshi.we-erp.com 东湖
+     
+     https://www.pgyer.com/xinzhuiguoji
+     https://www.pgyer.com/mega
+     https://www.pgyer.com/bornxyam
+     https://fir.im/hengshi
+     */
+    
+    /*
+     profile.baseUrl = @"http://hengshi.we-erp.com";
+     profile.sql = @"V9N00000091";
+     */
+    
     PersonalProfile *profile = [[PersonalProfile alloc] init];
-    profile.baseUrl = @"http://hengshi.we-erp.com";
-    profile.sql = @"V9N00000091";
+    profile.baseUrl = @"http://ds.xyam999.com";
+    profile.sql = @"V9N00000080";
     profile.born_uuid = @"born_uuid";
     [profile save];
     

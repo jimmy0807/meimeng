@@ -291,6 +291,8 @@ typedef enum kPadPayAccountOperateType
     [super viewWillDisappear:animated];
     
     [[PosMachineManager sharedManager] active];
+    
+    [self.bluetoothManager cancelPeripheralConnection:self.posMachine.peripheral];
 }
 
 #pragma mark -
